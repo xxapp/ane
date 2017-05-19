@@ -4,7 +4,7 @@
   "description": "avalonjs components package",
   "main": "output/ane.js",
   "scripts": {
-    "test": "fis3 release -d ./output && karma start"
+    "test": "fis3 server start -p 8081 && fis3 release && nightwatch ./tests/nightwatch.js"
   },
   "dependencies": {
     "async-validator": "^1.6.8",

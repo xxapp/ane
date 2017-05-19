@@ -8,7 +8,8 @@
         "log_path" : "",
         "port": 4444,
         "cli_args": {
-            "webdriver.chrome.driver": "./bin/chromedriver"
+            "webdriver.chrome.driver": "./bin/chromedriver",
+            "webdriver.ie.driver" : "./bin/IEDriverServer.exe"
         }
     },
 
@@ -19,6 +20,15 @@
             "selenium_host"  : "localhost",
             "desiredCapabilities": {
                 "browserName": "chrome"
+            }
+        },
+        
+        "ie": {
+            "launch_url": "http://127.0.0.1:8081",
+            "selenium_port"  : 4444,
+            "selenium_host"  : "localhost",
+            "desiredCapabilities": {
+                "browserName": "internet explorer"
             }
         }
     }
