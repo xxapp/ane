@@ -4,7 +4,7 @@
   "description": "avalonjs components package",
   "main": "output/ane.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "fis3 release -d ./output && karma start"
   },
   "dependencies": {
     "async-validator": "^1.6.8",

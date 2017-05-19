@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="../../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <script src="../../../tests/mod.js"></script>
+</head>
+<body>
+    <div :controller="test">
+        <xmp is="ms-form" :widget="{$form: @$form}">
+            <ms-form-item :widget="{label:'名字'}">
+                <ms-input :widget="{id:'test-value',col:'name',value:@value,$rules:{required:true,message:'请输入名字'}}"></ms-input>
+            </ms-form-item>
+        </xmp>
+        <pre>{{@json}}</pre>
+    </div>
+    <script>
+        require(['../../../tests/index.js'], function () {
+            var createForm = require('../../ms-form/create-form').createForm;
+            require('../../ms-form');
+            require('../ms-input');
+
+            var vm = avalon.define({
+                $id: 'test',
+                value: '123',
+                json: '',
+                $form: createForm({
+                    onFieldsChange: function (fields, record) {
+                        vm.json = JSON.stringify(record);
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+</html>

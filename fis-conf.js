@@ -2,19 +2,20 @@ fis.hook('commonjs', {
     extList: ['.js', '.ts']
 });
 
-fis.set('project.ignore', ['node_modules/**', 'output/**', '.git/**', 'fis-conf.js', 
+fis.set('project.ignore', ['node_modules/**', 'output/**', '.git/**', 'fis-conf.js',
                             'README.md', 'karma.conf.js', 'package.json', 'LICENSE']);
 fis.set('baseurl', '');
 
 fis.unhook('components');
 fis.hook('node_modules', {
-    ignoreDevDependencies: true,
+    ignoreDevDependencies: false,
     shimBuffer: false,
     shimProcess: false,
     shutup: true
 });
 
-fis.match('**', {
+fis
+.match('**', {
     release: false,
     useHash: false
 })
@@ -47,36 +48,48 @@ fis.match('**', {
 .match('/{node_modules,components}/**/*.{css,eot,svg,ttf,woff,woff2,map}', {
     release: '/$0'
 })
-.match('/tests/index.js', {
-    release: '/$0'
-})
 .match('ane.js', {
     release: '/$0'
 })
-.match('ane-test.js', {
+.match('vendor.js', {
     release: '/$0'
+})
+.match('app.js', {
+    release: '/$0'
+})
+.match('/components/**/test/*.html', {
+    postprocessor: undefined,
+    release: '/$0'
+})
+.match('/tests/**', {
+    release: '/$0'
+})
+.match('/tests/index.js', {
+    isMod: true
 })
 .match('::package', {
     packager: fis.plugin('deps-pack', {
-        'ane-test.js': [
-            '/tests/index.js',
-            '/tests/index.js:deps'
-        ],
         'ane.js': [
             'index.ts',
             'index.ts:deps',
-            '!node_modules/async-validator/lib/index.js',
-            '!node_modules/async-validator/lib/index.js:deps',
-            '!node_modules/bootstrap/dist/js/bootstrap.js',
-            '!node_modules/bootbox/bootbox.js',
-            '!node_modules/noty/js/noty/packaged/jquery.noty.packaged.js',
-            '!node_modules/dom-align/lib/index.js',
-            '!node_modules/dom-align/lib/index.js:deps',
-            '!node_modules/moment/moment.js',
-            '!node_modules/up-loader/dist/up-loader.js'
+            '!node_modules/**',
+            '!node_modules/**:deps'
+        ],
+        'vendor.js': [
+            'node_modules/**',
+            'node_modules/**:deps',
+        ],
+        'app.js': [
+            'tests/index.js',
+            '!tests/mod.js'
+        ],
+        'app.css': [
+
         ]
     }),
     postpackager: fis.plugin('loader', {
-        useInlineMap: false
+        resourceType: 'commonJs',
+        useInlineMap: true,
+        obtainStyle: false
     })
 });
