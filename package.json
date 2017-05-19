@@ -1,6 +1,6 @@
 {
   "name": "ane",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "avalonjs components package",
   "main": "output/ane.js",
   "scripts": {
