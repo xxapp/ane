@@ -30,6 +30,11 @@ fis
     }),
     rExt: '.js'
 })
+.match('**.scss', {
+    parser: fis.plugin('node-sass', {
+    }),
+    rExt: '.css'
+})
 .match('/node_modules/**/*.{ts,js}', {
     isMod: true,
     release: '/$0'
@@ -45,7 +50,7 @@ fis
 .match('/components/**/*.html', {
     postprocessor: fis.plugin('component-view', { })
 })
-.match('/{node_modules,components}/**/*.{css,eot,svg,ttf,woff,woff2,map}', {
+.match('/{node_modules,components}/**/*.{css,scss,eot,svg,ttf,woff,woff2,map}', {
     release: '/$0'
 })
 .match('ane.js', {
@@ -55,6 +60,9 @@ fis
     release: '/$0'
 })
 .match('app.js', {
+    release: '/$0'
+})
+.match('app.css', {
     release: '/$0'
 })
 .match('/components/**/test/*.html', {
@@ -84,7 +92,8 @@ fis
             '!tests/mod.js'
         ],
         'app.css': [
-
+            'components/**.{css,scss}',
+            'components/**.{css,scss}:deps'
         ]
     }),
     postpackager: fis.plugin('loader', {

@@ -1,4 +1,7 @@
-.bus-loading-mask {
+@import '../../styles/index';
+$loading-prefix-cls: #{$ane-prefix}-loading;
+
+.#{$loading-prefix-cls}-mask {
     position: absolute;
     background: #ffffff;
     filter: alpha(opacity=90);
