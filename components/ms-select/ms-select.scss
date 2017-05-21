@@ -1,0 +1,185 @@
+@import '../../styles/index';
+$select-prefix-cls: #{$ane-prefix}-select;
+
+@mixin item-selected {
+    background-color: #eee;
+    font-weight: 700;
+    color: rgba(0,0,0,.65);
+}
+
+.#{$select-prefix-cls} {
+    position: relative;
+    cursor: pointer;
+
+    &.#{$select-prefix-cls}-multiple {
+        cursor: text;
+        height: initial;
+        padding: 0 0 0 12px;
+        min-height: 34px;
+
+        &:before {
+            content: " ";
+            display: table;
+        }
+
+        &:after {
+            content: " ";
+            display: table;
+            clear: both;
+            visibility: hidden;
+            font-size: 0;
+            height: 0;
+        }
+
+        .#{$select-prefix-cls}-selection {
+            .#{$select-prefix-cls}-search {
+                height: 25px;
+                line-height: 25px;
+                margin-top: 4px;
+            }
+        }
+    }
+
+    &-selection {
+        list-style: none;
+        padding: 0;
+
+        &.#{$select-prefix-cls}-tags li.#{$select-prefix-cls}-choice {
+            position: relative;
+            display: block;
+            float: left;
+            margin: 4px 4px 0 0;
+            background-color: #d0d0d0;
+            height: 25px;
+            max-width: 99%;
+            line-height: 25px;
+            padding: 0 8px;
+            user-select: none;
+
+            span {
+                padding-right: 16px;
+                display: inline-block;
+                max-width: 100%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+
+            i {
+                display: inline;
+                cursor: pointer;
+                position: absolute;
+                right: 4px;
+                line-height: inherit;
+                padding-left: 8px;
+                padding-right: 4px;
+
+                &:hover {
+                    color: #404040;
+                }
+            }
+        }
+
+        .#{$select-prefix-cls}-selected {
+            position: absolute;
+            left: 12px;
+            padding: 1px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            max-width: 100%;
+            padding-right: 14px;
+        }
+
+        .#{$select-prefix-cls}-search {
+            display: block;
+            float: left;
+        }
+
+        input.#{$select-prefix-cls}-search-field {
+            height: 100%;
+            border-width: 0;
+            box-shadow: none;
+            background: transparent url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAABNJREFUeNpi+P//PwMTAxAABBgAF/wDAMEBHdcAAAAASUVORK5CYII=') repeat scroll 0 0;
+            outline: none;
+            line-height: inherit;
+        }
+
+        li.#{$select-prefix-cls}-choice {
+            display: none;
+        }
+    }
+
+    .#{$select-prefix-cls}-arrow {
+        position: absolute;
+        top: 7px;
+        right: 8px;
+        line-height: 20px;
+    }
+}
+
+.#{$select-prefix-cls}-dropdown {
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0,0,0,.2);
+    box-sizing: border-box;
+    z-index: 1050;
+    left: -9999px;
+    top: -9999px;
+    position: absolute;
+    outline: none;
+    overflow: hidden;
+
+    &-menu {
+        list-style: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        max-height: 250px;
+
+        &-item {
+            position: relative;
+            display: block;
+            padding: 7px 13px;
+            cursor: pointer;
+            white-space: nowrap;
+            overflow: hidden;
+            user-select: none;
+
+            &:focus,
+            &:hover {
+                background: #ecf6fd;
+
+                i {
+                    color: #dddddd;
+                    display: inline-block;
+                }
+            }
+
+            i {
+                display: none;
+                position: absolute;
+                right: 13px;
+                line-height: inherit;
+            }
+        }
+
+        &-item-selected {
+            @include item-selected;
+
+            &:hover {
+                @include item-selected;
+            }
+
+            i {
+                color: #108ee9;
+                display: inline-block;
+            }
+        }
+
+        &-item-disabled,
+        &-item-disabled:hover {
+            background-color: inherit;
+            color: rgba(0,0,0,.25);
+            cursor: not-allowed;
+        }
+    }
+}

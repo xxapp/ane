@@ -1,19 +1,19 @@
 <template>
-    <div class="bus-select form-control"
-        :class="[(@isMultiple ? 'bus-select-multiple' : '')]"
+    <div class="ane-select form-control"
+        :class="[(@isMultiple ? 'ane-select-multiple' : '')]"
         :click="@handleClick"
         role="combobox"
         aria-autocomplete="list"
         aria-haspopup="true"
         :attr="{'aria-expanded': @panelVisible + ''}">
-        <ul class="bus-select-selection" :class="[(@isMultiple ? 'bus-select-tags' : '')]">
-            <li class="bus-select-selected" :visible="!@isMultiple && (!@showSearch || !@panelVisible)">{{@displayValue}}</li>
-            <li class="bus-select-choice" :for="choice in @selection">
+        <ul class="ane-select-selection" :class="[(@isMultiple ? 'ane-select-tags' : '')]">
+            <li class="ane-select-selected" :visible="!@isMultiple && (!@showSearch || !@panelVisible)">{{@displayValue}}</li>
+            <li class="ane-select-choice" :for="choice in @selection">
                 <span>{{choice.label}}</span>
                 <i class="fa fa-times" :click="@removeSelection($event, choice) | stop"></i>
             </li>
-            <li class="bus-select-search">
-                <input class="bus-select-search-field"
+            <li class="ane-select-search">
+                <input class="ane-select-search-field"
                     name="search"
                     type="text"
                     autocomplete="off"
@@ -22,7 +22,7 @@
                     :keydown="@handleDelete" />
             </li>
         </ul>
-        <i class="fa bus-select-arrow"
+        <i class="fa ane-select-arrow"
             :class="[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]"
             :visible="@mode === ''"></i>
         <ms-trigger :widget="{

@@ -31,7 +31,7 @@ avalon.component('ms-trigger', {
 
             avalon.scan(panel, avalon.vmodels[this.innerVmId]);
 
-            avalon.bind(body, 'click', e => {
+            avalon.bind(DOC, 'click', e => {
                 if (this.visible && panel !== e.target && !avalon.contains(panel, e.target) &&  !this.withInBox(e.target)) {
                     this.hide(panel);
                 }

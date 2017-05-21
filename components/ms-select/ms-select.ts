@@ -1,7 +1,7 @@
 import * as avalon from 'avalon2';
 import controlComponent from "../ms-form/ms-control";
 import '../ms-trigger';
-import './ms-select.css';
+import './ms-select.scss';
 
 import { getChildTemplateDescriptor, debounce } from '../../ane-util';
 import { emitToFormItem } from '../ms-form/utils';
@@ -99,7 +99,7 @@ controlComponent.extend({
         // 下拉框下拉列表部分
         panelVmId: '',
         panelVisible: false,
-        panelClass: 'bus-select-dropdown',
+        panelClass: 'ane-select-dropdown',
         panelTemplate: __inline('./ms-select-panel.html'),
         handlePanelHide() {
             this.panelVisible = false;

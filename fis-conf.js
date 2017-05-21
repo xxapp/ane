@@ -53,6 +53,9 @@ fis
 .match('/{node_modules,components}/**/*.{css,scss,eot,svg,ttf,woff,woff2,map}', {
     release: '/$0'
 })
+.match('/styles/**.{css,scss,eot,svg,ttf,woff,woff2,map}', {
+    release: '/$0'
+})
 .match('ane.js', {
     release: '/$0'
 })
