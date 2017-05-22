@@ -1,0 +1,30 @@
+<template>
+    <div>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th ms-if="false">日</th>
+                    <th>一</th>
+                    <th>二</th>
+                    <th>三</th>
+                    <th>四</th>
+                    <th>五</th>
+                    <th>六</th>
+                    <th>日</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr :for="week in @table">
+                    <td ms-if="false">{{week[6]}}</td>
+                    <td>{{week[0]}}</td>
+                    <td>{{week[1]}}</td>
+                    <td>{{week[2]}}</td>
+                    <td>{{week[3]}}</td>
+                    <td>{{week[4]}}</td>
+                    <td>{{week[5]}}</td>
+                    <td>{{week[6]}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</template>
