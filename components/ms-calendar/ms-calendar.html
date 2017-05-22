@@ -1,5 +1,23 @@
 <template>
     <div>
+        <div>
+            <a href="javascript:;" :click="mutate('subtract', 1, 'years')">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+            <a href="javascript:;" :click="mutate('subtract', 1, 'months')">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <span>
+                <a href="javascript:;">{{currentMonth}}</a>
+                <a href="javascript:;">{{currentYear}}</a>
+            </span>
+            <a href="javascript:;" :click="mutate('add', 1, 'months')">
+                <i class="fa fa-angle-right"></i>
+            </a>
+            <a href="javascript:;" :click="mutate('add', 1, 'years')">
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
@@ -15,14 +33,14 @@
             </thead>
             <tbody>
                 <tr :for="week in @table">
-                    <td ms-if="false">{{week[6]}}</td>
-                    <td>{{week[0]}}</td>
+                    <td ms-if="false">{{week[0]}}</td>
                     <td>{{week[1]}}</td>
                     <td>{{week[2]}}</td>
                     <td>{{week[3]}}</td>
                     <td>{{week[4]}}</td>
                     <td>{{week[5]}}</td>
                     <td>{{week[6]}}</td>
+                    <td>{{week[7]}}</td>
                 </tr>
             </tbody>
         </table>
