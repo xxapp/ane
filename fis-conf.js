@@ -93,10 +93,10 @@ fis
             'node_modules/**',
             'node_modules/**:deps',
         ],
-        'app.js': [
-            'tests/index.js',
-            '!tests/mod.js'
-        ],
+        // 'app.js': [
+        //     'tests/index.js',
+        //     '!tests/mod.js'
+        // ],
         'app.css': [
             'components/**.{css,scss}',
             'components/**.{css,scss}:deps'
