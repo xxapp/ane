@@ -1,8 +1,3 @@
-<style>
-    .table-pagination {
-        margin: 16px 0;
-    }
-</style>
 <template>
     <div>
         <table class="table" :loading="!window.isNaN(@paginationConfig.total) && @loading">
@@ -23,9 +18,14 @@
                 </tr>
             </tbody>
         </table>
-        <div class="table-pagination pull-right">
+        <div class="ane-table-pagination pull-right">
             <ms-pagination :widget="{current:@paginationConfig.current,pageSize:@paginationConfig.pageSize,total:@total,onChange:@handlePageChange}"></ms-pagination>
         </div>
         <div class="clearfix"></div>
     </div>
 </template>
+<style>
+    .ane-table-pagination {
+        margin: 16px 0;
+    }
+</style>

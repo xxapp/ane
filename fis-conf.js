@@ -30,7 +30,7 @@ fis
     }),
     rExt: '.js'
 })
-.match('**.scss', {
+.match('{**.scss,*.html:scss}', {
     parser: fis.plugin('node-sass', {
     }),
     rExt: '.css'
@@ -49,6 +49,9 @@ fis
 })
 .match('/components/**/*.html', {
     postprocessor: fis.plugin('component-view', { })
+})
+.match('/components/**/*.scss', {
+    release: '/$0'
 })
 .match('/{node_modules,components}/**/*.{css,scss,eot,svg,ttf,woff,woff2,map}', {
     release: '/$0'

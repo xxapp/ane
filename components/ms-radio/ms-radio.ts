@@ -6,13 +6,13 @@ if (avalon.msie <= 8) {
     const head = doc.getElementsByTagName('head')[0];
     const style: any = doc.createElement('style');
     const cssStr = `
-        .radio-inner-ie input {
+        .ane-radio-inner-ie input {
             left: 0;
             position: static !important;
             margin-left: 0 !important;
             margin-top: 6px !important;
         }
-        .radio-inner-ie span {
+        .ane-radio-inner-ie span {
             display: none !important;
         }
     `;

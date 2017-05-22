@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+    <title>Document</title>
+    <link href="../../../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="../../../node_modules/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <script src="../../../tests/mod.js"></script>
+</head>
+<body>
+    <div :controller="test">
+        <div>
+            <xmp is="ms-form" :widget="{$form: @$form}">
+                <ms-form-item :widget="{label:'附件'}">
+                    <ms-upload :widget="{
+                            value:@value,
+                            col:'attachment',
+                            action: @fileUploadUrl,
+                            listType:'text-list',
+                            $rules:{required:true,type:'array',message:'请选择附件'}
+                        }">
+                        <i class="fa fa-upload"></i>选择文件
+                    </ms-upload>
+                </ms-form-item>
+            </xmp>
+            <pre>{{@json}}</pre>
+        </div>
+        <div>
+            <xmp is="ms-form" :widget="{$form: @$form}">
+                <ms-form-item :widget="{label:'附件'}">
+                    <ms-upload :widget="{
+                            value:@value,
+                            col:'attachment',
+                            action: @fileUploadUrl,
+                            listType:'picture-card',
+                            $rules:{required:true,type:'array',message:'请选择附件'}
+                        }">
+                        <i class="fa fa-upload"></i>选择文件
+                    </ms-upload>
+                </ms-form-item>
+            </xmp>
+            <pre>{{@json}}</pre>
+        </div>
+    </div>
+    <script>
+        require(['../../../tests/index.js'], function () {
+            var createForm = require('../../ms-form/create-form').createForm;
+            require('../../ms-form');
+            require('../ms-upload');
+
+            var vm = avalon.define({
+                $id: 'test',
+                value: [],
+                fileUploadUrl: 'http://easy-mock.com/mock/58ff1b7c5e43ae5dbea5eff3/api/file/uploadFile',
+                json: '',
+                $form: createForm({
+                    onFieldsChange: function (fields, record) {
+                        vm.json = JSON.stringify(record);
+                    }
+                })
+            });
+        });
+    </script>
+</body>
+</html>

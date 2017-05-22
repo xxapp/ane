@@ -1,7 +1,7 @@
 import * as avalon from 'avalon2';
 import controlComponent from '../ms-form/ms-control';
 import { emitToFormItem } from '../ms-form/utils';
-import './ms-upload.css';
+import './ms-upload.scss';
 import './ms-upload-list';
 import './ms-upload-card';
 import Uploader from 'up-loader';
@@ -31,7 +31,7 @@ controlComponent.extend({
         listType: 'text-list',
         showUploadList: true,
         btnClass: 'btn btn-default',
-        cardClass: 'bus-upload-select-card bus-upload-card-item',
+        cardClass: 'ane-upload-select-card ane-upload-card-item',
         blankImg: 'data:image/gif;base64,R0lGODlhAQABAIABAP///wAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==',
         $uploader: null,
         beforeUpload() {

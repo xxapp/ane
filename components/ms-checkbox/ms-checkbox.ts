@@ -6,13 +6,13 @@ if (avalon.msie <= 8) {
     const head = doc.getElementsByTagName('head')[0];
     const style: any = doc.createElement('style');
     const cssStr = `
-        .checkbox-inner-ie input {
+        .ane-checkbox-inner-ie input {
             left: 0;
             position: static !important;
             margin-left: 0 !important;
             margin-top: 6px !important;
         }
-        .checkbox-inner-ie span {
+        .ane-checkbox-inner-ie span {
             display: none !important;
         }
     `;
@@ -31,7 +31,7 @@ avalon.component('ms-checkbox', {
     soleSlot: 'label',
     template: __inline('./ms-checkbox.html'),
     defaults: {
-        wrapper: 'checkbox',
+        wrapper: '',
         label: '',
         checked: false,
         group: false,
