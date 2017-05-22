@@ -25,7 +25,7 @@ avalon.component('ms-trigger', {
             medium.setAttribute('style', 'position: absolute; top: 0px; left: 0px; width: 100%;');
             panel.setAttribute('class', this.innerClass);
             panel.setAttribute(':important', this.innerVmId);
-            panel.innerHTML = this.innerTemplate;
+            panel.innerHTML = this.innerTemplate.replace(/\n/g, '');
             medium.appendChild(panel);
             body.appendChild(medium);
 
