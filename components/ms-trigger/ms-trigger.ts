@@ -39,7 +39,7 @@ avalon.component('ms-trigger', {
             });
             this.$watch('visible', v => {
                 if (v) {
-                    panel.style.width = this.width + 'px';
+                    panel.style.width = this.width === 0 ? 'auto' : (this.width + 'px');
                     panel.scrollTop = 0;
                     domAlign(panel, this.getTarget(), {
                         points: ['tl', 'bl'],

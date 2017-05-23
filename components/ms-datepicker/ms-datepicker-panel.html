@@ -1,0 +1,25 @@
+<template>
+    <div class="ane-datepicker-panel" style="overflow: auto">
+        <div class="ane-datepicker-panel-header">
+            <a class="ane-datepicker-prev-year-btn" :click="mutate('subtract', 1, 'years')">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+            <a class="ane-datepicker-prev-month-btn" :click="mutate('subtract', 1, 'months')">
+                <i class="fa fa-angle-left"></i>
+            </a>
+            <span>
+                <a>{{currentMonth}}</a>
+                <a>{{currentYear}}</a>
+            </span>
+            <a class="ane-datepicker-next-month-btn" :click="mutate('add', 1, 'years')">
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+            <a class="ane-datepicker-next-month-btn" :click="mutate('add', 1, 'months')">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        </div>
+        <div class="ane-datepicker-panel-body">
+            <ms-calendar :widget="{value:@currentDateArray,showHeader:false,onChange:@handleCalendarChange}"></ms-calendar>
+        </div>
+    </div>
+</template>

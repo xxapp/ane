@@ -1,3 +1,62 @@
 <template>
-    <div></div>
+    <div>
+        <button class="btn btn-primary" :click="@handleClick">
+            <i class="fa fa-calendar"></i>
+        </button>
+        <ms-trigger :widget="{
+            visible: @panelVisible,
+            innerVmId: @panelVmId,
+            innerClass: @panelClass,
+            innerTemplate: @panelTemplate,
+            withInBox: @withInBox,
+            getTarget: @getTarget,
+            onHide: @handlePanelHide
+        }">
+        </ms-trigger>
+    </div>
 </template>
+<style lang="scss">
+    @import '../../styles/index';
+    $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
+
+    .#{$datepicker-prefix-cls}-panel-container {
+        background-color: #fff;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+        box-sizing: border-box;
+    }
+    .#{$datepicker-prefix-cls}-panel {
+        width: 231px;
+
+        a {
+            cursor: pointer;
+        }
+
+        &-header {
+            text-align: center;
+            height: 34px;
+            line-height: 34px;
+            border-bottom: 1px solid #e9e9e9;
+        }
+        .#{$datepicker-prefix-cls}-prev-year-btn {
+            float: left;
+            margin-left: 7px;
+        }
+        .#{$datepicker-prefix-cls}-prev-month-btn {
+            float: left;
+            margin-left: 7px;
+        }
+        .#{$datepicker-prefix-cls}-next-year-btn {
+            float: right;
+            margin-right: 7px;
+        }
+        .#{$datepicker-prefix-cls}-next-month-btn {
+            float: right;
+            margin-right: 7px;
+        }
+
+        &-body {
+            padding: 4px 8px;
+        }
+
+    }
+</style>
