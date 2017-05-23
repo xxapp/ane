@@ -122,12 +122,6 @@ $select-prefix-cls: #{$ane-prefix}-select;
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(0,0,0,.2);
     box-sizing: border-box;
-    z-index: 1050;
-    left: -9999px;
-    top: -9999px;
-    position: absolute;
-    outline: none;
-    overflow: hidden;
 
     &-menu {
         list-style: none;
