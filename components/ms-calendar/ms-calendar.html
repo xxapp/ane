@@ -1,46 +1,28 @@
 <template>
     <div>
-        <div>
-            <a href="javascript:;" :click="mutate('subtract', 1, 'years')">
-                <i class="fa fa-angle-double-left"></i>
-            </a>
-            <a href="javascript:;" :click="mutate('subtract', 1, 'months')">
-                <i class="fa fa-angle-left"></i>
-            </a>
-            <span>
-                <a href="javascript:;">{{currentMonth}}</a>
-                <a href="javascript:;">{{currentYear}}</a>
-            </span>
-            <a href="javascript:;" :click="mutate('add', 1, 'months')">
-                <i class="fa fa-angle-right"></i>
-            </a>
-            <a href="javascript:;" :click="mutate('add', 1, 'years')">
-                <i class="fa fa-angle-double-right"></i>
-            </a>
+        <div class="row" ms-if="@showHeader">
+            <div class="col-md-2 col-md-offset-4">
+                <ms-select :widget="{value:[@currentYear],options:@currentYearOptions,onChange:@handleYearChange}"></ms-select>
+            </div>
+            <div class="col-md-2">
+                <ms-select :widget="{value:[@currentMonth],options:@monthOptions,onChange:@handleMonthChange}"></ms-select>
+            </div>
         </div>
         <table class="table table-bordered">
             <thead>
                 <tr>
-                    <th ms-if="false">日</th>
-                    <th>一</th>
-                    <th>二</th>
-                    <th>三</th>
-                    <th>四</th>
-                    <th>五</th>
-                    <th>六</th>
-                    <th>日</th>
+                    <th :for="day in @weekdays">{{day}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr :for="week in @table">
-                    <td ms-if="false">{{week[0]}}</td>
+                    <td>{{week[0]}}</td>
                     <td>{{week[1]}}</td>
                     <td>{{week[2]}}</td>
                     <td>{{week[3]}}</td>
                     <td>{{week[4]}}</td>
                     <td>{{week[5]}}</td>
                     <td>{{week[6]}}</td>
-                    <td>{{week[7]}}</td>
                 </tr>
             </tbody>
         </table>
