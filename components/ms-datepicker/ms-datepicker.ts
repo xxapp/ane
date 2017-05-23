@@ -20,6 +20,7 @@ controlComponent.extend({
     template: __inline('./ms-datepicker.html'),
     defaults: {
         selected: '',
+        format: 'YYYY-MM-DD',
         withInBox(el) {
             return this.$element === el || avalon.contains(this.$element, el);
         },
@@ -46,6 +47,7 @@ controlComponent.extend({
             this.selected = value;
         },
         onInit: function (event) {
+            const self = this;
             emitToFormItem(this);
             this.$watch('value', v => {
                 this.mapValueToSelected(v);
@@ -70,6 +72,12 @@ controlComponent.extend({
                 },
                 handleCalendarChange(e) {
                     this.$moment = e.target.value;
+                    self.selected = this.$moment.format(self.format);
+                    self.panelVisible = false;
+                    self.handleChange({
+                        target: { value: self.selected },
+                        type: 'datepicker-changed'
+                    });
                 }
             });
             innerVm.currentMonth = innerVm.$moment.format('MMM');

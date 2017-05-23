@@ -1,8 +1,7 @@
 <template>
-    <div>
-        <button class="btn btn-primary" :click="@handleClick">
-            <i class="fa fa-calendar"></i>
-        </button>
+    <div class="ane-datepicker">
+        <i class="fa fa-calendar ane-datepicker-icon"></i>
+        <input type="text" class="form-control" :click="@handleClick" readonly :duplex="selected" />
         <ms-trigger :widget="{
             visible: @panelVisible,
             innerVmId: @panelVmId,
@@ -19,10 +18,22 @@
     @import '../../styles/index';
     $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
 
+    .#{$datepicker-prefix-cls} {
+        position: relative;
+
+        &-icon {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            margin-top: -7px;
+        }
+    }
+
     .#{$datepicker-prefix-cls}-panel-container {
         background-color: #fff;
         box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
         box-sizing: border-box;
+        user-select: none;
     }
     .#{$datepicker-prefix-cls}-panel {
         width: 231px;
