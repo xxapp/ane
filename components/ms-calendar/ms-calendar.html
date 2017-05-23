@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="ane-calendar">
         <div class="row" ms-if="@showHeader">
             <div class="col-md-2 col-md-offset-4">
                 <ms-select :widget="{value:[@currentYear],options:@currentYearOptions,onChange:@handleYearChange}"></ms-select>
@@ -8,23 +8,79 @@
                 <ms-select :widget="{value:[@currentMonth],options:@monthOptions,onChange:@handleMonthChange}"></ms-select>
             </div>
         </div>
-        <table class="table table-bordered">
+        <table class="">
             <thead>
                 <tr>
-                    <th :for="day in @weekdays">{{day}}</th>
+                    <th class="ane-calendar-column-header" :for="day in @weekdays">{{day}}</th>
                 </tr>
             </thead>
             <tbody>
                 <tr :for="week in @table">
-                    <td>{{week[0]}}</td>
-                    <td>{{week[1]}}</td>
-                    <td>{{week[2]}}</td>
-                    <td>{{week[3]}}</td>
-                    <td>{{week[4]}}</td>
-                    <td>{{week[5]}}</td>
-                    <td>{{week[6]}}</td>
+                    <td class="ane-calendar-cell" :class="week[0].className">
+                        <div class="ane-calendar-date">{{week[0].date}}</div>
+                    </td>
+                    <td class="ane-calendar-cell" :class="week[1].className">
+                        <div class="ane-calendar-date">{{week[1].date}}</div>
+                    </td>
+                    <td class="ane-calendar-cell" :class="week[2].className">
+                        <div class="ane-calendar-date">{{week[2].date}}</div>
+                    </td>
+                    <td class="ane-calendar-cell" :class="week[3].className">
+                        <div class="ane-calendar-date">{{week[3].date}}</div>
+                    </td>
+                    <td class="ane-calendar-cell" :class="week[4].className">
+                        <div class="ane-calendar-date">{{week[4].date}}</div>
+                    </td>
+                    <td class="ane-calendar-cell" :class="week[5].className">
+                        <div class="ane-calendar-date">{{week[5].date}}</div>
+                    </td>
+                    <td class="ane-calendar-cell" :class="week[6].className">
+                        <div class="ane-calendar-date">{{week[6].date}}</div>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
 </template>
+<style lang="scss">
+    @import '../../styles/index';
+    $calendar-prefix-cls: #{$ane-prefix}-calendar;
+
+    .#{$calendar-prefix-cls} {
+        table {
+            width: 100%;
+            max-width: 100%;
+        }
+
+        &-column-header {
+            line-height: 18px;
+            width: 33px;
+            padding: 6px 0;
+            text-align: center;
+        }
+        &-cell {
+            padding: 4px 0;
+        }
+        &-prev-month-cell &-date, &-next-month-cell &-date {
+            color: rgba(0,0,0,.25);
+        }
+        &-today &-date {
+            border-color: #108ee9;
+            font-weight: 700;
+            color: #108ee9;
+        }
+        &-date {
+            display: block;
+            margin: 0 auto;
+            color: rgba(0,0,0,.65);
+            border-radius: 2px;
+            width: 20px;
+            height: 20px;
+            line-height: 18px;
+            border: 1px solid transparent;
+            padding: 0;
+            background: transparent;
+            text-align: center;
+        }
+    }
+</style>

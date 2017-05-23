@@ -7,6 +7,7 @@ moment.locale('zh-cn')
 avalon.component('ms-calendar', {
     template: __inline('./ms-calendar.html'),
     defaults: {
+        value: [],
         $value: moment(),
         weekStart: 0,
         showHeader: true,
@@ -25,6 +26,7 @@ avalon.component('ms-calendar', {
             this.$value.month(e.target.value);
             this.calcTable();
         },
+        onChnage: avalon.noop,
         calcTable() {
             let i, j;
             // 这个月的第一天
@@ -41,15 +43,30 @@ avalon.component('ms-calendar', {
             for (i = 0; i < 6; i++) {
                 const tableRow = [];
                 for (j = 0; j < 7; j++) {
+                    const className = [];
                     if (i === 0 && j < firstDay) {
                         // 上月结束部分
-                        tableRow.push(prevLastDate - firstDay + j + 1);
+                        className.push('ane-calendar-prev-month-cell');
+                        tableRow.push({
+                            className,
+                            date: prevLastDate - firstDay + j + 1
+                        });
                     } else if (passed + 1 > lastDate) {
                         // 下月开始部分
-                        tableRow.push(++passed - lastDate);
+                        className.push('ane-calendar-next-month-cell');
+                        tableRow.push({
+                            className,
+                            date: ++passed - lastDate
+                        });
                     } else {
                         // 本月部分
-                        tableRow.push(++passed);
+                        if (passed + 1 === this.$value.date()) {
+                            className.push('ane-calendar-today');
+                        }
+                        tableRow.push({
+                            className,
+                            date: ++passed
+                        });
                     }
                 }
                 table.push(tableRow);
@@ -67,6 +84,12 @@ avalon.component('ms-calendar', {
             this.weekdays = weekdays;
             this.monthOptions = moment.localeData().monthsShort().map(m => ({ label: m, value: m }));
             this.calcTable();
+
+            this.value = this.$value.toArray();
+            this.$watch('value', v => {
+                this.$value = moment(v);
+                this.calcTable();
+            });
         }
     }
 });
