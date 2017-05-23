@@ -59,16 +59,10 @@ fis
 .match('/styles/**.{css,scss,eot,svg,ttf,woff,woff2,map}', {
     release: '/$0'
 })
-.match('ane.js', {
+.match('{ane.js,vendor.js,app.js,app.css}', {
     release: '/$0'
 })
-.match('vendor.js', {
-    release: '/$0'
-})
-.match('app.js', {
-    release: '/$0'
-})
-.match('app.css', {
+.match('{**.js.map,**.css.map}', {
     release: '/$0'
 })
 .match('/components/**/test/*.html', {
@@ -83,6 +77,7 @@ fis
 })
 .match('::package', {
     packager: fis.plugin('deps-pack', {
+        useSourceMap: true,
         'ane.js': [
             'index.ts',
             'index.ts:deps',

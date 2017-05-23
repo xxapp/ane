@@ -9,7 +9,7 @@ bootbox.setLocale('zh_CN');
 
 var avalon = require('avalon2');
 avalon.config({
-    debug: false
+    debug: true
 });
 if (avalon.msie === 8) {
     Object.defineProperty = function (obj, property, meta) {
