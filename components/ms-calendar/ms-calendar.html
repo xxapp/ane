@@ -8,7 +8,7 @@
                 <ms-select :widget="{value:[@currentMonth],options:@monthOptions,onChange:@handleMonthChange}"></ms-select>
             </div>
         </div>
-        <table class="">
+        <table>
             <thead>
                 <tr>
                     <th class="ane-calendar-column-header" :for="day in @weekdays">{{day}}</th>
@@ -16,26 +16,8 @@
             </thead>
             <tbody>
                 <tr :for="week in @table">
-                    <td class="ane-calendar-cell" :class="week[0].className">
-                        <div class="ane-calendar-date">{{week[0].date}}</div>
-                    </td>
-                    <td class="ane-calendar-cell" :class="week[1].className">
-                        <div class="ane-calendar-date">{{week[1].date}}</div>
-                    </td>
-                    <td class="ane-calendar-cell" :class="week[2].className">
-                        <div class="ane-calendar-date">{{week[2].date}}</div>
-                    </td>
-                    <td class="ane-calendar-cell" :class="week[3].className">
-                        <div class="ane-calendar-date">{{week[3].date}}</div>
-                    </td>
-                    <td class="ane-calendar-cell" :class="week[4].className">
-                        <div class="ane-calendar-date">{{week[4].date}}</div>
-                    </td>
-                    <td class="ane-calendar-cell" :class="week[5].className">
-                        <div class="ane-calendar-date">{{week[5].date}}</div>
-                    </td>
-                    <td class="ane-calendar-cell" :class="week[6].className">
-                        <div class="ane-calendar-date">{{week[6].date}}</div>
+                    <td class="ane-calendar-cell" :class="el.className" :for="el in week">
+                        <div class="ane-calendar-date" :click="@handleDateClick(el) | stop">{{el.date}}</div>
                     </td>
                 </tr>
             </tbody>
@@ -69,6 +51,15 @@
             font-weight: 700;
             color: #108ee9;
         }
+        &-selected-day &-date {
+            background: #108ee9;
+            color: #fff;
+            border: 1px solid transparent;
+
+            &:hover {
+                background: #108ee9;
+            }
+        }
         &-date {
             display: block;
             margin: 0 auto;
@@ -81,6 +72,11 @@
             padding: 0;
             background: transparent;
             text-align: center;
+
+            &:hover {
+                background: #ecf6fd;
+                cursor: pointer;
+            }
         }
     }
 </style>

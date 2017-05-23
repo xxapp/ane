@@ -9,6 +9,7 @@ avalon.component('ms-calendar', {
     defaults: {
         value: [],
         $value: moment(),
+        $selected: moment(),
         weekStart: 0,
         showHeader: true,
         
@@ -19,20 +20,32 @@ avalon.component('ms-calendar', {
         monthOptions: [],
         table: [],
         handleYearChange(e) {
-            this.$value.year(e.target.value);
-            this.calcTable();
+            this.$value.year(e.target.value)
+            this.calcTable(this.$value.clone());
         },
         handleMonthChange(e) {
-            this.$value.month(e.target.value);
-            this.calcTable();
+            this.$value.month(e.target.value)
+            this.calcTable(this.$value.clone());
         },
-        onChnage: avalon.noop,
-        calcTable() {
+        handleDateClick(el) {
+            this.$selected.year(this.currentYear).month(this.currentMonth).date(el.date);
+            this.$value = this.$selected;
+            this.onChange({
+                target: {
+                    value: this.$selected.clone()
+                },
+                type: 'calendar-changed'
+            });
+            // 是否有必要再计算更新一次？
+            this.calcTable(this.$value.clone());
+        },
+        onChange: avalon.noop,
+        calcTable(m: moment.Moment) {
             let i, j;
             // 这个月的第一天
-            const firstDayOfMonth = this.$value.clone().startOf('month');
+            const firstDayOfMonth = m.clone().startOf('month');
             // 这个月的最后一天
-            const lastDayOfMonth = this.$value.clone().endOf('month');
+            const lastDayOfMonth = m.clone().endOf('month');
             // 上个月的最后一天
             const lastDayOfPrevMonth = firstDayOfMonth.clone().subtract(1, 'days');
             const firstDay = (firstDayOfMonth.day() - this.weekStart + 7) % 7;
@@ -60,8 +73,11 @@ avalon.component('ms-calendar', {
                         });
                     } else {
                         // 本月部分
-                        if (passed + 1 === this.$value.date()) {
+                        if (moment().isSame(m.clone().date(passed + 1), 'day')) {
                             className.push('ane-calendar-today');
+                        }
+                        if (this.$selected.isSame(m.clone().date(passed + 1), 'day')) {
+                            className.push('ane-calendar-selected-day');
                         }
                         tableRow.push({
                             className,
@@ -72,8 +88,8 @@ avalon.component('ms-calendar', {
                 table.push(tableRow);
             }
             this.table = table;
-            this.currentMonth = this.$value.format('MMM');
-            this.currentYear = this.$value.year();
+            this.currentMonth = m.format('MMM');
+            this.currentYear = m.year();
             this.currentYearOptions = avalon.range(this.currentYear - 10, this.currentYear + 9).map(y => ({ label: y, value: y }));
         },
         onInit(event) {
@@ -83,12 +99,12 @@ avalon.component('ms-calendar', {
             })
             this.weekdays = weekdays;
             this.monthOptions = moment.localeData().monthsShort().map(m => ({ label: m, value: m }));
-            this.calcTable();
+            this.calcTable(this.$value.clone());
 
             this.value = this.$value.toArray();
             this.$watch('value', v => {
                 this.$value = moment(v);
-                this.calcTable();
+                this.calcTable(this.$value.clone());
             });
         }
     }
