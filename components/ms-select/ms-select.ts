@@ -113,9 +113,12 @@ controlComponent.extend({
             }
         },
         
-        // 声明周期
+        // 生命周期
         mapValueToSelection(value) {
             this.selection = this.options.filter(o => value.contains(o.value));
+            if (this.selection.length > 0) {
+                this.displayValue = this.selection[0].label;
+            }
             avalon.vmodels[this.panelVmId].selection = this.selection.toJSON();
         },
         onInit(event) {
