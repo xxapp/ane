@@ -39,7 +39,12 @@
         width: 231px;
 
         a {
+            color: $link-color;
             cursor: pointer;
+            text-decoration: none;
+            &:hover {
+                color: $link-hover-color;
+            }
         }
 
         &-header {
@@ -51,18 +56,40 @@
         .#{$datepicker-prefix-cls}-prev-year-btn {
             float: left;
             margin-left: 7px;
+            padding: 0 5px;
+            font-size: 16px;
         }
         .#{$datepicker-prefix-cls}-prev-month-btn {
             float: left;
             margin-left: 7px;
+            padding: 0 5px;
+            font-size: 16px;
         }
         .#{$datepicker-prefix-cls}-next-year-btn {
             float: right;
             margin-right: 7px;
+            padding: 0 5px;
+            font-size: 16px;
         }
         .#{$datepicker-prefix-cls}-next-month-btn {
             float: right;
             margin-right: 7px;
+            padding: 0 5px;
+            font-size: 16px;
+        }
+        .#{$datepicker-prefix-cls}-month-select {
+            padding: 0 2px;
+            font-weight: 700;
+            display: inline-block;
+            color: rgba(0,0,0,.65);
+            line-height: 34px;
+        }
+        .#{$datepicker-prefix-cls}-year-select {
+            padding: 0 2px;
+            font-weight: 700;
+            display: inline-block;
+            color: rgba(0,0,0,.65);
+            line-height: 34px;
         }
 
         &-body {

@@ -44,26 +44,26 @@
             padding: 4px 0;
         }
         &-prev-month-cell &-date, &-next-month-cell &-date {
-            color: rgba(0,0,0,.25);
+            color: $disabled-color;
         }
         &-today &-date {
-            border-color: #108ee9;
+            border-color: $brand-primary;
             font-weight: 700;
-            color: #108ee9;
+            color: $brand-primary;
         }
         &-selected-day &-date {
-            background: #108ee9;
+            background: $brand-primary;
             color: #fff;
             border: 1px solid transparent;
 
             &:hover {
-                background: #108ee9;
+                background: $brand-primary;
             }
         }
         &-date {
             display: block;
             margin: 0 auto;
-            color: rgba(0,0,0,.65);
+            color: $text-color;
             border-radius: 2px;
             width: 20px;
             height: 20px;
@@ -74,7 +74,7 @@
             text-align: center;
 
             &:hover {
-                background: #ecf6fd;
+                background: $item-hover-bg;
                 cursor: pointer;
             }
         }

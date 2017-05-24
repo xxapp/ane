@@ -132,7 +132,7 @@ $select-prefix-cls: #{$ane-prefix}-upload;
         cursor: pointer;
 
         &:hover {
-            border-color: #108ee9;
+            border-color: $brand-primary;
         }
         .fa {
             display: block;

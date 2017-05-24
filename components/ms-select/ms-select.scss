@@ -140,7 +140,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
 
             &:focus,
             &:hover {
-                background: #ecf6fd;
+                background: $item-hover-bg;
 
                 i {
                     color: #dddddd;
@@ -164,7 +164,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
             }
 
             i {
-                color: #108ee9;
+                color: $brand-primary;
                 display: inline-block;
             }
         }
@@ -172,7 +172,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
         &-item-disabled,
         &-item-disabled:hover {
             background-color: inherit;
-            color: rgba(0,0,0,.25);
+            color: $disabled-color;
             cursor: not-allowed;
         }
     }
