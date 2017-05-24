@@ -1,0 +1,11 @@
+<template>
+    <table class="ane-calendar-year-view">
+        <tbody>
+            <tr :for="row in @table">
+                <td class="ane-calendar-cell" :for="cell in row">
+                    <div class="ane-calendar-date">{{cell.label}}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</template>

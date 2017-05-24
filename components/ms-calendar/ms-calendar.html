@@ -22,6 +22,7 @@
                 </tr>
             </tbody>
         </table>
+        <ms-calendar-year-view :widget="{table:@yearViewTable}"></ms-calendar-year-view>
     </div>
 </template>
 <style lang="scss">
@@ -77,6 +78,20 @@
                 background: $item-hover-bg;
                 cursor: pointer;
             }
+        }
+
+        &-year-view {
+            table-layout: fixed;
+            text-align: center;
+        }
+        &-year-view &-cell {
+            padding: 10px 0;
+        }
+        &-year-view &-date {
+            width: auto;
+            display: inline-block;
+            color: $text-color;
+            padding: 0 6px;
         }
     }
 </style>

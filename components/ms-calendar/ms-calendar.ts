@@ -1,8 +1,10 @@
 import * as avalon from 'avalon2';
 import * as moment from 'moment';
 import 'moment/locale/zh-cn';
-import "../ms-select";
-moment.locale('zh-cn')
+import '../ms-select';
+import './ms-calendar-year-view';
+moment.locale('zh-cn');
+window.moment = moment;
 
 avalon.component('ms-calendar', {
     template: __inline('./ms-calendar.html'),
@@ -19,6 +21,7 @@ avalon.component('ms-calendar', {
         currentYearOptions: [],
         monthOptions: [],
         table: [],
+        yearViewTable: [],
         handleYearChange(e) {
             this.$value.year(e.target.value)
             this.calcTable(this.$value.clone());
