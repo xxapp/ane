@@ -1,6 +1,6 @@
 <template>
     <div class="ane-datepicker-panel" style="overflow: auto">
-        <div class="ane-datepicker-panel-header">
+        <div class="ane-datepicker-panel-header" :visible="@viewMode === 0">
             <a class="ane-datepicker-prev-year-btn" :click="mutate('subtract', 1, 'years')">
                 <i class="fa fa-angle-double-left"></i>
             </a>
@@ -8,8 +8,8 @@
                 <i class="fa fa-angle-left"></i>
             </a>
             <span>
-                <a class="ane-datepicker-month-select">{{currentMonth}}</a>
-                <a class="ane-datepicker-year-select">{{currentYear}}</a>
+                <a class="ane-datepicker-month-select" :click="@changeView(1)">{{@currentMonth}}</a>
+                <a class="ane-datepicker-year-select" :click="@changeView(2)">{{@currentYear}}</a>
             </span>
             <a class="ane-datepicker-next-month-btn" :click="mutate('add', 1, 'years')">
                 <i class="fa fa-angle-double-right"></i>
@@ -18,8 +18,42 @@
                 <i class="fa fa-angle-right"></i>
             </a>
         </div>
-        <div class="ane-datepicker-panel-body">
+        <div class="ane-datepicker-panel-header" :visible="@viewMode === 1">
+            <a class="ane-datepicker-prev-year-btn" :click="mutate('subtract', 1, 'years')">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+            <span>
+                <a class="ane-datepicker-month-select" :click="@changeView(2)">{{@currentYear}}</a>
+            </span>
+            <a class="ane-datepicker-next-month-btn" :click="mutate('add', 1, 'years')">
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+        <div class="ane-datepicker-panel-header" :visible="@viewMode === 2">
+            <a class="ane-datepicker-prev-year-btn" :click="mutate('subtract', 10, 'years')">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+            <span>
+                <a class="ane-datepicker-month-select" :click="@changeView(3)">{{@startOfDecade + '-' + (@startOfDecade + 9)}}</a>
+            </span>
+            <a class="ane-datepicker-next-month-btn" :click="mutate('add', 10, 'years')">
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+        <div class="ane-datepicker-panel-header" :visible="@viewMode === 3">
+            <a class="ane-datepicker-prev-year-btn" :click="mutate('subtract', 100, 'years')">
+                <i class="fa fa-angle-double-left"></i>
+            </a>
+            <span>{{@startOfCentury + '-' + (@startOfCentury + 99)}}</span>
+            <a class="ane-datepicker-next-month-btn" :click="mutate('add', 100, 'years')">
+                <i class="fa fa-angle-double-right"></i>
+            </a>
+        </div>
+        <div class="ane-datepicker-panel-body" :visible="@viewMode === 0">
             <ms-calendar :widget="{value:@currentDateArray,showHeader:false,onChange:@handleCalendarChange}"></ms-calendar>
+        </div>
+        <div class="ane-datepicker-panel-body" :visible="@viewMode !== 0">
+            <ms-calendar-year-view :widget="{currentMonth:@currentMonth,currentYear:@currentYear,view:@viewMode,onSelect:@handleYearViewSelect}"></ms-calendar-year-view>
         </div>
     </div>
 </template>

@@ -29,6 +29,7 @@ controlComponent.extend({
         },
         handleClick(e) {
             if (!this.panelVisible) {
+                avalon.vmodels[this.panelVmId].reset();
                 this.panelVisible = true;
             } else {
                 this.panelVisible = false;
@@ -64,6 +65,53 @@ controlComponent.extend({
                 $moment: moment(),
                 currentMonth: '',
                 currentYear: 0,
+                // 0-月视图，1-年视图，2-十年视图，3-百年视图
+                viewMode: 0,
+                staged: 0,
+                $computed: {
+                    startOfDecade() {
+                        return this.currentYear - this.currentYear % 10;
+                    },
+                    startOfCentury() {
+                        return this.currentYear - this.currentYear % 100;
+                    },
+                },
+                reset() {
+                    this.viewMode = 0;
+                    this.staged = 0;
+                    this.$moment = moment();
+                    this.currentMonth = this.$moment.format('MMM');
+                    this.currentYear = this.$moment.year();
+                    this.currentDateArray = this.$moment.toArray();
+                },
+                changeView(viewMode) {
+                    if (this.viewMode === 0 && viewMode === 2) {
+                        // 从月视图直接跳到十年视图后，返回时跳过年视图
+                        this.staged = 1;
+                    }
+                    this.viewMode = viewMode;
+                },
+                handleYearViewSelect(el) {
+                    if (this.viewMode === 1) {
+                        this.currentMonth = el.value;
+                        this.$moment.month(el.value);
+                        this.currentDateArray = this.$moment.toArray();
+                    }
+                    if (this.viewMode === 3) {
+                        this.currentYear = el.value;
+                        this.$moment.year(el.value);
+                        this.currentDateArray = this.$moment.toArray();
+                    }
+                    if (this.viewMode === 2) {
+                        this.currentYear = el.value;
+                        this.$moment.year(el.value);
+                        this.currentDateArray = this.$moment.toArray();
+                        this.viewMode = this.viewMode - 1 - this.staged;
+                        this.staged = 0;
+                    } else {
+                        this.viewMode = this.viewMode - 1;
+                    }
+                },
                 mutate(action, ...args) {
                     this.$moment[action].apply(this.$moment, args);
                     this.currentMonth = this.$moment.format('MMM');
@@ -80,9 +128,7 @@ controlComponent.extend({
                     });
                 }
             });
-            innerVm.currentMonth = innerVm.$moment.format('MMM');
-            innerVm.currentYear = innerVm.$moment.year();
-            innerVm.currentDateArray = innerVm.$moment.toArray();
+            innerVm.reset();
 
             this.mapValueToSelected(this.value);
         },

@@ -21,7 +21,6 @@ avalon.component('ms-calendar', {
         currentYearOptions: [],
         monthOptions: [],
         table: [],
-        yearViewTable: [],
         handleYearChange(e) {
             this.$value.year(e.target.value)
             this.calcTable(this.$value.clone());
@@ -101,7 +100,8 @@ avalon.component('ms-calendar', {
                 weekdays.push(weekdays.shift());
             })
             this.weekdays = weekdays;
-            this.monthOptions = moment.localeData().monthsShort().map(m => ({ label: m, value: m }));
+            const monthList = moment.localeData().monthsShort();
+            this.monthOptions = monthList.map(m => ({ label: m, value: m }));
             this.calcTable(this.$value.clone());
 
             this.value = this.$value.toArray();
