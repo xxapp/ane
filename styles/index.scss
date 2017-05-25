@@ -50,4 +50,6 @@ $item-hover-bg:         lighten($brand-primary, 40%);
 //
 //##
 
-//** 
+//** Disabled date
+$calendar-disabled-date-color:   $disabled-color;
+$calendar-disabled-date-bg:      $gray-lighter;

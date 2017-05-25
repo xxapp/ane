@@ -13,7 +13,13 @@
     <div :controller="test">
         <xmp is="ms-form" :widget="{$form: @$form}">
             <ms-form-item :widget="{label:'入学时间'}">
-                <ms-datepicker :widget="{col:'date',format:'YYYY/MM/DD',$rules:{required:true,message:'请选择日期'}}"></ms-datepicker>
+                <ms-datepicker :widget="{
+                    col:'date',
+                    format:'YYYY/MM/DD',
+                    startDate:'2017/5/26',
+                    endDate:'2018/7/26',
+                    $rules:{required:true,message:'请选择日期'}
+                }"></ms-datepicker>
             </ms-form-item>
         </xmp>
         <pre>{{@json}}</pre>

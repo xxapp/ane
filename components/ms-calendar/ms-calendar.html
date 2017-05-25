@@ -44,7 +44,7 @@
             padding: 4px 0;
         }
         &-prev-month-cell &-date, &-next-month-cell &-date {
-            color: $disabled-color;
+            color: $calendar-disabled-date-color;
         }
         &-today &-date {
             border-color: $brand-primary;
@@ -60,6 +60,18 @@
                 background: $brand-primary;
             }
         }
+        &-disabled-cell &-date {
+            cursor: not-allowed;
+            color: $calendar-disabled-date-color;
+            background: $calendar-disabled-date-bg;
+            border-radius: 0;
+            width: auto;
+            border: 1px solid transparent;
+
+            &:hover {
+                background: $calendar-disabled-date-bg;
+            }
+        }
         &-date {
             display: block;
             margin: 0 auto;
@@ -72,10 +84,10 @@
             padding: 0;
             background: transparent;
             text-align: center;
+            cursor: pointer;
 
             &:hover {
                 background: $item-hover-bg;
-                cursor: pointer;
             }
         }
 

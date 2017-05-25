@@ -5,6 +5,7 @@
   "main": "output/ane.js",
   "scripts": {
     "start": "fis3 server start -p 8081 && fis3 release",
+    "dev": "fis3 server start -p 8081 && fis3 release -wL",
     "test": "npm start && nightwatch ./tests/nightwatch.js"
   },
   "dependencies": {

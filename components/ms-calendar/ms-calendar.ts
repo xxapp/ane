@@ -14,6 +14,7 @@ avalon.component('ms-calendar', {
         $selected: moment(),
         weekStart: 0,
         showHeader: true,
+        disabledDate() { return false; },
         
         currentMonth: '',
         currentYear: 0,
@@ -30,6 +31,9 @@ avalon.component('ms-calendar', {
             this.calcTable(this.$value.clone());
         },
         handleDateClick(el) {
+            if (el.disabled) {
+                return false;
+            }
             this.$selected.year(this.currentYear).month(this.currentMonth).date(el.date);
             this.$value = this.$selected;
             this.onChange({
@@ -59,18 +63,29 @@ avalon.component('ms-calendar', {
                 const tableRow = [];
                 for (j = 0; j < 7; j++) {
                     const className = [];
+                    let disabled = false;
                     if (i === 0 && j < firstDay) {
                         // 上月结束部分
                         className.push('ane-calendar-prev-month-cell');
+                        if (this.disabledDate(+m.clone().subtract(1, 'months').date(prevLastDate - firstDay + j + 1))) {
+                            disabled = true;
+                            className.push('ane-calendar-disabled-cell');
+                        }
                         tableRow.push({
                             className,
+                            disabled,
                             date: prevLastDate - firstDay + j + 1
                         });
                     } else if (passed + 1 > lastDate) {
                         // 下月开始部分
                         className.push('ane-calendar-next-month-cell');
+                        if (this.disabledDate(+m.clone().add(1, 'months').date(passed + 1 - lastDate))) {
+                            disabled = true;
+                            className.push('ane-calendar-disabled-cell');
+                        }
                         tableRow.push({
                             className,
+                            disabled,
                             date: ++passed - lastDate
                         });
                     } else {
@@ -81,8 +96,13 @@ avalon.component('ms-calendar', {
                         if (this.$selected.isSame(m.clone().date(passed + 1), 'day')) {
                             className.push('ane-calendar-selected-day');
                         }
+                        if (this.disabledDate(+m.clone().date(passed + 1))) {
+                            disabled = true;
+                            className.push('ane-calendar-disabled-cell');
+                        }
                         tableRow.push({
                             className,
+                            disabled,
                             date: ++passed
                         });
                     }

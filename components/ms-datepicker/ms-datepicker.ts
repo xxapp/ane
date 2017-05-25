@@ -9,6 +9,10 @@ import { emitToFormItem } from '../ms-form/utils';
  * 日期选择组件
  * @prop value 组件值(inherit)
  * @prop col 字段路径(inherit)
+ * @prop format 日期格式，参考 momentjs
+ * @prop startDate 控制可已选择的时间的开始日期，日期字符串，格式与 format 参数匹配，设置此项自动忽略 disabledDate
+ * @prop endDate 控制可已选择的时间的结束日期，日期字符串，格式与 format 参数匹配，设置此项自动忽略 disabledDate
+ * @prop disabledDate 不可选择日期的判断函数，传入 current（当前遍历日期），返回 true 表示此日期不可选
  * 
  * @example
  * ``` html
@@ -21,6 +25,9 @@ controlComponent.extend({
     defaults: {
         selected: '',
         format: 'YYYY-MM-DD',
+        startDate: '',
+        endDate: '',
+        disabledDate() { return false; },
         withInBox(el) {
             return this.$element === el || avalon.contains(this.$element, el);
         },
@@ -65,6 +72,9 @@ controlComponent.extend({
                 $moment: moment(),
                 currentMonth: '',
                 currentYear: 0,
+                $startDate: null,
+                $endDate: null,
+                disabledDate() { return false; },
                 // 0-月视图，1-年视图，2-十年视图，3-百年视图
                 viewMode: 0,
                 staged: 0,
@@ -79,10 +89,39 @@ controlComponent.extend({
                 reset() {
                     this.viewMode = 0;
                     this.staged = 0;
-                    this.$moment = moment();
+                    this.$moment = self.selected ? moment(self.selected, self.format) : moment();
                     this.currentMonth = this.$moment.format('MMM');
                     this.currentYear = this.$moment.year();
                     this.currentDateArray = this.$moment.toArray();
+                    
+                    // 构造不可选择日期的判断函数
+                    if (self.startDate) {
+                        this.$startDate = moment(self.startDate, self.format);
+                    }
+                    if (self.endDate) {
+                        this.$endDate = moment(self.endDate, self.format);
+                    }
+                    if (self.startDate || self.endDate) {
+                        // 如果设置了开始日期和结束日期，则据此构造一个判断函数
+                        this.disabledDate = (current) => {
+                            if (this.$startDate === null && this.$endDate === null) {
+                                return false;
+                            }
+                            const currentMoment = moment(current);
+                            const isSameOrAfterStartDate = currentMoment.isSameOrAfter(this.$startDate, 'date');
+                            const isSameOrBeforeEndDate = currentMoment.isSameOrBefore(this.$endDate, 'date');
+                            if (this.$startDate === null) {
+                                return !isSameOrBeforeEndDate;
+                            }
+                            if (this.$endDate === null) {
+                                return !isSameOrAfterStartDate;
+                            }
+                            return !(isSameOrAfterStartDate && isSameOrBeforeEndDate);
+                        };
+                    } else {
+                        // 否则使用默认的或者外部传进来的判断函数
+                        this.disabledDate = self.disabledDate;
+                    }
                 },
                 changeView(viewMode) {
                     if (this.viewMode === 0 && viewMode === 2) {
