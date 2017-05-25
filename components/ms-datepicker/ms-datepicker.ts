@@ -163,6 +163,14 @@ controlComponent.extend({
                     this.currentYear = this.$moment.year();
                     this.currentDateArray = this.$moment.toArray();
                 },
+                today() {
+                    this.handleCalendarChange({
+                        target: {
+                            value: moment()
+                        },
+                        type: 'calendar-changed'
+                    });
+                },
                 handleCalendarChange(e) {
                     this.$moment = e.target.value;
                     self.selected = this.$moment.format(self.format);

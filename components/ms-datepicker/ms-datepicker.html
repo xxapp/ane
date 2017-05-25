@@ -1,9 +1,9 @@
 <template>
     <div class="ane-datepicker">
-        <i class="fa fa-times-circle ane-datepicker-clear" :if="@selected.length" :click="@clear"></i>
         <i class="fa fa-calendar ane-datepicker-icon"></i>
+        <i class="fa fa-times-circle ane-datepicker-clear" :if="@selected.length" :click="@clear"></i>
         <input type="text"
-            class="form-control"
+            class="form-control ane-datepicker-input"
             :click="@handleClick"
             readonly
             :attr="{placeholder:@placeholder}"
@@ -38,14 +38,16 @@
             right: 8px;
             top: 50%;
             margin-top: -7px;
+            padding: 1px;
             cursor: pointer;
             display: none;
-        }
-        &:hover &-icon {
-            display: none;
+            background: #fff;
         }
         &:hover &-clear {
             display: inline-block;
+        }
+        & &-input {
+            background-color: #fff;
         }
     }
 
@@ -111,9 +113,23 @@
             color: rgba(0,0,0,.65);
             line-height: 34px;
         }
+        &-today-btn {
+            display: inline-block;
+            text-align: center;
+            margin: 0 0 0 8px;
+        }
 
         &-body {
             padding: 4px 8px;
+        }
+
+        &-footer {
+            &-btn {
+                border-top: 1px solid #e9e9e9;
+                text-align: center;
+                display: block;
+                line-height: 33px;
+            }
         }
 
     }

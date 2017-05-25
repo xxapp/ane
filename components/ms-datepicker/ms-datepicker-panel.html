@@ -55,5 +55,10 @@
         <div class="ane-datepicker-panel-body" :visible="@viewMode !== 0">
             <ms-calendar-year-view :widget="{currentMonth:@currentMonth,currentYear:@currentYear,view:@viewMode,onSelect:@handleYearViewSelect}"></ms-calendar-year-view>
         </div>
+        <div class="ane-datepicker-panel-footer" :visible="@viewMode === 0">
+            <span class="ane-datepicker-panel-footer-btn">
+                <a class="ane-calendar-today-btn" :click="@today">今天</a>
+            </span>
+        </div>
     </div>
 </template>
