@@ -4,7 +4,6 @@ import 'moment/locale/zh-cn';
 import '../ms-select';
 import './ms-calendar-year-view';
 moment.locale('zh-cn');
-window.moment = moment;
 
 avalon.component('ms-calendar', {
     template: __inline('./ms-calendar.html'),
@@ -126,7 +125,7 @@ avalon.component('ms-calendar', {
 
             this.value = this.$value.toArray();
             this.$watch('value', v => {
-                this.$value = moment(v);
+                this.$value = this.$selected = moment(v);
                 this.calcTable(this.$value.clone());
             });
         }

@@ -28,6 +28,10 @@ controlComponent.extend({
         startDate: '',
         endDate: '',
         disabledDate() { return false; },
+        clear() {
+            this.selected = '';
+            avalon.vmodels[this.panelVmId].reset();
+        },
         withInBox(el) {
             return this.$element === el || avalon.contains(this.$element, el);
         },
@@ -56,7 +60,9 @@ controlComponent.extend({
         },
         onInit: function (event) {
             const self = this;
-            emitToFormItem(this);
+            emitToFormItem(this, {
+                showIcon: false
+            });
             this.$watch('value', v => {
                 this.mapValueToSelected(v);
                 this.handleChange({

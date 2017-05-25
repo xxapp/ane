@@ -1,7 +1,13 @@
 <template>
     <div class="ane-datepicker">
+        <i class="fa fa-times-circle ane-datepicker-clear" :if="@selected.length" :click="@clear"></i>
         <i class="fa fa-calendar ane-datepicker-icon"></i>
-        <input type="text" class="form-control" :click="@handleClick" readonly :duplex="selected" />
+        <input type="text"
+            class="form-control"
+            :click="@handleClick"
+            readonly
+            :attr="{placeholder:@placeholder}"
+            :duplex="selected" />
         <ms-trigger :widget="{
             visible: @panelVisible,
             innerVmId: @panelVmId,
@@ -26,6 +32,20 @@
             right: 8px;
             top: 50%;
             margin-top: -7px;
+        }
+        &-clear {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            margin-top: -7px;
+            cursor: pointer;
+            display: none;
+        }
+        &:hover &-icon {
+            display: none;
+        }
+        &:hover &-clear {
+            display: inline-block;
         }
     }
 
