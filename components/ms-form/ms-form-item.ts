@@ -22,6 +22,7 @@ avalon.component('ms-form-item', {
         dirty: false,
         reasons: [],
         hasRules: false,
+        showIcon: true,
         className: '',
         inlineFormGroupStyle: { verticalAlign: 'top' },
         inlineMessageStyle: { marginBottom: 0 },
@@ -30,6 +31,10 @@ avalon.component('ms-form-item', {
                 [descriptor.name]: { value: descriptor.value, denyValidate: descriptor.denyValidate }
             });
             if (!descriptor.rules) return ;
+            if (descriptor.showIcon === false) {
+                this.showIcon = false;
+            }
+            delete descriptor.showIcon;
             this.hasRules = true;
             this.$formVm.$form.addFields({
                 [descriptor.name]: { rules: descriptor.rules }
