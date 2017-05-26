@@ -3,16 +3,18 @@ import * as moment from 'moment';
 import controlComponent from '../ms-form/ms-control';
 import '../ms-trigger';
 import '../ms-calendar';
+import '../ms-timepicker/ms-timepicker-view'
 import { emitToFormItem } from '../ms-form/utils';
 
 /**
  * 日期选择组件
  * @prop value 组件值(inherit)
  * @prop col 字段路径(inherit)
- * @prop format 日期格式，参考 momentjs
+ * @prop format 日期格式，参考 momentjs，默认为 YYYY-MM-DD
  * @prop startDate 控制可已选择的时间的开始日期，日期字符串，格式与 format 参数匹配，设置此项自动忽略 disabledDate
  * @prop endDate 控制可已选择的时间的结束日期，日期字符串，格式与 format 参数匹配，设置此项自动忽略 disabledDate
  * @prop disabledDate 不可选择日期的判断函数，传入 current（当前遍历日期），返回 true 表示此日期不可选
+ * @prop showTime 是否显示时间选择，如果此项为 true，则 format 默认为 YYYY-MM-DD HH:mm:ss
  * 
  * @example
  * ``` html
@@ -28,6 +30,7 @@ controlComponent.extend({
         startDate: '',
         endDate: '',
         disabledDate() { return false; },
+        showTime: false,
         clear() {
             this.selected = '';
             avalon.vmodels[this.panelVmId].reset();
@@ -71,17 +74,23 @@ controlComponent.extend({
                     type: 'changed'
                 });
             });
+            if (this.showTime && this.format === 'YYYY-MM-DD') {
+                // 允许选择时间的模式下，用户如果没自定义格式，则自动转为日期时间格式
+                this.format = 'YYYY-MM-DD HH:mm:ss';
+            }
             this.panelVmId = this.$id + '_panel';
             const innerVm = avalon.define({
                 $id: this.panelVmId,
-                currentDateArray: [],
+                currentDateArray: '',
                 $moment: moment(),
+                currentDay: 0,
                 currentMonth: '',
                 currentYear: 0,
                 $startDate: null,
                 $endDate: null,
                 disabledDate() { return false; },
-                // 0-月视图，1-年视图，2-十年视图，3-百年视图
+                showTime: false,
+                // -1-天（时间）视图，0-月视图，1-年视图，2-十年视图，3-百年视图
                 viewMode: 0,
                 staged: 0,
                 $computed: {
@@ -96,9 +105,11 @@ controlComponent.extend({
                     this.viewMode = 0;
                     this.staged = 0;
                     this.$moment = self.selected ? moment(self.selected, self.format) : moment();
+                    this.currentDay = this.$moment.date();
                     this.currentMonth = this.$moment.format('MMM');
                     this.currentYear = this.$moment.year();
-                    this.currentDateArray = this.$moment.toArray();
+                    this.currentDateArray = this.$moment.toArray().toString();
+                    this.showTime = self.showTime;
                     
                     // 构造不可选择日期的判断函数
                     if (self.startDate) {
@@ -140,17 +151,17 @@ controlComponent.extend({
                     if (this.viewMode === 1) {
                         this.currentMonth = el.value;
                         this.$moment.month(el.value);
-                        this.currentDateArray = this.$moment.toArray();
+                        this.currentDateArray = this.$moment.toArray().toString();
                     }
                     if (this.viewMode === 3) {
                         this.currentYear = el.value;
                         this.$moment.year(el.value);
-                        this.currentDateArray = this.$moment.toArray();
+                        this.currentDateArray = this.$moment.toArray().toString();
                     }
                     if (this.viewMode === 2) {
                         this.currentYear = el.value;
                         this.$moment.year(el.value);
-                        this.currentDateArray = this.$moment.toArray();
+                        this.currentDateArray = this.$moment.toArray().toString();
                         this.viewMode = this.viewMode - 1 - this.staged;
                         this.staged = 0;
                     } else {
@@ -159,9 +170,10 @@ controlComponent.extend({
                 },
                 mutate(action, ...args) {
                     this.$moment[action].apply(this.$moment, args);
+                    this.currentDay = this.$moment.date();
                     this.currentMonth = this.$moment.format('MMM');
                     this.currentYear = this.$moment.year();
-                    this.currentDateArray = this.$moment.toArray();
+                    this.currentDateArray = this.$moment.toArray().toString();
                 },
                 today() {
                     this.handleCalendarChange({
@@ -170,9 +182,22 @@ controlComponent.extend({
                         },
                         type: 'calendar-changed'
                     });
+                    this.complete();
                 },
                 handleCalendarChange(e) {
                     this.$moment = e.target.value;
+                    this.currentDay = this.$moment.date();
+                    this.currentMonth = this.$moment.format('MMM');
+                    this.currentYear = this.$moment.year();
+                    if (!this.showTime) {
+                        this.complete();
+                    }
+                },
+                handleTimepickerChange(e) {
+                    const { hour, minute, second } = e.target;
+                    this.$moment.hour(hour).minute(minute).second(second);
+                },
+                complete() {
                     self.selected = this.$moment.format(self.format);
                     self.panelVisible = false;
                     self.handleChange({

@@ -39,7 +39,7 @@ $link-hover-color:      darken($link-color, 15%);
 $link-hover-decoration: underline;
 
 //** Disabled state
-$disabled-color:        rgba(#000, .25);
+$disabled-color:        lighten($gray-base, 70%);
 
 //** The background colors for active and hover states for things like
 //** list items or table cells.
@@ -53,3 +53,12 @@ $item-hover-bg:         lighten($brand-primary, 40%);
 //** Disabled date
 $calendar-disabled-date-color:   $disabled-color;
 $calendar-disabled-date-bg:      $gray-lighter;
+
+//= Button
+//
+//##
+
+//** Primary
+$btn-primary-color:     #fff;
+$btn-primary-bg:        $brand-primary;
+$btn-primary-border:    darken($btn-primary-bg, 5%);

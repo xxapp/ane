@@ -8,9 +8,9 @@ moment.locale('zh-cn');
 avalon.component('ms-calendar', {
     template: __inline('./ms-calendar.html'),
     defaults: {
-        value: [],
-        $value: moment(),
-        $selected: moment(),
+        value: '',
+        $value: null,
+        $selected: null,
         weekStart: 0,
         showHeader: true,
         disabledDate() { return false; },
@@ -26,7 +26,7 @@ avalon.component('ms-calendar', {
             this.calcTable(this.$value.clone());
         },
         handleMonthChange(e) {
-            this.$value.month(e.target.value)
+            this.$value.month(e.target.value);
             this.calcTable(this.$value.clone());
         },
         handleDateClick(el) {
@@ -34,6 +34,12 @@ avalon.component('ms-calendar', {
                 return false;
             }
             this.$selected.year(this.currentYear).month(this.currentMonth).date(el.date);
+            if (el.prevMonth) {
+                this.$selected.subtract(1, 'months');
+            }
+            if (el.nextMonth) {
+                this.$selected.add(1, 'months');
+            }
             this.$value = this.$selected;
             this.onChange({
                 target: {
@@ -63,9 +69,12 @@ avalon.component('ms-calendar', {
                 for (j = 0; j < 7; j++) {
                     const className = [];
                     let disabled = false;
+                    let prevMonth = false;
+                    let nextMonth = false;
                     if (i === 0 && j < firstDay) {
                         // 上月结束部分
                         className.push('ane-calendar-prev-month-cell');
+                        prevMonth = true;
                         if (this.disabledDate(+m.clone().subtract(1, 'months').date(prevLastDate - firstDay + j + 1))) {
                             disabled = true;
                             className.push('ane-calendar-disabled-cell');
@@ -73,11 +82,14 @@ avalon.component('ms-calendar', {
                         tableRow.push({
                             className,
                             disabled,
+                            prevMonth,
+                            nextMonth,
                             date: prevLastDate - firstDay + j + 1
                         });
                     } else if (passed + 1 > lastDate) {
                         // 下月开始部分
                         className.push('ane-calendar-next-month-cell');
+                        nextMonth = true;
                         if (this.disabledDate(+m.clone().add(1, 'months').date(passed + 1 - lastDate))) {
                             disabled = true;
                             className.push('ane-calendar-disabled-cell');
@@ -85,6 +97,8 @@ avalon.component('ms-calendar', {
                         tableRow.push({
                             className,
                             disabled,
+                            prevMonth,
+                            nextMonth,
                             date: ++passed - lastDate
                         });
                     } else {
@@ -102,6 +116,8 @@ avalon.component('ms-calendar', {
                         tableRow.push({
                             className,
                             disabled,
+                            prevMonth,
+                            nextMonth,
                             date: ++passed
                         });
                     }
@@ -114,6 +130,8 @@ avalon.component('ms-calendar', {
             this.currentYearOptions = avalon.range(this.currentYear - 10, this.currentYear + 9).map(y => ({ label: y, value: y }));
         },
         onInit(event) {
+            this.$value = moment();
+            this.$selected = moment();
             const weekdays = moment.localeData().weekdaysMin();
             avalon.range(this.weekStart).forEach(n => {
                 weekdays.push(weekdays.shift());
@@ -123,9 +141,9 @@ avalon.component('ms-calendar', {
             this.monthOptions = monthList.map(m => ({ label: m, value: m }));
             this.calcTable(this.$value.clone());
 
-            this.value = this.$value.toArray();
+            this.value = this.$value.toArray().toString();
             this.$watch('value', v => {
-                this.$value = this.$selected = moment(v);
+                this.$value = this.$selected = moment(v.split(','));
                 this.calcTable(this.$value.clone());
             });
         }

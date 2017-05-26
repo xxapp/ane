@@ -22,6 +22,23 @@
                     $rules:{required:true,message:'请选择日期'}
                 }"></ms-datepicker>
             </ms-form-item>
+            <ms-form-item :widget="{label:'抢购开始时间'}">
+                <ms-datepicker :widget="{
+                    placeholder:'请选择抢购开始时间',
+                    col:'datetime',
+                    startDate:'2017-5-26',
+                    endDate:'2018-7-26',
+                    showTime: true,
+                    $rules:{required:true,message:'请选择日期和时间'}
+                }"></ms-datepicker>
+            </ms-form-item>
+            <ms-form-item :widget="{label:'打卡时间'}">
+                <ms-timepicker :widget="{
+                    placeholder:'请选择打卡时间',
+                    col:'time',
+                    $rules:{required:true,message:'请选择时间'}
+                }"></ms-timepicker>
+            </ms-form-item>
         </xmp>
         <pre>{{@json}}</pre>
     </div>
@@ -30,6 +47,7 @@
             var createForm = require('../../ms-form/create-form').createForm;
             require('../../ms-form');
             require('../');
+            require('../../ms-timepicker/ms-timepicker');
 
             var vm = avalon.define({
                 $id: 'test',

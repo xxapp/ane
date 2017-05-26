@@ -49,15 +49,32 @@
                 <i class="fa fa-angle-double-right"></i>
             </a>
         </div>
+        <div class="ane-datepicker-panel-header" :visible="@viewMode < 0 && @showTime">
+            <span>
+                <a class="ane-datepicker-month-select">{{@currentMonth}}</a>
+                <a class="ane-datepicker-month-select">{{@currentDay}}</a>
+                <a class="ane-datepicker-year-select">{{@currentYear}}</a>
+            </span>
+        </div>
         <div class="ane-datepicker-panel-body" :visible="@viewMode === 0">
             <ms-calendar :widget="{value:@currentDateArray,showHeader:false,disabledDate:@disabledDate,onChange:@handleCalendarChange}"></ms-calendar>
         </div>
-        <div class="ane-datepicker-panel-body" :visible="@viewMode !== 0">
+        <div class="ane-datepicker-panel-body" :visible="@viewMode > 0">
             <ms-calendar-year-view :widget="{currentMonth:@currentMonth,currentYear:@currentYear,view:@viewMode,onSelect:@handleYearViewSelect}"></ms-calendar-year-view>
         </div>
-        <div class="ane-datepicker-panel-footer" :visible="@viewMode === 0">
+        <div class="ane-datepicker-panel-body" :visible="@viewMode === -1">
+            <ms-timepicker-view :widget="{value:@currentDateArray,onChange:@handleTimepickerChange}"></ms-timepicker-view>
+        </div>
+        <div class="ane-datepicker-panel-footer" :visible="@viewMode === 0 && !@showTime">
             <span class="ane-datepicker-panel-footer-btn">
-                <a class="ane-calendar-today-btn" :click="@today">今天</a>
+                <a class="ane-datepicker-panel-today-btn" :click="@today">今天</a>
+            </span>
+        </div>
+        <div class="ane-datepicker-panel-footer" :visible="@viewMode <= 0 && @showTime">
+            <span class="ane-datepicker-panel-footer-btn">
+                <a class="ane-datepicker-panel-now-btn" :click="@today">此刻</a>
+                <a class="ane-datepicker-panel-ok-btn" :click="@complete">确定</a>
+                <a class="ane-datepicker-panel-timepicker-btn" :click="@changeView(@viewMode > -1 ? -1 : 0)">{{@viewMode > -1 ? '选择时间' : '选择日期'}}</a>
             </span>
         </div>
     </div>
