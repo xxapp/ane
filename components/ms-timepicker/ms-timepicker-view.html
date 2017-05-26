@@ -1,21 +1,21 @@
 <template>
     <div class="ane-timepicker-view">
         <div class="ane-timepicker-view-combobox">
-            <div class="ane-timepicker-view-select">
+            <div class="ane-timepicker-view-select" name="hour-options">
                 <ul>
                     <li :for="hour in @hourOptions"
                         :class="[(hour==@currentHour?'ane-timepicker-view-select-option-selected':'')]"
                         :click="@select(hour, 'hour')">{{hour}}</li>
                 </ul>
             </div>
-            <div class="ane-timepicker-view-select">
+            <div class="ane-timepicker-view-select" name="minute-options">
                 <ul>
                     <li :for="minute in @minuteOptions"
                         :class="[(minute==@currentMinute?'ane-timepicker-view-select-option-selected':'')]"
                         :click="@select(minute, 'minute')">{{minute}}</li>
                 </ul>
             </div>
-            <div class="ane-timepicker-view-select">
+            <div class="ane-timepicker-view-select" name="second-options">
                 <ul>
                     <li :for="second in @secondOptions"
                         :class="[(second==@currentSecond?'ane-timepicker-view-select-option-selected':'')]"
@@ -56,6 +56,12 @@
                 padding: 0;
                 width: 100%;
                 max-height: 200px;
+
+                &:after {
+                    content: "";
+                    display: block;
+                    height: 176px;
+                }
             }
             li {
                 text-align: center;
