@@ -34,6 +34,10 @@ controlComponent.extend({
         clear() {
             this.selected = '';
             avalon.vmodels[this.panelVmId].reset();
+            this.handleChange({
+                target: { value: '' },
+                type: 'datepicker-changed'
+            });
         },
         withInBox(el) {
             return this.$element === el || avalon.contains(this.$element, el);
@@ -71,7 +75,7 @@ controlComponent.extend({
                 this.handleChange({
                     target: { value: v },
                     denyValidate: true,
-                    type: 'changed'
+                    type: 'datepicker-changed'
                 });
             });
             if (this.showTime && this.format === 'YYYY-MM-DD') {
@@ -206,9 +210,8 @@ controlComponent.extend({
                     });
                 }
             });
-            innerVm.reset();
-
             this.mapValueToSelected(this.value);
+            innerVm.reset();
         },
         onDispose() {
             delete avalon.vmodels[this.panelVmId];

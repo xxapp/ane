@@ -92,9 +92,8 @@ controlComponent.extend({
                     });
                 }
             });
-            innerVm.reset();
-
             this.mapValueToSelected(this.value);
+            innerVm.reset();
         },
         onDispose() {
             delete avalon.vmodels[this.panelVmId];
