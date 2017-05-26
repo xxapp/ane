@@ -1,0 +1,86 @@
+<template>
+    <div class="ane-timepicker-view">
+        <div class="ane-timepicker-view-combobox">
+            <div class="ane-timepicker-view-select">
+                <ul>
+                    <li :for="hour in @hourOptions"
+                        :class="[(hour==@currentHour?'ane-timepicker-view-select-option-selected':'')]"
+                        :click="@select(hour, 'hour')">{{hour}}</li>
+                </ul>
+            </div>
+            <div class="ane-timepicker-view-select">
+                <ul>
+                    <li :for="minute in @minuteOptions"
+                        :class="[(minute==@currentMinute?'ane-timepicker-view-select-option-selected':'')]"
+                        :click="@select(minute, 'minute')">{{minute}}</li>
+                </ul>
+            </div>
+            <div class="ane-timepicker-view-select">
+                <ul>
+                    <li :for="second in @secondOptions"
+                        :class="[(second==@currentSecond?'ane-timepicker-view-select-option-selected':'')]"
+                        :click="@select(second, 'second')">{{second}}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
+<style lang="scss">
+    @import '../../styles/index';
+
+    .ane-timepicker-view {
+        height: 198px;
+
+        &-combobox {
+            width: 100%;
+        }
+
+        &-select {
+            display: inline-block;
+            width: 33.33%;
+            border-left: 1px solid $gray-lighter;
+            float: left;
+            overflow: hidden;
+
+            &:first-child {
+                border-left: none;
+            }
+
+            &:hover {
+                overflow: auto;
+            }
+
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                max-height: 200px;
+            }
+            li {
+                text-align: center;
+                list-style: none;
+                box-sizing: content-box;
+                margin: 0;
+                width: 100%;
+                height: 24px;
+                line-height: 24px;
+                cursor: pointer;
+
+                &:hover {
+                    background: $item-hover-bg;
+                }
+            }
+
+            & &-option-selected {
+                background: $brand-primary;
+                font-weight: 700;
+                color: #fff;
+
+                &:hover {
+                    background: $brand-primary;
+                }
+            }
+        }
+    }
+</style>
