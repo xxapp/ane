@@ -9,6 +9,7 @@ avalon.component('ms-trigger', {
         innerVmId: '',
         innerClass: '',
         innerTemplate: '',
+        initialized: false,
         withInBox() { return true; },
         getTarget: avalon.noop,
         onHide: avalon.noop,
@@ -17,10 +18,9 @@ avalon.component('ms-trigger', {
             panel.style.left = '-9999px';
             this.onHide();
         },
-        onInit(event) {
+        initPanel(panel: HTMLDivElement) {
             const DOC = document, body = DOC.body;
             const medium = DOC.createElement('div');
-            const panel = DOC.createElement('div');
             medium.setAttribute('id', this.$id);
             medium.setAttribute('style', 'position: absolute; top: 0px; left: 0px; width: 100%;');
             panel.setAttribute('class', this.innerClass);
@@ -37,8 +37,16 @@ avalon.component('ms-trigger', {
                     this.hide(panel);
                 }
             });
+        },
+        onInit(event) {
+            const DOC = document;
+            const panel = DOC.createElement('div');
             this.$watch('visible', v => {
                 if (v) {
+                    if (!this.initialized) {
+                        this.initPanel(panel);
+                        this.initialized = true;
+                    }
                     panel.style.width = this.width === 0 ? 'auto' : (this.width + 'px');
                     panel.scrollTop = 0;
                     domAlign(panel, this.getTarget(), {
