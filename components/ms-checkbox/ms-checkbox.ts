@@ -31,7 +31,7 @@ avalon.component('ms-checkbox', {
     soleSlot: 'label',
     template: __inline('./ms-checkbox.html'),
     defaults: {
-        wrapper: '',
+        wrapper: 'checkbox',
         label: '',
         checked: false,
         group: false,
