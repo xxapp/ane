@@ -1,35 +1,116 @@
 @import '../../styles/index';
 $layout-prefix-cls: #{$ane-prefix}-layout;
 
+$layout-sider-bg: blanchedalmond;
+$layout-sider-width: 300px;
+$layout-header-bg: aquamarine;
+$layout-header-height: 60px;
+$layout-footer-bg: aquamarine;
+$layout-footer-height: 60px;
+$layout-content-bg: #fff;
+
+body:before {
+    content: "";
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: $layout-sider-width;
+    right: 0;
+    z-index: -1;
+    background-color: $layout-content-bg;
+}
+
 .#{$layout-prefix-cls} {
     height: 100%;
-    margin-left: 300px;
-    background: #fff;
+    background: $layout-content-bg;
     position: relative;
 
     &-sider {
-        position: absolute;
-        width: 300px;
+        float: left;
+        width: $layout-sider-width;
+        height: 100%;
         top: 0;
         bottom: 0;
-        background: blanchedalmond;
+        background: $layout-sider-bg;
+
+        &:after {
+            content: "";
+            display: block;
+        }
+    }
+    &-fixed-sider {
+        height: auto;
+        position: fixed;
+        border-bottom: solid $layout-footer-height $layout-sider-bg;
+    }
+    &-fixed-sider &-sider-inner {
+        height: 100%;
+        overflow: auto;
+        border-bottom: solid 0 $layout-sider-bg;
+        margin-top: $layout-header-height;
     }
     
     &-header {
-        height: 60px;
-        background: aquamarine;
+        height: $layout-header-height;
+        background: $layout-header-bg;
+    }
+    &-fixed-header {
+        position: fixed;
+        width: 100%;
+        z-index: 1;
+    }
+    &-fixed-header ~ & > &-fixed-sider,
+    &-fixed-header ~ &-fixed-sider {
+        border-bottom-width: 0;
+    }
+    &-fixed-header ~ & > &-sider,
+    &-fixed-header ~ &-sider {
+        margin-top: $layout-header-height;
+    }
+    &-fixed-header ~ & > &-sider > &-sider-inner,
+    &-fixed-header ~ &-sider > &-sider-inner {
+        margin-top: 0;
+    }
+    &-fixed-header ~ & > &-content,
+    &-fixed-header ~ &-content {
+        padding-top: $layout-header-height;
     }
 
     &-content {
-        padding-bottom: 60px;
+        background: $layout-content-bg;
+        margin-left: $layout-sider-width;
+
+        &:before {
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: $layout-sider-width;
+            right: 0;
+            z-index: -1;
+            background-color: $layout-content-bg;
+        }
     }
 
     &-footer {
         width: 100%;
-        height: 60px;
-        background: aquamarine;
-        position: absolute;
+        height: $layout-footer-height;
+        background: $layout-footer-bg;
         bottom: 0;
+    }
+    &-fixed-footer {
+        position: fixed;
+        z-index: 1;
+    }
+    &-fixed-footer ~ & > &-sider > &-sider-inner,
+    &-fixed-footer ~ &-sider > &-sider-inner {
+        border-bottom-width: $layout-footer-height;
+    }
+    &-fixed-footer ~ & > &-content,
+    &-fixed-footer ~ &-content {
+        padding-bottom: $layout-footer-height;
     }
 }
 
