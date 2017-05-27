@@ -63,6 +63,9 @@ avalon.component('ms-trigger', {
             });
         },
         onDispose(event) {
+            if (!this.initialized) {
+                return;
+            }
             const DOC = document, body = DOC.body;
             const medium = DOC.getElementById(this.$id);
             body.removeChild(medium);
