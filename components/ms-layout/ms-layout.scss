@@ -9,16 +9,20 @@ $layout-footer-bg: aquamarine;
 $layout-footer-height: 60px;
 $layout-content-bg: #fff;
 
-body:before {
-    content: "";
-    display: block;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: $layout-sider-width;
-    right: 0;
-    z-index: -1;
-    background-color: $layout-content-bg;
+body {
+    background-color: $layout-sider-bg;
+
+    &:before {
+        content: "";
+        display: block;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: $layout-sider-width;
+        right: 0;
+        z-index: -1;
+        background-color: $layout-content-bg;
+    }
 }
 
 .#{$layout-prefix-cls} {
@@ -37,6 +41,7 @@ body:before {
         &:after {
             content: "";
             display: block;
+            height: 60px;
         }
     }
     &-fixed-sider {
