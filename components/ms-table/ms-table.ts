@@ -1,5 +1,6 @@
 import * as avalon from 'avalon2';
 import '../ms-checkbox/ms-checkbox';
+import './ms-table-header'
 import '../ms-pagination/ms-pagination';
 import {
     findParentComponent,
