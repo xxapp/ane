@@ -6,9 +6,12 @@ $layout-sider-width: 300px;
 $layout-header-bg: aquamarine;
 $layout-header-height: 60px;
 $layout-footer-bg: aquamarine;
-$layout-footer-height: 60px;
+$layout-footer-height: 30px;
 $layout-content-bg: #fff;
 
+xmp {
+    display: none;
+}
 body {
     background-color: $layout-sider-bg;
 
@@ -117,8 +120,4 @@ body {
     &-fixed-footer ~ &-content {
         padding-bottom: $layout-footer-height;
     }
-}
-
-a {
-    cursor: not-allowed;
 }
