@@ -20,14 +20,36 @@ $menu-prefix-cls: #{$ane-prefix}-menu;
         height: 40px;
         line-height: 40px;
         cursor: pointer;
+        position: relative;
 
-        & > a > i {
+        & > a > i:first-child {
+            min-width: 14px;
+            margin-right: 8px;
+        }
+        & > a > i.ane-menu-caret {
             display: none;
         }
         a {
             display: block;
             &:hover {
                 color: $brand-primary;
+            }
+        }
+
+        &-selected {
+            background-color: $menu-item-selected-bg;
+
+            a {
+                color: $brand-primary;
+            }
+
+            &:after {
+                content: "";
+                border-right: 3px solid $menu-item-selected-border-color;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                position: absolute;
             }
         }
     }
@@ -38,7 +60,11 @@ $menu-prefix-cls: #{$ane-prefix}-menu;
         line-height: 40px;
         cursor: pointer;
 
-        & > a > i {
+        & > a > i:first-child {
+            min-width: 14px;
+            margin-right: 8px;
+        }
+        & > a > i.ane-menu-caret {
             display: none;
         }
         & > a {
@@ -47,7 +73,7 @@ $menu-prefix-cls: #{$ane-prefix}-menu;
                 color: $brand-primary;
             }
 
-            i.fa {
+            i.ane-menu-caret.fa {
                 position: absolute;
                 display: inline-block;
                 top: 0;
@@ -59,5 +85,10 @@ $menu-prefix-cls: #{$ane-prefix}-menu;
 
     & & {
         border-right: 0;
+        display: none;
+    }
+
+    &-open > & {
+        display: block;
     }
 }

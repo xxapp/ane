@@ -62,3 +62,11 @@ $calendar-disabled-date-bg:      $gray-lighter;
 $btn-primary-color:     #fff;
 $btn-primary-bg:        $brand-primary;
 $btn-primary-border:    darken($btn-primary-bg, 5%);
+
+//= Menu
+//
+//##
+
+//** Selected
+$menu-item-selected-border-color:   $brand-primary;
+$menu-item-selected-bg: lighten($brand-primary, 50%);
