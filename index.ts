@@ -1,4 +1,5 @@
 // export { default as layout } from './components/ms-layout';
+export { default as menu } from './components/ms-menu';
 export { default as table } from './components/ms-table/ms-table';
 export { default as pagination } from './components/ms-pagination/ms-pagination';
 export { default as dialog } from './components/ms-dialog';

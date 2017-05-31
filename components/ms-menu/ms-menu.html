@@ -1,0 +1,23 @@
+<template>
+    <ul class="ane-menu">
+        <li :class="[!item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu']" :for="item in @menu">
+            <a style="padding-left: 24px;">
+                <span>{{item.title}}</span>
+                <i class="fa fa-angle-up"></i>
+            </a>
+            <ul class="ane-menu">
+                <li :class="[!item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu']" :for="item2 in item.children">
+                    <a style="padding-left: 48px;">
+                        <span>子菜单</span>
+                        <i class="fa fa-angle-up"></i>
+                    </a>
+                    <ul class="ane-menu">
+                        <li :class="[!item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu']" :for="item2 in item.children">
+                            <a style="padding-left: 72px;">选项二</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</template>
