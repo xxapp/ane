@@ -16,7 +16,7 @@ avalon.directive('loading', {
     },
     update(vdom, value) {
         if (value) {
-            if (this.instance === null) {
+            if (!this.instance) {
                 const t = setInterval(() => {
                     const dom = vdom.dom;
                     const computedStyle = global.getComputedStyle ? global.getComputedStyle(dom) : dom.currentStyle;
@@ -55,7 +55,6 @@ avalon.directive('loading', {
                     }
                     dom.appendChild(maskElement);
                     this.instance = maskElement;
-                    console.log('mask初始化完成');
                 }, 100);
             } else {
                 const dom = vdom.dom;
@@ -70,7 +69,7 @@ avalon.directive('loading', {
             }
         } else {
             setTimeout(() => {
-                if (this.instance !== null) {
+                if (this.instance) {
                     const dom = vdom.dom;
                     const maskElement = this.instance;
                     const className = dom.className;
@@ -85,7 +84,7 @@ avalon.directive('loading', {
     },
     beforeDispose() {
         const dom = this.node.dom;
-        this.instance !== null && dom.removeChild(this.instance);
+        this.instance && dom.removeChild(this.instance);
     }
 });
 

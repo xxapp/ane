@@ -31,7 +31,18 @@ layoutComponent.extend({
 
 layoutComponent.extend({
     displayName: 'ms-layout-content',
-    template: `<div class="ane-layout-content" :css="@style" :class="@className"><slot /></div>`,
+    template: `<div class="ane-layout-content" :css="@style" :class="@className">
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Library</a></li>
+                        <li class="active">Data</li>
+                    </ol>
+                    <div class="ane-layout-content-wrapper">
+                        <div class="container-fluid">
+                            <slot />
+                        </div>
+                    </div>
+                </div>`,
     soleSlot: 'slot',
     defaults: {
         fixed: false

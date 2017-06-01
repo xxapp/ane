@@ -1,13 +1,13 @@
 @import '../../styles/index';
 $layout-prefix-cls: #{$ane-prefix}-layout;
 
-$layout-sider-bg: blanchedalmond;
+$layout-sider-bg: #fff;
 $layout-sider-width: 300px;
 $layout-header-bg: aquamarine;
 $layout-header-height: 60px;
 $layout-footer-bg: aquamarine;
 $layout-footer-height: 30px;
-$layout-content-bg: #fff;
+$layout-content-bg: #ececec;
 
 xmp {
     display: none;
@@ -66,7 +66,7 @@ body {
     &-fixed-header {
         position: fixed;
         width: 100%;
-        z-index: 1;
+        z-index: 200;
     }
     &-fixed-header ~ & > &-fixed-sider,
     &-fixed-header ~ &-fixed-sider {
@@ -86,7 +86,6 @@ body {
     }
 
     &-content {
-        background: $layout-content-bg;
         margin-left: $layout-sider-width;
 
         &:before {
@@ -100,6 +99,13 @@ body {
             z-index: -1;
             background-color: $layout-content-bg;
         }
+
+        &-wrapper {
+            margin: 0 16px;
+            background: #fff;
+            margin-bottom: 16px;
+            padding: 10px 5px;
+        }
     }
 
     &-footer {
@@ -110,7 +116,7 @@ body {
     }
     &-fixed-footer {
         position: fixed;
-        z-index: 1;
+        z-index: 200;
     }
     &-fixed-footer ~ & > &-sider > &-sider-inner,
     &-fixed-footer ~ &-sider > &-sider-inner {
