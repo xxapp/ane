@@ -1,7 +1,7 @@
 module.exports = {
     'input value': function (browser) {
         browser
-            .url(browser.launchUrl + '/components/ms-input/test/ms-input.test.html')
+            .url(browser.launchUrl + '/tests/index.html')
             .waitForElementVisible('input', 1000)
             .assert.value('input', '123');
     },

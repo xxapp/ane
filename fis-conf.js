@@ -69,6 +69,10 @@ fis
     postprocessor: undefined,
     release: '/$0'
 })
+.match('/components/ms-input/test/*.html', {
+    postprocessor: fis.plugin('component-view', { }),
+    release: '/$0'
+})
 .match('/tests/**', {
     release: '/$0'
 })
@@ -78,24 +82,24 @@ fis
 .match('::package', {
     packager: fis.plugin('deps-pack', {
         useSourceMap: true,
-        'ane.js': [
-            'index.ts',
-            'index.ts:deps',
-            '!node_modules/**',
-            '!node_modules/**:deps'
-        ],
-        'vendor.js': [
-            'node_modules/**',
-            'node_modules/**:deps',
-        ],
+        // 'ane.js': [
+        //     'index.ts',
+        //     'index.ts:deps',
+        //     '!node_modules/**',
+        //     '!node_modules/**:deps'
+        // ],
+        // 'vendor.js': [
+        //     'node_modules/**',
+        //     'node_modules/**:deps',
+        // ],
         // 'app.js': [
         //     'tests/index.js',
         //     '!tests/mod.js'
         // ],
-        'app.css': [
-            'components/**.{css,scss}',
-            'components/**.{css,scss}:deps'
-        ]
+        // 'app.css': [
+        //     'components/**.{css,scss}',
+        //     'components/**.{css,scss}:deps'
+        // ]
     }),
     postpackager: fis.plugin('loader', {
         resourceType: 'commonJs',

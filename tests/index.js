@@ -17,3 +17,8 @@ if (avalon.msie === 8) {
     }
 }
 require('es5-shim/es5-sham');
+require('../components/ms-input/test/ms-input.test.ts');
+
+avalon.define({
+    $id: 'root'
+});
