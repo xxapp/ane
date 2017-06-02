@@ -18,14 +18,9 @@
                 </tr>
             </tbody>
         </table>
-        <div class="ane-table-pagination pull-right">
+        <div class="pull-right">
             <ms-pagination :widget="{current:@paginationConfig.current,pageSize:@paginationConfig.pageSize,total:@total,onChange:@handlePageChange}"></ms-pagination>
         </div>
         <div class="clearfix"></div>
     </div>
 </template>
-<style>
-    .ane-table-pagination {
-        margin: 16px 0;
-    }
-</style>
