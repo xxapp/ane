@@ -1,6 +1,7 @@
 <template>
     <div class="ane-select form-control"
         :class="[(@isMultiple ? 'ane-select-multiple' : '')]"
+        :css="{width:@width}"
         :click="@handleClick"
         role="combobox"
         aria-autocomplete="list"
@@ -18,7 +19,7 @@
                     type="text"
                     autocomplete="off"
                     :duplex="@searchValue"
-                    :visible="@showSearch && @panelVisible"
+                    :css="{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}"
                     :keydown="@handleDelete" />
             </li>
         </ul>
@@ -26,7 +27,7 @@
             :class="[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]"
             :visible="@mode === ''"></i>
         <ms-trigger :widget="{
-            width: @width,
+            width: @panelWidth,
             visible: @panelVisible,
             innerVmId: @panelVmId,
             innerClass: @panelClass,

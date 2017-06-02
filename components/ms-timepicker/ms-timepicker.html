@@ -1,5 +1,5 @@
 <template>
-    <div class="ane-timepicker">
+    <div class="ane-timepicker" :css="{width:@width}">
         <i class="fa fa-clock-o ane-timepicker-icon"></i>
         <i class="fa fa-times-circle ane-timepicker-clear" :if="@selected.length" :click="@clear"></i>
         <input type="text"
@@ -7,6 +7,7 @@
             :click="@handleClick"
             readonly
             :attr="{placeholder:@placeholder}"
+            :css="{width:'100%'}"
             :duplex="selected" />
         <ms-trigger :widget="{
             visible: @panelVisible,
@@ -24,6 +25,11 @@
     @import '../../styles/index';
     $timepicker-prefix-cls: #{$ane-prefix}-timepicker;
 
+    .form-inline .#{$timepicker-prefix-cls} {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
     .#{$timepicker-prefix-cls} {
         position: relative;
 

@@ -41,7 +41,6 @@ controlComponent.extend({
     displayName: 'ms-select',
     template: __inline('./ms-select.html'),
     defaults: {
-        width: 0,
         value: [],
         mode: '',
         options: [],
@@ -65,7 +64,7 @@ controlComponent.extend({
         handleClick(e) {
             if (!this.panelVisible) {
                 this.searchValue = '';
-                this.width = this.$element.offsetWidth;
+                this.panelWidth = this.$element.offsetWidth;
                 this.panelVisible = true;
                 this.focusSearch();
             } else if (!this.isMultiple) {
@@ -97,6 +96,7 @@ controlComponent.extend({
         },
 
         // 下拉框下拉列表部分
+        panelWidth: 0,
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-select-dropdown',
