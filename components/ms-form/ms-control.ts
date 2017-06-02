@@ -24,6 +24,7 @@ export default avalon.component('ms-control', {
         value: '',
         col: '',
         placeholder: '',
+        width: 'x',
         onChange: avalon.noop,
         emitValue(e) {
             let v = e.target.value;

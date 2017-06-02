@@ -1,5 +1,5 @@
 <template>
-    <div class="ane-datepicker">
+    <div class="ane-datepicker" :css="{width:@width}">
         <i class="fa fa-calendar ane-datepicker-icon"></i>
         <i class="fa fa-times-circle ane-datepicker-clear" :if="@selected.length" :click="@clear"></i>
         <input type="text"
@@ -7,6 +7,7 @@
             :click="@handleClick"
             readonly
             :attr="{placeholder:@placeholder}"
+            :css="{width:'100%'}"
             :duplex="selected" />
         <ms-trigger :widget="{
             visible: @panelVisible,
@@ -24,6 +25,13 @@
     @import '../../styles/index';
     $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
 
+    @media (min-width: 768px) {
+        .form-inline .#{$datepicker-prefix-cls} {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
+    }
     .#{$datepicker-prefix-cls} {
         position: relative;
 
