@@ -15,7 +15,7 @@ avalon.component('ms-timepicker-view', {
         secondOptions: avalon.range(60).map(n => ('0' + n).substr(-2)),
         onChange: avalon.noop,
         select(el, type) {
-            this.$element.getElementsByClassName('ane-timepicker-view-select')[type + '-options'].scrollTop = el * 24;
+            this.$element.querySelector('.ane-timepicker-view-select[name=' + type + '-options]').scrollTop = el * 24;
             if (type === 'hour') {
                 this.currentHour = el;
             } else if (type === 'minute') {
@@ -39,10 +39,9 @@ avalon.component('ms-timepicker-view', {
                 this.currentMinute = m.minute();
                 this.currentSecond = m.second();
 
-                const selectElements = this.$element.getElementsByClassName('ane-timepicker-view-select');
-                selectElements['hour-options'].scrollTop = this.currentHour * OPTION_HEIGHT;
-                selectElements['minute-options'].scrollTop = this.currentMinute * OPTION_HEIGHT;
-                selectElements['second-options'].scrollTop = this.currentSecond * OPTION_HEIGHT;
+                this.$element.querySelector('.ane-timepicker-view-select[name=hour-options]').scrollTop = this.currentHour * OPTION_HEIGHT;
+                this.$element.querySelector('.ane-timepicker-view-select[name=minute-options]').scrollTop = this.currentMinute * OPTION_HEIGHT;
+                this.$element.querySelector('.ane-timepicker-view-select[name=second-options]').scrollTop = this.currentSecond * OPTION_HEIGHT;
             });
             this.$fire('value', this.value);
         }
