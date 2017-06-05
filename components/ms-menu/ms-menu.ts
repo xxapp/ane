@@ -7,6 +7,7 @@ avalon.component('ms-menu', {
         selectedKeys: [],
         openKeys: [],
         onClick: avalon.noop,
+        onOpenChange: avalon.noop,
         handleClick(item, key, keyPath) {
             if (!item.children || item.children.length === 0) {
                 // 叶子节点
@@ -20,6 +21,7 @@ avalon.component('ms-menu', {
                 } else {
                     this.openKeys.push(item.key);
                 }
+                this.onOpenChange(this.openKeys.toJSON());
             }
         }
     }
