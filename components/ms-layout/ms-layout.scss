@@ -87,6 +87,7 @@ body {
 
     &-content {
         margin-left: $layout-sider-width;
+        background-color: $layout-content-bg;
 
         &:before {
             content: "";
@@ -97,7 +98,6 @@ body {
             left: $layout-sider-width;
             right: 0;
             z-index: -1;
-            background-color: $layout-content-bg;
         }
 
         &-wrapper {
