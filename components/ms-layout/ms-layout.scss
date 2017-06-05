@@ -87,7 +87,7 @@ body {
 
     &-content {
         margin-left: $layout-sider-width;
-        background-color: $layout-content-bg;
+        background-color: inherit;
 
         &:before {
             content: "";
