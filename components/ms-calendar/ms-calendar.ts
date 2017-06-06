@@ -1,12 +1,12 @@
 import * as avalon from 'avalon2';
 import * as moment from 'moment';
-import 'moment/locale/zh-cn';
+//import 'moment/locale/zh-cn';
 import '../ms-select';
 import './ms-calendar-year-view';
-moment.locale('zh-cn');
+//moment.locale('zh-cn');
 
 avalon.component('ms-calendar', {
-    template: __inline('./ms-calendar.html'),
+    template: require('./ms-calendar.html'),
     defaults: {
         value: '',
         $value: null,

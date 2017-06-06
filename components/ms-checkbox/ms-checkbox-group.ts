@@ -6,7 +6,7 @@ import './ms-checkbox';
 
 controlComponent.extend({
     displayName: 'ms-checkbox-group',
-    template: __inline('./ms-checkbox-group.html'),
+    template: require('./ms-checkbox-group.html'),
     defaults: {
         value: [],
         disabled: false,

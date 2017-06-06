@@ -13,7 +13,7 @@ import { findParentComponent } from '../../ane-util';
  * ```
  */
 avalon.component('ms-form-item', {
-    template: __inline('./ms-form-item.html'),
+    template: require('./ms-form-item.html'),
     defaults: {
         $formVm: null,
         label: '',

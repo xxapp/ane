@@ -1,10 +1,3 @@
-/// <reference path="./avalon.d.ts" />
-
-import { Promise}  from 'es6-promise';
-
-// FIS3 inline syntax
-declare var __inline
-
 // runtime global
 
 interface MyWindow extends Window {
@@ -15,6 +8,10 @@ interface MyWindow extends Window {
 }
 
 declare var global: MyWindow
+
+declare var require: {
+    (id: string): any;
+}
 
 declare var module: {
     exports: any

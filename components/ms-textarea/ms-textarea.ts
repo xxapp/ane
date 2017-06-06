@@ -16,7 +16,7 @@ import { findParentComponent } from '../../ane-util';
  */
 controlComponent.extend({
     displayName: 'ms-textarea',
-    template: __inline('./ms-textarea.html'),
+    template: require('./ms-textarea.html'),
     defaults: {
         rows: '',
         text: '',

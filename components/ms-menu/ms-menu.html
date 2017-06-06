@@ -1,38 +1,36 @@
-<template>
-    <ul class="ane-menu">
-        <li :class="[
-                        !item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',
-                        @openKeys.contains(item.key) ? 'ane-menu-open' : '',
-                        @selectedKeys.contains(item.key) ? 'ane-menu-item-selected' : ''
-                    ]"
-            :for="item in @menu">
-            <a :click="handleClick(item, item.key, [item.key])" style="padding-left: 24px;">
-                <i :class="[item.icon]"></i>
-                <span>{{item.title}}</span>
-                <i class="ane-menu-caret fa" :class="[@openKeys.contains(item.key) ? 'fa-angle-up' : 'fa-angle-down']"></i>
-            </a>
-            <ul class="ane-menu">
-                <li :class="[
-                                !item2.children || item2.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',
-                                    @openKeys.contains(item2.key) ? 'ane-menu-open' : '',
-                                    @selectedKeys.contains(item2.key) ? 'ane-menu-item-selected' : ''
+<ul class="ane-menu">
+    <li :class="[
+                    !item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',
+                    @openKeys.contains(item.key) ? 'ane-menu-open' : '',
+                    @selectedKeys.contains(item.key) ? 'ane-menu-item-selected' : ''
+                ]"
+        :for="item in @menu">
+        <a :click="handleClick(item, item.key, [item.key])" style="padding-left: 24px;">
+            <i :class="[item.icon]"></i>
+            <span>{{item.title}}</span>
+            <i class="ane-menu-caret fa" :class="[@openKeys.contains(item.key) ? 'fa-angle-up' : 'fa-angle-down']"></i>
+        </a>
+        <ul class="ane-menu">
+            <li :class="[
+                            !item2.children || item2.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',
+                                @openKeys.contains(item2.key) ? 'ane-menu-open' : '',
+                                @selectedKeys.contains(item2.key) ? 'ane-menu-item-selected' : ''
+                            ]"
+                :for="item2 in item.children">
+                <a :click="handleClick(item2, item2.key, [item2.key,item.key])" style="padding-left: 48px;">
+                    <span>{{item2.title}}</span>
+                    <i class="ane-menu-caret fa" :class="[@openKeys.contains(item2.key) ? 'fa-angle-up' : 'fa-angle-down']"></i>
+                </a>
+                <ul class="ane-menu">
+                    <li :class="[
+                                    !item3.children || item3.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',
+                                    @selectedKeys.contains(item3.key) ? 'ane-menu-item-selected' : ''
                                 ]"
-                    :for="item2 in item.children">
-                    <a :click="handleClick(item2, item2.key, [item2.key,item.key])" style="padding-left: 48px;">
-                        <span>{{item2.title}}</span>
-                        <i class="ane-menu-caret fa" :class="[@openKeys.contains(item2.key) ? 'fa-angle-up' : 'fa-angle-down']"></i>
-                    </a>
-                    <ul class="ane-menu">
-                        <li :class="[
-                                        !item3.children || item3.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',
-                                        @selectedKeys.contains(item3.key) ? 'ane-menu-item-selected' : ''
-                                    ]"
-                            :for="item3 in item2.children">
-                            <a :click="handleClick(item3, item3.key, [item3.key,item2.key,item.key])" style="padding-left: 72px;">{{item3.title}}</a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
-</template>
+                        :for="item3 in item2.children">
+                        <a :click="handleClick(item3, item3.key, [item3.key,item2.key,item.key])" style="padding-left: 72px;">{{item3.title}}</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>

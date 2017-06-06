@@ -1,196 +1,21 @@
-<template>
-    <div class="ane-datepicker" :css="{width:@width}">
-        <i class="fa fa-calendar ane-datepicker-icon"></i>
-        <i class="fa fa-times-circle ane-datepicker-clear" :if="@selected.length" :click="@clear"></i>
-        <input type="text"
-            class="form-control ane-datepicker-input"
-            :click="@handleClick"
-            readonly
-            :attr="{placeholder:@placeholder}"
-            :css="{width:'100%'}"
-            :duplex="selected" />
-        <ms-trigger :widget="{
-            visible: @panelVisible,
-            innerVmId: @panelVmId,
-            innerClass: @panelClass,
-            innerTemplate: @panelTemplate,
-            withInBox: @withInBox,
-            getTarget: @getTarget,
-            onHide: @handlePanelHide
-        }">
-        </ms-trigger>
-    </div>
-</template>
-<style lang="scss">
-    @import '../../styles/index';
-    $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
-
-    @media (min-width: 768px) {
-        .form-inline .#{$datepicker-prefix-cls} {
-            display: inline-block;
-            width: auto;
-            vertical-align: middle;
-        }
-    }
-    .#{$datepicker-prefix-cls} {
-        position: relative;
-
-        &-icon {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            margin-top: -7px;
-        }
-        &-clear {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            margin-top: -7px;
-            padding: 1px;
-            cursor: pointer;
-            display: none;
-            background: #fff;
-        }
-        &:hover &-clear {
-            display: inline-block;
-        }
-        & &-input {
-            background-color: #fff;
-        }
-    }
-
-    .#{$datepicker-prefix-cls}-panel-container {
-        background-color: #fff;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-        box-sizing: border-box;
-        user-select: none;
-    }
-    .#{$datepicker-prefix-cls}-panel {
-        width: 252px;
-
-        a {
-            color: $link-color;
-            cursor: pointer;
-            text-decoration: none;
-            &:hover {
-                color: $link-hover-color;
-            }
-        }
-
-        &-header {
-            text-align: center;
-            height: 34px;
-            line-height: 34px;
-            border-bottom: 1px solid $gray-lighter;
-        }
-        .#{$datepicker-prefix-cls}-prev-year-btn {
-            float: left;
-            margin-left: 7px;
-            padding: 0 5px;
-            font-size: 16px;
-        }
-        .#{$datepicker-prefix-cls}-prev-month-btn {
-            float: left;
-            margin-left: 7px;
-            padding: 0 5px;
-            font-size: 16px;
-        }
-        .#{$datepicker-prefix-cls}-next-year-btn {
-            float: right;
-            margin-right: 7px;
-            padding: 0 5px;
-            font-size: 16px;
-        }
-        .#{$datepicker-prefix-cls}-next-month-btn {
-            float: right;
-            margin-right: 7px;
-            padding: 0 5px;
-            font-size: 16px;
-        }
-        .#{$datepicker-prefix-cls}-month-select {
-            padding: 0 2px;
-            font-weight: 700;
-            display: inline-block;
-            color: rgba(0,0,0,.65);
-            line-height: 34px;
-        }
-        .#{$datepicker-prefix-cls}-year-select {
-            padding: 0 2px;
-            font-weight: 700;
-            display: inline-block;
-            color: rgba(0,0,0,.65);
-            line-height: 34px;
-        }
-        &-today-btn {
-            display: inline-block;
-            text-align: center;
-            margin: 0 0 0 8px;
-        }
-        &-now-btn {
-            display: inline-block;
-            text-align: center;
-            float: left;
-            margin: 0;
-            padding-left: 12px;
-        }
-        &-timepicker-btn {
-            display: inline-block;
-            text-align: center;
-            margin-right: 20px;
-            float: right;
-        }
-        & &-ok-btn {
-            display: inline-block;
-            margin-bottom: 0;
-            font-weight: normal;
-            text-align: center;
-            white-space: nowrap;
-            vertical-align: middle;
-            -ms-touch-action: manipulation;
-            touch-action: manipulation;
-            cursor: pointer;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-            background-image: none;
-            border: 1px solid transparent;
-            padding: 1px 5px;
-            font-size: 12px;
-            line-height: 1.5;
-            border-radius: 3px;
-            color: $btn-primary-color;
-            background-color: $btn-primary-bg;
-            border-color: $btn-primary-border;
-            float: right;
-            margin-right: 9px;
-
-            &:hover {
-                color: $btn-primary-color;
-                background-color: darken($btn-primary-bg, 17%);
-                border-color: darken($btn-primary-border, 25%);
-            }
-        }
-
-        &-body {
-            padding: 4px 8px;
-        }
-
-        &-footer {
-            &-btn {
-                border-top: 1px solid $gray-lighter;
-                text-align: center;
-                display: block;
-                line-height: 1.5;
-                padding: 10px 0;
-
-                &:after {
-                    clear: both;
-                    content: ' ';
-                    display: inline-block;
-                }
-            }
-        }
-
-    }
-</style>
+<div class="ane-datepicker" :css="{width:@width}">
+    <i class="fa fa-calendar ane-datepicker-icon"></i>
+    <i class="fa fa-times-circle ane-datepicker-clear" :if="@selected.length" :click="@clear"></i>
+    <input type="text"
+        class="form-control ane-datepicker-input"
+        :click="@handleClick"
+        readonly
+        :attr="{placeholder:@placeholder}"
+        :css="{width:'100%'}"
+        :duplex="selected" />
+    <ms-trigger :widget="{
+        visible: @panelVisible,
+        innerVmId: @panelVmId,
+        innerClass: @panelClass,
+        innerTemplate: @panelTemplate,
+        withInBox: @withInBox,
+        getTarget: @getTarget,
+        onHide: @handlePanelHide
+    }">
+    </ms-trigger>
+</div>

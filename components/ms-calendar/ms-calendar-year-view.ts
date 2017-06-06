@@ -4,7 +4,7 @@ import * as moment from 'moment';
 const monthTable = [];
 
 avalon.component('ms-calendar-year-view', {
-    template: __inline('./ms-calendar-year-view.html'),
+    template: require('./ms-calendar-year-view.html'),
     defaults: {
         table: [],
         // 0-月视图，1-年视图，2-十年视图，3-百年视图

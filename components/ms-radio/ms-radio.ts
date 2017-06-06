@@ -29,7 +29,7 @@ if (avalon.msie <= 8) {
 
 avalon.component('ms-radio', {
     soleSlot: 'label',
-    template: __inline('./ms-radio.html'),
+    template: require('./ms-radio.html'),
     defaults: {
         wrapper: 'radio',
         label: '',

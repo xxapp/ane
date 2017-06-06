@@ -15,7 +15,7 @@ import { findParentComponent } from '../../ane-util';
  */
 controlComponent.extend({
     displayName: 'ms-input',
-    template: __inline('./ms-input.html'),
+    template: require('./ms-input.html'),
     defaults: {
         text: '',
         mapValueToText(value) {

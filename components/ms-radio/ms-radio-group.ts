@@ -6,7 +6,7 @@ import './ms-radio';
 
 controlComponent.extend({
     displayName: 'ms-radio-group',
-    template: __inline('./ms-radio-group.html'),
+    template: require('./ms-radio-group.html'),
     defaults: {
         value: '',
         disabled: false,

@@ -17,7 +17,7 @@ const defaultPagination = function () {
 
 avalon.component('ms-table', {
     soleSlot: 'header',
-    template: __inline('./ms-table.html'),
+    template: require('./ms-table.html'),
     defaults: {
         header: '',
         columns: [],

@@ -1,69 +1,21 @@
-<template>
-    <div class="ane-timepicker" :css="{width:@width}">
-        <i class="fa fa-clock-o ane-timepicker-icon"></i>
-        <i class="fa fa-times-circle ane-timepicker-clear" :if="@selected.length" :click="@clear"></i>
-        <input type="text"
-            class="form-control ane-timepicker-input"
-            :click="@handleClick"
-            readonly
-            :attr="{placeholder:@placeholder}"
-            :css="{width:'100%'}"
-            :duplex="selected" />
-        <ms-trigger :widget="{
-            visible: @panelVisible,
-            innerVmId: @panelVmId,
-            innerClass: @panelClass,
-            innerTemplate: @panelTemplate,
-            withInBox: @withInBox,
-            getTarget: @getTarget,
-            onHide: @handlePanelHide
-        }">
-        </ms-trigger>
-    </div>
-</template>
-<style lang="scss">
-    @import '../../styles/index';
-    $timepicker-prefix-cls: #{$ane-prefix}-timepicker;
-
-    .form-inline .#{$timepicker-prefix-cls} {
-        display: inline-block;
-        width: auto;
-        vertical-align: middle;
-    }
-    .#{$timepicker-prefix-cls} {
-        position: relative;
-
-        &-icon {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            margin-top: -7px;
-        }
-        &-clear {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            margin-top: -7px;
-            padding: 1px;
-            cursor: pointer;
-            display: none;
-            background: #fff;
-        }
-        &:hover &-clear {
-            display: inline-block;
-        }
-        & &-input {
-            background-color: #fff;
-        }
-    }
-
-    .#{$timepicker-prefix-cls}-panel-container {
-        background-color: #fff;
-        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
-        box-sizing: border-box;
-        user-select: none;
-    }
-    .#{$timepicker-prefix-cls}-panel {
-        width: 252px;
-    }
-</style>
+<div class="ane-timepicker" :css="{width:@width}">
+    <i class="fa fa-clock-o ane-timepicker-icon"></i>
+    <i class="fa fa-times-circle ane-timepicker-clear" :if="@selected.length" :click="@clear"></i>
+    <input type="text"
+        class="form-control ane-timepicker-input"
+        :click="@handleClick"
+        readonly
+        :attr="{placeholder:@placeholder}"
+        :css="{width:'100%'}"
+        :duplex="selected" />
+    <ms-trigger :widget="{
+        visible: @panelVisible,
+        innerVmId: @panelVmId,
+        innerClass: @panelClass,
+        innerTemplate: @panelTemplate,
+        withInBox: @withInBox,
+        getTarget: @getTarget,
+        onHide: @handlePanelHide
+    }">
+    </ms-trigger>
+</div>

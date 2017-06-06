@@ -1,7 +1,7 @@
 import * as avalon from 'avalon2';
 
 avalon.component('ms-upload-list', {
-    template: __inline('./ms-upload-list.html'),
+    template: require('./ms-upload-list.html'),
     defaults: {
         fileList: [],
         getTextClass(file) {

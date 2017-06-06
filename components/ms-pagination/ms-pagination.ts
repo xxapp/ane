@@ -15,7 +15,7 @@ import * as avalon from 'avalon2';
  * ```
  */
 avalon.component('ms-pagination', {
-    template: __inline('./ms-pagination.html'),
+    template: require('./ms-pagination.html'),
     defaults: {
         current: 1,
         pageSize: 10,

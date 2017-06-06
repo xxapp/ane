@@ -29,7 +29,7 @@ if (avalon.msie <= 8) {
 
 avalon.component('ms-checkbox', {
     soleSlot: 'label',
-    template: __inline('./ms-checkbox.html'),
+    template: require('./ms-checkbox.html'),
     defaults: {
         wrapper: 'checkbox',
         label: '',

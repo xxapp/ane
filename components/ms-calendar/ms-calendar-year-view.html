@@ -1,18 +1,16 @@
-<template>
-    <div class="ane-calendar">
-        <table class="ane-calendar-year-view">
-            <tbody>
-                <tr :for="（i, row) in @table">
-                    <td class="ane-calendar-cell"
-                        :class="[
-                                    (@isSelected(cell) ? 'ane-calendar-selected-day' : ''),
-                                    (@view > 1 && (i + j === 0 || i * j === 6) ? 'ane-calendar-prev-month-cell' : '')
-                                ]"
-                        :for="(j, cell) in row">
-                        <div class="ane-calendar-date" :click="@handleCellClick(cell)">{{cell.label}}</div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</template>
+<div class="ane-calendar">
+    <table class="ane-calendar-year-view">
+        <tbody>
+            <tr :for="（i, row) in @table">
+                <td class="ane-calendar-cell"
+                    :class="[
+                                (@isSelected(cell) ? 'ane-calendar-selected-day' : ''),
+                                (@view > 1 && (i + j === 0 || i * j === 6) ? 'ane-calendar-prev-month-cell' : '')
+                            ]"
+                    :for="(j, cell) in row">
+                    <div class="ane-calendar-date" :click="@handleCellClick(cell)">{{cell.label}}</div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

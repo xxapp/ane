@@ -18,7 +18,7 @@ import { emitToFormItem } from '../ms-form/utils';
  */
 controlComponent.extend({
     displayName: 'ms-timepicker',
-    template: __inline('./ms-timepicker.html'),
+    template: require('./ms-timepicker.html'),
     defaults: {
         selected: '',
         format: 'HH:mm:ss',

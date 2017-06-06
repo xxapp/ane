@@ -6,7 +6,7 @@ import '../ms-input';
 export const name = 'component-demo-input';
 
 avalon.component(name, {
-    template: __inline('./ms-input.test.html'),
+    template: require('./ms-input.test.html'),
     defaults: {
         value: '123',
         json: '',

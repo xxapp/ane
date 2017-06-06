@@ -4,7 +4,7 @@ import * as moment from 'moment';
 const OPTION_HEIGHT = 24;
 
 avalon.component('ms-timepicker-view', {
-    template: __inline('./ms-timepicker-view.html'),
+    template: require('./ms-timepicker-view.html'),
     defaults: {
         value: '',
         currentHour: 0,

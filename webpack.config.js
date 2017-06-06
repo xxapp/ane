@@ -5,13 +5,20 @@ var extractSass = new ExtractTextPlugin({
     filename: "ane.css",
     disable: false
 });
+var extractLayoutSass = new ExtractTextPlugin({
+    filename: "layout.css",
+    disable: false
+});
 
 module.exports = {
-    entry: './index.ts',
+    entry: {
+        ane: './index.ts',
+        layout: './components/ms-layout/index.ts'
+    },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'ane.js',
-        library: 'ane',
+        filename: '[name].js',
+        library: '[name]',
         libraryTarget: 'umd'
     },
     externals: {
@@ -45,12 +52,7 @@ module.exports = {
             commonjs2: 'dom-align',
             amd: 'dom-align'
         },
-        moment: {
-            root: 'moment',
-            commonjs: 'moment',
-            commonjs2: 'moment',
-            amd: 'moment'
-        },
+        moment: true,
         noty: {
             root: 'noty',
             commonjs: 'noty',
@@ -70,10 +72,7 @@ module.exports = {
             include: [
                 path.resolve(__dirname, 'index.ts'),
                 path.resolve(__dirname, 'ane-util.ts'),
-                path.resolve(__dirname, 'components/ms-select'),
-                path.resolve(__dirname, 'components/ms-trigger'),
-                path.resolve(__dirname, 'components/ms-form/ms-control.ts'),
-                path.resolve(__dirname, 'components/ms-form/utils.ts')
+                path.resolve(__dirname, 'components')
             ],
             loader: 'ts-loader'
         }, {
@@ -82,7 +81,23 @@ module.exports = {
                 path.resolve(__dirname, 'styles'),
                 path.resolve(__dirname, 'components')
             ],
+            exclude: [
+                path.resolve(__dirname, 'components/ms-layout')
+            ],
             use: extractSass.extract({
+                use: [{
+                    loader: 'css-loader'
+                }, {
+                    loader: 'sass-loader'
+                }]
+            })
+        }, {
+            test: /\.scss$/,
+            include: [
+                path.resolve(__dirname, 'styles'),
+                path.resolve(__dirname, 'components/ms-layout')
+            ],
+            use: extractLayoutSass.extract({
                 use: [{
                     loader: 'css-loader'
                 }, {
@@ -101,6 +116,7 @@ module.exports = {
         extensions: ['.js', '.ts', '.scss']
     },
     plugins: [
-        extractSass
+        extractSass,
+        extractLayoutSass
     ]
 };

@@ -1,5 +1,4 @@
 import * as avalon from 'avalon2';
-import './ms-loading.scss';
 
 /**
  * loading 指令

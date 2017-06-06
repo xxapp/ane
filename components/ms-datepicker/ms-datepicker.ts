@@ -23,7 +23,7 @@ import { emitToFormItem } from '../ms-form/utils';
  */
 controlComponent.extend({
     displayName: 'ms-datepicker',
-    template: __inline('./ms-datepicker.html'),
+    template: require('./ms-datepicker.html'),
     defaults: {
         selected: '',
         format: 'YYYY-MM-DD',
@@ -57,7 +57,7 @@ controlComponent.extend({
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-datepicker-panel-container',
-        panelTemplate: __inline('./ms-datepicker-panel.html'),
+        panelTemplate: require('./ms-datepicker-panel.html'),
         handlePanelHide() {
             this.panelVisible = false;
         },

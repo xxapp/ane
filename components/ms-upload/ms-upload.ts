@@ -1,7 +1,9 @@
+/// <reference path="../../typings/index.d.ts" />
+
+
 import * as avalon from 'avalon2';
 import controlComponent from '../ms-form/ms-control';
 import { emitToFormItem } from '../ms-form/utils';
-import './ms-upload.scss';
 import './ms-upload-list';
 import './ms-upload-card';
 import Uploader from 'up-loader';
@@ -20,7 +22,7 @@ import Uploader from 'up-loader';
  */
 controlComponent.extend({
     displayName: 'ms-upload',
-    template: __inline('./ms-upload.html'),
+    template: require('./ms-upload.html'),
     soleSlot: 'trigger',
     defaults: {
         helpId: '',

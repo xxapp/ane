@@ -1,7 +1,7 @@
 import * as avalon from 'avalon2';
 
 avalon.component('ms-upload-card', {
-    template: __inline('./ms-upload-card.html'),
+    template: require('./ms-upload-card.html'),
     defaults: {
         fileList: [],
         getTextClass(file) {
