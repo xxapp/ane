@@ -2,7 +2,7 @@ fis.hook('commonjs', {
     extList: ['.js', '.ts']
 });
 
-fis.set('project.ignore', ['node_modules/**', 'output/**', '.git/**', 'fis-conf.js',
+fis.set('project.ignore', ['node_modules/**', 'output/**', 'dist/**',, '.git/**', 'fis-conf.js',
                             'README.md', 'karma.conf.js', 'package.json', 'LICENSE']);
 fis.set('baseurl', '');
 

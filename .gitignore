@@ -76,4 +76,5 @@ Temporary Items
 !.vscode/launch.json
 
 output/*
+dist/*
 bin/*
