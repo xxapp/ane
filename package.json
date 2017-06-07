@@ -3,6 +3,9 @@
   "version": "0.0.4",
   "description": "avalonjs components package",
   "main": "dist/ane.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "start": "webpack --config webpack.test.config.js",
     "dev": "webpack-dev-server --open --config webpack.test.config.js -w false",
