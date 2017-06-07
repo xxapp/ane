@@ -10,7 +10,9 @@ interface MyWindow extends Window {
 declare var global: MyWindow
 
 declare var require: {
-    (id: string): any;
+    <T>(path: string): T;
+    (paths: string[], callback: (...modules: any[]) => void): void;
+    ensure: (paths: string[], callback: (require: <T>(path: string) => T) => void) => void;
 }
 
 declare var module: {

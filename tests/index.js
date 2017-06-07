@@ -1,3 +1,6 @@
+require('bootstrap/dist/css/bootstrap.css');
+require('font-awesome/css/font-awesome.css');
+
 require('es5-shim');
 require('es6-promise/dist/es6-promise.auto');
 
@@ -6,6 +9,8 @@ window.$ = window.jQuery = jQuery;
 require('bootstrap');
 var bootbox = require('bootbox');
 bootbox.setLocale('zh_CN');
+
+require('./router');
 
 var avalon = require('avalon2');
 avalon.config({
@@ -17,8 +22,15 @@ if (avalon.msie === 8) {
     }
 }
 require('es5-shim/es5-sham');
-require('../components/ms-input/test/ms-input.test.ts');
 
 avalon.define({
-    $id: 'root'
+    $id: 'root',
+    currentPage: ''
 });
+avalon.history.start({
+    fireAnchor: false
+});
+if (!/#!/.test(global.location.hash)) {
+    avalon.router.navigate('/', 2);
+}
+avalon.scan(document.body);

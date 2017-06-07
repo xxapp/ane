@@ -2,12 +2,14 @@
   "name": "ane",
   "version": "0.0.3",
   "description": "avalonjs components package",
-  "main": "output/ane.js",
+  "main": "dist/ane.js",
   "scripts": {
-    "start": "fis3 server start -p 8081 && fis3 release",
-    "dev": "fis3 server start -p 8081 && fis3 release -wL",
-    "test": "npm start && nightwatch ./tests/nightwatch.js",
-    "pack": "webpack"
+    "start": "webpack --config webpack.test.config.js",
+    "dev": "webpack-dev-server --open --config webpack.test.config.js -w false",
+    "test": "npm-run-all -p -r server nightwatch",
+    "server": "http-server dist -s -p 9000",
+    "nightwatch": "nightwatch ./tests/nightwatch.js",
+    "pub": "webpack"
   },
   "dependencies": {
     "avalon2": "^2.2.7",
@@ -25,12 +27,19 @@
     "es5-shim": "^4.5.9",
     "es6-promise": "^4.1.0",
     "extract-text-webpack-plugin": "^2.1.0",
+    "file-loader": "^0.11.2",
     "font-awesome": "^4.7.0",
+    "html-webpack-plugin": "^2.28.0",
+    "http-server": "^0.10.0",
+    "mmRouter": "^0.9.6",
+    "npm-run-all": "^4.0.2",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",
     "style-loader": "^0.18.2",
     "ts-loader": "^2.1.0",
-    "webpack": "^2.6.1"
+    "typescript": "^2.3.4",
+    "webpack": "^2.6.1",
+    "webpack-dev-server": "^2.4.5"
   },
   "keywords": [
     "avalonjs",
