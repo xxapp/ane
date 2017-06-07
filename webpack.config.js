@@ -61,9 +61,9 @@ module.exports = {
         },
         'up-loader': {
             root: 'Uploader',
-            commonjs: 'noty',
-            commonjs2: 'noty',
-            amd: 'noty'
+            commonjs: 'up-loader',
+            commonjs2: 'up-loader',
+            amd: 'up-loader'
         }
     },
     module: {
