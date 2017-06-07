@@ -39,6 +39,7 @@
     "html-webpack-plugin": "^2.28.0",
     "http-server": "^0.10.0",
     "mmRouter": "^0.9.6",
+    "node-sass": "^4.5.3",
     "npm-run-all": "^4.0.2",
     "raw-loader": "^0.5.1",
     "sass-loader": "^6.0.5",

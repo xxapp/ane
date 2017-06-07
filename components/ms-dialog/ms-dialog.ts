@@ -1,6 +1,7 @@
 import * as avalon from 'avalon2';
 import * as bootbox from 'bootbox';
 import { parseSlotToVModel } from '../../ane-util';
+import * as $ from 'jquery';
 
 avalon.component('ms-dialog', {
     template: '<div style="display: none"><slot name="header" /><slot name="body"/></div>',
