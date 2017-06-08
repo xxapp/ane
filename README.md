@@ -6,3 +6,22 @@
 <div align="center">
   <strong>中文名：安逸</strong>
 </div>
+
+## 快速开始
+
+``` bash
+npm install ane --save
+```
+
+``` js
+import * as avalon from 'avalon2';
+import 'ane';
+// 打印一下会发现组件库已经挂在 avalon 上了
+console.log(avalon.components);
+```
+
+组件的具体使用方法参考这个项目 [ms-bus](https://github.com/xxapp/ms-bus)，独立完善的组件文档会在近期推出
+
+## 浏览器支持
+
+现代浏览器、IE8 及以上
