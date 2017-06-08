@@ -1,6 +1,4 @@
-# 输入组件
 
-基本用法
 
 ``` html
 <div :controller="doc-input-basic">
@@ -17,15 +15,14 @@
 import * as avalon from 'avalon2';
 import { createForm } from 'ane';
 
-avalon.define({
+const vm = avalon.define({
     $id: 'doc-input-basic',
     value: '123',
     json: '',
-    $form: createForm(),
-    onInit() {
-        this.$form.onFieldsChange = (fields, record) => {
-            this.json = JSON.stringify(record);
+    $form: createForm({
+        onFieldsChange(fields, record) {
+            vm.json = JSON.stringify(record);
         }
-    }
+    })
 });
 ```

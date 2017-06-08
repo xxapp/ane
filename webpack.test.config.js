@@ -32,6 +32,9 @@ module.exports = {
                 path.resolve(__dirname, 'components'),
                 path.resolve(__dirname, 'tests')
             ],
+            exclude: [
+                path.resolve(__dirname, 'components/ms-input/demo')
+            ],
             loader: 'ts-loader'
         }, {
             test: /\.scss$/,
@@ -72,10 +75,22 @@ module.exports = {
                 limit: 1,
                 name: '[name].[ext]'
             }
+        }, {
+            test: /\.ts$/,
+            include: [
+                path.resolve(__dirname, 'components/ms-input/demo')
+            ],
+            use: [
+                { loader: 'ts-loader' },
+                { loader: 'ane-markdown-loader' }
+            ]
         }]
     },
     resolve: {
-        extensions: ['.js', '.ts', '.scss']
+        extensions: ['.js', '.ts', '.scss', '.md'],
+        alias: {
+            ane: path.resolve(__dirname, "index.ts")
+        }
     },
     plugins: [
         extractSass,

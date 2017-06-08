@@ -36,7 +36,7 @@ const routeConfig = [{
     path: '/ms-input',
     component(resolve) {
         require.ensure([], function () {
-            resolve(require('../components/ms-input/test/ms-input.test.ts'));
+            resolve(require('../components/ms-input/demo/input.ts'));
         });
     }
 }, {
