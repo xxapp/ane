@@ -113,6 +113,7 @@ module.exports = {
         }]
     },
     resolve: {
+        mainFields: ['browser', 'main'],
         extensions: ['.js', '.ts', '.scss']
     },
     plugins: [
