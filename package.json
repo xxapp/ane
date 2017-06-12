@@ -11,7 +11,7 @@
   ],
   "scripts": {
     "start": "webpack --config webpack.test.config.js",
-    "dev": "webpack-dev-server --open --config webpack.test.config.js -w false",
+    "dev": "webpack-dev-server --config webpack.test.config.js",
     "test": "npm-run-all -p -r server nightwatch",
     "server": "http-server dist -s -p 9000",
     "nightwatch": "nightwatch ./tests/nightwatch.js",

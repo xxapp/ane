@@ -1,5 +1,5 @@
 import * as avalon from 'avalon2';
-import domAlign from 'dom-align';
+import * as domAlign from 'dom-align';
 
 avalon.component('ms-trigger', {
     template: '<span style="display:none;"></span>',

@@ -94,6 +94,7 @@ module.exports = {
         }]
     },
     resolve: {
+        mainFields: ['browser', 'main'],
         extensions: ['.js', '.ts', '.scss', '.md'],
         alias: {
             ane: path.resolve(__dirname, "index.ts")
@@ -122,5 +123,6 @@ module.exports = {
         watchOptions: {
             ignored: /node_modules/
         }
-    }
+    },
+    devtool: 'inline-source-map'
 };
