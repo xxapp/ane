@@ -15,6 +15,7 @@
             </ms-select>
         </ms-form-item>
     </xmp>
+    <pre>{{@json}}</pre>
 </div>
 ```
 

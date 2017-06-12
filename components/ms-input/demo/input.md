@@ -9,6 +9,7 @@
             <ms-input :widget="{id:'test-value',col:'name',value:@value,$rules:{required:true,message:'请输入名字'}}"></ms-input>
         </ms-form-item>
     </xmp>
+    <pre>{{@json}}</pre>
 </div>
 ```
 

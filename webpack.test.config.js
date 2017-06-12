@@ -81,7 +81,7 @@ module.exports = {
                 RegExp(path.resolve(__dirname, 'components') + '/.*?/demo')
             ],
             use: [
-                { loader: 'ane-markdown-loader' }
+                { loader: 'ane-markdown-loader', options: { highlight: true } }
             ]
         }, {
             test: /\.ts$/,
