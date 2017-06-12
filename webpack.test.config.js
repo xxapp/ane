@@ -76,13 +76,20 @@ module.exports = {
                 name: '[name].[ext]'
             }
         }, {
-            test: /\.ts$/,
+            test: /\.md$/,
             include: [
-                path.resolve(__dirname, 'components/ms-input/demo')
+                RegExp(path.resolve(__dirname, 'components') + '/.*?/demo')
             ],
             use: [
-                { loader: 'ts-loader' },
                 { loader: 'ane-markdown-loader' }
+            ]
+        }, {
+            test: /\.ts$/,
+            include: [
+                RegExp(path.resolve(__dirname, 'components') + '/.*?/demo')
+            ],
+            use: [
+                { loader: 'ts-loader', options: { appendTsSuffixTo: [/\.md$/] } }
             ]
         }]
     },

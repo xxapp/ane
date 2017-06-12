@@ -36,14 +36,14 @@ const routeConfig = [{
     path: '/ms-input',
     component(resolve) {
         require.ensure([], function () {
-            resolve(require('../components/ms-input/demo/input.ts'));
+            resolve(require('../components/ms-input/demo/input.md'));
         });
     }
 }, {
     path: '/ms-select',
     component(resolve) {
         require.ensure([], function () {
-            resolve(require('../components/ms-select/test/ms-select.test.ts'));
+            resolve(require('../components/ms-select/demo/select.md'));
         });
     }
 }];
