@@ -1,6 +1,6 @@
-# 选择组件
+## 选择组件
 
-基本用法
+### 基本用法
 
 ``` html
 <div :controller="doc-select-basic">

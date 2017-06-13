@@ -15,7 +15,7 @@ var extractCss = new ExtractTextPlugin({
 
 module.exports = {
     entry: {
-        app: './tests/index.js'
+        app: './docs/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -30,7 +30,7 @@ module.exports = {
                 path.resolve(__dirname, 'index.ts'),
                 path.resolve(__dirname, 'ane-util.ts'),
                 path.resolve(__dirname, 'components'),
-                path.resolve(__dirname, 'tests')
+                path.resolve(__dirname, 'docs')
             ],
             loader: 'ts-loader'
         }, {
@@ -59,7 +59,8 @@ module.exports = {
         }, {
             test: /\.html$/,
             include: [
-                path.resolve(__dirname, 'components')
+                path.resolve(__dirname, 'components'),
+                path.resolve(__dirname, 'docs/components')
             ],
             loader: 'raw-loader'
         }, {
@@ -101,7 +102,7 @@ module.exports = {
         extractSass,
         extractCss,
         new HtmlWebpackPlugin({
-            template: 'tests/index.html'
+            template: 'docs/index.html'
         }),
         new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
