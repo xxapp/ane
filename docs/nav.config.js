@@ -16,5 +16,10 @@ module.exports = [{
         title: '表单控件',
         uri: '/form-control',
         location: 'ms-form/ms-control.md'
+    }, {
+        key: 'component-demo-form-form',
+        title: '表单',
+        uri: '/form',
+        location: 'ms-form/ms-form.md'
     }]
 }];
