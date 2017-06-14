@@ -42,8 +42,7 @@ const travel = item => {
             path: item.uri,
             component(resolve) {
                 require.ensure([], function () {
-                    const name = item.key.replace('component-demo-', '');
-                    resolve(require('../components/ms-' + name + '/ms-' + name + '.md'));
+                    resolve(require('../components/' + item.location));
                 });
             }
         });

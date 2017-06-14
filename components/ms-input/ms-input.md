@@ -19,3 +19,5 @@ const vm = avalon.define({
     value: '123'
 });
 ```
+
+> 继承 [ms-control 组件](#!/form-control) 的所有参数

@@ -5,37 +5,6 @@ import '../ms-trigger';
 import { getChildTemplateDescriptor, debounce } from '../../ane-util';
 import { emitToFormItem } from '../ms-form/utils';
 
-/**
- * 选择组件
- * @prop value 组件值(inherit)
- * @prop col 字段路径(inherit)
- * @prop options 下拉选项
- * @prop mode 模式 'combobox' | 'multiple' | 'tags' 默认为 ''
- * @prop showSearch 是否显示搜索框
- * @prop remote 是否为远程搜索
- * @prop remoteMethod 当remote为true时调用，包含远程搜索要执行的请求，返回一个Promise<options>
- * 
- * @example
- * ``` html
- * <ms-select :widget="{showSearch:true}">
- *     <ms-select-option :widget="{value:'M'}">男</ms-select-option>
- *     <ms-select-option :widget="{value:'F', disabled:false}">女</ms-select-option>
- * </ms-select>
- * 
- * <!--
- * fetchOptions(query) {
- *     return ajax({ url, data: { query } });
- * }
- * -->
- * <ms-select :widget="{mode:'combobox',showSearch:true,remote:true,remoteMethod:@fetchOptions}"></ms-select>
- * 
- * <ms-select :widget="{showSearch:true,mode:'multiple'}">
- *     <ms-select-option :widget="{value:'ane'}">Ane</ms-select-option>
- *     <ms-select-option :widget="{value:'ms-bus'}">ms-bus</ms-select-option>
- *     <ms-select-option :widget="{value:'up-loader'}">up-loader</ms-select-option>
- * </ms-select>
- * ```
- */
 controlComponent.extend({
     displayName: 'ms-select',
     template: require('./ms-select.html'),
