@@ -15,7 +15,7 @@ function Form(options) {
     this.cachedRecord = {};
     this.fields = {};
     this.all = {};
-    avalon.mix(this, defaultOptions, options)
+    avalon.mix(this, avalon.mix(true, {}, defaultOptions), options)
 }
 
 Form.prototype.setFieldsValue = function (fields) {
