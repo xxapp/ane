@@ -21,5 +21,10 @@ module.exports = [{
         title: '表单',
         uri: '/form',
         location: 'ms-form/ms-form.md'
+    }, {
+        key: 'component-demo-menu-menu',
+        title: '菜单',
+        uri: '/menu',
+        location: 'ms-menu/ms-menu.md'
     }]
 }];
