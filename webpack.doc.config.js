@@ -76,7 +76,7 @@ module.exports = {
         }, {
             test: /\.md$/,
             include: [
-                RegExp(path.resolve(__dirname, 'components') + '/.*?/demo')
+                RegExp(path.resolve(__dirname, 'components') + '/.*?')
             ],
             use: [
                 { loader: 'ane-markdown-loader', options: { highlight: false } }

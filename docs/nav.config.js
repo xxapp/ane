@@ -2,11 +2,11 @@ module.exports = [{
     key: 'components',
     title: '组件',
     children: [{
-        key: 'ms-input',
+        key: 'component-demo-input',
         title: '输入框',
         uri: '/input'
     }, {
-        key: 'ms-select',
+        key: 'component-demo-select',
         title: '选择框',
         uri: '/select'
     }]
