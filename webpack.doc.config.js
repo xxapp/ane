@@ -120,6 +120,12 @@ module.exports = {
         port: 9000,
         watchOptions: {
             ignored: /node_modules/
+        },
+        proxy: {
+            '/api': {
+                target: 'https://www.easy-mock.com/mock/58ff1b7c5e43ae5dbea5eff3',
+                secure: false
+            }
         }
     },
     devtool: 'inline-source-map'
