@@ -15,5 +15,6 @@ import './components/ms-checkbox/ms-checkbox-group';
 import './components/ms-radio';
 import './components/ms-radio/ms-radio-group';
 
+export { Loading } from './components/ms-loading';
 export { default as notification } from './components/ms-notification';
 export { default as message } from './components/ms-message';

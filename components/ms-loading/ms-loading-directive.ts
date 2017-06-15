@@ -19,7 +19,7 @@ avalon.directive('loading', {
                 const t = setInterval(() => {
                     const dom = vdom.dom;
                     const computedStyle = global.getComputedStyle ? global.getComputedStyle(dom) : dom.currentStyle;
-                    const width = dom.offsetWidth, height = dom.offsetHeight, className = dom.className;
+                    const width = dom.offsetWidth, height = dom.scrollHeight, className = dom.className;
                     const {
                         borderLeftWidth,
                         borderTopWidth,
