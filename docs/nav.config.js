@@ -27,6 +27,11 @@ module.exports = [{
         uri: '/timepicker',
         location: 'ms-timepicker/ms-timepicker.md'
     }, {
+        key: 'component-demo-upload-upload',
+        title: 'upload 文件上传',
+        uri: '/upload',
+        location: 'ms-upload/ms-upload.md'
+    }, {
         key: 'component-demo-form-control',
         title: 'form-control 表单控件',
         uri: '/form-control',
@@ -46,6 +51,11 @@ module.exports = [{
         title: 'table 数据表格',
         uri: '/table',
         location: 'ms-table/ms-table.md'
+    }, {
+        key: 'component-demo-pagination-pagination',
+        title: 'pagination 分页',
+        uri: '/pagination',
+        location: 'ms-pagination/ms-pagination.md'
     }, {
         key: 'component-demo-dialog-dialog',
         title: 'dialog 对话框',
