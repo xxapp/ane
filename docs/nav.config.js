@@ -51,5 +51,10 @@ module.exports = [{
         title: 'dialog 对话框',
         uri: '/dialog',
         location: 'ms-dialog/ms-dialog.md'
+    }, {
+        key: 'component-demo-loading-loading',
+        title: 'loading 加载中蒙版',
+        uri: '/loading',
+        location: 'ms-loading/ms-loading.md'
     }]
 }];
