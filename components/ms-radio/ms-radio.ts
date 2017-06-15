@@ -38,9 +38,7 @@ avalon.component('ms-radio', {
         name: '',
         group: false,
         disabled: false,
-        onChange(e) {
-            this.onChange(e);
-        },
+        onChange: avalon.noop,
         helpId: '',
         onInit(event) {
             this.helpId = this.$id;
