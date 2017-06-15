@@ -26,5 +26,10 @@ module.exports = [{
         title: '菜单',
         uri: '/menu',
         location: 'ms-menu/ms-menu.md'
+    }, {
+        key: 'component-demo-table-table',
+        title: '数据表格',
+        uri: '/table',
+        location: 'ms-table/ms-table.md'
     }]
 }];

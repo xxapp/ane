@@ -63,7 +63,7 @@ avalon.component('ms-table', {
             this.onSelect(record.$model, checked, this.selection.$model);
         },
 
-        actions: {},
+        actions: avalon.noop,
         handle(type, col, record, $index, ...extra) {
             let text = record[col.dataIndex].$model || record[col.dataIndex];
             this.actions(type, text, record.$model, $index, ...extra);

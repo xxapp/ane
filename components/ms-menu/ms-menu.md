@@ -126,6 +126,7 @@ avalon.define({
     openKeys: ['nav1'],
     handleMenuClick(item, key, keyPath) {
         console.log(item, key, keyPath);
+        this.selectedKeys = [key];
     },
     handleOpenChange(openKeys) {
         const state = this;
@@ -151,3 +152,13 @@ avalon.define({
     }
 });
 ```
+
+### 组件参数
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----|-----|-----|-----|
+| menu | 菜单数据 | {key:string,title:string,icon:string,children:\[\]}\[\] | \[\] |
+| selectedKeys | 选择的菜单的key的集合 | string\[\] | \[\] |
+| openKeys | 展开的菜单的key的集合 | string\[\] | \[\] |
+| onClick | 点击菜单项的回调 | function(item, key, keyPath) | noop |
+| onOpenChange | 菜单展开/收起的回调 | function(openKeys:string\[\]) | noop |
