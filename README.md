@@ -20,7 +20,9 @@ import 'ane';
 console.log(avalon.components);
 ```
 
-组件的具体使用方法参考这个项目 [ms-bus](https://github.com/xxapp/ms-bus)，独立完善的组件文档会在近期推出
+## 组件文档及示例
+
+https://xxapp.github.io/ane
 
 ## 浏览器支持
 
