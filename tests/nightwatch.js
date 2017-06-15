@@ -1,1 +1,0 @@
-exports.input = require('../components/ms-input/test/ms-input.test.js');
