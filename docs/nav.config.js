@@ -3,42 +3,52 @@ module.exports = [{
     title: '组件',
     children: [{
         key: 'component-demo-input-input',
-        title: '输入框',
+        title: 'input 输入框',
         uri: '/input',
         location: 'ms-input/ms-input.md'
     }, {
         key: 'component-demo-textarea-textarea',
-        title: '多行输入框',
+        title: 'textarea 多行输入框',
         uri: '/textarea',
         location: 'ms-textarea/ms-textarea.md'
     }, {
         key: 'component-demo-select-select',
-        title: '选择框',
+        title: 'select 选择框',
         uri: '/select',
         location: 'ms-select/ms-select.md'
     }, {
+        key: 'component-demo-datepicker-datepicker',
+        title: 'datepicker 日期选择器',
+        uri: '/datepicker',
+        location: 'ms-datepicker/ms-datepicker.md'
+    }, {
+        key: 'component-demo-timepicker-timepicker',
+        title: 'timepicker 时间选择器',
+        uri: '/timepicker',
+        location: 'ms-timepicker/ms-timepicker.md'
+    }, {
         key: 'component-demo-form-control',
-        title: '表单控件',
+        title: 'form-control 表单控件',
         uri: '/form-control',
         location: 'ms-form/ms-control.md'
     }, {
         key: 'component-demo-form-form',
-        title: '表单',
+        title: 'form 表单',
         uri: '/form',
         location: 'ms-form/ms-form.md'
     }, {
         key: 'component-demo-menu-menu',
-        title: '菜单',
+        title: 'menu 菜单',
         uri: '/menu',
         location: 'ms-menu/ms-menu.md'
     }, {
         key: 'component-demo-table-table',
-        title: '数据表格',
+        title: 'table 数据表格',
         uri: '/table',
         location: 'ms-table/ms-table.md'
     }, {
         key: 'component-demo-dialog-dialog',
-        title: '对话框',
+        title: 'dialog 对话框',
         uri: '/dialog',
         location: 'ms-dialog/ms-dialog.md'
     }]
