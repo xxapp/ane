@@ -1,0 +1,17 @@
+language: node_js
+node_js:
+- '6'
+env:
+  global:
+  - GH_PAGES_DEPLOY: YES
+  - PATH: node_modules/.bin/:$PATH
+  - REPO_SLUG: xxapp/ane
+install:
+- npm i
+script: sh .deploy.sh
+cache:
+  directories:
+  - node_modules
+branches:
+  only:
+  - master
