@@ -56,5 +56,15 @@ module.exports = [{
         title: 'loading 加载中蒙版',
         uri: '/loading',
         location: 'ms-loading/ms-loading.md'
+    }, {
+        key: 'component-demo-message-message',
+        title: 'message 全局提示',
+        uri: '/message',
+        location: 'ms-message/ms-message.md'
+    }, {
+        key: 'component-demo-notification-notification',
+        title: 'notification 通知提醒框',
+        uri: '/notification',
+        location: 'ms-notification/ms-notification.md'
     }]
 }];
