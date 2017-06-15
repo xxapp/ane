@@ -17,6 +17,16 @@ module.exports = [{
         uri: '/select',
         location: 'ms-select/ms-select.md'
     }, {
+        key: 'component-demo-radio-radio',
+        title: 'radio 单选框',
+        uri: '/radio',
+        location: 'ms-radio/ms-radio.md'
+    }, {
+        key: 'component-demo-checkbox-checkbox',
+        title: 'checkbox 多选框',
+        uri: '/checkbox',
+        location: 'ms-checkbox/ms-checkbox.md'
+    }, {
         key: 'component-demo-datepicker-datepicker',
         title: 'datepicker 日期选择器',
         uri: '/datepicker',
