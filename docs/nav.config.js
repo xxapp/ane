@@ -7,6 +7,11 @@ module.exports = [{
         uri: '/input',
         location: 'ms-input/ms-input.md'
     }, {
+        key: 'component-demo-textarea-textarea',
+        title: '多行输入框',
+        uri: '/textarea',
+        location: 'ms-textarea/ms-textarea.md'
+    }, {
         key: 'component-demo-select-select',
         title: '选择框',
         uri: '/select',
@@ -31,5 +36,10 @@ module.exports = [{
         title: '数据表格',
         uri: '/table',
         location: 'ms-table/ms-table.md'
+    }, {
+        key: 'component-demo-dialog-dialog',
+        title: '对话框',
+        uri: '/dialog',
+        location: 'ms-dialog/ms-dialog.md'
     }]
 }];
