@@ -32,7 +32,8 @@ module.exports = {
                 path.resolve(__dirname, 'components'),
                 path.resolve(__dirname, 'docs')
             ],
-            loader: 'ts-loader'
+            loader: 'ts-loader',
+            options: { appendTsSuffixTo: [/\.md$/] }
         }, {
             test: /\.scss$/,
             include: [
@@ -80,14 +81,6 @@ module.exports = {
             ],
             use: [
                 { loader: 'ane-markdown-loader', options: { highlight: false } }
-            ]
-        }, {
-            test: /\.ts$/,
-            include: [
-                RegExp(path.resolve(__dirname, 'components') + '/.*?/demo')
-            ],
-            use: [
-                { loader: 'ts-loader', options: { appendTsSuffixTo: [/\.md$/] } }
             ]
         }]
     },
