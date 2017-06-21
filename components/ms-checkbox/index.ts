@@ -1,3 +1,3 @@
 import './ms-checkbox';
 import './ms-checkbox-group';
-import './ms-checkbox.scss';
+import './ms-checkbox.less';

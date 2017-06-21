@@ -1,17 +1,17 @@
 @import '../../styles/index';
-$select-prefix-cls: #{$ane-prefix}-select;
+@select-prefix-cls: ~"@{ane-prefix}-select";
 
-@mixin item-selected {
+.item-selected() {
     background-color: #eee;
     font-weight: 700;
     color: rgba(0,0,0,.65);
 }
 
-.#{$select-prefix-cls} {
+.@{select-prefix-cls} {
     position: relative;
     cursor: pointer;
 
-    &.#{$select-prefix-cls}-multiple {
+    &.@{select-prefix-cls}-multiple {
         cursor: text;
         height: initial;
         padding: 0 0 0 12px;
@@ -31,8 +31,8 @@ $select-prefix-cls: #{$ane-prefix}-select;
             height: 0;
         }
 
-        .#{$select-prefix-cls}-selection {
-            .#{$select-prefix-cls}-search {
+        .@{select-prefix-cls}-selection {
+            .@{select-prefix-cls}-search {
                 height: 25px;
                 line-height: 25px;
                 margin-top: 4px;
@@ -44,7 +44,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
         list-style: none;
         padding: 0;
 
-        &.#{$select-prefix-cls}-tags li.#{$select-prefix-cls}-choice {
+        &.@{select-prefix-cls}-tags li.@{select-prefix-cls}-choice {
             position: relative;
             display: block;
             float: left;
@@ -80,7 +80,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
             }
         }
 
-        .#{$select-prefix-cls}-selected {
+        .@{select-prefix-cls}-selected {
             position: absolute;
             left: 12px;
             padding: 1px;
@@ -91,12 +91,12 @@ $select-prefix-cls: #{$ane-prefix}-select;
             padding-right: 14px;
         }
 
-        .#{$select-prefix-cls}-search {
+        .@{select-prefix-cls}-search {
             display: block;
             float: left;
         }
 
-        input.#{$select-prefix-cls}-search-field {
+        input.@{select-prefix-cls}-search-field {
             height: 100%;
             border-width: 0;
             box-shadow: none;
@@ -105,12 +105,12 @@ $select-prefix-cls: #{$ane-prefix}-select;
             line-height: inherit;
         }
 
-        li.#{$select-prefix-cls}-choice {
+        li.@{select-prefix-cls}-choice {
             display: none;
         }
     }
 
-    .#{$select-prefix-cls}-arrow {
+    .@{select-prefix-cls}-arrow {
         position: absolute;
         top: 7px;
         right: 8px;
@@ -118,7 +118,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
     }
 }
 
-.#{$select-prefix-cls}-dropdown {
+.@{select-prefix-cls}-dropdown {
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(0,0,0,.2);
     box-sizing: border-box;
@@ -140,7 +140,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
 
             &:focus,
             &:hover {
-                background: $item-hover-bg;
+                background: @item-hover-bg;
 
                 i {
                     color: #dddddd;
@@ -157,14 +157,14 @@ $select-prefix-cls: #{$ane-prefix}-select;
         }
 
         &-item-selected {
-            @include item-selected;
+            .item-selected;
 
             &:hover {
-                @include item-selected;
+                .item-selected;
             }
 
             i {
-                color: $brand-primary;
+                color: @brand-primary;
                 display: inline-block;
             }
         }
@@ -172,7 +172,7 @@ $select-prefix-cls: #{$ane-prefix}-select;
         &-item-disabled,
         &-item-disabled:hover {
             background-color: inherit;
-            color: $disabled-color;
+            color: @disabled-color;
             cursor: not-allowed;
         }
     }

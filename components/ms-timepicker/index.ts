@@ -1,2 +1,2 @@
 import './ms-timepicker';
-import './ms-timepicker.scss';
+import './ms-timepicker.less';

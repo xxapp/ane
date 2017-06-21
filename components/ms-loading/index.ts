@@ -1,2 +1,2 @@
 export { Loading } from  './ms-loading-directive';
-import './ms-loading.scss';
+import './ms-loading.less';

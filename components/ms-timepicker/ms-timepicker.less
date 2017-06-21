@@ -1,13 +1,13 @@
 @import '../../styles/index';
 
-$timepicker-prefix-cls: #{$ane-prefix}-timepicker;
+@timepicker-prefix-cls: ~"@{ane-prefix}-timepicker";
 
-.form-inline .#{$timepicker-prefix-cls} {
+.form-inline .@{timepicker-prefix-cls} {
     display: inline-block;
     width: auto;
     vertical-align: middle;
 }
-.#{$timepicker-prefix-cls} {
+.@{timepicker-prefix-cls} {
     position: relative;
 
     &-icon {
@@ -34,17 +34,17 @@ $timepicker-prefix-cls: #{$ane-prefix}-timepicker;
     }
 }
 
-.#{$timepicker-prefix-cls}-panel-container {
+.@{timepicker-prefix-cls}-panel-container {
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     user-select: none;
 }
-.#{$timepicker-prefix-cls}-panel {
+.@{timepicker-prefix-cls}-panel {
     width: 252px;
 }
 
-.#{$timepicker-prefix-cls}-view {
+.@{timepicker-prefix-cls}-view {
     height: 198px;
 
     &-combobox {
@@ -54,7 +54,7 @@ $timepicker-prefix-cls: #{$ane-prefix}-timepicker;
     &-select {
         display: inline-block;
         width: 33.33%;
-        border-left: 1px solid $gray-lighter;
+        border-left: 1px solid @gray-lighter;
         float: left;
         overflow: hidden;
 
@@ -90,17 +90,17 @@ $timepicker-prefix-cls: #{$ane-prefix}-timepicker;
             cursor: pointer;
 
             &:hover {
-                background: $item-hover-bg;
+                background: @item-hover-bg;
             }
         }
 
         & &-option-selected {
-            background: $brand-primary;
+            background: @brand-primary;
             font-weight: 700;
             color: #fff;
 
             &:hover {
-                background: $brand-primary;
+                background: @brand-primary;
             }
         }
     }

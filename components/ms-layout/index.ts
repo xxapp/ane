@@ -1,2 +1,2 @@
-import './ms-layout.scss';
+import './ms-layout.less';
 import './ms-layout';

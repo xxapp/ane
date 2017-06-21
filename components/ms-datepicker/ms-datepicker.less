@@ -1,14 +1,14 @@
 @import '../../styles/index';
-$datepicker-prefix-cls: #{$ane-prefix}-datepicker;
+@datepicker-prefix-cls: ~"@{ane-prefix}-datepicker";
 
 @media (min-width: 768px) {
-    .form-inline .#{$datepicker-prefix-cls} {
+    .form-inline .@{datepicker-prefix-cls} {
         display: inline-block;
         width: auto;
         vertical-align: middle;
     }
 }
-.#{$datepicker-prefix-cls} {
+.@{datepicker-prefix-cls} {
     position: relative;
 
     &-icon {
@@ -35,21 +35,21 @@ $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
     }
 }
 
-.#{$datepicker-prefix-cls}-panel-container {
+.@{datepicker-prefix-cls}-panel-container {
     background-color: #fff;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     user-select: none;
 }
-.#{$datepicker-prefix-cls}-panel {
+.@{datepicker-prefix-cls}-panel {
     width: 252px;
 
     a {
-        color: $link-color;
+        color: @link-color;
         cursor: pointer;
         text-decoration: none;
         &:hover {
-            color: $link-hover-color;
+            color: @link-hover-color;
         }
     }
 
@@ -57,40 +57,40 @@ $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
         text-align: center;
         height: 34px;
         line-height: 34px;
-        border-bottom: 1px solid $gray-lighter;
+        border-bottom: 1px solid @gray-lighter;
     }
-    .#{$datepicker-prefix-cls}-prev-year-btn {
+    .@{datepicker-prefix-cls}-prev-year-btn {
         float: left;
         margin-left: 7px;
         padding: 0 5px;
         font-size: 16px;
     }
-    .#{$datepicker-prefix-cls}-prev-month-btn {
+    .@{datepicker-prefix-cls}-prev-month-btn {
         float: left;
         margin-left: 7px;
         padding: 0 5px;
         font-size: 16px;
     }
-    .#{$datepicker-prefix-cls}-next-year-btn {
+    .@{datepicker-prefix-cls}-next-year-btn {
         float: right;
         margin-right: 7px;
         padding: 0 5px;
         font-size: 16px;
     }
-    .#{$datepicker-prefix-cls}-next-month-btn {
+    .@{datepicker-prefix-cls}-next-month-btn {
         float: right;
         margin-right: 7px;
         padding: 0 5px;
         font-size: 16px;
     }
-    .#{$datepicker-prefix-cls}-month-select {
+    .@{datepicker-prefix-cls}-month-select {
         padding: 0 2px;
         font-weight: 700;
         display: inline-block;
         color: rgba(0,0,0,.65);
         line-height: 34px;
     }
-    .#{$datepicker-prefix-cls}-year-select {
+    .@{datepicker-prefix-cls}-year-select {
         padding: 0 2px;
         font-weight: 700;
         display: inline-block;
@@ -135,16 +135,16 @@ $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
         font-size: 12px;
         line-height: 1.5;
         border-radius: 3px;
-        color: $btn-primary-color;
-        background-color: $btn-primary-bg;
-        border-color: $btn-primary-border;
+        color: @btn-primary-color;
+        background-color: @btn-primary-bg;
+        border-color: @btn-primary-border;
         float: right;
         margin-right: 9px;
 
         &:hover {
-            color: $btn-primary-color;
-            background-color: darken($btn-primary-bg, 17%);
-            border-color: darken($btn-primary-border, 25%);
+            color: @btn-primary-color;
+            background-color: darken(@btn-primary-bg, 17%);
+            border-color: darken(@btn-primary-border, 25%);
         }
     }
 
@@ -154,7 +154,7 @@ $datepicker-prefix-cls: #{$ane-prefix}-datepicker;
 
     &-footer {
         &-btn {
-            border-top: 1px solid $gray-lighter;
+            border-top: 1px solid @gray-lighter;
             text-align: center;
             display: block;
             line-height: 1.5;

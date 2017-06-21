@@ -1,2 +1,2 @@
 import './ms-calendar';
-import './ms-calendar.scss';
+import './ms-calendar.less';

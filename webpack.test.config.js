@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-var extractSass = new ExtractTextPlugin({
+var extractLess = new ExtractTextPlugin({
     filename: "bundle[chunkHash].css",
     disable: false,
     allChunks: true
@@ -34,16 +34,16 @@ module.exports = {
             ],
             loader: 'ts-loader'
         }, {
-            test: /\.scss$/,
+            test: /\.less$/,
             include: [
                 path.resolve(__dirname, 'styles'),
                 path.resolve(__dirname, 'components')
             ],
-            use: extractSass.extract({
+            use: extractLess.extract({
                 use: [{
                     loader: 'css-loader'
                 }, {
-                    loader: 'sass-loader'
+                    loader: 'less-loader'
                 }]
             })
         }, {
@@ -92,13 +92,13 @@ module.exports = {
     },
     resolve: {
         mainFields: ['browser', 'main'],
-        extensions: ['.js', '.ts', '.scss', '.md'],
+        extensions: ['.js', '.ts', '.less', '.md'],
         alias: {
             ane: path.resolve(__dirname, "index.ts")
         }
     },
     plugins: [
-        extractSass,
+        extractLess,
         extractCss,
         new HtmlWebpackPlugin({
             template: 'tests/index.html'

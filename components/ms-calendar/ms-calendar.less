@@ -1,7 +1,7 @@
 @import '../../styles/index';
-$calendar-prefix-cls: #{$ane-prefix}-calendar;
+@calendar-prefix-cls: ~"@{ane-prefix}-calendar";
 
-.#{$calendar-prefix-cls} {
+.@{calendar-prefix-cls} {
     table {
         width: 100%;
         max-width: 100%;
@@ -17,38 +17,38 @@ $calendar-prefix-cls: #{$ane-prefix}-calendar;
         padding: 4px 0;
     }
     &-prev-month-cell &-date, &-next-month-cell &-date {
-        color: $calendar-disabled-date-color;
+        color: @calendar-disabled-date-color;
     }
     &-today &-date {
-        border-color: $brand-primary;
+        border-color: @brand-primary;
         font-weight: 700;
-        color: $brand-primary;
+        color: @brand-primary;
     }
     &-selected-day &-date {
-        background: $brand-primary;
+        background: @brand-primary;
         color: #fff;
         border: 1px solid transparent;
 
         &:hover {
-            background: $brand-primary;
+            background: @brand-primary;
         }
     }
     &-disabled-cell &-date {
         cursor: not-allowed;
-        color: $calendar-disabled-date-color;
-        background: $calendar-disabled-date-bg;
+        color: @calendar-disabled-date-color;
+        background: @calendar-disabled-date-bg;
         border-radius: 0;
         width: auto;
         border: 1px solid transparent;
 
         &:hover {
-            background: $calendar-disabled-date-bg;
+            background: @calendar-disabled-date-bg;
         }
     }
     &-date {
         display: block;
         margin: 0 auto;
-        color: $text-color;
+        color: @text-color;
         border-radius: 2px;
         width: 20px;
         height: 20px;
@@ -60,7 +60,7 @@ $calendar-prefix-cls: #{$ane-prefix}-calendar;
         cursor: pointer;
 
         &:hover {
-            background: $item-hover-bg;
+            background: @item-hover-bg;
         }
     }
 

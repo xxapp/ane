@@ -1,2 +1,2 @@
 import './ms-upload';
-import './ms-upload.scss';
+import './ms-upload.less';

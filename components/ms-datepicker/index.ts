@@ -1,2 +1,2 @@
 import './ms-datepicker';
-import './ms-datepicker.scss';
+import './ms-datepicker.less';

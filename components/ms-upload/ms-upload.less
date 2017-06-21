@@ -1,7 +1,7 @@
 @import '../../styles/index';
-$select-prefix-cls: #{$ane-prefix}-upload;
+@select-prefix-cls: ~"@{ane-prefix}-upload";
 
-.#{$select-prefix-cls} {
+.@{select-prefix-cls} {
     &-container input {
         position: absolute;
         clip: rect(0 0 0 0);
@@ -19,24 +19,24 @@ $select-prefix-cls: #{$ane-prefix}-upload;
             position: relative;
             width: 500px;
 
-            .#{$select-prefix-cls}-btn-close {
+            .@{select-prefix-cls}-btn-close {
                 cursor: pointer;
                 display: none;
             }
-            .#{$select-prefix-cls}-list-progress {
+            .@{select-prefix-cls}-list-progress {
                 position: absolute;
                 right: 0;
                 top: 0;
                 text-align: right;
             }
-            &.text-danger .#{$select-prefix-cls}-btn-close {
+            &.text-danger .@{select-prefix-cls}-btn-close {
                 display: inline-block;
             }
             &:hover {
-                .#{$select-prefix-cls}-list-progress {
+                .@{select-prefix-cls}-list-progress {
                     right: 10px;
                 }
-                i.#{$select-prefix-cls}-btn-close {
+                i.@{select-prefix-cls}-btn-close {
                     display: inline-block;
                 }
                 i.text-success {
@@ -93,7 +93,7 @@ $select-prefix-cls: #{$ane-prefix}-upload;
             padding: 8px;
             position: relative;
 
-            .#{$select-prefix-cls}-card-progress {
+            .@{select-prefix-cls}-card-progress {
                 position: absolute;
                 left: 50%;
                 top: 50%;
@@ -104,7 +104,7 @@ $select-prefix-cls: #{$ane-prefix}-upload;
                 height: 100%;
                 width: 100%;
             }
-            .#{$select-prefix-cls}-card-tool {
+            .@{select-prefix-cls}-card-tool {
                 display: none;
                 .fa {
                     margin: 0 4px;
@@ -112,7 +112,7 @@ $select-prefix-cls: #{$ane-prefix}-upload;
                     cursor: pointer;
                 }
             }
-            &:hover .#{$select-prefix-cls}-card-tool {
+            &:hover .@{select-prefix-cls}-card-tool {
                 display: block;
                 position: absolute;
                 width: 78px;
@@ -132,7 +132,7 @@ $select-prefix-cls: #{$ane-prefix}-upload;
         cursor: pointer;
 
         &:hover {
-            border-color: $brand-primary;
+            border-color: @brand-primary;
         }
         .fa {
             display: block;

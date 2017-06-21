@@ -1,2 +1,2 @@
-import './ms-menu.scss';
+import './ms-menu.less';
 import './ms-menu';

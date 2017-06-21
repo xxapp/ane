@@ -1,11 +1,11 @@
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
-var extractSass = new ExtractTextPlugin({
+var extractLess = new ExtractTextPlugin({
     filename: "ane.css",
     disable: false
 });
-var extractLayoutSass = new ExtractTextPlugin({
+var extractLayoutLess = new ExtractTextPlugin({
     filename: "layout.css",
     disable: false
 });
@@ -76,7 +76,7 @@ module.exports = {
             ],
             loader: 'ts-loader'
         }, {
-            test: /\.scss$/,
+            test: /\.less$/,
             include: [
                 path.resolve(__dirname, 'styles'),
                 path.resolve(__dirname, 'components')
@@ -84,24 +84,24 @@ module.exports = {
             exclude: [
                 path.resolve(__dirname, 'components/ms-layout')
             ],
-            use: extractSass.extract({
+            use: extractLess.extract({
                 use: [{
                     loader: 'css-loader'
                 }, {
-                    loader: 'sass-loader'
+                    loader: 'less-loader'
                 }]
             })
         }, {
-            test: /\.scss$/,
+            test: /\.less$/,
             include: [
                 path.resolve(__dirname, 'styles'),
                 path.resolve(__dirname, 'components/ms-layout')
             ],
-            use: extractLayoutSass.extract({
+            use: extractLayoutLess.extract({
                 use: [{
                     loader: 'css-loader'
                 }, {
-                    loader: 'sass-loader'
+                    loader: 'less-loader'
                 }]
             })
         }, {
@@ -114,10 +114,10 @@ module.exports = {
     },
     resolve: {
         mainFields: ['browser', 'main'],
-        extensions: ['.js', '.ts', '.scss']
+        extensions: ['.js', '.ts', '.less']
     },
     plugins: [
-        extractSass,
-        extractLayoutSass
+        extractLess,
+        extractLayoutLess
     ]
 };
