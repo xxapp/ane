@@ -86,7 +86,30 @@ const vm1 = avalon.define({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----|-----|-----|-----|
-| $form | 表单数据集散中心 | createForm() | null |
+| $form | 表单数据集散中心，详见下文 | createForm() | null |
 | type | 如果为 search，则只在表单项的值被用户手动修改时，才会加入到最后要提交的数据对象上，用于搜索表单 | string | '' |
 | horizontal | 是否添加 form-horizontal 到 class | boolean | false |
 | inline | 是否添加 form-inline 到 class | boolean | false |
+
+#### createFrom(options)
+
+由于 avalon2 自带的表单验证只能配合 ms-duplex 使用，表单中每个组件都写 onChnage 配置又很繁琐，并且为了方便的收集和分发表单数据，所以有了这个 `“表单数据集散中心”`。
+
+options 配置：
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----|-----|-----|-----|
+| record | 表单数据 | any | `{}` |
+| autoAsyncChange | 是否在表单项改变时同步数据到 record | boolean | true |
+| onFieldsChange | 表单项改变的回调 | function(fields, record) | noop |
+
+$form 对象可访问的属性如下：
+
+| 参数 | 说明 | 类型 |
+|-----|-----|-----|
+| fields | 所有的字段集合 | { \[string\]: meta } |
+| setFieldsValue | 设置字段值的方法 | (fields) => void |
+| addFields | 添加字段 | (fields) => void |
+| validateField | 验证某个字段 | (fieldName, field) => Promise<{isOk: boolean, name: string, message: string}> |
+| validateFields | 验证多个或者所有字段 | (field?) => Promise&#x3C;boolean&#x3E; |
+| resetFields | 重置多个或者所有字段 | (field?) => void |
