@@ -57,3 +57,7 @@ interface AvalonStatic {
         navigate: (hash: string, mode: number) => string
     }
 }
+
+declare module 'mmRouter' {
+    export = AvalonStatic
+}
