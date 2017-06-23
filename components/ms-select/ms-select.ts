@@ -1,6 +1,7 @@
 import * as avalon from 'avalon2';
 import controlComponent from "../ms-form/ms-control";
 import '../ms-trigger';
+import getPanelVm from './ms-select-panel';
 
 import { getChildTemplateDescriptor, debounce } from '../../ane-util';
 import { emitToFormItem } from '../ms-form/utils';
@@ -108,51 +109,7 @@ controlComponent.extend({
             });
 
             this.panelVmId = this.$id + '_panel';
-            const innerVm = avalon.define({
-                $id: this.panelVmId,
-                selection: [],
-                loading: false,
-                isMultiple: this.isMultiple,
-                options: this.options.toJSON(),
-                searchValue: '',
-                getFilteredOptions() {
-                    return this.options.filter(this.filterFn);
-                },
-                filterFn(el) {
-                    if (this.loading) {
-                        return false;
-                    }
-                    if (self.remote) {
-                        return true;
-                    }
-                    const reg = new RegExp(avalon.escapeRegExp(this.searchValue), 'i');
-                    return reg.test(el.label) || reg.test(el.value);
-                },
-                handleOptionClick(e, option) {
-                    if (option.disabled) {
-                        return false;
-                    }
-                    if (self.isMultiple) {
-                        if (this.selection.some(o => o.value === option.value)) {
-                            this.selection.removeAll(o => o.value === option.value);
-                        } else {
-                            this.selection.push(option);
-                        }
-                        self.focusSearch();
-                    } else {
-                        this.selection = [option];
-                        self.panelVisible = false;
-                    }
-                    const selection = this.selection.toJSON();
-                    const value = selection.map(s => s.value);
-                    self.handleChange({
-                        target: { value: self.isMultiple ? value : value[0] || '' },
-                        type: 'select'
-                    });
-                    self.displayValue = option.label;
-                    self.selection = selection;
-                }
-            });
+            const innerVm = getPanelVm(this);
             this.$watch('searchValue', debounce(v => {
                 innerVm.searchValue = v;
                 if (this.remote && !!v) {

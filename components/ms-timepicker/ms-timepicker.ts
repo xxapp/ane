@@ -1,8 +1,8 @@
 import * as avalon from 'avalon2';
-import * as moment from 'moment';
 import controlComponent from '../ms-form/ms-control';
 import '../ms-trigger';
-import '../ms-timepicker/ms-timepicker-view'
+import './ms-timepicker-view'
+import getPanelVm from './ms-timepicker-panel'
 import { emitToFormItem } from '../ms-form/utils';
 
 /**
@@ -72,26 +72,7 @@ controlComponent.extend({
                 });
             });
             this.panelVmId = this.$id + '_panel';
-            const innerVm = avalon.define({
-                $id: this.panelVmId,
-                currentDateArray: '',
-                $moment: moment(),
-                reset() {
-                    this.$moment = self.selected ? moment(self.selected, self.format) : moment();
-                    this.currentDateArray = this.$moment.toArray().toString();
-                },
-                handleTimepickerChange(e) {
-                    const { hour, minute, second } = e.target;
-                    this.$moment.hour(hour).minute(minute).second(second);
-                    this.currentDateArray = this.$moment.toArray().toString();
-                    self.selected = this.$moment.format(self.format);
-
-                    self.handleChange({
-                        target: { value: self.selected },
-                        type: 'timepicker-changed'
-                    });
-                }
-            });
+            const innerVm = getPanelVm(this);
             this.mapValueToSelected(this.value);
             innerVm.reset();
         },
