@@ -67,6 +67,11 @@ module.exports = [{
         uri: '/pagination',
         location: 'ms-pagination/ms-pagination.md'
     }, {
+        key: 'component-demo-tree-tree',
+        title: 'tree 树',
+        uri: '/tree',
+        location: 'ms-tree/ms-tree.md'
+    }, {
         key: 'component-demo-dialog-dialog',
         title: 'dialog 对话框',
         uri: '/dialog',

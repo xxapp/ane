@@ -1,0 +1,7 @@
+<ul class="ane-tree">
+    <li :for="(index, el) in @tree | get(0)">
+        <span class="ane-tree-icon fa" :class="[@changeIcon(el)]" :click="@openSubTree(el)"></span>
+        {{el.text}}
+        <div :visible="el.open" :html="@renderSubTree(el)"></div>
+    </li>
+</ul>
