@@ -27,3 +27,15 @@ https://xxapp.github.io/ane
 ## 浏览器支持
 
 现代浏览器、IE8 及以上
+
+## 贡献
+
+欢迎提 issue
+
+如果希望贡献组件，请阅读：
+
+https://github.com/xxapp/ane/wiki/如何贡献组件
+
+## 鸣谢
+
+组件开发过程中从 [ant-design](https://ant.design) 和 [element-ui](http://element.eleme.io/) 这两个优秀的组件库借鉴了很多设计和实现方法，在这里表示衷心的感谢。
