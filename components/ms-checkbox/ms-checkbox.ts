@@ -34,6 +34,7 @@ avalon.component('ms-checkbox', {
         wrapper: 'checkbox',
         label: '',
         checked: false,
+        indeterminate: false,
         group: false,
         disabled: false,
         onChange: avalon.noop,
