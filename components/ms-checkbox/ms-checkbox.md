@@ -46,6 +46,7 @@ checkbox
 | value | 此选项的 value 值 | string | '' |
 | disabled | 是否禁用 | boolean | false |
 | onChange | 选择改变时的回调 | function(e) | noop |
+| indeterminate | 设置半选状态，只负责样式控制 | boolean | false |
 
 radio-checkbox
 
