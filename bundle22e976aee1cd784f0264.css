@@ -250,6 +250,12 @@
   min-width: 18px;
   font-weight: 400;
 }
+.ane-checkbox input[type="checkbox"].ane-checkbox-indeterminate + .text::before {
+  display: inline-block;
+  content: "\F068";
+  background-color: #f5f8fc;
+  border-color: #333333;
+}
 .ane-checkbox input[type="checkbox"]:checked + .text::before {
   display: inline-block;
   content: "\F00C";
@@ -944,4 +950,4 @@ body:before {
   padding: 4px 0;
 }
 
-/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidW5kbGU0Y2RmNjQzY2E0N2IwMGViZmNjYi5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJidW5kbGUyMmU5NzZhZWUxY2Q3ODRmMDI2NC5jc3MiLCJzb3VyY2VSb290IjoiIn0=*/
