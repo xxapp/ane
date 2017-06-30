@@ -4,7 +4,7 @@
 
 ```html
 <div :controller="tree">
-    <ms-tree :widget="{tree: @data}"></ms-tree>
+    <ms-tree :widget="{tree: @data, checkedKeys: @checkedKeys, onCheck:@handleCheck}"></ms-tree>
 </div>
 ```
 
@@ -15,30 +15,33 @@ import 'ane';
 avalon.define({
     $id: "tree",
     data: [
-        {text: "aaa", open: 1, subtree: [
-                {text: 1111, open: 1, subtree: []},
-                {text: 2222, open: 1, subtree: [
-                        {text: 777, open: 1, subtree: []}
+        {key: 1, label: "aaa", children: [
+                {key: 7, label: 1111, children: []},
+                {key: 8, label: 2222, children: [
+                        {key: 14, label: 777, children: []}
                     ]},
-                {text: 3333, open: 1, subtree: [
-                        {text: 8888, open: 1, subtree: []},
-                        {text: 9999, open: 1, subtree: [
-                                {text: '司徒正美', open: 1, subtree: []}
+                {key: 9, label: 3333, children: [
+                        {key: 15, label: 8888, children: []},
+                        {key: 16, label: 9999, children: [
+                                {key: 17, label: '司徒正美', children: []}
                             ]}
                     ]}
             ]},
-        {text: "bbb", open: 1, subtree: [
-                {text: 4444, open: 1, subtree: []},
-                {text: 5555, open: 1, subtree: []},
-                {text: 6666, open: 1, subtree: []}
+        {key: 2, label: "bbb", children: [
+                {key: 10, label: 4444, children: []},
+                {key: 11, label: 5555, children: []},
+                {key: 12, label: 6666, children: []}
             ]},
-        {text: "ccc", open: 1, subtree: []},
-        {text: "ddd", open: 1, subtree: []},
-        {text: "eee", open: 1, subtree: [
-                {text: 1234, open: 1, subtree: []}
+        {key: 3, label: "ccc", children: []},
+        {key: 4, label: "ddd", children: []},
+        {key: 5, label: "eee", children: [
+                {key: 13, label: 1234, children: []}
             ]},
-        {text: "fff", open: 1, subtree: []}
-    ]
-
+        {key: 6, label: "fff", children: []}
+    ],
+    checkedKeys: [],
+    handleCheck(checkedKeys) {
+        console.log(checkedKeys);
+    }
 })
 ```
