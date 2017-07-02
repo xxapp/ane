@@ -63,7 +63,19 @@ module.exports = {
                 path.resolve(__dirname, 'components'),
                 path.resolve(__dirname, 'docs/components')
             ],
-            loader: 'raw-loader'
+            use: [
+                {
+                    loader: 'raw-loader'
+                },
+                {
+                    loader: 'string-replace-loader',
+                    query: {
+                        multiple: [
+                            { search: '\r', replace: '', flags: 'g' }
+                        ]
+                    }
+                }
+            ]
         }, {
             test: /\.(eot|otf|ttf|woff|woff2|svg)\w*/,
             include: [
