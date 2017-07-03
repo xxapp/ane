@@ -8,9 +8,12 @@ avalon.component('ms-tree', {
         tree: [],
         expandedKeys: [],
         checkedKeys: [],
+        indeterminatedKeys: [],
+        $bufferedTree: {},
+        root: true,
         renderSubTree: function (el) {
             return  el.children.length ?
-                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',tree:el.children,checkedKeys:@checkedKeys,handleCheck:@handleCheck}"/>' :
+                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',tree:el.children,checkedKeys:@checkedKeys,handleCheck:@handleCheck,root:false}"/>' :
                 ''
         },
         openSubTree: function (el) {
@@ -37,10 +40,36 @@ avalon.component('ms-tree', {
         handleCheck(el) {
             if (this.isChecked(el)) {
                 this.checkedKeys.remove(el.key);
+                travelForCheckChildren(el.children, this.checkedKeys, false);
             } else {
                 this.checkedKeys.push(el.key);
+                travelForCheckChildren(el.children, this.checkedKeys, true);
             }
             this.onCheck(this.checkedKeys.toJSON());
+        },
+        onInit() {
+            if (this.root) {
+                travelForBuffer(this.tree.toJSON(), this.$bufferedTree);
+            }
         }
     }
 });
+
+function travelForBuffer(treelet, bufferedTree, parent = null) {
+    treelet.forEach(node => {
+        node.parent = parent;
+        bufferedTree[node.key] = node;
+        travelForBuffer(node.children, bufferedTree, node);
+    });
+}
+
+function travelForCheckChildren(treelet, checkedKeys, isCheck) {
+    treelet.forEach(node => {
+        if (isCheck) {
+            checkedKeys.ensure(node.key);
+        } else {
+            checkedKeys.remove(node.key);
+        }
+        travelForCheckChildren(node.children, checkedKeys, isCheck)
+    });
+}
