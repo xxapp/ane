@@ -13,7 +13,7 @@ avalon.component('ms-tree', {
         root: true,
         renderSubTree: function (el) {
             return  el.children.length ?
-                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',tree:el.children,checkedKeys:@checkedKeys,handleCheck:@handleCheck,root:false}"/>' :
+                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',tree:el.children,checkedKeys:@checkedKeys,indeterminatedKeys:@indeterminatedKeys,handleCheck:@handleCheck,root:false}"/>' :
                 ''
         },
         openSubTree: function (el) {
@@ -35,6 +35,9 @@ avalon.component('ms-tree', {
         isChecked(el) {
             return this.checkedKeys.contains(el.key);
         },
+        isIndeterminated(el) {
+            return this.indeterminatedKeys.contains(el.key);
+        },
         onCheck: avalon.noop,
         onCheckInner: avalon.noop,
         handleCheck(el) {
@@ -45,6 +48,8 @@ avalon.component('ms-tree', {
                 this.checkedKeys.push(el.key);
                 travelForCheckChildren(el.children, this.checkedKeys, true);
             }
+            this.indeterminatedKeys.remove(el.key);
+            influenceParent(this.$bufferedTree[el.key], this.checkedKeys, this.indeterminatedKeys);
             this.onCheck(this.checkedKeys.toJSON());
         },
         onInit() {
@@ -72,4 +77,32 @@ function travelForCheckChildren(treelet, checkedKeys, isCheck) {
         }
         travelForCheckChildren(node.children, checkedKeys, isCheck)
     });
+}
+
+function influenceParent(node, checkedKeys, indeterminatedKeys, isIndeterminate = false) {
+    if (node.parent === null) {
+        return;
+    }
+    let count = 0;
+    for (let child of node.parent.children) {
+        if (checkedKeys.contains(child.key)) {
+            count++;
+        }
+    }
+    if (!isIndeterminate) {
+        if (count === 0) {
+            indeterminatedKeys.remove(node.parent.key);
+            checkedKeys.remove(node.parent.key);
+            influenceParent(node.parent, checkedKeys, indeterminatedKeys);
+            return;
+        } else if (count === node.parent.children.length) {
+            indeterminatedKeys.remove(node.parent.key);
+            checkedKeys.ensure(node.parent.key);
+            influenceParent(node.parent, checkedKeys, indeterminatedKeys);
+            return;
+        }
+    }
+    checkedKeys.remove(node.parent.key);
+    indeterminatedKeys.ensure(node.parent.key);
+    influenceParent(node.parent, checkedKeys, indeterminatedKeys, true);
 }
