@@ -5,6 +5,7 @@ let treeID = 0;
 avalon.component('ms-tree', {
     template: require('./ms-tree.html'),
     defaults: {
+        checkable: false,
         tree: [],
         expandedKeys: [],
         checkedKeys: [],

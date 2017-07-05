@@ -1,8 +1,8 @@
 <ul class="ane-tree">
     <li :for="(index, el) in @tree | get(0)">
         <span class="ane-tree-icon fa" :class="[@changeIcon(el)]" :click="@openSubTree(el)"></span>
-        <ms-checkbox :widget="{indeterminate:@isIndeterminated(el),checked:@isChecked(el),onChange:function(){handleCheck(el)}}"></ms-checkbox>
-        {{el.label}}
+        <ms-checkbox :if="@checkable" :widget="{indeterminate:@isIndeterminated(el),checked:@isChecked(el),onChange:function(){handleCheck(el)}}"></ms-checkbox>
+        {{el.title}}
         <div :visible="@isExpended(el)" :html="@renderSubTree(el)"></div>
     </li>
 </ul>
