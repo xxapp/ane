@@ -2,6 +2,7 @@ var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var es3ifyPlugin = require('es3ify-webpack-plugin');
 
 var extractLess = new ExtractTextPlugin({
     filename: "bundle[chunkHash].css",
@@ -104,6 +105,7 @@ module.exports = {
         }
     },
     plugins: [
+        new es3ifyPlugin(),
         extractLess,
         extractCss,
         new HtmlWebpackPlugin({
