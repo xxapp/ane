@@ -42,11 +42,6 @@ avalon.component('ms-radio', {
         helpId: '',
         onInit(event) {
             this.helpId = this.$id;
-        },
-        onReady(event) {
-            parseSlotToVModel(this);
-        },
-        onDispose(vm, el) {
         }
     }
 });
