@@ -1468,7 +1468,7 @@ __WEBPACK_IMPORTED_MODULE_0_avalon2__["define"]({
     },
     getAncestorKeys(key) {
         const map = {
-            submenu: ['nav2']
+            submenu: ['nav2'],
         };
         return map[key] || [];
     },
