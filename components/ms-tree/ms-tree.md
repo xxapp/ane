@@ -4,7 +4,7 @@
 
 ```html
 <div :controller="tree">
-    <ms-tree :widget="{tree: @data, checkedKeys: @checkedKeys, onCheck:@handleCheck}"></ms-tree>
+    <ms-tree :widget="{checkable: true,tree: @data, checkedKeys: @checkedKeys, onCheck:@handleCheck}"></ms-tree>
 </div>
 ```
 

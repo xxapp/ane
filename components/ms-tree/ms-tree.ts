@@ -14,7 +14,7 @@ avalon.component('ms-tree', {
         root: true,
         renderSubTree: function (el) {
             return  el.children.length ?
-                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',tree:el.children,checkedKeys:@checkedKeys,indeterminatedKeys:@indeterminatedKeys,handleCheck:@handleCheck,root:false}"/>' :
+                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',checkable:@checkable,tree:el.children,checkedKeys:@checkedKeys,indeterminatedKeys:@indeterminatedKeys,handleCheck:@handleCheck,root:false}"/>' :
                 ''
         },
         openSubTree: function (el) {
@@ -88,6 +88,9 @@ function influenceParent(node, checkedKeys, indeterminatedKeys, isIndeterminate 
     for (let child of node.parent.children) {
         if (checkedKeys.contains(child.key)) {
             count++;
+        }
+        if (indeterminatedKeys.contains(child.key)) {
+            count += 0.5;
         }
     }
     if (!isIndeterminate) {
