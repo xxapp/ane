@@ -14,7 +14,9 @@ var extractCss = new ExtractTextPlugin({
     disable: false
 });
 
-module.exports = {
+var debug = process.env.NODE_ENV !== 'production';
+
+var config = {
     entry: {
         app: './docs/index.js'
     },
@@ -137,3 +139,9 @@ module.exports = {
     },
     devtool: 'inline-source-map'
 };
+
+if (!debug) {
+    delete config.devtool;
+}
+
+module.exports = config;
