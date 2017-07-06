@@ -13,7 +13,7 @@
     "start": "webpack --config webpack.test.config.js",
     "dev": "webpack-dev-server --config webpack.test.config.js",
     "doc": "webpack-dev-server --config webpack.doc.config.js",
-    "ci:doc": "webpack --config webpack.doc.config.js --output-path='./output' -p",
+    "ci:doc": "webpack --config webpack.doc.config.js --output-path='./output' --define process.env.NODE_ENV='production'",
     "test": "npm-run-all -p -r server nightwatch",
     "server": "http-server dist -s -p 9000",
     "nightwatch": "nightwatch ./tests/nightwatch.js",

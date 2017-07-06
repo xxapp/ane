@@ -107,7 +107,6 @@ var config = {
         }
     },
     plugins: [
-        new es3ifyPlugin(),
         extractLess,
         extractCss,
         new HtmlWebpackPlugin({
@@ -142,6 +141,7 @@ var config = {
 
 if (!debug) {
     delete config.devtool;
+    config.plugins.unshift(new es3ifyPlugin());
 }
 
 module.exports = config;
