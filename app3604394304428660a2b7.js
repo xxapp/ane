@@ -3565,6 +3565,17 @@ __webpack_require__(184);
 var bootbox = __webpack_require__(41);
 bootbox.setLocale('zh_CN');
 
+// 提前禁止avalon对Object.create的实现
+if (!Object.create) {
+    Object.create = function () {
+        function F() {}
+
+        return function (o) {
+            F.prototype = o;
+            return new F();
+        };
+    }();
+}
 var avalon = __webpack_require__(1);
 avalon.config({
     debug: true
