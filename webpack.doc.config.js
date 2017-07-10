@@ -140,9 +140,9 @@ var config = {
 };
 
 module.exports = function (env) {
-    if (env.production) {
+    config.plugins.unshift(new es3ifyPlugin());
+    if (env && env.production) {
         delete config.devtool;
-        config.plugins.unshift(new es3ifyPlugin());
     }
     return config;
 };

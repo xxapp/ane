@@ -11,6 +11,17 @@ require('bootstrap');
 var bootbox = require('bootbox');
 bootbox.setLocale('zh_CN');
 
+// 提前禁止avalon对Object.create的实现
+if (!Object.create) {
+    Object.create = function () {
+        function F() {}
+
+        return function (o) {
+            F.prototype = o;
+            return new F();
+        };
+    }();
+}
 var avalon = require('avalon2');
 avalon.config({
     debug: true
