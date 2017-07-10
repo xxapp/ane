@@ -1,10 +1,1 @@
-<ul class="ane-tree">
-    <li :for="(index, el) in @tree | get(0)">
-        <span class="ane-tree-icon fa" :class="[@changeIcon(el)]" :click="@openSubTree(el)"></span>
-        <span :if="@checkable">
-            <ms-checkbox :widget="{indeterminate:@isIndeterminated(el),checked:@isChecked(el),onChange:function(){handleCheck(el)}}"></ms-checkbox>
-        </span>
-        {{el.title}}
-        <div :visible="@isExpended(el)" :html="@renderSubTree(el)"></div>
-    </li>
-</ul>
+<ul id="treeDemo" class="ztree"></ul>

@@ -53,6 +53,7 @@ var config = {
         }, {
             test: /\.css$/,
             include: [
+                path.resolve(__dirname, 'components'),
                 path.resolve(__dirname, 'node_modules')
             ],
             use: extractCss.extract({
@@ -80,8 +81,9 @@ var config = {
                 }
             ]
         }, {
-            test: /\.(eot|otf|ttf|woff|woff2|svg)\w*/,
+            test: /\.(eot|otf|ttf|woff|woff2|svg|png|gif)\w*/,
             include: [
+                path.resolve(__dirname, 'components'),
                 path.resolve(__dirname, 'node_modules')
             ],
             loader: 'file-loader',
@@ -140,8 +142,8 @@ var config = {
 };
 
 module.exports = function (env) {
-    config.plugins.unshift(new es3ifyPlugin());
     if (env && env.production) {
+        config.plugins.unshift(new es3ifyPlugin());
         delete config.devtool;
     }
     return config;

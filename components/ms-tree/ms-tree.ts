@@ -1,5 +1,8 @@
 import * as avalon from 'avalon2';
 import '../ms-checkbox';
+import './metroStyle.css';
+import * as $ from 'jquery';
+import './jquery.ztree.core';
 
 let treeID = 0;
 avalon.component('ms-tree', {
@@ -55,16 +58,22 @@ avalon.component('ms-tree', {
             this.checkedKeysString = this.checkedKeys.join(',');
             this.onCheck(this.checkedKeys.toJSON());
         },
-        onInit() {
-            if (this.root) {
-                travelForBuffer(this.tree.toJSON(), this.$bufferedTree);
-                this.checkedKeysString = this.checkedKeys.join(',');
-            } else {
-                this.$watch('checkedKeysString', v => {
-                    this.checkedKeys = v.split(',');
-                });
-                this.$fire('checkedKeysString', this.checkedKeys.join(','));
-            }
+        onInit(event) {
+            // if (this.root) {
+            //     travelForBuffer(this.tree.toJSON(), this.$bufferedTree);
+            //     this.checkedKeysString = this.checkedKeys.join(',');
+            // } else {
+            //     this.$watch('checkedKeysString', v => {
+            //         this.checkedKeys = v.split(',');
+            //     });
+            //     this.$fire('checkedKeysString', this.checkedKeys.join(','));
+            // }
+            $.fn.zTree.init($(event.target), {}, [
+                {name:"test1", open:true, children:[
+                    {name:"test1_1"}, {name:"test1_2"}]},
+                {name:"test2", open:true, children:[
+                    {name:"test2_1"}, {name:"test2_2"}]}
+            ]);
         }
     }
 });
