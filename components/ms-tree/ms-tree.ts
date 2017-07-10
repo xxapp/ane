@@ -9,12 +9,13 @@ avalon.component('ms-tree', {
         tree: [],
         expandedKeys: [],
         checkedKeys: [],
+        checkedKeysString: '',
         indeterminatedKeys: [],
         $bufferedTree: {},
         root: true,
         renderSubTree: function (el) {
             return  el.children.length ?
-                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',checkable:@checkable,tree:el.children,checkedKeys:@checkedKeys,indeterminatedKeys:@indeterminatedKeys,handleCheck:@handleCheck,root:false}"/>' :
+                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',checkable:@checkable,tree:el.children,checkedKeysString:@checkedKeysString,indeterminatedKeys:@indeterminatedKeys,handleCheck:@handleCheck,root:false}"/>' :
                 ''
         },
         openSubTree: function (el) {
@@ -51,11 +52,18 @@ avalon.component('ms-tree', {
             }
             this.indeterminatedKeys.remove(el.key);
             influenceParent(this.$bufferedTree[el.key], this.checkedKeys, this.indeterminatedKeys);
+            this.checkedKeysString = this.checkedKeys.join(',');
             this.onCheck(this.checkedKeys.toJSON());
         },
         onInit() {
             if (this.root) {
                 travelForBuffer(this.tree.toJSON(), this.$bufferedTree);
+                this.checkedKeysString = this.checkedKeys.join(',');
+            } else {
+                this.$watch('checkedKeysString', v => {
+                    this.checkedKeys = v.split(',');
+                });
+                this.$fire('checkedKeysString', this.checkedKeys.join(','));
             }
         }
     }
