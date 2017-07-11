@@ -195,7 +195,7 @@ if (avalon.msie <= 8) {
 }
 avalon.component('ms-checkbox', {
     soleSlot: 'label',
-    template: __webpack_require__(249),
+    template: __webpack_require__(250),
     defaults: {
         wrapper: 'checkbox',
         label: '',
@@ -224,7 +224,7 @@ avalon.component('ms-checkbox', {
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(232);
+__webpack_require__(233);
 
 
 /***/ }),
@@ -265,7 +265,7 @@ if (avalon.msie <= 8) {
 }
 avalon.component('ms-radio', {
     soleSlot: 'label',
-    template: __webpack_require__(257),
+    template: __webpack_require__(258),
     defaults: {
         wrapper: 'radio',
         label: '',
@@ -306,7 +306,7 @@ var avalon = __webpack_require__(1);
  * ```
  */
 avalon.component('ms-pagination', {
-    template: __webpack_require__(255),
+    template: __webpack_require__(256),
     defaults: {
         current: 1,
         pageSize: 10,
@@ -340,8 +340,8 @@ avalon.component('ms-pagination', {
 
 exports.__esModule = true;
 __webpack_require__(199);
-__webpack_require__(225);
-__webpack_require__(242);
+__webpack_require__(226);
+__webpack_require__(243);
 
 
 /***/ }),
@@ -353,7 +353,7 @@ __webpack_require__(242);
 exports.__esModule = true;
 __webpack_require__(26);
 __webpack_require__(46);
-__webpack_require__(237);
+__webpack_require__(238);
 
 
 /***/ }),
@@ -368,7 +368,7 @@ var utils_1 = __webpack_require__(5);
 __webpack_require__(26);
 ms_control_1["default"].extend({
     displayName: 'ms-checkbox-group',
-    template: __webpack_require__(248),
+    template: __webpack_require__(249),
     defaults: {
         value: [],
         disabled: false,
@@ -419,7 +419,7 @@ ms_control_1["default"].extend({
 "use strict";
 
 exports.__esModule = true;
-var ms_loading_directive_1 = __webpack_require__(220);
+var ms_loading_directive_1 = __webpack_require__(221);
 exports.Loading = ms_loading_directive_1.Loading;
 __webpack_require__(203);
 
@@ -436,7 +436,7 @@ var utils_1 = __webpack_require__(5);
 __webpack_require__(42);
 ms_control_1["default"].extend({
     displayName: 'ms-radio-group',
-    template: __webpack_require__(256),
+    template: __webpack_require__(257),
     defaults: {
         value: '',
         disabled: false,
@@ -486,7 +486,7 @@ var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
 var OPTION_HEIGHT = 24;
 avalon.component('ms-timepicker-view', {
-    template: __webpack_require__(262),
+    template: __webpack_require__(263),
     defaults: {
         value: '',
         currentHour: 0,
@@ -540,7 +540,7 @@ avalon.component('ms-timepicker-view', {
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(239);
+__webpack_require__(240);
 __webpack_require__(207);
 
 
@@ -823,7 +823,7 @@ __webpack_require__(193);
 var stores_1 = __webpack_require__(183);
 exports.name = 'doc-sidebar';
 avalon.component(exports.name, {
-    template: __webpack_require__(344),
+    template: __webpack_require__(345),
     defaults: {
         menu: [],
         selectedKeys: [],
@@ -853,7 +853,7 @@ avalon.component(exports.name, {
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-__webpack_require__(342);
+__webpack_require__(343);
 var stores_1 = __webpack_require__(183);
 var navConfig = __webpack_require__(51);
 function getPage(component) {
@@ -895,7 +895,7 @@ var travel = function (item) {
             path: item.uri,
             component: function (resolve) {
                 __webpack_require__.e/* require.ensure */(0).then((function () {
-                    resolve(__webpack_require__(348)("./" + item.location));
+                    resolve(__webpack_require__(349)("./" + item.location));
                 }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
             }
         });
@@ -917,29 +917,29 @@ applyRouteConfig(routeConfig, {
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(221);
+__webpack_require__(222);
 __webpack_require__(210);
 __webpack_require__(43);
-__webpack_require__(217);
+__webpack_require__(218);
 __webpack_require__(196);
 var create_form_1 = __webpack_require__(195);
 exports.createForm = create_form_1.createForm;
-__webpack_require__(219);
-__webpack_require__(228);
-__webpack_require__(44);
-__webpack_require__(233);
-__webpack_require__(215);
+__webpack_require__(220);
 __webpack_require__(229);
+__webpack_require__(44);
+__webpack_require__(234);
+__webpack_require__(216);
+__webpack_require__(230);
 __webpack_require__(45);
 __webpack_require__(46);
-__webpack_require__(224);
+__webpack_require__(225);
 __webpack_require__(48);
-__webpack_require__(231);
+__webpack_require__(232);
 var ms_loading_1 = __webpack_require__(47);
 exports.Loading = ms_loading_1.Loading;
-var ms_notification_1 = __webpack_require__(223);
+var ms_notification_1 = __webpack_require__(224);
 exports.notification = ms_notification_1["default"];
-var ms_message_1 = __webpack_require__(222);
+var ms_message_1 = __webpack_require__(223);
 exports.message = ms_message_1["default"];
 
 
@@ -953,9 +953,9 @@ exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
 __webpack_require__(27);
-__webpack_require__(213);
+__webpack_require__(214);
 __webpack_require__(49);
-var ms_datepicker_panel_1 = __webpack_require__(216);
+var ms_datepicker_panel_1 = __webpack_require__(217);
 var utils_1 = __webpack_require__(5);
 /**
  * 日期选择组件
@@ -974,7 +974,7 @@ var utils_1 = __webpack_require__(5);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-datepicker',
-    template: __webpack_require__(251),
+    template: __webpack_require__(252),
     defaults: {
         selected: '',
         format: 'YYYY-MM-DD',
@@ -1008,7 +1008,7 @@ ms_control_1["default"].extend({
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-datepicker-panel-container',
-        panelTemplate: __webpack_require__(250),
+        panelTemplate: __webpack_require__(251),
         handlePanelHide: function () {
             this.panelVisible = false;
         },
@@ -1088,7 +1088,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var Schema = __webpack_require__(269);
+var Schema = __webpack_require__(270);
 function createForm(options) {
     return new Form(options);
 }
@@ -1266,7 +1266,7 @@ function getValue(record, expr) {
 
 exports.__esModule = true;
 __webpack_require__(206);
-__webpack_require__(218);
+__webpack_require__(219);
 
 
 /***/ }),
@@ -1280,7 +1280,7 @@ var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-input',
-    template: __webpack_require__(253),
+    template: __webpack_require__(254),
     defaults: {
         text: '',
         mapValueToText: function (value) {
@@ -1312,7 +1312,7 @@ ms_control_1["default"].extend({
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 avalon.component('ms-menu', {
-    template: __webpack_require__(254),
+    template: __webpack_require__(255),
     defaults: {
         menu: [],
         selectedKeys: [],
@@ -1351,12 +1351,12 @@ exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
 __webpack_require__(27);
-var ms_select_panel_1 = __webpack_require__(226);
+var ms_select_panel_1 = __webpack_require__(227);
 var ane_util_1 = __webpack_require__(17);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-select',
-    template: __webpack_require__(259),
+    template: __webpack_require__(260),
     defaults: {
         value: [],
         mode: '',
@@ -1416,7 +1416,7 @@ ms_control_1["default"].extend({
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-select-dropdown',
-        panelTemplate: __webpack_require__(258),
+        panelTemplate: __webpack_require__(259),
         handlePanelHide: function () {
             this.panelVisible = false;
         },
@@ -1500,7 +1500,7 @@ var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
 __webpack_require__(27);
 __webpack_require__(49);
-var ms_timepicker_panel_1 = __webpack_require__(230);
+var ms_timepicker_panel_1 = __webpack_require__(231);
 var utils_1 = __webpack_require__(5);
 /**
  * 时间选择组件
@@ -1515,7 +1515,7 @@ var utils_1 = __webpack_require__(5);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-timepicker',
-    template: __webpack_require__(263),
+    template: __webpack_require__(264),
     defaults: {
         selected: '',
         format: 'HH:mm:ss',
@@ -1587,138 +1587,49 @@ ms_control_1["default"].extend({
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 __webpack_require__(45);
-__webpack_require__(245);
+__webpack_require__(246);
 var $ = __webpack_require__(9);
 __webpack_require__(212);
-var treeID = 0;
+__webpack_require__(213);
 avalon.component('ms-tree', {
-    template: __webpack_require__(264),
+    template: __webpack_require__(265),
     defaults: {
         checkable: false,
         tree: [],
         expandedKeys: [],
         checkedKeys: [],
-        checkedKeysString: '',
-        indeterminatedKeys: [],
-        $bufferedTree: {},
-        root: true,
-        renderSubTree: function (el) {
-            return el.children.length ?
-                '<wbr :widget="{is:\'ms-tree\',$id:\'tree_' + (++treeID) + '\',checkable:@checkable,tree:el.children,checkedKeysString:@checkedKeysString,indeterminatedKeys:@indeterminatedKeys,handleCheck:@handleCheck,root:false}"/>' :
-                '';
-        },
-        openSubTree: function (el) {
-            if (this.isExpended(el)) {
-                this.expandedKeys.remove(el.key);
-            }
-            else {
-                this.expandedKeys.push(el.key);
-            }
-        },
-        changeIcon: function (el) {
-            if (!el.children.length) {
-                return '';
-            }
-            return this.isExpended(el) ? 'fa-caret-down' : 'fa-caret-right';
-        },
-        isExpended: function (el) {
-            return this.expandedKeys.contains(el.key);
-        },
-        isChecked: function (el) {
-            return this.checkedKeys.contains(el.key);
-        },
-        isIndeterminated: function (el) {
-            return this.indeterminatedKeys.contains(el.key);
-        },
         onCheck: avalon.noop,
         onCheckInner: avalon.noop,
         handleCheck: function (el) {
-            if (this.isChecked(el)) {
+            if (!el.checked) {
                 this.checkedKeys.remove(el.key);
-                travelForCheckChildren(el.children, this.checkedKeys, false);
             }
             else {
                 this.checkedKeys.push(el.key);
-                travelForCheckChildren(el.children, this.checkedKeys, true);
             }
-            this.indeterminatedKeys.remove(el.key);
-            influenceParent(this.$bufferedTree[el.key], this.checkedKeys, this.indeterminatedKeys);
-            this.checkedKeysString = this.checkedKeys.join(',');
             this.onCheck(this.checkedKeys.toJSON());
         },
         onInit: function (event) {
-            // if (this.root) {
-            //     travelForBuffer(this.tree.toJSON(), this.$bufferedTree);
-            //     this.checkedKeysString = this.checkedKeys.join(',');
-            // } else {
-            //     this.$watch('checkedKeysString', v => {
-            //         this.checkedKeys = v.split(',');
-            //     });
-            //     this.$fire('checkedKeysString', this.checkedKeys.join(','));
-            // }
-            $.fn.zTree.init($(event.target), {}, [
-                { name: "test1", open: true, children: [
-                        { name: "test1_1" }, { name: "test1_2" }
-                    ] },
-                { name: "test2", open: true, children: [
-                        { name: "test2_1" }, { name: "test2_2" }
-                    ] }
-            ]);
+            var _this = this;
+            var treeObj = $.fn.zTree.init($(event.target), {
+                check: { enable: true },
+                data: {
+                    key: {
+                        name: 'title'
+                    }
+                },
+                callback: {
+                    onCheck: function (e, treeId, node) {
+                        _this.handleCheck(node);
+                    }
+                }
+            }, this.tree.toJSON());
+            treeObj.getNodesByFilter(function (n) { return _this.checkedKeys.contains(n.key); }).forEach(function (n) {
+                treeObj.checkNode(n, true, true);
+            });
         }
     }
 });
-function travelForBuffer(treelet, bufferedTree, parent) {
-    if (parent === void 0) { parent = null; }
-    treelet.forEach(function (node) {
-        node.parent = parent;
-        bufferedTree[node.key] = node;
-        travelForBuffer(node.children, bufferedTree, node);
-    });
-}
-function travelForCheckChildren(treelet, checkedKeys, isCheck) {
-    treelet.forEach(function (node) {
-        if (isCheck) {
-            checkedKeys.ensure(node.key);
-        }
-        else {
-            checkedKeys.remove(node.key);
-        }
-        travelForCheckChildren(node.children, checkedKeys, isCheck);
-    });
-}
-function influenceParent(node, checkedKeys, indeterminatedKeys, isIndeterminate) {
-    if (isIndeterminate === void 0) { isIndeterminate = false; }
-    if (node.parent === null) {
-        return;
-    }
-    var count = 0;
-    for (var _i = 0, _a = node.parent.children; _i < _a.length; _i++) {
-        var child = _a[_i];
-        if (checkedKeys.contains(child.key)) {
-            count++;
-        }
-        if (indeterminatedKeys.contains(child.key)) {
-            count += 0.5;
-        }
-    }
-    if (!isIndeterminate) {
-        if (count === 0) {
-            indeterminatedKeys.remove(node.parent.key);
-            checkedKeys.remove(node.parent.key);
-            influenceParent(node.parent, checkedKeys, indeterminatedKeys);
-            return;
-        }
-        else if (count === node.parent.children.length) {
-            indeterminatedKeys.remove(node.parent.key);
-            checkedKeys.ensure(node.parent.key);
-            influenceParent(node.parent, checkedKeys, indeterminatedKeys);
-            return;
-        }
-    }
-    checkedKeys.remove(node.parent.key);
-    indeterminatedKeys.ensure(node.parent.key);
-    influenceParent(node.parent, checkedKeys, indeterminatedKeys, true);
-}
 
 
 /***/ }),
@@ -1731,9 +1642,9 @@ function influenceParent(node, checkedKeys, indeterminatedKeys, isIndeterminate)
 exports.__esModule = true;
 var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
+__webpack_require__(236);
 __webpack_require__(235);
-__webpack_require__(234);
-var up_loader_1 = __webpack_require__(345);
+var up_loader_1 = __webpack_require__(346);
 /**
  * 文件上传组件
  * @prop value 组件值(inherit)
@@ -1748,7 +1659,7 @@ var up_loader_1 = __webpack_require__(345);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-upload',
-    template: __webpack_require__(267),
+    template: __webpack_require__(268),
     soleSlot: 'trigger',
     defaults: {
         helpId: '',
@@ -1899,9 +1810,9 @@ exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
 __webpack_require__(44);
-__webpack_require__(214);
+__webpack_require__(215);
 avalon.component('ms-calendar', {
-    template: __webpack_require__(247),
+    template: __webpack_require__(248),
     defaults: {
         value: '',
         $value: null,
@@ -2344,7 +2255,7 @@ function template(title, message, icon) {
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 __webpack_require__(26);
-__webpack_require__(227);
+__webpack_require__(228);
 __webpack_require__(43);
 var ane_util_1 = __webpack_require__(17);
 __webpack_require__(47);
@@ -2355,7 +2266,7 @@ var defaultPagination = function () {
 };
 avalon.component('ms-table', {
     soleSlot: 'header',
-    template: __webpack_require__(260),
+    template: __webpack_require__(261),
     defaults: {
         header: '',
         columns: [],
@@ -2526,7 +2437,7 @@ var utils_1 = __webpack_require__(5);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-textarea',
-    template: __webpack_require__(261),
+    template: __webpack_require__(262),
     defaults: {
         rows: '',
         text: '',
@@ -4482,17 +4393,650 @@ ms_control_1["default"].extend({
 
 /***/ }),
 /* 213 */
+/***/ (function(module, exports) {
+
+/*
+ * JQuery zTree excheck v3.5.29
+ * http://treejs.cn/
+ *
+ * Copyright (c) 2010 Hunter.z
+ *
+ * Licensed same as jquery - MIT License
+ * http://www.opensource.org/licenses/mit-license.php
+ *
+ * email: hunter.z@263.net
+ * Date: 2017-06-19
+ */
+(function($){
+	//default consts of excheck
+	var _consts = {
+		event: {
+			CHECK: "ztree_check"
+		},
+		id: {
+			CHECK: "_check"
+		},
+		checkbox: {
+			STYLE: "checkbox",
+			DEFAULT: "chk",
+			DISABLED: "disable",
+			FALSE: "false",
+			TRUE: "true",
+			FULL: "full",
+			PART: "part",
+			FOCUS: "focus"
+		},
+		radio: {
+			STYLE: "radio",
+			TYPE_ALL: "all",
+			TYPE_LEVEL: "level"
+		}
+	},
+	//default setting of excheck
+	_setting = {
+		check: {
+			enable: false,
+			autoCheckTrigger: false,
+			chkStyle: _consts.checkbox.STYLE,
+			nocheckInherit: false,
+			chkDisabledInherit: false,
+			radioType: _consts.radio.TYPE_LEVEL,
+			chkboxType: {
+				"Y": "ps",
+				"N": "ps"
+			}
+		},
+		data: {
+			key: {
+				checked: "checked"
+			}
+		},
+		callback: {
+			beforeCheck:null,
+			onCheck:null
+		}
+	},
+	//default root of excheck
+	_initRoot = function (setting) {
+		var r = data.getRoot(setting);
+		r.radioCheckedList = [];
+	},
+	//default cache of excheck
+	_initCache = function(treeId) {},
+	//default bind event of excheck
+	_bindEvent = function(setting) {
+		var o = setting.treeObj,
+		c = consts.event;
+		o.bind(c.CHECK, function (event, srcEvent, treeId, node) {
+			event.srcEvent = srcEvent;
+			tools.apply(setting.callback.onCheck, [event, treeId, node]);
+		});
+	},
+	_unbindEvent = function(setting) {
+		var o = setting.treeObj,
+		c = consts.event;
+		o.unbind(c.CHECK);
+	},
+	//default event proxy of excheck
+	_eventProxy = function(e) {
+		var target = e.target,
+		setting = data.getSetting(e.data.treeId),
+		tId = "", node = null,
+		nodeEventType = "", treeEventType = "",
+		nodeEventCallback = null, treeEventCallback = null;
+
+		if (tools.eqs(e.type, "mouseover")) {
+			if (setting.check.enable && tools.eqs(target.tagName, "span") && target.getAttribute("treeNode"+ consts.id.CHECK) !== null) {
+				tId = tools.getNodeMainDom(target).id;
+				nodeEventType = "mouseoverCheck";
+			}
+		} else if (tools.eqs(e.type, "mouseout")) {
+			if (setting.check.enable && tools.eqs(target.tagName, "span") && target.getAttribute("treeNode"+ consts.id.CHECK) !== null) {
+				tId = tools.getNodeMainDom(target).id;
+				nodeEventType = "mouseoutCheck";
+			}
+		} else if (tools.eqs(e.type, "click")) {
+			if (setting.check.enable && tools.eqs(target.tagName, "span") && target.getAttribute("treeNode"+ consts.id.CHECK) !== null) {
+				tId = tools.getNodeMainDom(target).id;
+				nodeEventType = "checkNode";
+			}
+		}
+		if (tId.length>0) {
+			node = data.getNodeCache(setting, tId);
+			switch (nodeEventType) {
+				case "checkNode" :
+					nodeEventCallback = _handler.onCheckNode;
+					break;
+				case "mouseoverCheck" :
+					nodeEventCallback = _handler.onMouseoverCheck;
+					break;
+				case "mouseoutCheck" :
+					nodeEventCallback = _handler.onMouseoutCheck;
+					break;
+			}
+		}
+		var proxyResult = {
+			stop: nodeEventType === "checkNode",
+			node: node,
+			nodeEventType: nodeEventType,
+			nodeEventCallback: nodeEventCallback,
+			treeEventType: treeEventType,
+			treeEventCallback: treeEventCallback
+		};
+		return proxyResult
+	},
+	//default init node of excheck
+	_initNode = function(setting, level, n, parentNode, isFirstNode, isLastNode, openFlag) {
+		if (!n) return;
+		var checkedKey = setting.data.key.checked;
+		if (typeof n[checkedKey] == "string") n[checkedKey] = tools.eqs(n[checkedKey], "true");
+		n[checkedKey] = !!n[checkedKey];
+		n.checkedOld = n[checkedKey];
+		if (typeof n.nocheck == "string") n.nocheck = tools.eqs(n.nocheck, "true");
+		n.nocheck = !!n.nocheck || (setting.check.nocheckInherit && parentNode && !!parentNode.nocheck);
+		if (typeof n.chkDisabled == "string") n.chkDisabled = tools.eqs(n.chkDisabled, "true");
+		n.chkDisabled = !!n.chkDisabled || (setting.check.chkDisabledInherit && parentNode && !!parentNode.chkDisabled);
+		if (typeof n.halfCheck == "string") n.halfCheck = tools.eqs(n.halfCheck, "true");
+		n.halfCheck = !!n.halfCheck;
+		n.check_Child_State = -1;
+		n.check_Focus = false;
+		n.getCheckStatus = function() {return data.getCheckStatus(setting, n);};
+
+		if (setting.check.chkStyle == consts.radio.STYLE && setting.check.radioType == consts.radio.TYPE_ALL && n[checkedKey] ) {
+			var r = data.getRoot(setting);
+			r.radioCheckedList.push(n);
+		}
+	},
+	//add dom for check
+	_beforeA = function(setting, node, html) {
+		var checkedKey = setting.data.key.checked;
+		if (setting.check.enable) {
+			data.makeChkFlag(setting, node);
+			html.push("<span ID='", node.tId, consts.id.CHECK, "' class='", view.makeChkClass(setting, node), "' treeNode", consts.id.CHECK, (node.nocheck === true?" style='display:none;'":""),"></span>");
+		}
+	},
+	//update zTreeObj, add method of check
+	_zTreeTools = function(setting, zTreeTools) {
+		zTreeTools.checkNode = function(node, checked, checkTypeFlag, callbackFlag) {
+			var checkedKey = this.setting.data.key.checked;
+			if (node.chkDisabled === true) return;
+			if (checked !== true && checked !== false) {
+				checked = !node[checkedKey];
+			}
+			callbackFlag = !!callbackFlag;
+
+			if (node[checkedKey] === checked && !checkTypeFlag) {
+				return;
+			} else if (callbackFlag && tools.apply(this.setting.callback.beforeCheck, [this.setting.treeId, node], true) == false) {
+				return;
+			}
+			if (tools.uCanDo(this.setting) && this.setting.check.enable && node.nocheck !== true) {
+				node[checkedKey] = checked;
+				var checkObj = $$(node, consts.id.CHECK, this.setting);
+				if (checkTypeFlag || this.setting.check.chkStyle === consts.radio.STYLE) view.checkNodeRelation(this.setting, node);
+				view.setChkClass(this.setting, checkObj, node);
+				view.repairParentChkClassWithSelf(this.setting, node);
+				if (callbackFlag) {
+					this.setting.treeObj.trigger(consts.event.CHECK, [null, this.setting.treeId, node]);
+				}
+			}
+		}
+
+		zTreeTools.checkAllNodes = function(checked) {
+			view.repairAllChk(this.setting, !!checked);
+		}
+
+		zTreeTools.getCheckedNodes = function(checked) {
+			var childKey = this.setting.data.key.children;
+			checked = (checked !== false);
+			return data.getTreeCheckedNodes(this.setting, data.getRoot(this.setting)[childKey], checked);
+		}
+
+		zTreeTools.getChangeCheckedNodes = function() {
+			var childKey = this.setting.data.key.children;
+			return data.getTreeChangeCheckedNodes(this.setting, data.getRoot(this.setting)[childKey]);
+		}
+
+		zTreeTools.setChkDisabled = function(node, disabled, inheritParent, inheritChildren) {
+			disabled = !!disabled;
+			inheritParent = !!inheritParent;
+			inheritChildren = !!inheritChildren;
+			view.repairSonChkDisabled(this.setting, node, disabled, inheritChildren);
+			view.repairParentChkDisabled(this.setting, node.getParentNode(), disabled, inheritParent);
+		}
+
+		var _updateNode = zTreeTools.updateNode;
+		zTreeTools.updateNode = function(node, checkTypeFlag) {
+			if (_updateNode) _updateNode.apply(zTreeTools, arguments);
+			if (!node || !this.setting.check.enable) return;
+			var nObj = $$(node, this.setting);
+			if (nObj.get(0) && tools.uCanDo(this.setting)) {
+				var checkObj = $$(node, consts.id.CHECK, this.setting);
+				if (checkTypeFlag == true || this.setting.check.chkStyle === consts.radio.STYLE) view.checkNodeRelation(this.setting, node);
+				view.setChkClass(this.setting, checkObj, node);
+				view.repairParentChkClassWithSelf(this.setting, node);
+			}
+		}
+	},
+	//method of operate data
+	_data = {
+		getRadioCheckedList: function(setting) {
+			var checkedList = data.getRoot(setting).radioCheckedList;
+			for (var i=0, j=checkedList.length; i<j; i++) {
+				if(!data.getNodeCache(setting, checkedList[i].tId)) {
+					checkedList.splice(i, 1);
+					i--; j--;
+				}
+			}
+			return checkedList;
+		},
+		getCheckStatus: function(setting, node) {
+			if (!setting.check.enable || node.nocheck || node.chkDisabled) return null;
+			var checkedKey = setting.data.key.checked,
+			r = {
+				checked: node[checkedKey],
+				half: node.halfCheck ? node.halfCheck : (setting.check.chkStyle == consts.radio.STYLE ? (node.check_Child_State === 2) : (node[checkedKey] ? (node.check_Child_State > -1 && node.check_Child_State < 2) : (node.check_Child_State > 0)))
+			};
+			return r;
+		},
+		getTreeCheckedNodes: function(setting, nodes, checked, results) {
+			if (!nodes) return [];
+			var childKey = setting.data.key.children,
+			checkedKey = setting.data.key.checked,
+			onlyOne = (checked && setting.check.chkStyle == consts.radio.STYLE && setting.check.radioType == consts.radio.TYPE_ALL);
+			results = !results ? [] : results;
+			for (var i = 0, l = nodes.length; i < l; i++) {
+				if (nodes[i].nocheck !== true && nodes[i].chkDisabled !== true && nodes[i][checkedKey] == checked) {
+					results.push(nodes[i]);
+					if(onlyOne) {
+						break;
+					}
+				}
+				data.getTreeCheckedNodes(setting, nodes[i][childKey], checked, results);
+				if(onlyOne && results.length > 0) {
+					break;
+				}
+			}
+			return results;
+		},
+		getTreeChangeCheckedNodes: function(setting, nodes, results) {
+			if (!nodes) return [];
+			var childKey = setting.data.key.children,
+			checkedKey = setting.data.key.checked;
+			results = !results ? [] : results;
+			for (var i = 0, l = nodes.length; i < l; i++) {
+				if (nodes[i].nocheck !== true && nodes[i].chkDisabled !== true && nodes[i][checkedKey] != nodes[i].checkedOld) {
+					results.push(nodes[i]);
+				}
+				data.getTreeChangeCheckedNodes(setting, nodes[i][childKey], results);
+			}
+			return results;
+		},
+		makeChkFlag: function(setting, node) {
+			if (!node) return;
+			var childKey = setting.data.key.children,
+			checkedKey = setting.data.key.checked,
+			chkFlag = -1;
+			if (node[childKey]) {
+				for (var i = 0, l = node[childKey].length; i < l; i++) {
+					var cNode = node[childKey][i];
+					var tmp = -1;
+					if (setting.check.chkStyle == consts.radio.STYLE) {
+						if (cNode.nocheck === true || cNode.chkDisabled === true) {
+							tmp = cNode.check_Child_State;
+						} else if (cNode.halfCheck === true) {
+							tmp = 2;
+						} else if (cNode[checkedKey]) {
+							tmp = 2;
+						} else {
+							tmp = cNode.check_Child_State > 0 ? 2:0;
+						}
+						if (tmp == 2) {
+							chkFlag = 2; break;
+						} else if (tmp == 0){
+							chkFlag = 0;
+						}
+					} else if (setting.check.chkStyle == consts.checkbox.STYLE) {
+						if (cNode.nocheck === true || cNode.chkDisabled === true) {
+							tmp = cNode.check_Child_State;
+						} else if (cNode.halfCheck === true) {
+							tmp = 1;
+						} else if (cNode[checkedKey] ) {
+							tmp = (cNode.check_Child_State === -1 || cNode.check_Child_State === 2) ? 2 : 1;
+						} else {
+							tmp = (cNode.check_Child_State > 0) ? 1 : 0;
+						}
+						if (tmp === 1) {
+							chkFlag = 1; break;
+						} else if (tmp === 2 && chkFlag > -1 && i > 0 && tmp !== chkFlag) {
+							chkFlag = 1; break;
+						} else if (chkFlag === 2 && tmp > -1 && tmp < 2) {
+							chkFlag = 1; break;
+						} else if (tmp > -1) {
+							chkFlag = tmp;
+						}
+					}
+				}
+			}
+			node.check_Child_State = chkFlag;
+		}
+	},
+	//method of event proxy
+	_event = {
+
+	},
+	//method of event handler
+	_handler = {
+		onCheckNode: function (event, node) {
+			if (node.chkDisabled === true) return false;
+			var setting = data.getSetting(event.data.treeId),
+			checkedKey = setting.data.key.checked;
+			if (tools.apply(setting.callback.beforeCheck, [setting.treeId, node], true) == false) return true;
+			node[checkedKey] = !node[checkedKey];
+			view.checkNodeRelation(setting, node);
+			var checkObj = $$(node, consts.id.CHECK, setting);
+			view.setChkClass(setting, checkObj, node);
+			view.repairParentChkClassWithSelf(setting, node);
+			setting.treeObj.trigger(consts.event.CHECK, [event, setting.treeId, node]);
+			return true;
+		},
+		onMouseoverCheck: function(event, node) {
+			if (node.chkDisabled === true) return false;
+			var setting = data.getSetting(event.data.treeId),
+			checkObj = $$(node, consts.id.CHECK, setting);
+			node.check_Focus = true;
+			view.setChkClass(setting, checkObj, node);
+			return true;
+		},
+		onMouseoutCheck: function(event, node) {
+			if (node.chkDisabled === true) return false;
+			var setting = data.getSetting(event.data.treeId),
+			checkObj = $$(node, consts.id.CHECK, setting);
+			node.check_Focus = false;
+			view.setChkClass(setting, checkObj, node);
+			return true;
+		}
+	},
+	//method of tools for zTree
+	_tools = {
+
+	},
+	//method of operate ztree dom
+	_view = {
+		checkNodeRelation: function(setting, node) {
+			var pNode, i, l,
+			childKey = setting.data.key.children,
+			checkedKey = setting.data.key.checked,
+			r = consts.radio;
+			if (setting.check.chkStyle == r.STYLE) {
+				var checkedList = data.getRadioCheckedList(setting);
+				if (node[checkedKey]) {
+					if (setting.check.radioType == r.TYPE_ALL) {
+						for (i = checkedList.length-1; i >= 0; i--) {
+							pNode = checkedList[i];
+							if (pNode[checkedKey] && pNode != node) {
+								pNode[checkedKey] = false;
+								checkedList.splice(i, 1);
+
+								view.setChkClass(setting, $$(pNode, consts.id.CHECK, setting), pNode);
+								if (pNode.parentTId != node.parentTId) {
+									view.repairParentChkClassWithSelf(setting, pNode);
+								}
+							}
+						}
+						checkedList.push(node);
+					} else {
+						var parentNode = (node.parentTId) ? node.getParentNode() : data.getRoot(setting);
+						for (i = 0, l = parentNode[childKey].length; i < l; i++) {
+							pNode = parentNode[childKey][i];
+							if (pNode[checkedKey] && pNode != node) {
+								pNode[checkedKey] = false;
+								view.setChkClass(setting, $$(pNode, consts.id.CHECK, setting), pNode);
+							}
+						}
+					}
+				} else if (setting.check.radioType == r.TYPE_ALL) {
+					for (i = 0, l = checkedList.length; i < l; i++) {
+						if (node == checkedList[i]) {
+							checkedList.splice(i, 1);
+							break;
+						}
+					}
+				}
+
+			} else {
+				if (node[checkedKey] && (!node[childKey] || node[childKey].length==0 || setting.check.chkboxType.Y.indexOf("s") > -1)) {
+					view.setSonNodeCheckBox(setting, node, true);
+				}
+				if (!node[checkedKey] && (!node[childKey] || node[childKey].length==0 || setting.check.chkboxType.N.indexOf("s") > -1)) {
+					view.setSonNodeCheckBox(setting, node, false);
+				}
+				if (node[checkedKey] && setting.check.chkboxType.Y.indexOf("p") > -1) {
+					view.setParentNodeCheckBox(setting, node, true);
+				}
+				if (!node[checkedKey] && setting.check.chkboxType.N.indexOf("p") > -1) {
+					view.setParentNodeCheckBox(setting, node, false);
+				}
+			}
+		},
+		makeChkClass: function(setting, node) {
+			var checkedKey = setting.data.key.checked,
+			c = consts.checkbox, r = consts.radio,
+			fullStyle = "";
+			if (node.chkDisabled === true) {
+				fullStyle = c.DISABLED;
+			} else if (node.halfCheck) {
+				fullStyle = c.PART;
+			} else if (setting.check.chkStyle == r.STYLE) {
+				fullStyle = (node.check_Child_State < 1)? c.FULL:c.PART;
+			} else {
+				fullStyle = node[checkedKey] ? ((node.check_Child_State === 2 || node.check_Child_State === -1) ? c.FULL:c.PART) : ((node.check_Child_State < 1)? c.FULL:c.PART);
+			}
+			var chkName = setting.check.chkStyle + "_" + (node[checkedKey] ? c.TRUE : c.FALSE) + "_" + fullStyle;
+			chkName = (node.check_Focus && node.chkDisabled !== true) ? chkName + "_" + c.FOCUS : chkName;
+			return consts.className.BUTTON + " " + c.DEFAULT + " " + chkName;
+		},
+		repairAllChk: function(setting, checked) {
+			if (setting.check.enable && setting.check.chkStyle === consts.checkbox.STYLE) {
+				var checkedKey = setting.data.key.checked,
+				childKey = setting.data.key.children,
+				root = data.getRoot(setting);
+				for (var i = 0, l = root[childKey].length; i<l ; i++) {
+					var node = root[childKey][i];
+					if (node.nocheck !== true && node.chkDisabled !== true) {
+						node[checkedKey] = checked;
+					}
+					view.setSonNodeCheckBox(setting, node, checked);
+				}
+			}
+		},
+		repairChkClass: function(setting, node) {
+			if (!node) return;
+			data.makeChkFlag(setting, node);
+			if (node.nocheck !== true) {
+				var checkObj = $$(node, consts.id.CHECK, setting);
+				view.setChkClass(setting, checkObj, node);
+			}
+		},
+		repairParentChkClass: function(setting, node) {
+			if (!node || !node.parentTId) return;
+			var pNode = node.getParentNode();
+			view.repairChkClass(setting, pNode);
+			view.repairParentChkClass(setting, pNode);
+		},
+		repairParentChkClassWithSelf: function(setting, node) {
+			if (!node) return;
+			var childKey = setting.data.key.children;
+			if (node[childKey] && node[childKey].length > 0) {
+				view.repairParentChkClass(setting, node[childKey][0]);
+			} else {
+				view.repairParentChkClass(setting, node);
+			}
+		},
+		repairSonChkDisabled: function(setting, node, chkDisabled, inherit) {
+			if (!node) return;
+			var childKey = setting.data.key.children;
+			if (node.chkDisabled != chkDisabled) {
+				node.chkDisabled = chkDisabled;
+			}
+			view.repairChkClass(setting, node);
+			if (node[childKey] && inherit) {
+				for (var i = 0, l = node[childKey].length; i < l; i++) {
+					var sNode = node[childKey][i];
+					view.repairSonChkDisabled(setting, sNode, chkDisabled, inherit);
+				}
+			}
+		},
+		repairParentChkDisabled: function(setting, node, chkDisabled, inherit) {
+			if (!node) return;
+			if (node.chkDisabled != chkDisabled && inherit) {
+				node.chkDisabled = chkDisabled;
+			}
+			view.repairChkClass(setting, node);
+			view.repairParentChkDisabled(setting, node.getParentNode(), chkDisabled, inherit);
+		},
+		setChkClass: function(setting, obj, node) {
+			if (!obj) return;
+			if (node.nocheck === true) {
+				obj.hide();
+			} else {
+				obj.show();
+			}
+            obj.attr('class', view.makeChkClass(setting, node));
+		},
+		setParentNodeCheckBox: function(setting, node, value, srcNode) {
+			var childKey = setting.data.key.children,
+			checkedKey = setting.data.key.checked,
+			checkObj = $$(node, consts.id.CHECK, setting);
+			if (!srcNode) srcNode = node;
+			data.makeChkFlag(setting, node);
+			if (node.nocheck !== true && node.chkDisabled !== true) {
+				node[checkedKey] = value;
+				view.setChkClass(setting, checkObj, node);
+				if (setting.check.autoCheckTrigger && node != srcNode) {
+					setting.treeObj.trigger(consts.event.CHECK, [null, setting.treeId, node]);
+				}
+			}
+			if (node.parentTId) {
+				var pSign = true;
+				if (!value) {
+					var pNodes = node.getParentNode()[childKey];
+					for (var i = 0, l = pNodes.length; i < l; i++) {
+						if ((pNodes[i].nocheck !== true && pNodes[i].chkDisabled !== true && pNodes[i][checkedKey])
+						|| ((pNodes[i].nocheck === true || pNodes[i].chkDisabled === true) && pNodes[i].check_Child_State > 0)) {
+							pSign = false;
+							break;
+						}
+					}
+				}
+				if (pSign) {
+					view.setParentNodeCheckBox(setting, node.getParentNode(), value, srcNode);
+				}
+			}
+		},
+		setSonNodeCheckBox: function(setting, node, value, srcNode) {
+			if (!node) return;
+			var childKey = setting.data.key.children,
+			checkedKey = setting.data.key.checked,
+			checkObj = $$(node, consts.id.CHECK, setting);
+			if (!srcNode) srcNode = node;
+
+			var hasDisable = false;
+			if (node[childKey]) {
+				for (var i = 0, l = node[childKey].length; i < l; i++) {
+					var sNode = node[childKey][i];
+					view.setSonNodeCheckBox(setting, sNode, value, srcNode);
+					if (sNode.chkDisabled === true) hasDisable = true;
+				}
+			}
+
+			if (node != data.getRoot(setting) && node.chkDisabled !== true) {
+				if (hasDisable && node.nocheck !== true) {
+					data.makeChkFlag(setting, node);
+				}
+				if (node.nocheck !== true && node.chkDisabled !== true) {
+					node[checkedKey] = value;
+					if (!hasDisable) node.check_Child_State = (node[childKey] && node[childKey].length > 0) ? (value ? 2 : 0) : -1;
+				} else {
+					node.check_Child_State = -1;
+				}
+				view.setChkClass(setting, checkObj, node);
+				if (setting.check.autoCheckTrigger && node != srcNode && node.nocheck !== true && node.chkDisabled !== true) {
+					setting.treeObj.trigger(consts.event.CHECK, [null, setting.treeId, node]);
+				}
+			}
+
+		}
+	},
+
+	_z = {
+		tools: _tools,
+		view: _view,
+		event: _event,
+		data: _data
+	};
+	$.extend(true, $.fn.zTree.consts, _consts);
+	$.extend(true, $.fn.zTree._z, _z);
+
+	var zt = $.fn.zTree,
+	tools = zt._z.tools,
+	consts = zt.consts,
+	view = zt._z.view,
+	data = zt._z.data,
+	event = zt._z.event,
+	$$ = tools.$;
+
+	data.exSetting(_setting);
+	data.addInitBind(_bindEvent);
+	data.addInitUnBind(_unbindEvent);
+	data.addInitCache(_initCache);
+	data.addInitNode(_initNode);
+	data.addInitProxy(_eventProxy, true);
+	data.addInitRoot(_initRoot);
+	data.addBeforeA(_beforeA);
+	data.addZTreeTools(_zTreeTools);
+
+	var _createNodes = view.createNodes;
+	view.createNodes = function(setting, level, nodes, parentNode, index) {
+		if (_createNodes) _createNodes.apply(view, arguments);
+		if (!nodes) return;
+		view.repairParentChkClassWithSelf(setting, parentNode);
+	}
+	var _removeNode = view.removeNode;
+	view.removeNode = function(setting, node) {
+		var parentNode = node.getParentNode();
+		if (_removeNode) _removeNode.apply(view, arguments);
+		if (!node || !parentNode) return;
+		view.repairChkClass(setting, parentNode);
+		view.repairParentChkClass(setting, parentNode);
+	}
+
+	var _appendNodes = view.appendNodes;
+	view.appendNodes = function(setting, level, nodes, parentNode, index, initFlag, openFlag) {
+		var html = "";
+		if (_appendNodes) {
+			html = _appendNodes.apply(view, arguments);
+		}
+		if (parentNode) {
+			data.makeChkFlag(setting, parentNode);
+		}
+		return html;
+	}
+})(jQuery);
+
+/***/ }),
+/* 214 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 __webpack_require__(204);
-__webpack_require__(236);
+__webpack_require__(237);
 
 
 /***/ }),
-/* 214 */
+/* 215 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4502,7 +5046,7 @@ var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
 var monthTable = [];
 avalon.component('ms-calendar-year-view', {
-    template: __webpack_require__(246),
+    template: __webpack_require__(247),
     defaults: {
         table: [],
         // 0-月视图，1-年视图，2-十年视图，3-百年视图
@@ -4552,18 +5096,18 @@ avalon.component('ms-calendar-year-view', {
 
 
 /***/ }),
-/* 215 */
+/* 216 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 __webpack_require__(194);
-__webpack_require__(238);
+__webpack_require__(239);
 
 
 /***/ }),
-/* 216 */
+/* 217 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4713,7 +5257,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 217 */
+/* 218 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4723,7 +5267,7 @@ __webpack_require__(205);
 
 
 /***/ }),
-/* 218 */
+/* 219 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4743,7 +5287,7 @@ var ane_util_1 = __webpack_require__(17);
  * ```
  */
 avalon.component('ms-form-item', {
-    template: __webpack_require__(252),
+    template: __webpack_require__(253),
     defaults: {
         $formVm: null,
         label: '',
@@ -4806,7 +5350,7 @@ avalon.component('ms-form-item', {
 
 
 /***/ }),
-/* 219 */
+/* 220 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4816,7 +5360,7 @@ __webpack_require__(197);
 
 
 /***/ }),
-/* 220 */
+/* 221 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4949,18 +5493,18 @@ exports.Loading = {
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 221 */
+/* 222 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(240);
+__webpack_require__(241);
 __webpack_require__(198);
 
 
 /***/ }),
-/* 222 */
+/* 223 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4971,7 +5515,7 @@ exports["default"] = ms_message_1["default"];
 
 
 /***/ }),
-/* 223 */
+/* 224 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4982,7 +5526,7 @@ exports["default"] = ms_notification_1["default"];
 
 
 /***/ }),
-/* 224 */
+/* 225 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4990,11 +5534,11 @@ exports["default"] = ms_notification_1["default"];
 exports.__esModule = true;
 __webpack_require__(42);
 __webpack_require__(48);
-__webpack_require__(241);
+__webpack_require__(242);
 
 
 /***/ }),
-/* 225 */
+/* 226 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5013,7 +5557,7 @@ avalon.component('ms-select-option', {
 
 
 /***/ }),
-/* 226 */
+/* 227 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5076,7 +5620,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 227 */
+/* 228 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5094,7 +5638,7 @@ avalon.component('ms-table-header', {
 
 
 /***/ }),
-/* 228 */
+/* 229 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5104,18 +5648,18 @@ __webpack_require__(211);
 
 
 /***/ }),
-/* 229 */
+/* 230 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 __webpack_require__(200);
-__webpack_require__(243);
+__webpack_require__(244);
 
 
 /***/ }),
-/* 230 */
+/* 231 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5152,7 +5696,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 231 */
+/* 232 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5162,14 +5706,14 @@ __webpack_require__(201);
 
 
 /***/ }),
-/* 232 */
+/* 233 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var domAlign = __webpack_require__(340);
+var domAlign = __webpack_require__(341);
 avalon.component('ms-trigger', {
     template: '<span style="display:none;"></span>',
     defaults: {
@@ -5245,42 +5789,14 @@ avalon.component('ms-trigger', {
 
 
 /***/ }),
-/* 233 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-__webpack_require__(202);
-__webpack_require__(244);
-
-
-/***/ }),
 /* 234 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-var avalon = __webpack_require__(1);
-avalon.component('ms-upload-card', {
-    template: __webpack_require__(265),
-    defaults: {
-        fileList: [],
-        getTextClass: function (file) {
-            switch (file.status) {
-                case 'done': return 'text-primary';
-                case 'uploading': return 'text-muted';
-                case 'error': return 'text-danger';
-            }
-            return '';
-        },
-        onRemove: avalon.noop,
-        del: function (file) {
-            this.onRemove(file);
-        }
-    }
-});
+__webpack_require__(202);
+__webpack_require__(245);
 
 
 /***/ }),
@@ -5291,7 +5807,7 @@ avalon.component('ms-upload-card', {
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-avalon.component('ms-upload-list', {
+avalon.component('ms-upload-card', {
     template: __webpack_require__(266),
     defaults: {
         fileList: [],
@@ -5313,9 +5829,31 @@ avalon.component('ms-upload-list', {
 
 /***/ }),
 /* 236 */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-// removed by extract-text-webpack-plugin
+"use strict";
+
+exports.__esModule = true;
+var avalon = __webpack_require__(1);
+avalon.component('ms-upload-list', {
+    template: __webpack_require__(267),
+    defaults: {
+        fileList: [],
+        getTextClass: function (file) {
+            switch (file.status) {
+                case 'done': return 'text-primary';
+                case 'uploading': return 'text-muted';
+                case 'error': return 'text-danger';
+            }
+            return '';
+        },
+        onRemove: avalon.noop,
+        del: function (file) {
+            this.onRemove(file);
+        }
+    }
+});
+
 
 /***/ }),
 /* 237 */
@@ -5375,136 +5913,142 @@ avalon.component('ms-upload-list', {
 /* 246 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-calendar\">\n    <table class=\"ane-calendar-year-view\">\n        <tbody>\n            <tr :for=\"（i, row) in @table\">\n                <td class=\"ane-calendar-cell\"\n                    :class=\"[\n                                (@isSelected(cell) ? 'ane-calendar-selected-day' : ''),\n                                (@view > 1 && (i + j === 0 || i * j === 6) ? 'ane-calendar-prev-month-cell' : '')\n                            ]\"\n                    :for=\"(j, cell) in row\">\n                    <div class=\"ane-calendar-date\" :click=\"@handleCellClick(cell)\">{{cell.label}}</div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 /* 247 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-calendar\">\n    <div class=\"row\" ms-if=\"@showHeader\">\n        <div class=\"col-md-2 col-md-offset-4\">\n            <ms-select :widget=\"{value:[@currentYear],options:@currentYearOptions,onChange:@handleYearChange}\"></ms-select>\n        </div>\n        <div class=\"col-md-2\">\n            <ms-select :widget=\"{value:[@currentMonth],options:@monthOptions,onChange:@handleMonthChange}\"></ms-select>\n        </div>\n    </div>\n    <table>\n        <thead>\n            <tr>\n                <th class=\"ane-calendar-column-header\" :for=\"day in @weekdays\">{{day}}</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr :for=\"week in @table\">\n                <td class=\"ane-calendar-cell\" :class=\"el.className\" :for=\"el in week\">\n                    <div class=\"ane-calendar-date\" :click=\"@handleDateClick(el) | stop\">{{el.date}}</div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
+module.exports = "<div class=\"ane-calendar\">\n    <table class=\"ane-calendar-year-view\">\n        <tbody>\n            <tr :for=\"（i, row) in @table\">\n                <td class=\"ane-calendar-cell\"\n                    :class=\"[\n                                (@isSelected(cell) ? 'ane-calendar-selected-day' : ''),\n                                (@view > 1 && (i + j === 0 || i * j === 6) ? 'ane-calendar-prev-month-cell' : '')\n                            ]\"\n                    :for=\"(j, cell) in row\">\n                    <div class=\"ane-calendar-date\" :click=\"@handleCellClick(cell)\">{{cell.label}}</div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
 
 /***/ }),
 /* 248 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"checkbox-group\">\n    <ms-checkbox \n        :widget=\"{\n            checked:@selection.indexOf(option.value)!=-1,\n            group:true,\n            onChange:function(){\n                @toggleOption(option)\n            },\n            disabled:'disabled' in option?option.disabled:@disabled\n        }\" \n        :for=\"option in options\">{{option.label}}</ms-checkbox>\n</div>"
+module.exports = "<div class=\"ane-calendar\">\n    <div class=\"row\" ms-if=\"@showHeader\">\n        <div class=\"col-md-2 col-md-offset-4\">\n            <ms-select :widget=\"{value:[@currentYear],options:@currentYearOptions,onChange:@handleYearChange}\"></ms-select>\n        </div>\n        <div class=\"col-md-2\">\n            <ms-select :widget=\"{value:[@currentMonth],options:@monthOptions,onChange:@handleMonthChange}\"></ms-select>\n        </div>\n    </div>\n    <table>\n        <thead>\n            <tr>\n                <th class=\"ane-calendar-column-header\" :for=\"day in @weekdays\">{{day}}</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr :for=\"week in @table\">\n                <td class=\"ane-calendar-cell\" :class=\"el.className\" :for=\"el in week\">\n                    <div class=\"ane-calendar-date\" :click=\"@handleDateClick(el) | stop\">{{el.date}}</div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
 
 /***/ }),
 /* 249 */
 /***/ (function(module, exports) {
 
-module.exports = "<div :class=\"@wrapper\" class=\"ane-checkbox\" style=\"margin-top: 0; margin-bottom: 0;\">\n    <label class=\"ane-checkbox-inner ane-checkbox-inner-ie\">\n        <input type=\"checkbox\"\n            :class=\"[@indeterminate?'ane-checkbox-indeterminate':'']\"\n            :attr=\"{id:@helpId,disabled:@disabled}\"\n            :duplex-checked=\"@checked\"\n            data-duplex-changed=\"@onChange\"\n            />\n        <span class=\"text\"></span>\n    </label>\n    <label :attr=\"{'for':@helpId}\" style=\"padding-left: 0;\" :css=\"{marginRight:@group?8:0}\"><slot /></label>\n</div>"
+module.exports = "<div class=\"checkbox-group\">\n    <ms-checkbox \n        :widget=\"{\n            checked:@selection.indexOf(option.value)!=-1,\n            group:true,\n            onChange:function(){\n                @toggleOption(option)\n            },\n            disabled:'disabled' in option?option.disabled:@disabled\n        }\" \n        :for=\"option in options\">{{option.label}}</ms-checkbox>\n</div>"
 
 /***/ }),
 /* 250 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-datepicker-panel\" style=\"overflow: auto\">\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 0\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 1, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <a class=\"ane-datepicker-prev-month-btn\" :click=\"mutate('subtract', 1, 'months')\">\n            <i class=\"fa fa-angle-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(1)\">{{@currentMonth}}</a>\n            <a class=\"ane-datepicker-year-select\" :click=\"@changeView(2)\">{{@currentYear}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'months')\">\n            <i class=\"fa fa-angle-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 1\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 1, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(2)\">{{@currentYear}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 2\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 10, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(3)\">{{@startOfDecade + '-' + (@startOfDecade + 9)}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 10, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 3\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 100, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>{{@startOfCentury + '-' + (@startOfCentury + 99)}}</span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 100, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode < 0 && @showTime\">\n        <span>\n            <a class=\"ane-datepicker-month-select\">{{@currentMonth}}</a>\n            <a class=\"ane-datepicker-month-select\">{{@currentDay}}</a>\n            <a class=\"ane-datepicker-year-select\">{{@currentYear}}</a>\n        </span>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode === 0\">\n        <ms-calendar :widget=\"{value:@currentDateArray,showHeader:false,disabledDate:@disabledDate,onChange:@handleCalendarChange}\"></ms-calendar>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode > 0\">\n        <ms-calendar-year-view :widget=\"{currentMonth:@currentMonth,currentYear:@currentYear,view:@viewMode,onSelect:@handleYearViewSelect}\"></ms-calendar-year-view>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode === -1\">\n        <ms-timepicker-view :widget=\"{value:@currentDateArray,onChange:@handleTimepickerChange}\"></ms-timepicker-view>\n    </div>\n    <div class=\"ane-datepicker-panel-footer\" :visible=\"@viewMode === 0 && !@showTime\">\n        <span class=\"ane-datepicker-panel-footer-btn\">\n            <a class=\"ane-datepicker-panel-today-btn\" :click=\"@today\">今天</a>\n        </span>\n    </div>\n    <div class=\"ane-datepicker-panel-footer\" :visible=\"@viewMode <= 0 && @showTime\">\n        <span class=\"ane-datepicker-panel-footer-btn\">\n            <a class=\"ane-datepicker-panel-now-btn\" :click=\"@today\">此刻</a>\n            <a class=\"ane-datepicker-panel-ok-btn\" :click=\"@complete\">确定</a>\n            <a class=\"ane-datepicker-panel-timepicker-btn\" :click=\"@changeView(@viewMode > -1 ? -1 : 0)\">{{@viewMode > -1 ? '选择时间' : '选择日期'}}</a>\n        </span>\n    </div>\n</div>"
+module.exports = "<div :class=\"@wrapper\" class=\"ane-checkbox\" style=\"margin-top: 0; margin-bottom: 0;\">\n    <label class=\"ane-checkbox-inner ane-checkbox-inner-ie\">\n        <input type=\"checkbox\"\n            :class=\"[@indeterminate?'ane-checkbox-indeterminate':'']\"\n            :attr=\"{id:@helpId,disabled:@disabled}\"\n            :duplex-checked=\"@checked\"\n            data-duplex-changed=\"@onChange\"\n            />\n        <span class=\"text\"></span>\n    </label>\n    <label :attr=\"{'for':@helpId}\" style=\"padding-left: 0;\" :css=\"{marginRight:@group?8:0}\"><slot /></label>\n</div>"
 
 /***/ }),
 /* 251 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-datepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-calendar ane-datepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-datepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-datepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-datepicker-panel\" style=\"overflow: auto\">\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 0\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 1, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <a class=\"ane-datepicker-prev-month-btn\" :click=\"mutate('subtract', 1, 'months')\">\n            <i class=\"fa fa-angle-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(1)\">{{@currentMonth}}</a>\n            <a class=\"ane-datepicker-year-select\" :click=\"@changeView(2)\">{{@currentYear}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'months')\">\n            <i class=\"fa fa-angle-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 1\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 1, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(2)\">{{@currentYear}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 2\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 10, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(3)\">{{@startOfDecade + '-' + (@startOfDecade + 9)}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 10, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 3\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 100, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>{{@startOfCentury + '-' + (@startOfCentury + 99)}}</span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 100, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode < 0 && @showTime\">\n        <span>\n            <a class=\"ane-datepicker-month-select\">{{@currentMonth}}</a>\n            <a class=\"ane-datepicker-month-select\">{{@currentDay}}</a>\n            <a class=\"ane-datepicker-year-select\">{{@currentYear}}</a>\n        </span>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode === 0\">\n        <ms-calendar :widget=\"{value:@currentDateArray,showHeader:false,disabledDate:@disabledDate,onChange:@handleCalendarChange}\"></ms-calendar>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode > 0\">\n        <ms-calendar-year-view :widget=\"{currentMonth:@currentMonth,currentYear:@currentYear,view:@viewMode,onSelect:@handleYearViewSelect}\"></ms-calendar-year-view>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode === -1\">\n        <ms-timepicker-view :widget=\"{value:@currentDateArray,onChange:@handleTimepickerChange}\"></ms-timepicker-view>\n    </div>\n    <div class=\"ane-datepicker-panel-footer\" :visible=\"@viewMode === 0 && !@showTime\">\n        <span class=\"ane-datepicker-panel-footer-btn\">\n            <a class=\"ane-datepicker-panel-today-btn\" :click=\"@today\">今天</a>\n        </span>\n    </div>\n    <div class=\"ane-datepicker-panel-footer\" :visible=\"@viewMode <= 0 && @showTime\">\n        <span class=\"ane-datepicker-panel-footer-btn\">\n            <a class=\"ane-datepicker-panel-now-btn\" :click=\"@today\">此刻</a>\n            <a class=\"ane-datepicker-panel-ok-btn\" :click=\"@complete\">确定</a>\n            <a class=\"ane-datepicker-panel-timepicker-btn\" :click=\"@changeView(@viewMode > -1 ? -1 : 0)\">{{@viewMode > -1 ? '选择时间' : '选择日期'}}</a>\n        </span>\n    </div>\n</div>"
 
 /***/ }),
 /* 252 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"form-group has-feedback\" :css=\"[@inline && @inlineFormGroupStyle]\" :class=\"[@className,(@hasRules && @dirty ? (@reasons.length ? 'has-error' : 'has-success') : '')]\">\n    <label class=\"control-label\" :if=\"@label.length\">{{@label}}</label>\n    <slot />\n    <i class=\"form-control-feedback\" :if=\"@hasRules && @showIcon\" :class=\"[(@dirty ? 'glyphicon' : ''), (@reasons.length ? 'glyphicon-remove' : 'glyphicon-ok')]\" :visible=\"@dirty\"></i>\n    <small class=\"help-block\" :css=\"[@inline && @inlineMessageStyle]\" :if=\"@hasRules && @reasons.length\">{{@reasons.length ? @reasons[0].message : ''}}</small>\n</div>"
+module.exports = "<div class=\"ane-datepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-calendar ane-datepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-datepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-datepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 253 */
 /***/ (function(module, exports) {
 
-module.exports = "<input type=\"text\" class=\"form-control\" \n    :duplex=\"@text\" \n    :attr=\"{name:@col,placeholder:@placeholder}\" \n    :css=\"{width:@width}\"\n    data-duplex-changed=\"@handleChange\">"
+module.exports = "<div class=\"form-group has-feedback\" :css=\"[@inline && @inlineFormGroupStyle]\" :class=\"[@className,(@hasRules && @dirty ? (@reasons.length ? 'has-error' : 'has-success') : '')]\">\n    <label class=\"control-label\" :if=\"@label.length\">{{@label}}</label>\n    <slot />\n    <i class=\"form-control-feedback\" :if=\"@hasRules && @showIcon\" :class=\"[(@dirty ? 'glyphicon' : ''), (@reasons.length ? 'glyphicon-remove' : 'glyphicon-ok')]\" :visible=\"@dirty\"></i>\n    <small class=\"help-block\" :css=\"[@inline && @inlineMessageStyle]\" :if=\"@hasRules && @reasons.length\">{{@reasons.length ? @reasons[0].message : ''}}</small>\n</div>"
 
 /***/ }),
 /* 254 */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"ane-menu\">\n    <li :class=\"[\n                    !item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                    @openKeys.contains(item.key) ? 'ane-menu-open' : '',\n                    @selectedKeys.contains(item.key) ? 'ane-menu-item-selected' : ''\n                ]\"\n        :for=\"item in @menu\">\n        <a :click=\"handleClick(item, item.key, [item.key])\" style=\"padding-left: 24px;\">\n            <i :class=\"[item.icon]\"></i>\n            <span>{{item.title}}</span>\n            <i class=\"ane-menu-caret fa\" :class=\"[@openKeys.contains(item.key) ? 'fa-angle-up' : 'fa-angle-down']\"></i>\n        </a>\n        <ul class=\"ane-menu\">\n            <li :class=\"[\n                            !item2.children || item2.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                                @openKeys.contains(item2.key) ? 'ane-menu-open' : '',\n                                @selectedKeys.contains(item2.key) ? 'ane-menu-item-selected' : ''\n                            ]\"\n                :for=\"item2 in item.children\">\n                <a :click=\"handleClick(item2, item2.key, [item2.key,item.key])\" style=\"padding-left: 48px;\">\n                    <span>{{item2.title}}</span>\n                    <i class=\"ane-menu-caret fa\" :class=\"[@openKeys.contains(item2.key) ? 'fa-angle-up' : 'fa-angle-down']\"></i>\n                </a>\n                <ul class=\"ane-menu\">\n                    <li :class=\"[\n                                    !item3.children || item3.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                                    @selectedKeys.contains(item3.key) ? 'ane-menu-item-selected' : ''\n                                ]\"\n                        :for=\"item3 in item2.children\">\n                        <a :click=\"handleClick(item3, item3.key, [item3.key,item2.key,item.key])\" style=\"padding-left: 72px;\">{{item3.title}}</a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </li>\n</ul>"
+module.exports = "<input type=\"text\" class=\"form-control\" \n    :duplex=\"@text\" \n    :attr=\"{name:@col,placeholder:@placeholder}\" \n    :css=\"{width:@width}\"\n    data-duplex-changed=\"@handleChange\">"
 
 /***/ }),
 /* 255 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"btn-group\">\n    <a class=\"btn blue\" :attr=\"{disabled:@current===1}\" :click=\"@prevPage\">\n        <i class=\"icon-step-backward\"></i>上一页\n    </a>\n    <a class=\"btn success\">{{ @current }}/{{ Math.ceil(@total/@pageSize) }}</a>\n    <a class=\"btn blue\" :attr=\"{disabled:@current===Math.ceil(@total/@pageSize)}\" :click=\"@nextPage\">\n        <i class=\"icon-step-forward\"></i>下一页\n    </a>\n</div>"
+module.exports = "<ul class=\"ane-menu\">\n    <li :class=\"[\n                    !item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                    @openKeys.contains(item.key) ? 'ane-menu-open' : '',\n                    @selectedKeys.contains(item.key) ? 'ane-menu-item-selected' : ''\n                ]\"\n        :for=\"item in @menu\">\n        <a :click=\"handleClick(item, item.key, [item.key])\" style=\"padding-left: 24px;\">\n            <i :class=\"[item.icon]\"></i>\n            <span>{{item.title}}</span>\n            <i class=\"ane-menu-caret fa\" :class=\"[@openKeys.contains(item.key) ? 'fa-angle-up' : 'fa-angle-down']\"></i>\n        </a>\n        <ul class=\"ane-menu\">\n            <li :class=\"[\n                            !item2.children || item2.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                                @openKeys.contains(item2.key) ? 'ane-menu-open' : '',\n                                @selectedKeys.contains(item2.key) ? 'ane-menu-item-selected' : ''\n                            ]\"\n                :for=\"item2 in item.children\">\n                <a :click=\"handleClick(item2, item2.key, [item2.key,item.key])\" style=\"padding-left: 48px;\">\n                    <span>{{item2.title}}</span>\n                    <i class=\"ane-menu-caret fa\" :class=\"[@openKeys.contains(item2.key) ? 'fa-angle-up' : 'fa-angle-down']\"></i>\n                </a>\n                <ul class=\"ane-menu\">\n                    <li :class=\"[\n                                    !item3.children || item3.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                                    @selectedKeys.contains(item3.key) ? 'ane-menu-item-selected' : ''\n                                ]\"\n                        :for=\"item3 in item2.children\">\n                        <a :click=\"handleClick(item3, item3.key, [item3.key,item2.key,item.key])\" style=\"padding-left: 72px;\">{{item3.title}}</a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </li>\n</ul>"
 
 /***/ }),
 /* 256 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"checkbox-group\">\n    <ms-radio \n        :widget=\"{\n            checked:@selected,\n            value:option.value,\n            name:@helpId,\n            group:true,\n            onChange:function(){\n                @toggleOption(arguments[0], option)\n            },\n            disabled:'disabled' in option?option.disabled:@disabled\n        }\" \n        :for=\"option in options\">{{option.label}}</ms-radio>\n</div>"
+module.exports = "<div class=\"btn-group\">\n    <a class=\"btn blue\" :attr=\"{disabled:@current===1}\" :click=\"@prevPage\">\n        <i class=\"icon-step-backward\"></i>上一页\n    </a>\n    <a class=\"btn success\">{{ @current }}/{{ Math.ceil(@total/@pageSize) }}</a>\n    <a class=\"btn blue\" :attr=\"{disabled:@current===Math.ceil(@total/@pageSize)}\" :click=\"@nextPage\">\n        <i class=\"icon-step-forward\"></i>下一页\n    </a>\n</div>"
 
 /***/ }),
 /* 257 */
 /***/ (function(module, exports) {
 
-module.exports = "<div :class=\"@wrapper\" class=\"ane-radio\" style=\"margin-top: 0; margin-bottom: 0;\">\n    <label class=\"ane-radio-inner ane-radio-inner-ie\">\n        <input type=\"radio\"\n            :attr=\"{id:@helpId,disabled:@disabled,value:@value,name:@name}\"\n            :duplex=\"@checked\"\n            data-duplex-changed=\"@onChange\"\n            />\n        <span class=\"text\"></span>\n    </label>\n    <label :attr=\"{'for':@helpId}\" style=\"padding-left: 0;\" :css=\"{marginRight:@group?8:0}\"><slot /></label>\n</div>"
+module.exports = "<div class=\"checkbox-group\">\n    <ms-radio \n        :widget=\"{\n            checked:@selected,\n            value:option.value,\n            name:@helpId,\n            group:true,\n            onChange:function(){\n                @toggleOption(arguments[0], option)\n            },\n            disabled:'disabled' in option?option.disabled:@disabled\n        }\" \n        :for=\"option in options\">{{option.label}}</ms-radio>\n</div>"
 
 /***/ }),
 /* 258 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: auto\">\n    <ul class=\"ane-select-dropdown-menu\" role=\"menu\">\n        <li class=\"ane-select-dropdown-menu-item\"\n            :class=\"[\n                (@selection.some(function(){return arguments[0].value===option.value}) ? 'ane-select-dropdown-menu-item-selected' : ''),\n                (option.disabled ? 'ane-select-dropdown-menu-item-disabled' : '')\n            ]\"\n            :for=\"option in @getFilteredOptions()\"\n            :click=\"@handleOptionClick($event, option)\"\n            role=\"menuitem\">\n            {{option.label}}\n            <i class=\"fa fa-check\" :visible=\"@isMultiple\"></i>\n        </li>\n        <li class=\"ane-select-dropdown-menu-item ane-select-dropdown-menu-item-disabled\"\n            :visible=\"@getFilteredOptions().length <= 0 && @searchValue && !@loading\">无数据</li>\n        <li class=\"ane-select-dropdown-menu-item ane-select-dropdown-menu-item-disabled\"\n            :visible=\"@loading\">加载中</li>\n    </ul>\n</div>"
+module.exports = "<div :class=\"@wrapper\" class=\"ane-radio\" style=\"margin-top: 0; margin-bottom: 0;\">\n    <label class=\"ane-radio-inner ane-radio-inner-ie\">\n        <input type=\"radio\"\n            :attr=\"{id:@helpId,disabled:@disabled,value:@value,name:@name}\"\n            :duplex=\"@checked\"\n            data-duplex-changed=\"@onChange\"\n            />\n        <span class=\"text\"></span>\n    </label>\n    <label :attr=\"{'for':@helpId}\" style=\"padding-left: 0;\" :css=\"{marginRight:@group?8:0}\"><slot /></label>\n</div>"
 
 /***/ }),
 /* 259 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-select form-control\"\n    :class=\"[(@isMultiple ? 'ane-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-select-selection\" :class=\"[(@isMultiple ? 'ane-select-tags' : '')]\">\n        <li class=\"ane-select-selected\" :visible=\"!@isMultiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.label}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-select-search\">\n            <input class=\"ane-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"@mode === ''\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
+module.exports = "<div style=\"overflow: auto\">\n    <ul class=\"ane-select-dropdown-menu\" role=\"menu\">\n        <li class=\"ane-select-dropdown-menu-item\"\n            :class=\"[\n                (@selection.some(function(){return arguments[0].value===option.value}) ? 'ane-select-dropdown-menu-item-selected' : ''),\n                (option.disabled ? 'ane-select-dropdown-menu-item-disabled' : '')\n            ]\"\n            :for=\"option in @getFilteredOptions()\"\n            :click=\"@handleOptionClick($event, option)\"\n            role=\"menuitem\">\n            {{option.label}}\n            <i class=\"fa fa-check\" :visible=\"@isMultiple\"></i>\n        </li>\n        <li class=\"ane-select-dropdown-menu-item ane-select-dropdown-menu-item-disabled\"\n            :visible=\"@getFilteredOptions().length <= 0 && @searchValue && !@loading\">无数据</li>\n        <li class=\"ane-select-dropdown-menu-item ane-select-dropdown-menu-item-disabled\"\n            :visible=\"@loading\">加载中</li>\n    </ul>\n</div>"
 
 /***/ }),
 /* 260 */
 /***/ (function(module, exports) {
 
-module.exports = "<div>\n    <table class=\"table\" :loading=\"!window.isNaN(@paginationConfig.total) && @loading\">\n        <thead>\n            <tr>\n                <th :if=\"@needSelection\">\n                    <ms-checkbox :widget=\"{checked:@isAllChecked,onChange:@handleCheckAll}\"></ms-checkbox>\n                </th>\n                <th :for=\"el in @columns\">{{el.title}}</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr :for=\"($index, record) in @getCurrentPageData()\">\n                <td :if=\"@needSelection\">\n                    <ms-checkbox :widget=\"{checked:@checked.indexOf(record[@key])!=-1,onChange:function(){@handleCheck(arguments[0].target.checked,record)}}\"></ms-checkbox>\n                </td>\n                <td :for=\"col in @columns\" :html=\"col.template\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <div class=\"pull-right\">\n        <ms-pagination :widget=\"{current:@paginationConfig.current,pageSize:@paginationConfig.pageSize,total:@total,onChange:@handlePageChange}\"></ms-pagination>\n    </div>\n    <div class=\"clearfix\"></div>\n</div>"
+module.exports = "<div class=\"ane-select form-control\"\n    :class=\"[(@isMultiple ? 'ane-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-select-selection\" :class=\"[(@isMultiple ? 'ane-select-tags' : '')]\">\n        <li class=\"ane-select-selected\" :visible=\"!@isMultiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.label}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-select-search\">\n            <input class=\"ane-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"@mode === ''\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 261 */
 /***/ (function(module, exports) {
 
-module.exports = "<textarea class=\"form-control\" \n    :duplex=\"@text\" \n    :attr=\"{rows:@rows,name:@col}\"\n    data-duplex-changed=\"@handleChange\"></textarea>"
+module.exports = "<div>\n    <table class=\"table\" :loading=\"!window.isNaN(@paginationConfig.total) && @loading\">\n        <thead>\n            <tr>\n                <th :if=\"@needSelection\">\n                    <ms-checkbox :widget=\"{checked:@isAllChecked,onChange:@handleCheckAll}\"></ms-checkbox>\n                </th>\n                <th :for=\"el in @columns\">{{el.title}}</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr :for=\"($index, record) in @getCurrentPageData()\">\n                <td :if=\"@needSelection\">\n                    <ms-checkbox :widget=\"{checked:@checked.indexOf(record[@key])!=-1,onChange:function(){@handleCheck(arguments[0].target.checked,record)}}\"></ms-checkbox>\n                </td>\n                <td :for=\"col in @columns\" :html=\"col.template\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <div class=\"pull-right\">\n        <ms-pagination :widget=\"{current:@paginationConfig.current,pageSize:@paginationConfig.pageSize,total:@total,onChange:@handlePageChange}\"></ms-pagination>\n    </div>\n    <div class=\"clearfix\"></div>\n</div>"
 
 /***/ }),
 /* 262 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-timepicker-view\">\n    <div class=\"ane-timepicker-view-combobox\">\n        <div class=\"ane-timepicker-view-select\" name=\"hour-options\">\n            <ul>\n                <li :for=\"hour in @hourOptions\"\n                    :class=\"[(hour==@currentHour?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(hour, 'hour')\">{{hour}}</li>\n            </ul>\n        </div>\n        <div class=\"ane-timepicker-view-select\" name=\"minute-options\">\n            <ul>\n                <li :for=\"minute in @minuteOptions\"\n                    :class=\"[(minute==@currentMinute?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(minute, 'minute')\">{{minute}}</li>\n            </ul>\n        </div>\n        <div class=\"ane-timepicker-view-select\" name=\"second-options\">\n            <ul>\n                <li :for=\"second in @secondOptions\"\n                    :class=\"[(second==@currentSecond?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(second, 'second')\">{{second}}</li>\n            </ul>\n        </div>\n    </div>\n</div>"
+module.exports = "<textarea class=\"form-control\" \n    :duplex=\"@text\" \n    :attr=\"{rows:@rows,name:@col}\"\n    data-duplex-changed=\"@handleChange\"></textarea>"
 
 /***/ }),
 /* 263 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-clock-o ane-timepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-timepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-timepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-timepicker-view\">\n    <div class=\"ane-timepicker-view-combobox\">\n        <div class=\"ane-timepicker-view-select\" name=\"hour-options\">\n            <ul>\n                <li :for=\"hour in @hourOptions\"\n                    :class=\"[(hour==@currentHour?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(hour, 'hour')\">{{hour}}</li>\n            </ul>\n        </div>\n        <div class=\"ane-timepicker-view-select\" name=\"minute-options\">\n            <ul>\n                <li :for=\"minute in @minuteOptions\"\n                    :class=\"[(minute==@currentMinute?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(minute, 'minute')\">{{minute}}</li>\n            </ul>\n        </div>\n        <div class=\"ane-timepicker-view-select\" name=\"second-options\">\n            <ul>\n                <li :for=\"second in @secondOptions\"\n                    :class=\"[(second==@currentSecond?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(second, 'second')\">{{second}}</li>\n            </ul>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 /* 264 */
 /***/ (function(module, exports) {
 
-module.exports = "<ul id=\"treeDemo\" class=\"ztree\"></ul>"
+module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-clock-o ane-timepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-timepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-timepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 265 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-upload-card\">\n    <div class=\"ane-upload-card-item\" :class=\"[(file.status === 'error' ? 'bordered-danger' : '')]\" :for=\"($index, file) in @fileList\">\n        <img :attr=\"{src:file.url,alt:file.name,title:file.name}\">\n        <span class=\"ane-upload-card-progress\" :visible=\"file.status === 'uploading'\">上传中 {{file.progress}}%</span>\n        <span class=\"ane-upload-card-tool\">\n            <i class=\"fa fa-eye\"></i>\n            <i class=\"fa fa-trash-o\" :click=\"del(file)\"></i>\n        </span>\n    </div>\n</div>"
+module.exports = "<ul class=\"ztree\"></ul>"
 
 /***/ }),
 /* 266 */
 /***/ (function(module, exports) {
 
-module.exports = "<ul class=\"ane-upload-list\">\n    <li :for=\"($index, file) in @fileList\"\n        :class=\"[@getTextClass(file)]\">\n        <div class=\"ane-upload-list-info\">\n            <i class=\"fa fa-file-o text-muted\"></i>\n            <span :attr=\"{title:file.name}\">{{file.name}}</span>\n        </div>\n        <i class=\"fa fa-times ane-upload-btn-close\" :click=\"del(file)\"></i>\n        <span class=\"ane-upload-list-progress\" :visible=\"file.status === 'uploading'\">上传中 {{file.progress}}%</span>\n        <i class=\"fa fa-check-circle text-success\" :class=\"[(file.status === 'done' ? '' : 'hide')]\"></i>\n    </li>\n</ul>"
+module.exports = "<div class=\"ane-upload-card\">\n    <div class=\"ane-upload-card-item\" :class=\"[(file.status === 'error' ? 'bordered-danger' : '')]\" :for=\"($index, file) in @fileList\">\n        <img :attr=\"{src:file.url,alt:file.name,title:file.name}\">\n        <span class=\"ane-upload-card-progress\" :visible=\"file.status === 'uploading'\">上传中 {{file.progress}}%</span>\n        <span class=\"ane-upload-card-tool\">\n            <i class=\"fa fa-eye\"></i>\n            <i class=\"fa fa-trash-o\" :click=\"del(file)\"></i>\n        </span>\n    </div>\n</div>"
 
 /***/ }),
 /* 267 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-upload-container\">\n    <div class=\"ane-upload-card-wall\" :if=\"@showUploadList && @listType==='picture-card'\">\n        <ms-upload-card :widget=\"{fileList: @fileList, onRemove: @handleRemove}\"></ms-upload-card>\n    </div>\n    <label :visible=\"!@showUploadList && @listType==='picture-card' && @fileList.length > 0\" class=\"ane-upload-card-item\" :attr=\"{'for':@helpId}\">\n        <img :attr=\"{src:@fileList[0]?@fileList[0].url:blankImg,alt:@fileList[0]?@fileList[0].name:'',title:@fileList[0]?@fileList[0].name:''}\">\n    </label>\n    <label :visible=\"@showUploadList || @fileList.length == 0\" :class=\"[(@listType==='picture-card'?@cardClass:@btnClass)]\" :attr=\"{'for':@helpId}\"><slot /></label>\n    <form><input type=\"file\" name=\"file\" :attr=\"{id:@helpId}\"></form>\n    <div :if=\"@showUploadList && @listType!=='picture-card'\">\n        <ms-upload-list :widget=\"{fileList: @fileList, onRemove: @handleRemove}\"></ms-upload-list>\n    </div>\n</div>"
+module.exports = "<ul class=\"ane-upload-list\">\n    <li :for=\"($index, file) in @fileList\"\n        :class=\"[@getTextClass(file)]\">\n        <div class=\"ane-upload-list-info\">\n            <i class=\"fa fa-file-o text-muted\"></i>\n            <span :attr=\"{title:file.name}\">{{file.name}}</span>\n        </div>\n        <i class=\"fa fa-times ane-upload-btn-close\" :click=\"del(file)\"></i>\n        <span class=\"ane-upload-list-progress\" :visible=\"file.status === 'uploading'\">上传中 {{file.progress}}%</span>\n        <i class=\"fa fa-check-circle text-success\" :class=\"[(file.status === 'done' ? '' : 'hide')]\"></i>\n    </li>\n</ul>"
 
 /***/ }),
 /* 268 */
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"ane-upload-container\">\n    <div class=\"ane-upload-card-wall\" :if=\"@showUploadList && @listType==='picture-card'\">\n        <ms-upload-card :widget=\"{fileList: @fileList, onRemove: @handleRemove}\"></ms-upload-card>\n    </div>\n    <label :visible=\"!@showUploadList && @listType==='picture-card' && @fileList.length > 0\" class=\"ane-upload-card-item\" :attr=\"{'for':@helpId}\">\n        <img :attr=\"{src:@fileList[0]?@fileList[0].url:blankImg,alt:@fileList[0]?@fileList[0].name:'',title:@fileList[0]?@fileList[0].name:''}\">\n    </label>\n    <label :visible=\"@showUploadList || @fileList.length == 0\" :class=\"[(@listType==='picture-card'?@cardClass:@btnClass)]\" :attr=\"{'for':@helpId}\"><slot /></label>\n    <form><input type=\"file\" name=\"file\" :attr=\"{id:@helpId}\"></form>\n    <div :if=\"@showUploadList && @listType!=='picture-card'\">\n        <ms-upload-list :widget=\"{fileList: @fileList, onRemove: @handleRemove}\"></ms-upload-list>\n    </div>\n</div>"
+
+/***/ }),
+/* 269 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {__webpack_require__(188);
@@ -5560,7 +6104,6 @@ avalon.scan(document.body);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
 
 /***/ }),
-/* 269 */,
 /* 270 */,
 /* 271 */,
 /* 272 */,
@@ -5635,44 +6178,45 @@ avalon.scan(document.body);
 /* 341 */,
 /* 342 */,
 /* 343 */,
-/* 344 */
+/* 344 */,
+/* 345 */
 /***/ (function(module, exports) {
 
 module.exports = "<ms-menu :widget=\"{menu:@menu,openKeys:@openKeys,selectedKeys:@selectedKeys,onClick:@handleMenuClick,onOpenChange:@handleOpenChange}\"></ms-menu>"
 
 /***/ }),
-/* 345 */,
 /* 346 */,
-/* 347 */
+/* 347 */,
+/* 348 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ }),
-/* 348 */,
-/* 349 */
+/* 349 */,
+/* 350 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "line_conn.png";
 
 /***/ }),
-/* 350 */
+/* 351 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "loading.gif";
 
 /***/ }),
-/* 351 */
+/* 352 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "metro.gif";
 
 /***/ }),
-/* 352 */
+/* 353 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "metro.png";
 
 /***/ })
-],[268]);
+],[269]);
 });
