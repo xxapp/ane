@@ -39,7 +39,7 @@ avalon.define({
             ]},
         {key: 6, title: "fff", children: []}
     ],
-    checkedKeys: [],
+    checkedKeys: [10, 11, 12],
     handleCheck(checkedKeys) {
         console.log(checkedKeys);
     }
