@@ -39,7 +39,7 @@ avalon.component('ms-tree', {
         },
         onInit(event) {
             var treeObj = $.fn.zTree.init($(event.target), {
-                check: { enable: true },
+                check: { enable: this.checkable },
                 data: {
                     key: {
                         name: 'title'
