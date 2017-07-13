@@ -10,6 +10,7 @@ import './components/ms-select';
 import './components/ms-upload';
 import './components/ms-datepicker';
 import './components/ms-timepicker';
+import './components/ms-tree-select';
 import './components/ms-checkbox';
 import './components/ms-checkbox/ms-checkbox-group';
 import './components/ms-radio';

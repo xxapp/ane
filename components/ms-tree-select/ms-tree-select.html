@@ -1,0 +1,38 @@
+<div class="ane-tree-select form-control"
+    :class="[(@multiple ? 'ane-tree-select-multiple' : '')]"
+    :css="{width:@width}"
+    :click="@handleClick"
+    role="combobox"
+    aria-autocomplete="list"
+    aria-haspopup="true"
+    :attr="{'aria-expanded': @panelVisible + ''}">
+    <ul class="ane-tree-select-selection" :class="[(@multiple ? 'ane-tree-select-tags' : '')]">
+        <li class="ane-tree-select-selected" :visible="!@multiple && (!@showSearch || !@panelVisible)">{{@displayValue}}</li>
+        <li class="ane-tree-select-choice" :for="choice in @selection">
+            <span>{{choice.label}}</span>
+            <i class="fa fa-times" :click="@removeSelection($event, choice) | stop"></i>
+        </li>
+        <li class="ane-tree-select-search">
+            <input class="ane-tree-select-search-field"
+                name="search"
+                type="text"
+                autocomplete="off"
+                :duplex="@searchValue"
+                :css="{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}"
+                :keydown="@handleDelete" />
+        </li>
+    </ul>
+    <i class="fa ane-tree-select-arrow"
+        :class="[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]"
+        :visible="@mode === ''"></i>
+    <ms-trigger :widget="{
+        width: @panelWidth,
+        visible: @panelVisible,
+        innerVmId: @panelVmId,
+        innerClass: @panelClass,
+        innerTemplate: @panelTemplate,
+        withInBox: @withInBox,
+        getTarget: @getTarget,
+        onHide: @handlePanelHide}">
+    </ms-trigger>
+</div>

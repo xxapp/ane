@@ -74,6 +74,15 @@ module.exports = [{
              });
          }
     }, {
+        key: 'component-demo-tree-select-tree-select',
+        title: 'tree-select 树选择',
+        uri: '/tree-select',
+        location: function (resolve) {
+             require.ensure([], function () {
+                 resolve(require('../components/ms-tree-select/ms-tree-select.md'));
+             });
+         }
+    }, {
         key: 'component-demo-form-control',
         title: 'form-control 表单控件',
         uri: '/form-control',
