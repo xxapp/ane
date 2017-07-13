@@ -40,11 +40,7 @@ const travel = item => {
     if (!item.children || item.children.length === 0) {
         routeConfig.push({
             path: item.uri,
-            component(resolve) {
-                require.ensure([], function () {
-                    resolve(require('../components/' + item.location));
-                });
-            }
+            component: item.location
         });
     } else {
         item.children.map(travel);
