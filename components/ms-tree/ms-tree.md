@@ -54,7 +54,8 @@ avalon.define({
 | tree | 树数据 | TreeNode\[\] | \[\] |
 | expandedKeys | 展开的父节点的 key 集合 | string\[\] | \[\] |
 | checkedKeys | 勾选的节点的 key 集合 | string\[\] | \[\] |
-| onCheck | 勾选节点的回调 | function(string\[\]) | noop |
+| onCheck | 勾选节点的回调 | function(checkedKeys, e:{checked: bool, checkedNodes, node, event}) | noop |
+| onCheck | 选择节点的回调 | function(selectedKeys, e:{selected: bool, selectedNodes, node, event}) | noop |
 
 
 TreeNode

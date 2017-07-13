@@ -12,15 +12,30 @@ avalon.component('ms-tree', {
         tree: [],
         expandedKeys: [],
         checkedKeys: [],
+        selectedKeys: [],
         onCheck: avalon.noop,
-        onCheckInner: avalon.noop,
-        handleCheck(el) {
-            if (!el.checked) {
-                this.checkedKeys.remove(el.key);
+        onSelect: avalon.noop,
+        handleCheck(e, treeId, node) {
+            if (!node.checked) {
+                this.checkedKeys.remove(node.key);
             } else {
-                this.checkedKeys.push(el.key);
+                this.checkedKeys.push(node.key);
             }
-            this.onCheck(this.checkedKeys.toJSON());
+            this.onCheck(this.checkedKeys.toJSON(), {
+                checked: node.checked,
+                checkedNodes: [],
+                node: node,
+                event: e
+            });
+        },
+        handleSelect(e, treeId, node, clickFlag) {
+            this.selectedKeys = [node.key];
+            this.onSelect(this.selectedKeys.toJSON(), {
+                selected: clickFlag,
+                checkedNodes: [],
+                node: node,
+                event: e
+            });
         },
         onInit(event) {
             var treeObj = $.fn.zTree.init($(event.target), {
@@ -32,7 +47,10 @@ avalon.component('ms-tree', {
                 },
                 callback: {
                     onCheck: (e, treeId, node) => {
-                        this.handleCheck(node);
+                        this.handleCheck(e, treeId, node);
+                    },
+                    onClick: (e, treeId, node, clickFlag) => {
+                        this.handleSelect(e, treeId, node, clickFlag);
                     }
                 }
             }, this.tree.toJSON());
