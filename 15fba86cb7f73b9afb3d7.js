@@ -1,13 +1,13 @@
 webpackJsonpindex([1],{
 
-/***/ 365:
+/***/ 372:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_avalon2__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_avalon2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_avalon2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ane__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ane__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ane___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ane__);
 
 
@@ -95,7 +95,13 @@ avalon.define({
 <tr>
 <td>onCheck</td>
 <td>勾选节点的回调</td>
-<td>function(string[])</td>
+<td>function(checkedKeys, e:{checked: bool, checkedNodes, node, event})</td>
+<td>noop</td>
+</tr>
+<tr>
+<td>onCheck</td>
+<td>选择节点的回调</td>
+<td>function(selectedKeys, e:{selected: bool, selectedNodes, node, event})</td>
 <td>noop</td>
 </tr>
 </tbody>

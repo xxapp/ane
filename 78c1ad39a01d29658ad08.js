@@ -1,60 +1,60 @@
-webpackJsonpindex([17],{
+webpackJsonpindex([7],{
 
-/***/ 349:
+/***/ 366:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_avalon2__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_avalon2___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_avalon2__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ane__ = __webpack_require__(193);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ane__ = __webpack_require__(195);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ane___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ane__);
 
 
-const name = 'component-demo-checkbox-checkbox';
+const name = 'component-demo-radio-radio';
 /* harmony export (immutable) */ __webpack_exports__["name"] = name;
-__WEBPACK_IMPORTED_MODULE_0_avalon2__["component"](name, {    template: `<div><h2>多选框</h2>
+__WEBPACK_IMPORTED_MODULE_0_avalon2__["component"](name, {    template: `<div><h2>单选框</h2>
 <h3>基本用法</h3>
 <div>
-    <ms-checkbox>checkbox</ms-checkbox>
+    <ms-radio>radio</ms-radio>
 </div>
 <pre><code :skip="true" class="language-html">&lt;div&gt;
-    &lt;ms-checkbox&gt;checkbox&lt;/ms-checkbox&gt;
+    &lt;ms-radio&gt;radio&lt;/ms-radio&gt;
 &lt;/div&gt;
 </code></pre>
 <h3>单选框组</h3>
-<div :controller="doc-checkbox-group">
-    <ms-checkbox-group :widget="{
+<div :controller="doc-radio-group">
+    <ms-radio-group :widget="{
         options:[
-            { label: '编程', value: 'code' },
-            { label: '其他', value: 'other' }
+            { label: '男', value: 'M' },
+            { label: '女', value: 'F' }
         ],
         onChange:@handleChange
     }">
-    </ms-checkbox-group>
+    </ms-radio-group>
 </div>
-<pre><code :skip="true" class="language-html">&lt;div :controller=&quot;doc-checkbox-group&quot;&gt;
-    &lt;ms-checkbox-group :widget=&quot;{
+<pre><code :skip="true" class="language-html">&lt;div :controller=&quot;doc-radio-group&quot;&gt;
+    &lt;ms-radio-group :widget=&quot;{
         options:[
-            { label: '编程', value: 'code' },
-            { label: '其他', value: 'other' }
+            { label: '男', value: 'M' },
+            { label: '女', value: 'F' }
         ],
         onChange:@handleChange
     }&quot;&gt;
-    &lt;/ms-checkbox-group&gt;
+    &lt;/ms-radio-group&gt;
 &lt;/div&gt;
 </code></pre>
 <pre><code :skip="true" class="language-js">import 'ane';
 
 const vm = avalon.define({
-    $id: 'doc-checkbox-group',
+    $id: 'doc-radio-group',
     handleChange(e) {
         console.log(e.target.value);
     }
 });
 </code></pre>
 <h3>组件参数</h3>
-<p>checkbox</p>
+<p>radio</p>
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -74,8 +74,8 @@ const vm = avalon.define({
 <tr>
 <td>checked</td>
 <td>当前选择的 value 值</td>
-<td>boolean</td>
-<td>false</td>
+<td>string</td>
+<td>''</td>
 </tr>
 <tr>
 <td>value</td>
@@ -95,15 +95,9 @@ const vm = avalon.define({
 <td>function(e)</td>
 <td>noop</td>
 </tr>
-<tr>
-<td>indeterminate</td>
-<td>设置半选状态，只负责样式控制</td>
-<td>boolean</td>
-<td>false</td>
-</tr>
 </tbody>
 </table>
-<p>radio-checkbox</p>
+<p>radio-group</p>
 <table class="table table-bordered">
 <thead>
 <tr>
@@ -114,12 +108,6 @@ const vm = avalon.define({
 </tr>
 </thead>
 <tbody>
-<tr>
-<td>value</td>
-<td>选中的值数组</td>
-<td>string[]</td>
-<td>[]</td>
-</tr>
 <tr>
 <td>disabled</td>
 <td>是否禁用所有选项</td>
@@ -135,12 +123,12 @@ const vm = avalon.define({
 </tbody>
 </table>
 <blockquote>
-<p>radio-checkbox 继承 <a href="#!/form-control">ms-control 组件</a> 的所有参数</p>
+<p>radio-group 继承 <a href="#!/form-control">ms-control 组件</a> 的所有参数</p>
 </blockquote>
 </div>`});
 
 const vm = __WEBPACK_IMPORTED_MODULE_0_avalon2__["define"]({
-    $id: 'doc-checkbox-group',
+    $id: 'doc-radio-group',
     handleChange(e) {
         console.log(e.target.value);
     }
