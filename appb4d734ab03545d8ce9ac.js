@@ -859,6 +859,7 @@ function default_1(cmpVm) {
     }
     return avalon.define({
         $id: cmpVm.panelVmId,
+        checkedKeys: [],
         selection: [],
         loading: false,
         multiple: cmpVm.multiple,
@@ -878,26 +879,41 @@ function default_1(cmpVm) {
             return reg.test(el.label) || reg.test(el.value);
         },
         handleSelect: function (selectedKeys, e) {
-            if (e.node.disabled) {
+            if (this.multiple || e.node.disabled) {
                 return false;
             }
-            if (cmpVm.multiple) {
-                if (this.selection.some(function (o) { return o.key === e.node.key; })) {
-                    this.selection.removeAll(function (o) { return o.key === e.node.key; });
-                }
-                else {
-                    this.selection.push(e.node);
-                }
-                cmpVm.focusSearch();
-            }
-            else {
-                this.selection = [e.node];
-                cmpVm.panelVisible = false;
-            }
+            this.selection = [{
+                    key: e.node.key,
+                    title: e.node.title
+                }];
+            cmpVm.panelVisible = false;
             var selection = this.selection.toJSON();
             var value = selection.map(function (s) { return s.key; });
             cmpVm.handleChange({
-                target: { value: cmpVm.multiple ? value : value[0] || '' },
+                target: { value: value[0] || '' },
+                type: 'tree-select'
+            });
+            cmpVm.displayValue = e.node.title;
+            cmpVm.selection = selection;
+        },
+        handleCheck: function (checkedKeys, e) {
+            if (!this.multiple || e.node.disabled) {
+                return false;
+            }
+            this.selection = e.checkedNodes.map(function (n) { return ({ key: n.key, title: n.title }); });
+            // if (e.checked) {
+            //     this.selection.push({
+            //         key: e.node.key,
+            //         title: e.node.title
+            //     });
+            // } else {
+            //     this.selection.removeAll(o => o.key === e.node.key);
+            // }
+            cmpVm.focusSearch();
+            var selection = this.selection.toJSON();
+            var value = selection.map(function (s) { return s.key; });
+            cmpVm.handleChange({
+                target: { value: value },
                 type: 'tree-select'
             });
             cmpVm.displayValue = e.node.title;
@@ -3972,13 +3988,13 @@ module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i
 /* 304 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: auto\">\n    <ms-tree :widget=\"{checkable: multiple,tree: @treeData, onSelect:@handleSelect}\"></ms-tree>\n</div>"
+module.exports = "<div style=\"overflow: auto\">\n    <ms-tree :widget=\"{checkable: @multiple,tree: @treeData, onSelect:@handleSelect, onCheck:@handleCheck}\"></ms-tree>\n</div>"
 
 /***/ }),
 /* 305 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-tree-select form-control\"\n    :class=\"[(@multiple ? 'ane-tree-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-tree-select-selection\" :class=\"[(@multiple ? 'ane-tree-select-tags' : '')]\">\n        <li class=\"ane-tree-select-selected\" :visible=\"!@multiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-tree-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.label}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-tree-select-search\">\n            <input class=\"ane-tree-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-tree-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"@mode === ''\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-tree-select form-control\"\n    :class=\"[(@multiple ? 'ane-tree-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-tree-select-selection\" :class=\"[(@multiple ? 'ane-tree-select-tags' : '')]\">\n        <li class=\"ane-tree-select-selected\" :visible=\"!@multiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-tree-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.title}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-tree-select-search\">\n            <input class=\"ane-tree-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-tree-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"!@multiple\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 306 */
@@ -6039,8 +6055,8 @@ ms_control_1["default"].extend({
             if ((e.which === 8 || e.which === 46) && this.searchValue === '') {
                 this.selection.removeAt(this.selection.length - 1);
                 var selection = this.selection.toJSON();
-                var value = selection.map(function (s) { return s.value; });
-                avalon.vmodels[this.panelVmId].selection = selection;
+                var value = selection.map(function (s) { return s.key; });
+                avalon.vmodels[this.panelVmId].checkedKeys = value;
                 this.handleChange({
                     target: { value: this.multiple ? value : value[0] || '' },
                     type: 'tree-select'
@@ -6048,9 +6064,9 @@ ms_control_1["default"].extend({
             }
         },
         removeSelection: function (e, option) {
-            this.selection.removeAll(function (o) { return o.value === option.value; });
+            this.selection.removeAll(function (o) { return o.key === option.key; });
             var selection = this.selection.toJSON();
-            var value = selection.map(function (s) { return s.value; });
+            var value = selection.map(function (s) { return s.key; });
             avalon.vmodels[this.panelVmId].selection = selection;
             this.focusSearch();
             this.handleChange({
@@ -6092,13 +6108,6 @@ ms_control_1["default"].extend({
             var innerVm = ms_tree_select_panel_1["default"](this);
             this.$watch('searchValue', ane_util_1.debounce(function (v) {
                 innerVm.searchValue = v;
-                if (_this.remote && !!v) {
-                    innerVm.loading = true;
-                    _this.remoteMethod(v).then(function (options) {
-                        innerVm.loading = false;
-                        innerVm.options = options;
-                    });
-                }
             }));
             this.$watch('multiple', function (v) {
                 innerVm.multiple = v;
@@ -6136,15 +6145,18 @@ avalon.component('ms-tree', {
         onCheck: avalon.noop,
         onSelect: avalon.noop,
         handleCheck: function (e, treeId, node) {
-            if (!node.checked) {
-                this.checkedKeys.remove(node.key);
-            }
-            else {
-                this.checkedKeys.push(node.key);
-            }
-            this.onCheck(this.checkedKeys.toJSON(), {
+            var treeObj = $.fn.zTree.getZTreeObj(treeId);
+            var checkedNodes = treeObj.getNodesByFilter(function (n) {
+                var parentNode = n.getParentNode();
+                var checkStatus = n.getCheckStatus();
+                var parentCheckStatus = parentNode ? parentNode.getCheckStatus() : { checked: false, half: false };
+                return (checkStatus.checked && !checkStatus.half) && (!parentCheckStatus.checked || parentCheckStatus.half);
+            });
+            var checkedKeys = checkedNodes.map(function (n) { return n.key; });
+            this.checkedKeys = checkedKeys;
+            this.onCheck(checkedKeys, {
                 checked: node.checked,
-                checkedNodes: [],
+                checkedNodes: checkedNodes,
                 node: node,
                 event: e
             });
@@ -6153,7 +6165,9 @@ avalon.component('ms-tree', {
             this.selectedKeys = [node.key];
             this.onSelect(this.selectedKeys.toJSON(), {
                 selected: clickFlag,
-                checkedNodes: [],
+                checkedNodes: [{
+                        key: node.key, title: node.title
+                    }],
                 node: node,
                 event: e
             });
