@@ -43,8 +43,8 @@ controlComponent.extend({
             if ((e.which === 8 || e.which === 46) && this.searchValue === '') {
                 this.selection.removeAt(this.selection.length - 1);
                 const selection = this.selection.toJSON();
-                const value = selection.map(s => s.value);
-                avalon.vmodels[this.panelVmId].selection = selection;
+                const value = selection.map(s => s.key);
+                avalon.vmodels[this.panelVmId].checkedKeys = value;
                 this.handleChange({
                     target: { value: this.multiple ? value : value[0] || '' },
                     type: 'tree-select'
@@ -52,9 +52,9 @@ controlComponent.extend({
             }
         },
         removeSelection(e, option) {
-            this.selection.removeAll(o => o.value === option.value);
+            this.selection.removeAll(o => o.key === option.key);
             const selection = this.selection.toJSON();
-            const value = selection.map(s => s.value);
+            const value = selection.map(s => s.key);
             avalon.vmodels[this.panelVmId].selection = selection;
             this.focusSearch();
             this.handleChange({
@@ -99,13 +99,6 @@ controlComponent.extend({
             const innerVm = getPanelVm(this);
             this.$watch('searchValue', debounce(v => {
                 innerVm.searchValue = v;
-                if (this.remote && !!v) {
-                    innerVm.loading = true;
-                    this.remoteMethod(v).then(options => {
-                        innerVm.loading = false
-                        innerVm.options = options;
-                    });
-                }
             }));
             this.$watch('multiple', v => {
                 innerVm.multiple = v;

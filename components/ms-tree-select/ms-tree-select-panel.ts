@@ -7,6 +7,7 @@ export default function (cmpVm) {
 
     return avalon.define({
         $id: cmpVm.panelVmId,
+        checkedKeys: [],
         selection: [],
         loading: false,
         multiple: cmpVm.multiple,
@@ -26,24 +27,45 @@ export default function (cmpVm) {
             return reg.test(el.label) || reg.test(el.value);
         },
         handleSelect(selectedKeys, e) {
-            if (e.node.disabled) {
+            if (this.multiple || e.node.disabled) {
                 return false;
             }
-            if (cmpVm.multiple) {
-                if (this.selection.some(o => o.key === e.node.key)) {
-                    this.selection.removeAll(o => o.key === e.node.key);
-                } else {
-                    this.selection.push(e.node);
-                }
-                cmpVm.focusSearch();
-            } else {
-                this.selection = [e.node];
-                cmpVm.panelVisible = false;
-            }
+            
+            this.selection = [{
+                key: e.node.key,
+                title: e.node.title
+            }];
+            cmpVm.panelVisible = false;
+
             const selection = this.selection.toJSON();
             const value = selection.map(s => s.key);
             cmpVm.handleChange({
-                target: { value: cmpVm.multiple ? value : value[0] || '' },
+                target: { value: value[0] || '' },
+                type: 'tree-select'
+            });
+            cmpVm.displayValue = e.node.title;
+            cmpVm.selection = selection;
+        },
+        handleCheck(checkedKeys, e) {
+            if (!this.multiple || e.node.disabled) {
+                return false;
+            }
+
+            this.selection = e.checkedNodes.map(n => ({ key: n.key, title: n.title }));
+            // if (e.checked) {
+            //     this.selection.push({
+            //         key: e.node.key,
+            //         title: e.node.title
+            //     });
+            // } else {
+            //     this.selection.removeAll(o => o.key === e.node.key);
+            // }
+            cmpVm.focusSearch();
+
+            const selection = this.selection.toJSON();
+            const value = selection.map(s => s.key);
+            cmpVm.handleChange({
+                target: { value: value },
                 type: 'tree-select'
             });
             cmpVm.displayValue = e.node.title;

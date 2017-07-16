@@ -9,7 +9,7 @@
     <ul class="ane-tree-select-selection" :class="[(@multiple ? 'ane-tree-select-tags' : '')]">
         <li class="ane-tree-select-selected" :visible="!@multiple && (!@showSearch || !@panelVisible)">{{@displayValue}}</li>
         <li class="ane-tree-select-choice" :for="choice in @selection">
-            <span>{{choice.label}}</span>
+            <span>{{choice.title}}</span>
             <i class="fa fa-times" :click="@removeSelection($event, choice) | stop"></i>
         </li>
         <li class="ane-tree-select-search">
@@ -24,7 +24,7 @@
     </ul>
     <i class="fa ane-tree-select-arrow"
         :class="[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]"
-        :visible="@mode === ''"></i>
+        :visible="!@multiple"></i>
     <ms-trigger :widget="{
         width: @panelWidth,
         visible: @panelVisible,
