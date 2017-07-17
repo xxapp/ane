@@ -72,7 +72,7 @@ const vm1 = avalon.define({
     },
     fetch(params = {}) {
         vm1.loading = true;
-        $.getJSON('/api/demo', params).then(data => {
+        $.getJSON('http://easy-mock.com/mock/58ff1b7c5e43ae5dbea5eff3/api/demo', params).then(data => {
             vm1.pagination.total = data.total;
             data.rows[0].region_parent_id = Date.now();
             vm1.remoteList = data.rows;
