@@ -4,7 +4,7 @@
 
 ```html
 <div :controller="tree">
-    <ms-tree-select :widget="{treeData: @data,multiple:false}"></ms-tree>
+    <ms-tree-select :widget="{treeData: @data,multiple:true}"></ms-tree>
 </div>
 ```
 
