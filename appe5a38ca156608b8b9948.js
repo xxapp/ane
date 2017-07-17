@@ -3988,7 +3988,7 @@ module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i
 /* 304 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: auto\">\n    <ms-tree :widget=\"{checkable: @multiple,tree: @treeData, onSelect:@handleSelect, onCheck:@handleCheck}\"></ms-tree>\n</div>"
+module.exports = "<div style=\"overflow: auto\">\n    <xmp is=\"ms-tree\" :widget=\"{checkable: @multiple,tree: @treeData, onSelect:@handleSelect, onCheck:@handleCheck}\"></xmp>\n</div>"
 
 /***/ }),
 /* 305 */

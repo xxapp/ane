@@ -16,10 +16,10 @@ const name = 'component-demo-tree-select-tree-select';
 __WEBPACK_IMPORTED_MODULE_0_avalon2__["component"](name, {    template: `<div><h2>树选择组件</h2>
 <h3>基本用法</h3>
 <div :controller="tree">
-    <ms-tree-select :widget="{treeData: @data,multiple:false}"></ms-tree>
+    <ms-tree-select :widget="{treeData: @data,multiple:true}"></ms-tree>
 </div>
 <pre><code :skip="true" class="language-html">&lt;div :controller=&quot;tree&quot;&gt;
-    &lt;ms-tree-select :widget=&quot;{treeData: @data,multiple:false}&quot;&gt;&lt;/ms-tree&gt;
+    &lt;ms-tree-select :widget=&quot;{treeData: @data,multiple:true}&quot;&gt;&lt;/ms-tree&gt;
 &lt;/div&gt;
 </code></pre>
 <pre><code :skip="true" class="language-js">import 'ane';

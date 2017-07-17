@@ -93,7 +93,7 @@ const vm1 = avalon.define({
     },
     fetch(params = {}) {
         vm1.loading = true;
-        $.getJSON('/api/demo', params).then(data =&gt; {
+        $.getJSON('http://easy-mock.com/mock/58ff1b7c5e43ae5dbea5eff3/api/demo', params).then(data =&gt; {
             vm1.pagination.total = data.total;
             data.rows[0].region_parent_id = Date.now();
             vm1.remoteList = data.rows;
@@ -232,7 +232,7 @@ const vm1 = __WEBPACK_IMPORTED_MODULE_0_avalon2__["define"]({
     },
     fetch(params = {}) {
         vm1.loading = true;
-        __WEBPACK_IMPORTED_MODULE_1_jquery__["getJSON"]('/api/demo', params).then(data => {
+        __WEBPACK_IMPORTED_MODULE_1_jquery__["getJSON"]('http://easy-mock.com/mock/58ff1b7c5e43ae5dbea5eff3/api/demo', params).then(data => {
             vm1.pagination.total = data.total;
             data.rows[0].region_parent_id = Date.now();
             vm1.remoteList = data.rows;
