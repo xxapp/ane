@@ -132,7 +132,7 @@ avalon.define({
 <tr>
 <td>children</td>
 <td>子节点</td>
-<td>TreeNodep[]</td>
+<td>TreeNode[]</td>
 <td>-</td>
 </tr>
 </tbody>

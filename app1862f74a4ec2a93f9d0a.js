@@ -857,7 +857,7 @@ function default_1(cmpVm) {
     if (avalon.vmodels[cmpVm.panelVmId] !== undefined) {
         return avalon.vmodels[cmpVm.panelVmId];
     }
-    return avalon.define({
+    var vm = avalon.define({
         $id: cmpVm.panelVmId,
         checkedKeys: [],
         selection: [],
@@ -920,6 +920,7 @@ function default_1(cmpVm) {
             cmpVm.selection = selection;
         }
     });
+    return vm;
 }
 exports["default"] = default_1;
 
@@ -3988,7 +3989,7 @@ module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i
 /* 304 */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"overflow: auto\">\n    <xmp is=\"ms-tree\" :widget=\"{checkable: @multiple,tree: @treeData, onSelect:@handleSelect, onCheck:@handleCheck}\"></xmp>\n</div>"
+module.exports = "<div style=\"overflow: auto\">\n    <xmp is=\"ms-tree\" :widget=\"{checkable: @multiple,tree: @treeData, checkedKeys:@checkedKeys, onSelect:@handleSelect, onCheck:@handleCheck}\"></xmp>\n</div>"
 
 /***/ }),
 /* 305 */
@@ -6067,7 +6068,7 @@ ms_control_1["default"].extend({
             this.selection.removeAll(function (o) { return o.key === option.key; });
             var selection = this.selection.toJSON();
             var value = selection.map(function (s) { return s.key; });
-            avalon.vmodels[this.panelVmId].selection = selection;
+            avalon.vmodels[this.panelVmId].checkedKeys = value;
             this.focusSearch();
             this.handleChange({
                 target: { value: this.multiple ? value : value[0] || '' },
@@ -6153,7 +6154,7 @@ avalon.component('ms-tree', {
                 return (checkStatus.checked && !checkStatus.half) && (!parentCheckStatus.checked || parentCheckStatus.half);
             });
             var checkedKeys = checkedNodes.map(function (n) { return n.key; });
-            this.checkedKeys = checkedKeys;
+            //this.checkedKeys = checkedKeys
             this.onCheck(checkedKeys, {
                 checked: node.checked,
                 checkedNodes: checkedNodes,
@@ -6190,8 +6191,12 @@ avalon.component('ms-tree', {
                     }
                 }
             }, this.tree.toJSON());
-            treeObj.getNodesByFilter(function (n) { return _this.checkedKeys.contains(n.key); }).forEach(function (n) {
-                treeObj.checkNode(n, true, true);
+            this.$fire('checkedKeys', this.checkedKeys);
+            this.$watch('checkedKeys', function (v) {
+                treeObj.checkAllNodes(false);
+                treeObj.getNodesByFilter(function (n) { return v.contains(n.key); }).forEach(function (n) {
+                    treeObj.checkNode(n, true, true);
+                });
             });
         }
     }
