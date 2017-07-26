@@ -25,7 +25,7 @@ avalon.component('ms-tree', {
             });
             const checkedKeys = checkedNodes.map(n => n.key);
             
-            this.checkedKeys = checkedKeys
+            //this.checkedKeys = checkedKeys
             this.onCheck(checkedKeys, {
                 checked: node.checked,
                 checkedNodes: checkedNodes,
@@ -62,8 +62,13 @@ avalon.component('ms-tree', {
                 }
             }, this.tree.toJSON());
 
-            treeObj.getNodesByFilter(n => this.checkedKeys.contains(n.key)).forEach(n => {
-                treeObj.checkNode(n, true, true);
+            this.$fire('checkedKeys', this.checkedKeys);
+
+            this.$watch('checkedKeys', v => {
+                treeObj.checkAllNodes(false);
+                treeObj.getNodesByFilter(n => v.contains(n.key)).forEach(n => {
+                    treeObj.checkNode(n, true, true);
+                });
             });
         }
     }

@@ -5,7 +5,7 @@ export default function (cmpVm) {
         return avalon.vmodels[cmpVm.panelVmId];
     }
 
-    return avalon.define({
+    const vm = avalon.define({
         $id: cmpVm.panelVmId,
         checkedKeys: [],
         selection: [],
@@ -72,4 +72,6 @@ export default function (cmpVm) {
             cmpVm.selection = selection;
         }
     });
+
+    return vm;
 }

@@ -55,7 +55,7 @@ controlComponent.extend({
             this.selection.removeAll(o => o.key === option.key);
             const selection = this.selection.toJSON();
             const value = selection.map(s => s.key);
-            avalon.vmodels[this.panelVmId].selection = selection;
+                avalon.vmodels[this.panelVmId].checkedKeys = value;
             this.focusSearch();
             this.handleChange({
                 target: { value: this.multiple ? value : value[0] || '' },

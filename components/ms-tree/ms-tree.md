@@ -64,4 +64,4 @@ TreeNode
 |-----|-----|-----|-----|
 | title | 标题 | string | - |
 | key | 节点标识 | string | - |
-| children | 子节点 | TreeNodep\[\] | - |
+| children | 子节点 | TreeNode\[\] | - |

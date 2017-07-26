@@ -46,3 +46,17 @@ avalon.define({
 
 | 参数 | 说明 | 类型 | 默认值 |
 |-----|-----|-----|-----|
+| value | 默认值 | string\[\] | \[\] |
+| multiple | 是否多选 | boolean | false |
+| treeData | 树数据 | TreeNode\[\] | \[\] |
+| showSearch | 是否显示搜索框 | boolean | false |
+
+> 继承 [ms-control 组件](#!/form-control) 的所有参数
+
+TreeNode
+
+| 参数 | 说明 | 类型 | 默认值 |
+|-----|-----|-----|-----|
+| title | 标题 | string | - |
+| key | 节点标识 | string | - |
+| children | 子节点 | TreeNode\[\] | - |
