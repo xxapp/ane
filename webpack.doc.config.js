@@ -145,6 +145,7 @@ var config = {
 module.exports = function (env) {
     if (env && env.production) {
         config.plugins.unshift(new es3ifyPlugin());
+        config.watch = false;
         delete config.devtool;
     }
     return config;
