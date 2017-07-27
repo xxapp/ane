@@ -108,6 +108,7 @@ var config = {
             ane: path.resolve(__dirname, "index.ts")
         }
     },
+    watch: true,
     plugins: [
         extractLess,
         extractCss,
