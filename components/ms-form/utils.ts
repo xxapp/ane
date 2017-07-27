@@ -8,7 +8,7 @@ export function emitToFormItem(vmodel, options = {}): void {
     vmodel.$formItem.onFieldChange({
         name: vmodel.col,
         rules: vmodel.$rules,
-        value: vmodel.value,
+        value: vmodel.value.toJSON ? vmodel.value.toJSON() : vmodel.value,
         denyValidate: true,
         ...options
     });

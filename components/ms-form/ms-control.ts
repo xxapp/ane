@@ -13,6 +13,7 @@ export default avalon.component('ms-control', {
         onChange: avalon.noop,
         emitValue(e) {
             let v = e.target.value;
+            v = v.toJSON ? v.toJSON() : v;
             this.$formItem && this.$formItem.onFormChange({
                 name: this.col, value: v, denyValidate: e.denyValidate
             });

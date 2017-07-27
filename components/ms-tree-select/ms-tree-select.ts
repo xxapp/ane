@@ -75,11 +75,13 @@ controlComponent.extend({
         
         // 生命周期
         mapValueToSelection(value) {
-            // this.selection = this.options.filter(o => value.contains(o.value));
-            // if (this.selection.length > 0) {
-            //     this.displayValue = this.selection[0].label;
-            // }
-            // avalon.vmodels[this.panelVmId].selection = this.selection.toJSON();
+            const nodes = [];
+            getTreeNodesByKeys({children:this.treeData}, value, nodes);
+            if (nodes.length) {
+                this.displayValue = nodes[0].title;
+            }
+            avalon.vmodels[this.panelVmId].checkedKeys = value;
+            this.selection = nodes.map(n => ({ key: n.key, title: n.title }));
         },
         onInit(event) {
             const self = this;
@@ -87,7 +89,7 @@ controlComponent.extend({
             emitToFormItem(this);
             this.$watch('value', v => {
                 const value = v.toJSON();
-                this.mapValueToSelection(v);
+                this.mapValueToSelection(value);
                 this.handleChange({
                     target: { value: this.multiple ? value : value[0] || '' },
                     denyValidate: true,
@@ -103,10 +105,21 @@ controlComponent.extend({
             this.$watch('multiple', v => {
                 innerVm.multiple = v;
             });
-            this.mapValueToSelection(this.value);
+            const value = this.value.toJSON();
+            this.mapValueToSelection(value);
         },
         onDispose() {
             delete avalon.vmodels[this.panelVmId];
         }
     }
 });
+
+function getTreeNodesByKeys(root, keys, results) {
+    if (keys.indexOf(root.key) > -1) {
+        results.push(root);
+    } else {
+        for (var i = 0; i < root.children.length; i++) {
+            getTreeNodesByKeys(root.children[i], keys, results);
+        }
+    }
+}

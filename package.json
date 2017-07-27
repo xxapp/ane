@@ -4,10 +4,7 @@
   "description": "avalonjs components package",
   "main": "dist/ane.js",
   "files": [
-    "dist/ane.js",
-    "dist/ane.css",
-    "dist/layout.js",
-    "dist/layout.css"
+    "dist/*"
   ],
   "scripts": {
     "start": "webpack --config webpack.test.config.js",
@@ -21,10 +18,10 @@
     "version": "npm run pub"
   },
   "peerDependencies": {
-    "avalon2": "^2.2.7"
+    "avalon2": "^2.2.7",
+    "jquery": "^1.12.4"
   },
   "dependencies": {
-    "jquery": "^1.12.4",
     "async-validator": "^1.6.8",
     "bootbox": "^4.4.0",
     "dom-align": "^1.5.3",
