@@ -32,6 +32,7 @@ exports["default"] = avalon.component('ms-control', {
         onChange: avalon.noop,
         emitValue: function (e) {
             var v = e.target.value;
+            v = v.toJSON ? v.toJSON() : v;
             this.$formItem && this.$formItem.onFormChange({
                 name: this.col, value: v, denyValidate: e.denyValidate
             });
@@ -66,7 +67,7 @@ function emitToFormItem(vmodel, options) {
     if (vmodel.$formItem === null) {
         return;
     }
-    vmodel.$formItem.onFieldChange(__assign({ name: vmodel.col, rules: vmodel.$rules, value: vmodel.value, denyValidate: true }, options));
+    vmodel.$formItem.onFieldChange(__assign({ name: vmodel.col, rules: vmodel.$rules, value: vmodel.value.toJSON ? vmodel.value.toJSON() : vmodel.value, denyValidate: true }, options));
 }
 exports.emitToFormItem = emitToFormItem;
 
@@ -6086,11 +6087,13 @@ ms_control_1["default"].extend({
         },
         // 生命周期
         mapValueToSelection: function (value) {
-            // this.selection = this.options.filter(o => value.contains(o.value));
-            // if (this.selection.length > 0) {
-            //     this.displayValue = this.selection[0].label;
-            // }
-            // avalon.vmodels[this.panelVmId].selection = this.selection.toJSON();
+            var nodes = [];
+            getTreeNodesByKeys({ children: this.treeData }, value, nodes);
+            if (nodes.length) {
+                this.displayValue = nodes[0].title;
+            }
+            avalon.vmodels[this.panelVmId].checkedKeys = value;
+            this.selection = nodes.map(function (n) { return ({ key: n.key, title: n.title }); });
         },
         onInit: function (event) {
             var _this = this;
@@ -6098,7 +6101,7 @@ ms_control_1["default"].extend({
             utils_1.emitToFormItem(this);
             this.$watch('value', function (v) {
                 var value = v.toJSON();
-                _this.mapValueToSelection(v);
+                _this.mapValueToSelection(value);
                 _this.handleChange({
                     target: { value: _this.multiple ? value : value[0] || '' },
                     denyValidate: true,
@@ -6113,13 +6116,24 @@ ms_control_1["default"].extend({
             this.$watch('multiple', function (v) {
                 innerVm.multiple = v;
             });
-            this.mapValueToSelection(this.value);
+            var value = this.value.toJSON();
+            this.mapValueToSelection(value);
         },
         onDispose: function () {
             delete avalon.vmodels[this.panelVmId];
         }
     }
 });
+function getTreeNodesByKeys(root, keys, results) {
+    if (keys.indexOf(root.key) > -1) {
+        results.push(root);
+    }
+    else {
+        for (var i = 0; i < root.children.length; i++) {
+            getTreeNodesByKeys(root.children[i], keys, results);
+        }
+    }
+}
 
 
 /***/ }),
@@ -6191,13 +6205,20 @@ avalon.component('ms-tree', {
                     }
                 }
             }, this.tree.toJSON());
-            this.$fire('checkedKeys', this.checkedKeys);
             this.$watch('checkedKeys', function (v) {
-                treeObj.checkAllNodes(false);
-                treeObj.getNodesByFilter(function (n) { return v.contains(n.key); }).forEach(function (n) {
-                    treeObj.checkNode(n, true, true);
-                });
+                if (_this.checkable) {
+                    treeObj.checkAllNodes(false);
+                    treeObj.getNodesByFilter(function (n) { return v.contains(n.key); }).forEach(function (n) {
+                        treeObj.checkNode(n, true, true);
+                    });
+                }
+                else {
+                    treeObj.getNodesByFilter(function (n) { return v.contains(n.key); }).forEach(function (n) {
+                        treeObj.selectNode(n);
+                    });
+                }
             });
+            this.$fire('checkedKeys', this.checkedKeys);
         }
     }
 });
