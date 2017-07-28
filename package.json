@@ -30,7 +30,7 @@
     "up-loader": "0.0.8"
   },
   "devDependencies": {
-    "ane-markdown-loader": "^2.0.1",
+    "ane-markdown-loader": "^2.0.15",
     "avalon2": "^2.2.7",
     "bootstrap": "^3.2.0",
     "css-loader": "^0.28.4",
