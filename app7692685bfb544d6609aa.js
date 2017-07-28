@@ -8,7 +8,7 @@
 	else
 		root["index"] = factory();
 })(this, function() {
-return webpackJsonpindex([20],[
+return webpackJsonpindex([22],[
 /* 0 */,
 /* 1 */,
 /* 2 */,
@@ -247,6 +247,24 @@ avalon.component('ms-checkbox', {
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = [{
+    key: 'component-demo-README',
+    title: '主页',
+    uri: '/',
+    location: function (resolve) {
+        __webpack_require__.e/* require.ensure */(19).then((function () {
+            resolve(__webpack_require__(356));
+        }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
+    }
+}, {
+    key: 'component-demo-CHANGELOG',
+    title: '升级日志',
+    uri: '/changelog',
+    location: function (resolve) {
+        __webpack_require__.e/* require.ensure */(20).then((function () {
+            resolve(__webpack_require__(355));
+        }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
+    }
+}, {
     key: 'components',
     title: '组件',
     children: [{
@@ -255,7 +273,7 @@ module.exports = [{
         uri: '/input',
         location: function (resolve) {
             __webpack_require__.e/* require.ensure */(13).then((function () {
-                resolve(__webpack_require__(360));
+                resolve(__webpack_require__(362));
             }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
         }
     }, {
@@ -264,7 +282,7 @@ module.exports = [{
         uri: '/textarea',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(4).then((function () {
-                 resolve(__webpack_require__(369));
+                 resolve(__webpack_require__(371));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -273,7 +291,7 @@ module.exports = [{
         uri: '/select',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(6).then((function () {
-                 resolve(__webpack_require__(367));
+                 resolve(__webpack_require__(369));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -282,7 +300,7 @@ module.exports = [{
         uri: '/radio',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(7).then((function () {
-                 resolve(__webpack_require__(366));
+                 resolve(__webpack_require__(368));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -291,7 +309,7 @@ module.exports = [{
         uri: '/checkbox',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(18).then((function () {
-                 resolve(__webpack_require__(355));
+                 resolve(__webpack_require__(357));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -300,7 +318,7 @@ module.exports = [{
         uri: '/datepicker',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(17).then((function () {
-                 resolve(__webpack_require__(356));
+                 resolve(__webpack_require__(358));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -309,7 +327,7 @@ module.exports = [{
         uri: '/timepicker',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(3).then((function () {
-                 resolve(__webpack_require__(370));
+                 resolve(__webpack_require__(372));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -318,7 +336,7 @@ module.exports = [{
         uri: '/upload',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(0).then((function () {
-                 resolve(__webpack_require__(373));
+                 resolve(__webpack_require__(375));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -327,7 +345,7 @@ module.exports = [{
         uri: '/tree-select',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(2).then((function () {
-                 resolve(__webpack_require__(371));
+                 resolve(__webpack_require__(373));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -336,7 +354,7 @@ module.exports = [{
         uri: '/form-control',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(15).then((function () {
-                 resolve(__webpack_require__(358));
+                 resolve(__webpack_require__(360));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -345,7 +363,7 @@ module.exports = [{
         uri: '/form',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(14).then((function () {
-                 resolve(__webpack_require__(359));
+                 resolve(__webpack_require__(361));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -354,7 +372,7 @@ module.exports = [{
         uri: '/menu',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(11).then((function () {
-                 resolve(__webpack_require__(362));
+                 resolve(__webpack_require__(364));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -363,7 +381,7 @@ module.exports = [{
         uri: '/table',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(5).then((function () {
-                 resolve(__webpack_require__(368));
+                 resolve(__webpack_require__(370));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -372,7 +390,7 @@ module.exports = [{
         uri: '/pagination',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(8).then((function () {
-                 resolve(__webpack_require__(365));
+                 resolve(__webpack_require__(367));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -381,7 +399,7 @@ module.exports = [{
         uri: '/tree',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(1).then((function () {
-                 resolve(__webpack_require__(372));
+                 resolve(__webpack_require__(374));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -390,7 +408,7 @@ module.exports = [{
         uri: '/dialog',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(16).then((function () {
-                 resolve(__webpack_require__(357));
+                 resolve(__webpack_require__(359));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -399,7 +417,7 @@ module.exports = [{
         uri: '/loading',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(12).then((function () {
-                 resolve(__webpack_require__(361));
+                 resolve(__webpack_require__(363));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -408,7 +426,7 @@ module.exports = [{
         uri: '/message',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(10).then((function () {
-                 resolve(__webpack_require__(363));
+                 resolve(__webpack_require__(365));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -417,7 +435,7 @@ module.exports = [{
         uri: '/notification',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(9).then((function () {
-                 resolve(__webpack_require__(364));
+                 resolve(__webpack_require__(366));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }]
