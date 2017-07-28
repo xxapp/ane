@@ -13,7 +13,7 @@
 npm install ane --save
 ```
 
-``` js
+``` javascript
 import * as avalon from 'avalon2';
 import 'ane';
 // 打印一下会发现组件库已经挂在 avalon 上了

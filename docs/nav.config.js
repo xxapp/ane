@@ -1,4 +1,22 @@
 module.exports = [{
+    key: 'component-demo-README',
+    title: '主页',
+    uri: '/',
+    location: function (resolve) {
+        require.ensure([], function () {
+            resolve(require('../README.md?noEval=true'));
+        });
+    }
+}, {
+    key: 'component-demo-CHANGELOG',
+    title: '升级日志',
+    uri: '/changelog',
+    location: function (resolve) {
+        require.ensure([], function () {
+            resolve(require('../CHANGELOG.md'));
+        });
+    }
+}, {
     key: 'components',
     title: '组件',
     children: [{
