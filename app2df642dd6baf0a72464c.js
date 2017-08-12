@@ -3725,7 +3725,7 @@ var avalon = __webpack_require__(1);
 avalon.config({
     debug: true
 });
-if (avalon.msie === 8) {
+if (avalon.msie < 8) {
     Object.defineProperty = function (obj, property, meta) {
         obj[property] = meta.value;
     }
@@ -4731,6 +4731,7 @@ Form.prototype.validateField = function (fieldName, field) {
         return __generator(this, function (_b) {
             switch (_b.label) {
                 case 0:
+                    field = field || this.fields[fieldName];
                     rules = field.rules;
                     value = getValue(this.record, fieldName);
                     result = { isOk: true, name: fieldName };
