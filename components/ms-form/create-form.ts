@@ -61,6 +61,7 @@ Form.prototype.trigger = function (type: string, payload) {
 }
 
 Form.prototype.validateField = async function (fieldName, field) {
+    field = field || this.fields[fieldName];
     const rules = field.rules;
     const value = getValue(this.record, fieldName);
     let result: any = { isOk: true, name: fieldName };

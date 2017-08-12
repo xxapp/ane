@@ -37,6 +37,16 @@ const vm = avalon.define({
                 });
             }
         })
+        /*
+        // 验证某个字段
+        vm.$form.validateField('title').then(result => {
+            if (!result.isOk) {
+                message.success({
+                    content: result.message
+                });
+            }
+        })
+        */
     }
 });
 ```
@@ -110,6 +120,6 @@ $form 对象可访问的属性如下：
 | fields | 所有的字段集合 | { \[string\]: meta } |
 | setFieldsValue | 设置字段值的方法 | (fields) => void |
 | addFields | 添加字段 | (fields) => void |
-| validateField | 验证某个字段 | (fieldName, field) => Promise<{isOk: boolean, name: string, message: string}> |
+| validateField | 验证某个字段 | (fieldName) => Promise<{isOk: boolean, name: string, message: string}> |
 | validateFields | 验证多个或者所有字段 | (field?) => Promise&#x3C;boolean&#x3E; |
 | resetFields | 重置多个或者所有字段 | (field?) => void |
