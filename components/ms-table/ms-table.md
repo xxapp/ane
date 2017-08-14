@@ -6,6 +6,7 @@
 <div :controller="doc-table-local">
     <ms-table :widget="{data:@list,actions:@actions,onSelect:@handleSelect,onSelectAll:@handleSelectAll,selectionChange:@handleSelectionChange}">
         <ms-table-header :widget="{dataIndex:'id',type:'selection'}"></ms-table-header>
+        <ms-table-header :widget="{title:'序号',type:'index'}"></ms-table-header>
         <ms-table-header :widget="{title:'地址',dataIndex:'address'}"></ms-table-header>
         <ms-table-header :widget="{title:'省份',dataIndex:'province'}"></ms-table-header>
         <ms-table-header :widget="{title:'名称'}"><span :skip>{{record.name}}</span></ms-table-header>

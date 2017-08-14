@@ -148,6 +148,14 @@ function getColumnConfig(descriptor, level = 1) {
         if (column.props.type == 'selection') {
             return acc;
         }
+        if (column.props.type == 'index') {
+            acc.push({
+                title: column.props.title,
+                dataIndex: '',
+                template: '{{$index + 1}}'
+            });
+            return acc;
+        }
         let inlineTemplate = column.inlineTemplate;
         inlineTemplate = inlineTemplate.replace(/(ms-|:)skip="[^"]*"/g, '');
         inlineTemplate = inlineTemplate.replace(/<\s*ms-table-header[^>]*>.*<\/\s*ms-table-header\s*>/g, '');
