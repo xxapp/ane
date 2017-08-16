@@ -65,3 +65,5 @@ TreeNode
 | title | 标题 | string | - |
 | key | 节点标识 | string | - |
 | children | 子节点 | TreeNode\[\] | - |
+
+> 关于 TreeNode 的更多配置，请参考 [z-tree 官方文档](http://www.treejs.cn/v3/main.php)
