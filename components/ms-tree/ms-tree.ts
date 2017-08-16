@@ -37,7 +37,7 @@ avalon.component('ms-tree', {
             this.selectedKeys = [node.key];
             this.onSelect(this.selectedKeys.toJSON(), {
                 selected: clickFlag,
-                checkedNodes: [{
+                selectedNodes: [{
                     key: node.key, title: node.title
                 }],
                 node: node,
@@ -45,22 +45,25 @@ avalon.component('ms-tree', {
             });
         },
         onInit(event) {
-            var treeObj = $.fn.zTree.init($(event.target), {
-                check: { enable: this.checkable },
-                data: {
-                    key: {
-                        name: 'title'
-                    }
-                },
-                callback: {
-                    onCheck: (e, treeId, node) => {
-                        this.handleCheck(e, treeId, node);
+            var initTree = (el, tree) => {
+                return $.fn.zTree.init($(el), {
+                    check: { enable: this.checkable },
+                    data: {
+                        key: {
+                            name: 'title'
+                        }
                     },
-                    onClick: (e, treeId, node, clickFlag) => {
-                        this.handleSelect(e, treeId, node, clickFlag);
+                    callback: {
+                        onCheck: (e, treeId, node) => {
+                            this.handleCheck(e, treeId, node);
+                        },
+                        onClick: (e, treeId, node, clickFlag) => {
+                            this.handleSelect(e, treeId, node, clickFlag);
+                        }
                     }
-                }
-            }, this.tree.toJSON());
+                }, tree);
+            };
+            var treeObj = initTree(event.target, this.tree.toJSON());
 
             this.$watch('checkedKeys', v => {
                 if (this.checkable) {
@@ -73,6 +76,10 @@ avalon.component('ms-tree', {
                         treeObj.selectNode(n);
                     });
                 }
+            });
+
+            this.$watch('tree', v => {
+                treeObj = initTree(event.target, v.toJSON());
             });
 
             this.$fire('checkedKeys', this.checkedKeys);
