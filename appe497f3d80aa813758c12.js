@@ -6207,7 +6207,7 @@ avalon.component('ms-tree', {
             this.selectedKeys = [node.key];
             this.onSelect(this.selectedKeys.toJSON(), {
                 selected: clickFlag,
-                checkedNodes: [{
+                selectedNodes: [{
                         key: node.key, title: node.title
                     }],
                 node: node,
@@ -6216,22 +6216,25 @@ avalon.component('ms-tree', {
         },
         onInit: function (event) {
             var _this = this;
-            var treeObj = $.fn.zTree.init($(event.target), {
-                check: { enable: this.checkable },
-                data: {
-                    key: {
-                        name: 'title'
-                    }
-                },
-                callback: {
-                    onCheck: function (e, treeId, node) {
-                        _this.handleCheck(e, treeId, node);
+            var initTree = function (el, tree) {
+                return $.fn.zTree.init($(el), {
+                    check: { enable: _this.checkable },
+                    data: {
+                        key: {
+                            name: 'title'
+                        }
                     },
-                    onClick: function (e, treeId, node, clickFlag) {
-                        _this.handleSelect(e, treeId, node, clickFlag);
+                    callback: {
+                        onCheck: function (e, treeId, node) {
+                            _this.handleCheck(e, treeId, node);
+                        },
+                        onClick: function (e, treeId, node, clickFlag) {
+                            _this.handleSelect(e, treeId, node, clickFlag);
+                        }
                     }
-                }
-            }, this.tree.toJSON());
+                }, tree);
+            };
+            var treeObj = initTree(event.target, this.tree.toJSON());
             this.$watch('checkedKeys', function (v) {
                 if (_this.checkable) {
                     treeObj.checkAllNodes(false);
@@ -6244,6 +6247,9 @@ avalon.component('ms-tree', {
                         treeObj.selectNode(n);
                     });
                 }
+            });
+            this.$watch('tree', function (v) {
+                treeObj = initTree(event.target, v.toJSON());
             });
             this.$fire('checkedKeys', this.checkedKeys);
         }
