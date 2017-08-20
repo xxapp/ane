@@ -12,6 +12,8 @@ avalon.component('ms-dialog', {
         size: '',
         uploading: false,
         $innerVm: '',
+        okText: '',
+        cancelText: '',
         onOk() {},
         onCancel() {},
         onInit(event) {
@@ -24,7 +26,7 @@ avalon.component('ms-dialog', {
                         size: vm.size,
                         buttons: {
                             save: {
-                                label: '保存',
+                                label: vm.okText || '保存',
                                 className: 'btn-primary',
                                 callback() {
                                     vm.onOk();
@@ -32,7 +34,7 @@ avalon.component('ms-dialog', {
                                 }
                             },
                             cancel: {
-                                label: '取消',
+                                label: vm.cancelText || '取消',
                                 className: 'btn-default',
                                 callback() {
                                     vm.onCancel();
