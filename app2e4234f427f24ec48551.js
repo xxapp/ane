@@ -4568,6 +4568,8 @@ avalon.component('ms-dialog', {
         size: '',
         uploading: false,
         $innerVm: '',
+        okText: '',
+        cancelText: '',
         onOk: function () { },
         onCancel: function () { },
         onInit: function (event) {
@@ -4581,7 +4583,7 @@ avalon.component('ms-dialog', {
                         size: vm.size,
                         buttons: {
                             save: {
-                                label: '保存',
+                                label: vm.okText || '保存',
                                 className: 'btn-primary',
                                 callback: function () {
                                     vm.onOk();
@@ -4589,7 +4591,7 @@ avalon.component('ms-dialog', {
                                 }
                             },
                             cancel: {
-                                label: '取消',
+                                label: vm.cancelText || '取消',
                                 className: 'btn-default',
                                 callback: function () {
                                     vm.onCancel();
