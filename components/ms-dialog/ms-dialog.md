@@ -120,6 +120,8 @@ avalon.define({
 |-----|-----|-----|-----|
 | show | 控制对话框是否显示 | boolean | false |
 | size | 对话框尺寸 | 'large' \| 'small' | '' |
+| okText | 自定义确认按钮文字 | string | '保存' |
+| cancelText | 自定义取消按钮文字 | string | '取消' |
 | $innerVm | 对话框内部视图的 VM id | string | '' |
 | onOk | 点击确定的回调 | function | noop |
 | onCancel | 点击取消的回调 | function | noop |
