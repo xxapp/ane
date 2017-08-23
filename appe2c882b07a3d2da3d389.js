@@ -4594,11 +4594,11 @@ avalon.component('ms-dialog', {
                                 label: vm.cancelText || '取消',
                                 className: 'btn-default',
                                 callback: function () {
-                                    vm.onCancel();
                                 }
                             }
                         }
                     }).on('hidden.bs.modal', function (e) {
+                        vm.onCancel();
                         setTimeout(function () {
                             if ($('.modal.in').length) {
                                 $('body').addClass('modal-open');
@@ -4891,7 +4891,7 @@ avalon.component('ms-form-item', {
         inlineMessageStyle: { marginBottom: 0 },
         onFieldChange: function (descriptor) {
             var _this = this;
-            this.$formVm.type !== 'search' && this.$formVm.$form.setFieldsValue((_a = {},
+            this.$formVm.type !== 'search' && this.$formVm.$form && this.$formVm.$form.setFieldsValue((_a = {},
                 _a[descriptor.name] = { value: descriptor.value, denyValidate: descriptor.denyValidate },
                 _a));
             if (!descriptor.rules)
@@ -4901,14 +4901,14 @@ avalon.component('ms-form-item', {
             }
             delete descriptor.showIcon;
             this.hasRules = true;
-            this.$formVm.$form.addFields((_b = {},
+            this.$formVm.$form && this.$formVm.$form.addFields((_b = {},
                 _b[descriptor.name] = { rules: descriptor.rules },
                 _b));
-            this.$formVm.$form.on('error' + descriptor.name, function (reasons) {
+            this.$formVm.$form && this.$formVm.$form.on('error' + descriptor.name, function (reasons) {
                 _this.dirty = true;
                 _this.reasons = reasons;
             });
-            this.$formVm.$form.on('reset', function (fields) {
+            this.$formVm.$form && this.$formVm.$form.on('reset', function (fields) {
                 if (~Object.keys(fields).indexOf(descriptor.name)) {
                     _this.dirty = false;
                     _this.reasons = [];
