@@ -27,7 +27,7 @@ avalon.component('ms-form-item', {
         inlineFormGroupStyle: { verticalAlign: 'top' },
         inlineMessageStyle: { marginBottom: 0 },
         onFieldChange(descriptor) {
-            this.$formVm.type !== 'search' && this.$formVm.$form.setFieldsValue({
+            this.$formVm.type !== 'search' && this.$formVm.$form && this.$formVm.$form.setFieldsValue({
                 [descriptor.name]: { value: descriptor.value, denyValidate: descriptor.denyValidate }
             });
             if (!descriptor.rules) return ;
@@ -36,14 +36,14 @@ avalon.component('ms-form-item', {
             }
             delete descriptor.showIcon;
             this.hasRules = true;
-            this.$formVm.$form.addFields({
+            this.$formVm.$form && this.$formVm.$form.addFields({
                 [descriptor.name]: { rules: descriptor.rules }
             });
-            this.$formVm.$form.on('error' + descriptor.name, (reasons) => {
+            this.$formVm.$form && this.$formVm.$form.on('error' + descriptor.name, (reasons) => {
                 this.dirty = true;
                 this.reasons = reasons;
             });
-            this.$formVm.$form.on('reset', fields => {
+            this.$formVm.$form && this.$formVm.$form.on('reset', fields => {
                 if (~Object.keys(fields).indexOf(descriptor.name)) {
                     this.dirty = false;
                     this.reasons = [];

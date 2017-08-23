@@ -25,6 +25,7 @@ const vm = avalon.define({
     $id: 'doc-dialog-basic',
     show: false,
     handleCancel(e) {
+        console.count('hidden');
         this.show = false;
     },
     handleOk() {
@@ -71,7 +72,7 @@ const vm1 = avalon.define({
 });
 
 avalon.define({
-    $id: 'doc-dialog-basic_form',
+    $id: 'doc-dialog-size_form',
     title: '弹出框'
 });
 ```
@@ -109,7 +110,7 @@ const vm2 = avalon.define({
 });
 
 avalon.define({
-    $id: 'doc-dialog-basic_form',
+    $id: 'doc-dialog-custom_form',
     title: '弹出框'
 });
 ```
