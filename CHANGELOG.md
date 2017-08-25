@@ -1,3 +1,9 @@
+0.1.7 / 2017-08-25
+------------------
+
+- tree-select 组件，增加 direction （“下拉”方向）属性，同时 select/datepicker/timepicker 也增加了此属性
+- tree-select 组件，onChange 回调传入更多信息
+
 0.1.6 / 2017-08-23
 ------------------
 
