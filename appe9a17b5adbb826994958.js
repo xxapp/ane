@@ -909,7 +909,7 @@ function default_1(cmpVm) {
             var selection = this.selection.toJSON();
             var value = selection.map(function (s) { return s.key; });
             cmpVm.handleChange({
-                target: { value: value[0] || '' },
+                target: { value: value[0] || '', selection: e.node },
                 type: 'tree-select'
             });
             cmpVm.displayValue = e.node.title;
@@ -932,7 +932,7 @@ function default_1(cmpVm) {
             var selection = this.selection.toJSON();
             var value = selection.map(function (s) { return s.key; });
             cmpVm.handleChange({
-                target: { value: value },
+                target: { value: value, selection: e.checkedNodes },
                 type: 'tree-select'
             });
             cmpVm.displayValue = e.node.title;
@@ -3930,7 +3930,7 @@ module.exports = "<div class=\"ane-datepicker-panel\" style=\"overflow: auto\">\
 /* 291 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-datepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-calendar ane-datepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-datepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-datepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-datepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-calendar ane-datepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-datepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-datepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 292 */
@@ -3978,7 +3978,7 @@ module.exports = "<div style=\"overflow: auto\">\n    <ul class=\"ane-select-dro
 /* 299 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-select form-control\"\n    :class=\"[(@isMultiple ? 'ane-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-select-selection\" :class=\"[(@isMultiple ? 'ane-select-tags' : '')]\">\n        <li class=\"ane-select-selected\" :visible=\"!@isMultiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.label}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-select-search\">\n            <input class=\"ane-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"@mode === ''\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-select form-control\"\n    :class=\"[(@isMultiple ? 'ane-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-select-selection\" :class=\"[(@isMultiple ? 'ane-select-tags' : '')]\">\n        <li class=\"ane-select-selected\" :visible=\"!@isMultiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.label}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-select-search\">\n            <input class=\"ane-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"@mode === ''\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 300 */
@@ -4002,7 +4002,7 @@ module.exports = "<div class=\"ane-timepicker-view\">\n    <div class=\"ane-time
 /* 303 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-clock-o ane-timepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-timepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-timepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-clock-o ane-timepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-timepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-timepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 304 */
@@ -4014,7 +4014,7 @@ module.exports = "<div style=\"overflow: auto\">\n    <xmp is=\"ms-tree\" :widge
 /* 305 */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ane-tree-select form-control\"\n    :class=\"[(@multiple ? 'ane-tree-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-tree-select-selection\" :class=\"[(@multiple ? 'ane-tree-select-tags' : '')]\">\n        <li class=\"ane-tree-select-selected\" :visible=\"!@multiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-tree-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.title}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-tree-select-search\">\n            <input class=\"ane-tree-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-tree-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"!@multiple\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
+module.exports = "<div class=\"ane-tree-select form-control\"\n    :class=\"[(@multiple ? 'ane-tree-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-tree-select-selection\" :class=\"[(@multiple ? 'ane-tree-select-tags' : '')]\">\n        <li class=\"ane-tree-select-selected\" :visible=\"!@multiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-tree-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.title}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-tree-select-search\">\n            <input class=\"ane-tree-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-tree-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"!@multiple\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
 /* 306 */
@@ -4498,6 +4498,7 @@ ms_control_1["default"].extend({
                 this.panelVisible = false;
             }
         },
+        direction: 'up',
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-datepicker-panel-container',
@@ -5559,6 +5560,7 @@ ms_control_1["default"].extend({
             });
         },
         // 下拉框下拉列表部分
+        direction: 'down',
         panelWidth: 0,
         panelVmId: '',
         panelVisible: false,
@@ -5988,6 +5990,7 @@ ms_control_1["default"].extend({
                 this.panelVisible = false;
             }
         },
+        direction: 'down',
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-timepicker-panel-container',
@@ -6087,9 +6090,11 @@ ms_control_1["default"].extend({
                 this.selection.removeAt(this.selection.length - 1);
                 var selection = this.selection.toJSON();
                 var value = selection.map(function (s) { return s.key; });
+                var nodes = [];
+                getTreeNodesByKeys({ children: this.treeData }, value, nodes);
                 avalon.vmodels[this.panelVmId].checkedKeys = value;
                 this.handleChange({
-                    target: { value: this.multiple ? value : value[0] || '' },
+                    target: { value: this.multiple ? value.toJSON() : value.toJSON()[0] || '', selection: nodes },
                     type: 'tree-select'
                 });
             }
@@ -6098,14 +6103,17 @@ ms_control_1["default"].extend({
             this.selection.removeAll(function (o) { return o.key === option.key; });
             var selection = this.selection.toJSON();
             var value = selection.map(function (s) { return s.key; });
+            var nodes = [];
+            getTreeNodesByKeys({ children: this.treeData }, value, nodes);
             avalon.vmodels[this.panelVmId].checkedKeys = value;
             this.focusSearch();
             this.handleChange({
-                target: { value: this.multiple ? value : value[0] || '' },
+                target: { value: this.multiple ? value.toJSON() : value.toJSON()[0] || '', selection: nodes },
                 type: 'tree-select'
             });
         },
         // 下拉框下拉列表部分
+        direction: 'down',
         panelWidth: 0,
         panelVmId: '',
         panelVisible: false,
@@ -6123,6 +6131,7 @@ ms_control_1["default"].extend({
             }
             avalon.vmodels[this.panelVmId].checkedKeys = value;
             this.selection = nodes.map(function (n) { return ({ key: n.key, title: n.title }); });
+            return nodes;
         },
         onInit: function (event) {
             var _this = this;
@@ -6130,9 +6139,9 @@ ms_control_1["default"].extend({
             utils_1.emitToFormItem(this);
             this.$watch('value', function (v) {
                 var value = v.toJSON();
-                _this.mapValueToSelection(value);
+                var nodes = _this.mapValueToSelection(value);
                 _this.handleChange({
-                    target: { value: _this.multiple ? value : value[0] || '' },
+                    target: { value: _this.multiple ? value : value[0] || '', selection: nodes },
                     denyValidate: true,
                     type: 'tree-select'
                 });
@@ -6273,6 +6282,7 @@ avalon.component('ms-trigger', {
     defaults: {
         width: 0,
         visible: false,
+        direction: 'down',
         innerVmId: '',
         innerClass: '',
         innerTemplate: '',
@@ -6316,8 +6326,9 @@ avalon.component('ms-trigger', {
                     }
                     panel.style.width = _this.width === 0 ? 'auto' : (_this.width + 'px');
                     panel.scrollTop = 0;
+                    var points = ['tl', 'bl'];
                     domAlign(panel, _this.getTarget(), {
-                        points: ['tl', 'bl'],
+                        points: _this.direction === 'up' ? points.reverse() : points,
                         offset: [0, 1],
                         //targetOffset: ['0%','100%']
                         overflow: {
