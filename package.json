@@ -1,6 +1,6 @@
 {
   "name": "ane",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "description": "avalonjs components package",
   "main": "dist/ane.js",
   "files": [
