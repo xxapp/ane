@@ -6,6 +6,7 @@ avalon.component('ms-trigger', {
     defaults: {
         width: 0,
         visible: false,
+        direction: 'down',
         innerVmId: '',
         innerClass: '',
         innerTemplate: '',
@@ -49,8 +50,9 @@ avalon.component('ms-trigger', {
                     }
                     panel.style.width = this.width === 0 ? 'auto' : (this.width + 'px');
                     panel.scrollTop = 0;
+                    const points = ['tl', 'bl'];
                     domAlign(panel, this.getTarget(), {
-                        points: ['tl', 'bl'],
+                        points: this.direction === 'up' ? points.reverse() : points,
                         offset: [0, 1],
                         //targetOffset: ['0%','100%']
                         overflow: {

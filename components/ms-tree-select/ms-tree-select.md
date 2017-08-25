@@ -50,6 +50,7 @@ avalon.define({
 | multiple | 是否多选 | boolean | false |
 | treeData | 树数据 | TreeNode\[\] | \[\] |
 | showSearch | 是否显示搜索框 | boolean | false |
+| direction | 下拉框弹出方向，目前只有 `up`/`down` 两个选项 | string | `down` |
 
 > 继承 [ms-control 组件](#!/form-control) 的所有参数
 

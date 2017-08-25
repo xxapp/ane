@@ -116,6 +116,7 @@ avalon.define({
 | showSearch | 是否显示搜索框 | boolean | false |
 | remote | 是否为远程搜索 | boolean | false |
 | remoteMethod | remoteMethod 当remote为true时调用，包含远程搜索要执行的请求，要求返回一个Promise&#x3C;options&#x3E; | function(query) | noop |
+| direction | 下拉框弹出方向，目前只有 `up`/`down` 两个选项 | string | `down` |
 | onChange | 组件值改变回调 | function(e:{target:{value:string\[\]},type:string}) | noop |
 
 > 继承 [ms-control 组件](#!/form-control) 的所有参数

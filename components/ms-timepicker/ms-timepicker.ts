@@ -45,6 +45,7 @@ controlComponent.extend({
             }
         },
 
+        direction: 'down',
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-timepicker-panel-container',

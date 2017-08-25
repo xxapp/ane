@@ -26,5 +26,6 @@
 | 参数 | 说明 | 类型 | 默认值 |
 |-----|-----|-----|-----|
 | format | 日期格式，参考 momentjs | string | `'HH:mm:ss'` |
+| direction | 下拉框弹出方向，目前只有 `up`/`down` 两个选项 | string | `down` |
 
 > 继承 [ms-control 组件](#!/form-control) 的所有参数

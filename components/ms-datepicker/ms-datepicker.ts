@@ -54,6 +54,7 @@ controlComponent.extend({
             }
         },
 
+        direction: 'up',
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-datepicker-panel-container',

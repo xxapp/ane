@@ -65,6 +65,7 @@ controlComponent.extend({
         },
 
         // 下拉框下拉列表部分
+        direction: 'down',
         panelWidth: 0,
         panelVmId: '',
         panelVisible: false,
