@@ -40,7 +40,7 @@ export default function (cmpVm) {
             const selection = this.selection.toJSON();
             const value = selection.map(s => s.key);
             cmpVm.handleChange({
-                target: { value: value[0] || '' },
+                target: { value: value[0] || '', selection: e.node },
                 type: 'tree-select'
             });
             cmpVm.displayValue = e.node.title;
@@ -65,7 +65,7 @@ export default function (cmpVm) {
             const selection = this.selection.toJSON();
             const value = selection.map(s => s.key);
             cmpVm.handleChange({
-                target: { value: value },
+                target: { value: value, selection: e.checkedNodes },
                 type: 'tree-select'
             });
             cmpVm.displayValue = e.node.title;
