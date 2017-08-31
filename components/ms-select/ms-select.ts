@@ -124,6 +124,10 @@ controlComponent.extend({
             this.$watch('isMultiple', v => {
                 innerVm.isMultiple = v;
             });
+            this.$watch('options', v => {
+                this.options = v;
+                innerVm.options = v;
+            });
             this.mapValueToSelection(this.value);
         },
         onDispose() {
