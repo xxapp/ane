@@ -60,7 +60,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 exports.__esModule = true;
-var ane_util_1 = __webpack_require__(14);
+var ane_util_1 = __webpack_require__(13);
 function emitToFormItem(vmodel, options) {
     if (options === void 0) { options = {}; }
     vmodel.$formItem = ane_util_1.findParentComponent(vmodel, 'ms-form-item');
@@ -80,8 +80,7 @@ exports.emitToFormItem = emitToFormItem;
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */,
-/* 14 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -162,6 +161,7 @@ exports.debounce = debounce;
 
 
 /***/ }),
+/* 14 */,
 /* 15 */,
 /* 16 */,
 /* 17 */,
@@ -172,17 +172,17 @@ exports.debounce = debounce;
 /* 22 */,
 /* 23 */,
 /* 24 */,
-/* 25 */,
-/* 26 */
+/* 25 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(347);
+__webpack_require__(346);
 
 
 /***/ }),
+/* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
@@ -195,8 +195,7 @@ __webpack_require__(347);
 /* 36 */,
 /* 37 */,
 /* 38 */,
-/* 39 */,
-/* 40 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -219,7 +218,7 @@ if (avalon.msie <= 8) {
 }
 avalon.component('ms-checkbox', {
     soleSlot: 'label',
-    template: __webpack_require__(289),
+    template: __webpack_require__(288),
     defaults: {
         wrapper: 'checkbox',
         label: '',
@@ -242,8 +241,8 @@ avalon.component('ms-checkbox', {
 
 
 /***/ }),
-/* 41 */,
-/* 42 */
+/* 40 */,
+/* 41 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = [{
@@ -252,7 +251,7 @@ module.exports = [{
     uri: '/',
     location: function (resolve) {
         __webpack_require__.e/* require.ensure */(19).then((function () {
-            resolve(__webpack_require__(356));
+            resolve(__webpack_require__(355));
         }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
     }
 }, {
@@ -261,7 +260,7 @@ module.exports = [{
     uri: '/changelog',
     location: function (resolve) {
         __webpack_require__.e/* require.ensure */(20).then((function () {
-            resolve(__webpack_require__(355));
+            resolve(__webpack_require__(354));
         }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
     }
 }, {
@@ -273,7 +272,7 @@ module.exports = [{
         uri: '/input',
         location: function (resolve) {
             __webpack_require__.e/* require.ensure */(13).then((function () {
-                resolve(__webpack_require__(362));
+                resolve(__webpack_require__(361));
             }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
         }
     }, {
@@ -282,7 +281,7 @@ module.exports = [{
         uri: '/textarea',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(4).then((function () {
-                 resolve(__webpack_require__(371));
+                 resolve(__webpack_require__(370));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -291,7 +290,7 @@ module.exports = [{
         uri: '/select',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(6).then((function () {
-                 resolve(__webpack_require__(369));
+                 resolve(__webpack_require__(368));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -300,7 +299,7 @@ module.exports = [{
         uri: '/radio',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(7).then((function () {
-                 resolve(__webpack_require__(368));
+                 resolve(__webpack_require__(367));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -309,7 +308,7 @@ module.exports = [{
         uri: '/checkbox',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(18).then((function () {
-                 resolve(__webpack_require__(357));
+                 resolve(__webpack_require__(356));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -318,7 +317,7 @@ module.exports = [{
         uri: '/datepicker',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(17).then((function () {
-                 resolve(__webpack_require__(358));
+                 resolve(__webpack_require__(357));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -327,7 +326,7 @@ module.exports = [{
         uri: '/timepicker',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(3).then((function () {
-                 resolve(__webpack_require__(372));
+                 resolve(__webpack_require__(371));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -336,7 +335,7 @@ module.exports = [{
         uri: '/upload',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(0).then((function () {
-                 resolve(__webpack_require__(375));
+                 resolve(__webpack_require__(374));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -345,7 +344,7 @@ module.exports = [{
         uri: '/tree-select',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(2).then((function () {
-                 resolve(__webpack_require__(373));
+                 resolve(__webpack_require__(372));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -354,7 +353,7 @@ module.exports = [{
         uri: '/form-control',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(15).then((function () {
-                 resolve(__webpack_require__(360));
+                 resolve(__webpack_require__(359));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -363,7 +362,7 @@ module.exports = [{
         uri: '/form',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(14).then((function () {
-                 resolve(__webpack_require__(361));
+                 resolve(__webpack_require__(360));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -372,7 +371,7 @@ module.exports = [{
         uri: '/menu',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(11).then((function () {
-                 resolve(__webpack_require__(364));
+                 resolve(__webpack_require__(363));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -381,7 +380,7 @@ module.exports = [{
         uri: '/table',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(5).then((function () {
-                 resolve(__webpack_require__(370));
+                 resolve(__webpack_require__(369));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -390,7 +389,7 @@ module.exports = [{
         uri: '/pagination',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(8).then((function () {
-                 resolve(__webpack_require__(367));
+                 resolve(__webpack_require__(366));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -399,7 +398,7 @@ module.exports = [{
         uri: '/tree',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(1).then((function () {
-                 resolve(__webpack_require__(374));
+                 resolve(__webpack_require__(373));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -408,7 +407,7 @@ module.exports = [{
         uri: '/dialog',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(16).then((function () {
-                 resolve(__webpack_require__(359));
+                 resolve(__webpack_require__(358));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -417,7 +416,7 @@ module.exports = [{
         uri: '/loading',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(12).then((function () {
-                 resolve(__webpack_require__(363));
+                 resolve(__webpack_require__(362));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -426,7 +425,7 @@ module.exports = [{
         uri: '/message',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(10).then((function () {
-                 resolve(__webpack_require__(365));
+                 resolve(__webpack_require__(364));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }, {
@@ -435,13 +434,14 @@ module.exports = [{
         uri: '/notification',
         location: function (resolve) {
              __webpack_require__.e/* require.ensure */(9).then((function () {
-                 resolve(__webpack_require__(366));
+                 resolve(__webpack_require__(365));
              }).bind(null, __webpack_require__))["catch"](__webpack_require__.oe);
          }
     }]
 }];
 
 /***/ }),
+/* 42 */,
 /* 43 */,
 /* 44 */,
 /* 45 */,
@@ -571,21 +571,19 @@ module.exports = [{
 /* 169 */,
 /* 170 */,
 /* 171 */,
-/* 172 */,
-/* 173 */,
-/* 174 */
+/* 172 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(40);
-__webpack_require__(175);
-__webpack_require__(273);
+__webpack_require__(39);
+__webpack_require__(173);
+__webpack_require__(272);
 
 
 /***/ }),
-/* 175 */
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -593,10 +591,10 @@ __webpack_require__(273);
 exports.__esModule = true;
 var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
-__webpack_require__(40);
+__webpack_require__(39);
 ms_control_1["default"].extend({
     displayName: 'ms-checkbox-group',
-    template: __webpack_require__(288),
+    template: __webpack_require__(287),
     defaults: {
         value: [],
         disabled: false,
@@ -641,19 +639,19 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 176 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-var ms_loading_directive_1 = __webpack_require__(326);
+var ms_loading_directive_1 = __webpack_require__(325);
 exports.Loading = ms_loading_directive_1.Loading;
-__webpack_require__(276);
+__webpack_require__(275);
 
 
 /***/ }),
-/* 177 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -675,7 +673,7 @@ var avalon = __webpack_require__(1);
  * ```
  */
 avalon.component('ms-pagination', {
-    template: __webpack_require__(295),
+    template: __webpack_require__(294),
     defaults: {
         current: 1,
         pageSize: 10,
@@ -702,7 +700,7 @@ avalon.component('ms-pagination', {
 
 
 /***/ }),
-/* 178 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -710,10 +708,10 @@ avalon.component('ms-pagination', {
 exports.__esModule = true;
 var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
-__webpack_require__(179);
+__webpack_require__(177);
 ms_control_1["default"].extend({
     displayName: 'ms-radio-group',
-    template: __webpack_require__(296),
+    template: __webpack_require__(295),
     defaults: {
         value: '',
         disabled: false,
@@ -753,7 +751,7 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 179 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -776,7 +774,7 @@ if (avalon.msie <= 8) {
 }
 avalon.component('ms-radio', {
     soleSlot: 'label',
-    template: __webpack_require__(297),
+    template: __webpack_require__(296),
     defaults: {
         wrapper: 'radio',
         label: '',
@@ -795,19 +793,19 @@ avalon.component('ms-radio', {
 
 
 /***/ }),
-/* 180 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(336);
-__webpack_require__(334);
-__webpack_require__(279);
+__webpack_require__(335);
+__webpack_require__(333);
+__webpack_require__(278);
 
 
 /***/ }),
-/* 181 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -817,7 +815,7 @@ var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
 var OPTION_HEIGHT = 24;
 avalon.component('ms-timepicker-view', {
-    template: __webpack_require__(302),
+    template: __webpack_require__(301),
     defaults: {
         value: '',
         currentHour: 0,
@@ -865,7 +863,7 @@ avalon.component('ms-timepicker-view', {
 
 
 /***/ }),
-/* 182 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -945,17 +943,17 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 183 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(346);
+__webpack_require__(345);
 
 
 /***/ }),
-/* 184 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -983,37 +981,37 @@ function Observable() {
 
 
 /***/ }),
+/* 183 */,
+/* 184 */,
 /* 185 */,
 /* 186 */,
 /* 187 */,
 /* 188 */,
 /* 189 */,
-/* 190 */,
-/* 191 */,
-/* 192 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(275);
-__webpack_require__(325);
+__webpack_require__(274);
+__webpack_require__(324);
 
 
 /***/ }),
-/* 193 */
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var navConfig = __webpack_require__(42);
-__webpack_require__(195);
-var stores_1 = __webpack_require__(184);
+var navConfig = __webpack_require__(41);
+__webpack_require__(193);
+var stores_1 = __webpack_require__(182);
 exports.name = 'doc-sidebar';
 avalon.component(exports.name, {
-    template: __webpack_require__(310),
+    template: __webpack_require__(309),
     defaults: {
         menu: [],
         selectedKeys: [],
@@ -1036,16 +1034,16 @@ avalon.component(exports.name, {
 
 
 /***/ }),
-/* 194 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-__webpack_require__(284);
-var stores_1 = __webpack_require__(184);
-var navConfig = __webpack_require__(42);
+__webpack_require__(283);
+var stores_1 = __webpack_require__(182);
+var navConfig = __webpack_require__(41);
 function getPage(component) {
     var html = "<xmp is=\"" + component + "\" :widget=\"{id:'" + component.replace(/\-/g, '_') + "'}\"></xmp>";
     return html;
@@ -1097,41 +1095,41 @@ applyRouteConfig(routeConfig, {
 
 
 /***/ }),
-/* 195 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(327);
-__webpack_require__(338);
-__webpack_require__(177);
-__webpack_require__(317);
-__webpack_require__(320);
-var create_form_1 = __webpack_require__(319);
-exports.createForm = create_form_1.createForm;
-__webpack_require__(323);
-__webpack_require__(339);
-__webpack_require__(180);
-__webpack_require__(348);
-__webpack_require__(314);
-__webpack_require__(341);
-__webpack_require__(344);
-__webpack_require__(174);
+__webpack_require__(326);
+__webpack_require__(337);
 __webpack_require__(175);
-__webpack_require__(333);
+__webpack_require__(316);
+__webpack_require__(319);
+var create_form_1 = __webpack_require__(318);
+exports.createForm = create_form_1.createForm;
+__webpack_require__(322);
+__webpack_require__(338);
 __webpack_require__(178);
-__webpack_require__(183);
-var ms_loading_1 = __webpack_require__(176);
+__webpack_require__(347);
+__webpack_require__(313);
+__webpack_require__(340);
+__webpack_require__(343);
+__webpack_require__(172);
+__webpack_require__(173);
+__webpack_require__(332);
+__webpack_require__(176);
+__webpack_require__(181);
+var ms_loading_1 = __webpack_require__(174);
 exports.Loading = ms_loading_1.Loading;
-var ms_notification_1 = __webpack_require__(331);
+var ms_notification_1 = __webpack_require__(330);
 exports.notification = ms_notification_1["default"];
-var ms_message_1 = __webpack_require__(329);
+var ms_message_1 = __webpack_require__(328);
 exports.message = ms_message_1["default"];
 
 
 /***/ }),
-/* 196 */
+/* 194 */
 /***/ (function(module, exports) {
 
 /*
@@ -3061,7 +3059,7 @@ exports.message = ms_message_1["default"];
 })(jQuery);
 
 /***/ }),
-/* 197 */
+/* 195 */
 /***/ (function(module, exports) {
 
 /*
@@ -3694,20 +3692,20 @@ exports.message = ms_message_1["default"];
 })(jQuery);
 
 /***/ }),
-/* 198 */
+/* 196 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {__webpack_require__(189);
-__webpack_require__(190);
-__webpack_require__(191);
-
-__webpack_require__(187);
+/* WEBPACK VAR INJECTION */(function(global) {__webpack_require__(187);
 __webpack_require__(188);
+__webpack_require__(189);
 
-var jQuery = __webpack_require__(9);
-window.$ = window.jQuery = jQuery;
 __webpack_require__(185);
-var bootbox = __webpack_require__(41);
+__webpack_require__(186);
+
+var jQuery = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+window.$ = window.jQuery = jQuery;
+__webpack_require__(183);
+var bootbox = __webpack_require__(40);
 bootbox.setLocale('zh_CN');
 
 // 提前禁止avalon对Object.create的实现
@@ -3730,10 +3728,10 @@ if (avalon.msie < 8) {
         obj[property] = meta.value;
     }
 }
-__webpack_require__(186);
-__webpack_require__(194);
+__webpack_require__(184);
 __webpack_require__(192);
-__webpack_require__(193);
+__webpack_require__(190);
+__webpack_require__(191);
 
 avalon.define({
     $id: 'root',
@@ -3747,9 +3745,11 @@ if (!/#!/.test(global.location.hash)) {
     avalon.router.navigate('/', 2);
 }
 avalon.scan(document.body);
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
 
 /***/ }),
+/* 197 */,
+/* 198 */,
 /* 199 */,
 /* 200 */,
 /* 201 */,
@@ -3822,7 +3822,12 @@ avalon.scan(document.body);
 /* 268 */,
 /* 269 */,
 /* 270 */,
-/* 271 */,
+/* 271 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
 /* 272 */
 /***/ (function(module, exports) {
 
@@ -3889,176 +3894,170 @@ avalon.scan(document.body);
 // removed by extract-text-webpack-plugin
 
 /***/ }),
-/* 283 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
+/* 283 */,
 /* 284 */,
-/* 285 */,
-/* 286 */
+/* 285 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-calendar\">\n    <table class=\"ane-calendar-year-view\">\n        <tbody>\n            <tr :for=\"（i, row) in @table\">\n                <td class=\"ane-calendar-cell\"\n                    :class=\"[\n                                (@isSelected(cell) ? 'ane-calendar-selected-day' : ''),\n                                (@view > 1 && (i + j === 0 || i * j === 6) ? 'ane-calendar-prev-month-cell' : '')\n                            ]\"\n                    :for=\"(j, cell) in row\">\n                    <div class=\"ane-calendar-date\" :click=\"@handleCellClick(cell)\">{{cell.label}}</div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
 
 /***/ }),
-/* 287 */
+/* 286 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-calendar\">\n    <div class=\"row\" ms-if=\"@showHeader\">\n        <div class=\"col-md-2 col-md-offset-4\">\n            <ms-select :widget=\"{value:[@currentYear],options:@currentYearOptions,onChange:@handleYearChange}\"></ms-select>\n        </div>\n        <div class=\"col-md-2\">\n            <ms-select :widget=\"{value:[@currentMonth],options:@monthOptions,onChange:@handleMonthChange}\"></ms-select>\n        </div>\n    </div>\n    <table>\n        <thead>\n            <tr>\n                <th class=\"ane-calendar-column-header\" :for=\"day in @weekdays\">{{day}}</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr :for=\"week in @table\">\n                <td class=\"ane-calendar-cell\" :class=\"el.className\" :for=\"el in week\">\n                    <div class=\"ane-calendar-date\" :click=\"@handleDateClick(el) | stop\">{{el.date}}</div>\n                </td>\n            </tr>\n        </tbody>\n    </table>\n</div>"
 
 /***/ }),
-/* 288 */
+/* 287 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"checkbox-group\">\n    <ms-checkbox \n        :widget=\"{\n            checked:@selection.indexOf(option.value)!=-1,\n            group:true,\n            onChange:function(){\n                @toggleOption(option)\n            },\n            disabled:'disabled' in option?option.disabled:@disabled\n        }\" \n        :for=\"option in options\">{{option.label}}</ms-checkbox>\n</div>"
 
 /***/ }),
-/* 289 */
+/* 288 */
 /***/ (function(module, exports) {
 
 module.exports = "<div :class=\"@wrapper\" class=\"ane-checkbox\" style=\"margin-top: 0; margin-bottom: 0;\">\n    <label class=\"ane-checkbox-inner ane-checkbox-inner-ie\">\n        <input type=\"checkbox\"\n            :class=\"[@indeterminate?'ane-checkbox-indeterminate':'']\"\n            :attr=\"{id:@helpId,disabled:@disabled}\"\n            :duplex-checked=\"@checked\"\n            data-duplex-changed=\"@onChange\"\n            />\n        <span class=\"text\"></span>\n    </label>\n    <label :attr=\"{'for':@helpId}\" style=\"padding-left: 0;\" :css=\"{marginRight:@group?8:0}\"><slot /></label>\n</div>"
 
 /***/ }),
-/* 290 */
+/* 289 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-datepicker-panel\" style=\"overflow: auto\">\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 0\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 1, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <a class=\"ane-datepicker-prev-month-btn\" :click=\"mutate('subtract', 1, 'months')\">\n            <i class=\"fa fa-angle-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(1)\">{{@currentMonth}}</a>\n            <a class=\"ane-datepicker-year-select\" :click=\"@changeView(2)\">{{@currentYear}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'months')\">\n            <i class=\"fa fa-angle-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 1\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 1, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(2)\">{{@currentYear}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 1, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 2\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 10, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>\n            <a class=\"ane-datepicker-month-select\" :click=\"@changeView(3)\">{{@startOfDecade + '-' + (@startOfDecade + 9)}}</a>\n        </span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 10, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode === 3\">\n        <a class=\"ane-datepicker-prev-year-btn\" :click=\"mutate('subtract', 100, 'years')\">\n            <i class=\"fa fa-angle-double-left\"></i>\n        </a>\n        <span>{{@startOfCentury + '-' + (@startOfCentury + 99)}}</span>\n        <a class=\"ane-datepicker-next-month-btn\" :click=\"mutate('add', 100, 'years')\">\n            <i class=\"fa fa-angle-double-right\"></i>\n        </a>\n    </div>\n    <div class=\"ane-datepicker-panel-header\" :visible=\"@viewMode < 0 && @showTime\">\n        <span>\n            <a class=\"ane-datepicker-month-select\">{{@currentMonth}}</a>\n            <a class=\"ane-datepicker-month-select\">{{@currentDay}}</a>\n            <a class=\"ane-datepicker-year-select\">{{@currentYear}}</a>\n        </span>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode === 0\">\n        <ms-calendar :widget=\"{value:@currentDateArray,showHeader:false,disabledDate:@disabledDate,onChange:@handleCalendarChange}\"></ms-calendar>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode > 0\">\n        <ms-calendar-year-view :widget=\"{currentMonth:@currentMonth,currentYear:@currentYear,view:@viewMode,onSelect:@handleYearViewSelect}\"></ms-calendar-year-view>\n    </div>\n    <div class=\"ane-datepicker-panel-body\" :visible=\"@viewMode === -1\">\n        <ms-timepicker-view :widget=\"{value:@currentDateArray,onChange:@handleTimepickerChange}\"></ms-timepicker-view>\n    </div>\n    <div class=\"ane-datepicker-panel-footer\" :visible=\"@viewMode === 0 && !@showTime\">\n        <span class=\"ane-datepicker-panel-footer-btn\">\n            <a class=\"ane-datepicker-panel-today-btn\" :click=\"@today\">今天</a>\n        </span>\n    </div>\n    <div class=\"ane-datepicker-panel-footer\" :visible=\"@viewMode <= 0 && @showTime\">\n        <span class=\"ane-datepicker-panel-footer-btn\">\n            <a class=\"ane-datepicker-panel-now-btn\" :click=\"@today\">此刻</a>\n            <a class=\"ane-datepicker-panel-ok-btn\" :click=\"@complete\">确定</a>\n            <a class=\"ane-datepicker-panel-timepicker-btn\" :click=\"@changeView(@viewMode > -1 ? -1 : 0)\">{{@viewMode > -1 ? '选择时间' : '选择日期'}}</a>\n        </span>\n    </div>\n</div>"
 
 /***/ }),
-/* 291 */
+/* 290 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-datepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-calendar ane-datepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-datepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-datepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
-/* 292 */
+/* 291 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"form-group has-feedback\" :css=\"[@inline && @inlineFormGroupStyle]\" :class=\"[@className,(@hasRules && @dirty ? (@reasons.length ? 'has-error' : 'has-success') : '')]\">\n    <label class=\"control-label\" :if=\"@label.length\">{{@label}}</label>\n    <slot />\n    <i class=\"form-control-feedback\" :if=\"@hasRules && @showIcon\" :class=\"[(@dirty ? 'glyphicon' : ''), (@reasons.length ? 'glyphicon-remove' : 'glyphicon-ok')]\" :visible=\"@dirty\"></i>\n    <small class=\"help-block\" :css=\"[@inline && @inlineMessageStyle]\" :if=\"@hasRules && @reasons.length\">{{@reasons.length ? @reasons[0].message : ''}}</small>\n</div>"
 
 /***/ }),
-/* 293 */
+/* 292 */
 /***/ (function(module, exports) {
 
 module.exports = "<input type=\"text\" class=\"form-control\" \n    :duplex=\"@text\" \n    :attr=\"{name:@col,placeholder:@placeholder}\" \n    :css=\"{width:@width}\"\n    data-duplex-changed=\"@handleChange\">"
 
 /***/ }),
-/* 294 */
+/* 293 */
 /***/ (function(module, exports) {
 
 module.exports = "<ul class=\"ane-menu\">\n    <li :class=\"[\n                    !item.children || item.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                    @openKeys.contains(item.key) ? 'ane-menu-open' : '',\n                    @selectedKeys.contains(item.key) ? 'ane-menu-item-selected' : ''\n                ]\"\n        :for=\"item in @menu\">\n        <a :click=\"handleClick(item, item.key, [item.key])\" style=\"padding-left: 24px;\">\n            <i :class=\"[item.icon]\"></i>\n            <span>{{item.title}}</span>\n            <i class=\"ane-menu-caret fa\" :class=\"[@openKeys.contains(item.key) ? 'fa-angle-up' : 'fa-angle-down']\"></i>\n        </a>\n        <ul class=\"ane-menu\">\n            <li :class=\"[\n                            !item2.children || item2.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                                @openKeys.contains(item2.key) ? 'ane-menu-open' : '',\n                                @selectedKeys.contains(item2.key) ? 'ane-menu-item-selected' : ''\n                            ]\"\n                :for=\"item2 in item.children\">\n                <a :click=\"handleClick(item2, item2.key, [item2.key,item.key])\" style=\"padding-left: 48px;\">\n                    <span>{{item2.title}}</span>\n                    <i class=\"ane-menu-caret fa\" :class=\"[@openKeys.contains(item2.key) ? 'fa-angle-up' : 'fa-angle-down']\"></i>\n                </a>\n                <ul class=\"ane-menu\">\n                    <li :class=\"[\n                                    !item3.children || item3.children.length === 0 ? 'ane-menu-item' : 'ane-menu-submenu',\n                                    @selectedKeys.contains(item3.key) ? 'ane-menu-item-selected' : ''\n                                ]\"\n                        :for=\"item3 in item2.children\">\n                        <a :click=\"handleClick(item3, item3.key, [item3.key,item2.key,item.key])\" style=\"padding-left: 72px;\">{{item3.title}}</a>\n                    </li>\n                </ul>\n            </li>\n        </ul>\n    </li>\n</ul>"
 
 /***/ }),
-/* 295 */
+/* 294 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"btn-group\">\n    <a class=\"btn blue\" :attr=\"{disabled:@current===1}\" :click=\"@prevPage\">\n        <i class=\"icon-step-backward\"></i>上一页\n    </a>\n    <a class=\"btn success\">{{ @current }}/{{ Math.ceil(@total/@pageSize) }}</a>\n    <a class=\"btn blue\" :attr=\"{disabled:@current===Math.ceil(@total/@pageSize)}\" :click=\"@nextPage\">\n        <i class=\"icon-step-forward\"></i>下一页\n    </a>\n</div>"
 
 /***/ }),
-/* 296 */
+/* 295 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"checkbox-group\">\n    <ms-radio \n        :widget=\"{\n            checked:@selected,\n            value:option.value,\n            name:@helpId,\n            group:true,\n            onChange:function(){\n                @toggleOption(arguments[0], option)\n            },\n            disabled:'disabled' in option?option.disabled:@disabled\n        }\" \n        :for=\"option in options\">{{option.label}}</ms-radio>\n</div>"
 
 /***/ }),
-/* 297 */
+/* 296 */
 /***/ (function(module, exports) {
 
 module.exports = "<div :class=\"@wrapper\" class=\"ane-radio\" style=\"margin-top: 0; margin-bottom: 0;\">\n    <label class=\"ane-radio-inner ane-radio-inner-ie\">\n        <input type=\"radio\"\n            :attr=\"{id:@helpId,disabled:@disabled,value:@value,name:@name}\"\n            :duplex=\"@checked\"\n            data-duplex-changed=\"@onChange\"\n            />\n        <span class=\"text\"></span>\n    </label>\n    <label :attr=\"{'for':@helpId}\" style=\"padding-left: 0;\" :css=\"{marginRight:@group?8:0}\"><slot /></label>\n</div>"
 
 /***/ }),
-/* 298 */
+/* 297 */
 /***/ (function(module, exports) {
 
 module.exports = "<div style=\"overflow: auto\">\n    <ul class=\"ane-select-dropdown-menu\" role=\"menu\">\n        <li class=\"ane-select-dropdown-menu-item\"\n            :class=\"[\n                (@selection.some(function(){return arguments[0].value===option.value}) ? 'ane-select-dropdown-menu-item-selected' : ''),\n                (option.disabled ? 'ane-select-dropdown-menu-item-disabled' : '')\n            ]\"\n            :for=\"option in @getFilteredOptions()\"\n            :click=\"@handleOptionClick($event, option)\"\n            role=\"menuitem\">\n            {{option.label}}\n            <i class=\"fa fa-check\" :visible=\"@isMultiple\"></i>\n        </li>\n        <li class=\"ane-select-dropdown-menu-item ane-select-dropdown-menu-item-disabled\"\n            :visible=\"@getFilteredOptions().length <= 0 && @searchValue && !@loading\">无数据</li>\n        <li class=\"ane-select-dropdown-menu-item ane-select-dropdown-menu-item-disabled\"\n            :visible=\"@loading\">加载中</li>\n    </ul>\n</div>"
 
 /***/ }),
-/* 299 */
+/* 298 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-select form-control\"\n    :class=\"[(@isMultiple ? 'ane-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-select-selection\" :class=\"[(@isMultiple ? 'ane-select-tags' : '')]\">\n        <li class=\"ane-select-selected\" :visible=\"!@isMultiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.label}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-select-search\">\n            <input class=\"ane-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"@mode === ''\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
-/* 300 */
+/* 299 */
 /***/ (function(module, exports) {
 
 module.exports = "<div>\n    <table class=\"table\" :loading=\"!window.isNaN(@paginationConfig.total) && @loading\">\n        <thead>\n            <tr>\n                <th :if=\"@needSelection\">\n                    <ms-checkbox :widget=\"{checked:@isAllChecked,onChange:@handleCheckAll}\"></ms-checkbox>\n                </th>\n                <th :for=\"el in @columns\">{{el.title}}</th>\n            </tr>\n        </thead>\n        <tbody>\n            <tr :for=\"($index, record) in @getCurrentPageData()\">\n                <td :if=\"@needSelection\">\n                    <ms-checkbox :widget=\"{checked:@checked.indexOf(record[@key])!=-1,onChange:function(){@handleCheck(arguments[0].target.checked,record)}}\"></ms-checkbox>\n                </td>\n                <td :for=\"col in @columns\" :html=\"col.template\"></td>\n            </tr>\n        </tbody>\n    </table>\n    <div class=\"pull-right\">\n        <ms-pagination :widget=\"{current:@paginationConfig.current,pageSize:@paginationConfig.pageSize,total:@total,onChange:@handlePageChange}\"></ms-pagination>\n    </div>\n    <div class=\"clearfix\"></div>\n</div>"
 
 /***/ }),
-/* 301 */
+/* 300 */
 /***/ (function(module, exports) {
 
 module.exports = "<textarea class=\"form-control\" \n    :duplex=\"@text\" \n    :attr=\"{rows:@rows,name:@col}\"\n    data-duplex-changed=\"@handleChange\"></textarea>"
 
 /***/ }),
-/* 302 */
+/* 301 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-timepicker-view\">\n    <div class=\"ane-timepicker-view-combobox\">\n        <div class=\"ane-timepicker-view-select\" name=\"hour-options\">\n            <ul>\n                <li :for=\"hour in @hourOptions\"\n                    :class=\"[(hour==@currentHour?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(hour, 'hour')\">{{hour}}</li>\n            </ul>\n        </div>\n        <div class=\"ane-timepicker-view-select\" name=\"minute-options\">\n            <ul>\n                <li :for=\"minute in @minuteOptions\"\n                    :class=\"[(minute==@currentMinute?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(minute, 'minute')\">{{minute}}</li>\n            </ul>\n        </div>\n        <div class=\"ane-timepicker-view-select\" name=\"second-options\">\n            <ul>\n                <li :for=\"second in @secondOptions\"\n                    :class=\"[(second==@currentSecond?'ane-timepicker-view-select-option-selected':'')]\"\n                    :click=\"@select(second, 'second')\">{{second}}</li>\n            </ul>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
-/* 303 */
+/* 302 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-timepicker\" :css=\"{width:@width}\">\n    <i class=\"fa fa-clock-o ane-timepicker-icon\"></i>\n    <i class=\"fa fa-times-circle ane-timepicker-clear\" :if=\"@selected.length\" :click=\"@clear\"></i>\n    <input type=\"text\"\n        class=\"form-control ane-timepicker-input\"\n        :click=\"@handleClick\"\n        readonly\n        :attr=\"{placeholder:@placeholder}\"\n        :css=\"{width:'100%'}\"\n        :duplex=\"selected\" />\n    <ms-trigger :widget=\"{\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide\n    }\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
-/* 304 */
+/* 303 */
 /***/ (function(module, exports) {
 
 module.exports = "<div style=\"overflow: auto\">\n    <xmp is=\"ms-tree\" :widget=\"{checkable: @multiple,tree: @treeData, checkedKeys:@checkedKeys, onSelect:@handleSelect, onCheck:@handleCheck}\"></xmp>\n</div>"
 
 /***/ }),
-/* 305 */
+/* 304 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-tree-select form-control\"\n    :class=\"[(@multiple ? 'ane-tree-select-multiple' : '')]\"\n    :css=\"{width:@width}\"\n    :click=\"@handleClick\"\n    role=\"combobox\"\n    aria-autocomplete=\"list\"\n    aria-haspopup=\"true\"\n    :attr=\"{'aria-expanded': @panelVisible + ''}\">\n    <ul class=\"ane-tree-select-selection\" :class=\"[(@multiple ? 'ane-tree-select-tags' : '')]\">\n        <li class=\"ane-tree-select-selected\" :visible=\"!@multiple && (!@showSearch || !@panelVisible)\">{{@displayValue}}</li>\n        <li class=\"ane-tree-select-choice\" :for=\"choice in @selection\">\n            <span>{{choice.title}}</span>\n            <i class=\"fa fa-times\" :click=\"@removeSelection($event, choice) | stop\"></i>\n        </li>\n        <li class=\"ane-tree-select-search\">\n            <input class=\"ane-tree-select-search-field\"\n                name=\"search\"\n                type=\"text\"\n                autocomplete=\"off\"\n                :duplex=\"@searchValue\"\n                :css=\"{visibility:(@showSearch && @panelVisible)?'visible':'hidden'}\"\n                :keydown=\"@handleDelete\" />\n        </li>\n    </ul>\n    <i class=\"fa ane-tree-select-arrow\"\n        :class=\"[(@panelVisible ? 'fa-caret-up' : 'fa-caret-down')]\"\n        :visible=\"!@multiple\"></i>\n    <ms-trigger :widget=\"{\n        width: @panelWidth,\n        visible: @panelVisible,\n        direction: @direction,\n        innerVmId: @panelVmId,\n        innerClass: @panelClass,\n        innerTemplate: @panelTemplate,\n        withInBox: @withInBox,\n        getTarget: @getTarget,\n        onHide: @handlePanelHide}\">\n    </ms-trigger>\n</div>"
 
 /***/ }),
-/* 306 */
+/* 305 */
 /***/ (function(module, exports) {
 
 module.exports = "<ul class=\"ztree\"></ul>"
 
 /***/ }),
-/* 307 */
+/* 306 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-upload-card\">\n    <div class=\"ane-upload-card-item\" :class=\"[(file.status === 'error' ? 'bordered-danger' : '')]\" :for=\"($index, file) in @fileList\">\n        <img :attr=\"{src:file.url,alt:file.name,title:file.name}\">\n        <span class=\"ane-upload-card-progress\" :visible=\"file.status === 'uploading'\">上传中 {{file.progress}}%</span>\n        <span class=\"ane-upload-card-tool\">\n            <i class=\"fa fa-eye\"></i>\n            <i class=\"fa fa-trash-o\" :click=\"del(file)\"></i>\n        </span>\n    </div>\n</div>"
 
 /***/ }),
-/* 308 */
+/* 307 */
 /***/ (function(module, exports) {
 
 module.exports = "<ul class=\"ane-upload-list\">\n    <li :for=\"($index, file) in @fileList\"\n        :class=\"[@getTextClass(file)]\">\n        <div class=\"ane-upload-list-info\">\n            <i class=\"fa fa-file-o text-muted\"></i>\n            <span :attr=\"{title:file.name}\">{{file.name}}</span>\n        </div>\n        <i class=\"fa fa-times ane-upload-btn-close\" :click=\"del(file)\"></i>\n        <span class=\"ane-upload-list-progress\" :visible=\"file.status === 'uploading'\">上传中 {{file.progress}}%</span>\n        <i class=\"fa fa-check-circle text-success\" :class=\"[(file.status === 'done' ? '' : 'hide')]\"></i>\n    </li>\n</ul>"
 
 /***/ }),
-/* 309 */
+/* 308 */
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"ane-upload-container\">\n    <div class=\"ane-upload-card-wall\" :if=\"@showUploadList && @listType==='picture-card'\">\n        <ms-upload-card :widget=\"{fileList: @fileList, onRemove: @handleRemove}\"></ms-upload-card>\n    </div>\n    <label :visible=\"!@showUploadList && @listType==='picture-card' && @fileList.length > 0\" class=\"ane-upload-card-item\" :attr=\"{'for':@helpId}\">\n        <img :attr=\"{src:@fileList[0]?@fileList[0].url:blankImg,alt:@fileList[0]?@fileList[0].name:'',title:@fileList[0]?@fileList[0].name:''}\">\n    </label>\n    <label :visible=\"@showUploadList || @fileList.length == 0\" :class=\"[(@listType==='picture-card'?@cardClass:@btnClass)]\" :attr=\"{'for':@helpId}\"><slot /></label>\n    <form><input type=\"file\" name=\"file\" :attr=\"{id:@helpId}\"></form>\n    <div :if=\"@showUploadList && @listType!=='picture-card'\">\n        <ms-upload-list :widget=\"{fileList: @fileList, onRemove: @handleRemove}\"></ms-upload-list>\n    </div>\n</div>"
 
 /***/ }),
-/* 310 */
+/* 309 */
 /***/ (function(module, exports) {
 
 module.exports = "<ms-menu :widget=\"{menu:@menu,openKeys:@openKeys,selectedKeys:@selectedKeys,onClick:@handleMenuClick,onOpenChange:@handleOpenChange}\"></ms-menu>"
 
 /***/ }),
-/* 311 */
+/* 310 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(313);
-__webpack_require__(272);
+__webpack_require__(312);
+__webpack_require__(271);
 
 
 /***/ }),
-/* 312 */
+/* 311 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4068,7 +4067,7 @@ var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
 var monthTable = [];
 avalon.component('ms-calendar-year-view', {
-    template: __webpack_require__(286),
+    template: __webpack_require__(285),
     defaults: {
         table: [],
         // 0-月视图，1-年视图，2-十年视图，3-百年视图
@@ -4118,7 +4117,7 @@ avalon.component('ms-calendar-year-view', {
 
 
 /***/ }),
-/* 313 */
+/* 312 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4126,10 +4125,10 @@ avalon.component('ms-calendar-year-view', {
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
-__webpack_require__(180);
-__webpack_require__(312);
+__webpack_require__(178);
+__webpack_require__(311);
 avalon.component('ms-calendar', {
-    template: __webpack_require__(287),
+    template: __webpack_require__(286),
     defaults: {
         value: '',
         $value: null,
@@ -4276,18 +4275,18 @@ avalon.component('ms-calendar', {
 
 
 /***/ }),
-/* 314 */
+/* 313 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(316);
-__webpack_require__(274);
+__webpack_require__(315);
+__webpack_require__(273);
 
 
 /***/ }),
-/* 315 */
+/* 314 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4437,7 +4436,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 316 */
+/* 315 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4445,10 +4444,10 @@ exports["default"] = default_1;
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(26);
-__webpack_require__(311);
-__webpack_require__(181);
-var ms_datepicker_panel_1 = __webpack_require__(315);
+__webpack_require__(25);
+__webpack_require__(310);
+__webpack_require__(179);
+var ms_datepicker_panel_1 = __webpack_require__(314);
 var utils_1 = __webpack_require__(5);
 /**
  * 日期选择组件
@@ -4467,7 +4466,7 @@ var utils_1 = __webpack_require__(5);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-datepicker',
-    template: __webpack_require__(291),
+    template: __webpack_require__(290),
     defaults: {
         selected: '',
         format: 'YYYY-MM-DD',
@@ -4502,7 +4501,7 @@ ms_control_1["default"].extend({
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-datepicker-panel-container',
-        panelTemplate: __webpack_require__(290),
+        panelTemplate: __webpack_require__(289),
         handlePanelHide: function () {
             this.panelVisible = false;
         },
@@ -4540,26 +4539,26 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
+/* 316 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+__webpack_require__(317);
+
+
+/***/ }),
 /* 317 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(318);
-
-
-/***/ }),
-/* 318 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var bootbox = __webpack_require__(41);
-var ane_util_1 = __webpack_require__(14);
-var $ = __webpack_require__(9);
+var bootbox = __webpack_require__(40);
+var ane_util_1 = __webpack_require__(13);
+var $ = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
 avalon.component('ms-dialog', {
     template: '<div style="display: none"><slot name="header" /><slot name="body"/></div>',
     defaults: {
@@ -4632,7 +4631,7 @@ avalon.component('ms-dialog', {
 
 
 /***/ }),
-/* 319 */
+/* 318 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4674,7 +4673,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var Schema = __webpack_require__(199);
+var Schema = __webpack_require__(197);
 function createForm(options) {
     return new Form(options);
 }
@@ -4846,25 +4845,25 @@ function getValue(record, expr) {
 
 
 /***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+__webpack_require__(321);
+__webpack_require__(320);
+
+
+/***/ }),
 /* 320 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(322);
-__webpack_require__(321);
-
-
-/***/ }),
-/* 321 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var ane_util_1 = __webpack_require__(14);
+var ane_util_1 = __webpack_require__(13);
 /**
  * 表单项组件
  * @prop label 表单项标签
@@ -4877,7 +4876,7 @@ var ane_util_1 = __webpack_require__(14);
  * ```
  */
 avalon.component('ms-form-item', {
-    template: __webpack_require__(292),
+    template: __webpack_require__(291),
     defaults: {
         $formVm: null,
         label: '',
@@ -4940,7 +4939,7 @@ avalon.component('ms-form-item', {
 
 
 /***/ }),
-/* 322 */
+/* 321 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4975,17 +4974,17 @@ avalon.component('ms-form', {
 
 
 /***/ }),
-/* 323 */
+/* 322 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(324);
+__webpack_require__(323);
 
 
 /***/ }),
-/* 324 */
+/* 323 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4995,7 +4994,7 @@ var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-input',
-    template: __webpack_require__(293),
+    template: __webpack_require__(292),
     defaults: {
         text: '',
         mapValueToText: function (value) {
@@ -5019,7 +5018,7 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 325 */
+/* 324 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5072,7 +5071,7 @@ layoutComponent.extend({
 
 
 /***/ }),
-/* 326 */
+/* 325 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5202,7 +5201,18 @@ exports.Loading = {
     }
 };
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(18)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
+
+/***/ }),
+/* 326 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+__webpack_require__(276);
+__webpack_require__(327);
+
 
 /***/ }),
 /* 327 */
@@ -5211,20 +5221,9 @@ exports.Loading = {
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(277);
-__webpack_require__(328);
-
-
-/***/ }),
-/* 328 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
 var avalon = __webpack_require__(1);
 avalon.component('ms-menu', {
-    template: __webpack_require__(294),
+    template: __webpack_require__(293),
     defaults: {
         menu: [],
         selectedKeys: [],
@@ -5254,24 +5253,24 @@ avalon.component('ms-menu', {
 
 
 /***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var ms_message_1 = __webpack_require__(329);
+exports["default"] = ms_message_1["default"];
+
+
+/***/ }),
 /* 329 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-var ms_message_1 = __webpack_require__(330);
-exports["default"] = ms_message_1["default"];
-
-
-/***/ }),
-/* 330 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var noty = __webpack_require__(172);
+var noty = __webpack_require__(170);
 var defaultOptions = {
     duration: 1500
 };
@@ -5325,24 +5324,24 @@ exports["default"] = {
 
 
 /***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+var ms_notification_1 = __webpack_require__(331);
+exports["default"] = ms_notification_1["default"];
+
+
+/***/ }),
 /* 331 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-var ms_notification_1 = __webpack_require__(332);
-exports["default"] = ms_notification_1["default"];
-
-
-/***/ }),
-/* 332 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-exports.__esModule = true;
-var noty = __webpack_require__(172);
+var noty = __webpack_require__(170);
 var defaultOptions = {
     timeout: 3000
 };
@@ -5396,19 +5395,19 @@ function template(title, message, icon) {
 
 
 /***/ }),
-/* 333 */
+/* 332 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(179);
-__webpack_require__(178);
-__webpack_require__(278);
+__webpack_require__(177);
+__webpack_require__(176);
+__webpack_require__(277);
 
 
 /***/ }),
-/* 334 */
+/* 333 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5427,7 +5426,7 @@ avalon.component('ms-select-option', {
 
 
 /***/ }),
-/* 335 */
+/* 334 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5490,7 +5489,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 336 */
+/* 335 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5498,13 +5497,13 @@ exports["default"] = default_1;
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(26);
-var ms_select_panel_1 = __webpack_require__(335);
-var ane_util_1 = __webpack_require__(14);
+__webpack_require__(25);
+var ms_select_panel_1 = __webpack_require__(334);
+var ane_util_1 = __webpack_require__(13);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-select',
-    template: __webpack_require__(299),
+    template: __webpack_require__(298),
     defaults: {
         value: [],
         mode: '',
@@ -5565,7 +5564,7 @@ ms_control_1["default"].extend({
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-select-dropdown',
-        panelTemplate: __webpack_require__(298),
+        panelTemplate: __webpack_require__(297),
         handlePanelHide: function () {
             this.panelVisible = false;
         },
@@ -5616,6 +5615,10 @@ ms_control_1["default"].extend({
             this.$watch('isMultiple', function (v) {
                 innerVm.isMultiple = v;
             });
+            this.$watch('options', function (v) {
+                _this.options = v;
+                innerVm.options = v;
+            });
             this.mapValueToSelection(this.value);
         },
         onDispose: function () {
@@ -5639,7 +5642,7 @@ function getOptions(descriptor) {
 
 
 /***/ }),
-/* 337 */
+/* 336 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5657,18 +5660,18 @@ avalon.component('ms-table-header', {
 
 
 /***/ }),
-/* 338 */
+/* 337 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-__webpack_require__(40);
-__webpack_require__(337);
-__webpack_require__(177);
-var ane_util_1 = __webpack_require__(14);
-__webpack_require__(176);
+__webpack_require__(39);
+__webpack_require__(336);
+__webpack_require__(175);
+var ane_util_1 = __webpack_require__(13);
+__webpack_require__(174);
 var defaultPagination = function () {
     return {
         current: 1, pageSize: 10, total: NaN, onChange: avalon.noop
@@ -5676,7 +5679,7 @@ var defaultPagination = function () {
 };
 avalon.component('ms-table', {
     soleSlot: 'header',
-    template: __webpack_require__(300),
+    template: __webpack_require__(299),
     defaults: {
         header: '',
         columns: [],
@@ -5834,17 +5837,17 @@ function getColumnConfig(descriptor, level) {
 
 
 /***/ }),
-/* 339 */
+/* 338 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(340);
+__webpack_require__(339);
 
 
 /***/ }),
-/* 340 */
+/* 339 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5865,7 +5868,7 @@ var utils_1 = __webpack_require__(5);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-textarea',
-    template: __webpack_require__(301),
+    template: __webpack_require__(300),
     defaults: {
         rows: '',
         text: '',
@@ -5890,18 +5893,18 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 341 */
+/* 340 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(343);
-__webpack_require__(280);
+__webpack_require__(342);
+__webpack_require__(279);
 
 
 /***/ }),
-/* 342 */
+/* 341 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5938,7 +5941,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 343 */
+/* 342 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -5946,9 +5949,9 @@ exports["default"] = default_1;
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(26);
-__webpack_require__(181);
-var ms_timepicker_panel_1 = __webpack_require__(342);
+__webpack_require__(25);
+__webpack_require__(179);
+var ms_timepicker_panel_1 = __webpack_require__(341);
 var utils_1 = __webpack_require__(5);
 /**
  * 时间选择组件
@@ -5963,7 +5966,7 @@ var utils_1 = __webpack_require__(5);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-timepicker',
-    template: __webpack_require__(303),
+    template: __webpack_require__(302),
     defaults: {
         selected: '',
         format: 'HH:mm:ss',
@@ -6028,19 +6031,19 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 344 */
+/* 343 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(345);
-__webpack_require__(182);
-__webpack_require__(281);
+__webpack_require__(344);
+__webpack_require__(180);
+__webpack_require__(280);
 
 
 /***/ }),
-/* 345 */
+/* 344 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -6048,14 +6051,14 @@ __webpack_require__(281);
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(26);
-__webpack_require__(183);
-var ms_tree_select_panel_1 = __webpack_require__(182);
-var ane_util_1 = __webpack_require__(14);
+__webpack_require__(25);
+__webpack_require__(181);
+var ms_tree_select_panel_1 = __webpack_require__(180);
+var ane_util_1 = __webpack_require__(13);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-tree-select',
-    template: __webpack_require__(305),
+    template: __webpack_require__(304),
     defaults: {
         value: [],
         multiple: false,
@@ -6118,7 +6121,7 @@ ms_control_1["default"].extend({
         panelVmId: '',
         panelVisible: false,
         panelClass: 'ane-tree-select-dropdown',
-        panelTemplate: __webpack_require__(304),
+        panelTemplate: __webpack_require__(303),
         handlePanelHide: function () {
             this.panelVisible = false;
         },
@@ -6175,20 +6178,20 @@ function getTreeNodesByKeys(root, keys, results) {
 
 
 /***/ }),
-/* 346 */
+/* 345 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-__webpack_require__(174);
-__webpack_require__(283);
-var $ = __webpack_require__(9);
-__webpack_require__(196);
-__webpack_require__(197);
+__webpack_require__(172);
+__webpack_require__(282);
+var $ = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+__webpack_require__(194);
+__webpack_require__(195);
 avalon.component('ms-tree', {
-    template: __webpack_require__(306),
+    template: __webpack_require__(305),
     defaults: {
         checkable: false,
         tree: [],
@@ -6269,14 +6272,14 @@ avalon.component('ms-tree', {
 
 
 /***/ }),
-/* 347 */
+/* 346 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var domAlign = __webpack_require__(270);
+var domAlign = __webpack_require__(269);
 avalon.component('ms-trigger', {
     template: '<span style="display:none;"></span>',
     defaults: {
@@ -6354,14 +6357,42 @@ avalon.component('ms-trigger', {
 
 
 /***/ }),
+/* 347 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+exports.__esModule = true;
+__webpack_require__(350);
+__webpack_require__(281);
+
+
+/***/ }),
 /* 348 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(351);
-__webpack_require__(282);
+var avalon = __webpack_require__(1);
+avalon.component('ms-upload-card', {
+    template: __webpack_require__(306),
+    defaults: {
+        fileList: [],
+        getTextClass: function (file) {
+            switch (file.status) {
+                case 'done': return 'text-primary';
+                case 'uploading': return 'text-muted';
+                case 'error': return 'text-danger';
+            }
+            return '';
+        },
+        onRemove: avalon.noop,
+        del: function (file) {
+            this.onRemove(file);
+        }
+    }
+});
 
 
 /***/ }),
@@ -6372,7 +6403,7 @@ __webpack_require__(282);
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-avalon.component('ms-upload-card', {
+avalon.component('ms-upload-list', {
     template: __webpack_require__(307),
     defaults: {
         fileList: [],
@@ -6398,41 +6429,13 @@ avalon.component('ms-upload-card', {
 
 "use strict";
 
-exports.__esModule = true;
-var avalon = __webpack_require__(1);
-avalon.component('ms-upload-list', {
-    template: __webpack_require__(308),
-    defaults: {
-        fileList: [],
-        getTextClass: function (file) {
-            switch (file.status) {
-                case 'done': return 'text-primary';
-                case 'uploading': return 'text-muted';
-                case 'error': return 'text-danger';
-            }
-            return '';
-        },
-        onRemove: avalon.noop,
-        del: function (file) {
-            this.onRemove(file);
-        }
-    }
-});
-
-
-/***/ }),
-/* 351 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
 /// <reference path="../../typings/index.d.ts" />
 exports.__esModule = true;
 var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
-__webpack_require__(350);
 __webpack_require__(349);
-var up_loader_1 = __webpack_require__(352);
+__webpack_require__(348);
+var up_loader_1 = __webpack_require__(351);
 /**
  * 文件上传组件
  * @prop value 组件值(inherit)
@@ -6447,7 +6450,7 @@ var up_loader_1 = __webpack_require__(352);
  */
 ms_control_1["default"].extend({
     displayName: 'ms-upload',
-    template: __webpack_require__(309),
+    template: __webpack_require__(308),
     soleSlot: 'trigger',
     defaults: {
         helpId: '',
@@ -6583,13 +6586,13 @@ function updateFileObj(fileList, uid, callback) {
 
 
 /***/ }),
+/* 351 */,
 /* 352 */,
-/* 353 */,
-/* 354 */
+/* 353 */
 /***/ (function(module, exports) {
 
 /* (ignored) */
 
 /***/ })
-],[198]);
+],[196]);
 });
