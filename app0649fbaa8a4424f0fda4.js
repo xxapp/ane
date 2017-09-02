@@ -60,7 +60,7 @@ var __assign = (this && this.__assign) || Object.assign || function(t) {
     return t;
 };
 exports.__esModule = true;
-var ane_util_1 = __webpack_require__(13);
+var ane_util_1 = __webpack_require__(14);
 function emitToFormItem(vmodel, options) {
     if (options === void 0) { options = {}; }
     vmodel.$formItem = ane_util_1.findParentComponent(vmodel, 'ms-form-item');
@@ -80,7 +80,8 @@ exports.emitToFormItem = emitToFormItem;
 /* 10 */,
 /* 11 */,
 /* 12 */,
-/* 13 */
+/* 13 */,
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -161,7 +162,6 @@ exports.debounce = debounce;
 
 
 /***/ }),
-/* 14 */,
 /* 15 */,
 /* 16 */,
 /* 17 */,
@@ -172,7 +172,8 @@ exports.debounce = debounce;
 /* 22 */,
 /* 23 */,
 /* 24 */,
-/* 25 */
+/* 25 */,
+/* 26 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -182,7 +183,6 @@ __webpack_require__(346);
 
 
 /***/ }),
-/* 26 */,
 /* 27 */,
 /* 28 */,
 /* 29 */,
@@ -195,7 +195,8 @@ __webpack_require__(346);
 /* 36 */,
 /* 37 */,
 /* 38 */,
-/* 39 */
+/* 39 */,
+/* 40 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -241,8 +242,8 @@ avalon.component('ms-checkbox', {
 
 
 /***/ }),
-/* 40 */,
-/* 41 */
+/* 41 */,
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = [{
@@ -441,7 +442,6 @@ module.exports = [{
 }];
 
 /***/ }),
-/* 42 */,
 /* 43 */,
 /* 44 */,
 /* 45 */,
@@ -571,19 +571,20 @@ module.exports = [{
 /* 169 */,
 /* 170 */,
 /* 171 */,
-/* 172 */
+/* 172 */,
+/* 173 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
-__webpack_require__(39);
-__webpack_require__(173);
+__webpack_require__(40);
+__webpack_require__(174);
 __webpack_require__(272);
 
 
 /***/ }),
-/* 173 */
+/* 174 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -591,7 +592,7 @@ __webpack_require__(272);
 exports.__esModule = true;
 var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
-__webpack_require__(39);
+__webpack_require__(40);
 ms_control_1["default"].extend({
     displayName: 'ms-checkbox-group',
     template: __webpack_require__(287),
@@ -639,7 +640,7 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 174 */
+/* 175 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -651,7 +652,7 @@ __webpack_require__(275);
 
 
 /***/ }),
-/* 175 */
+/* 176 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -700,7 +701,7 @@ avalon.component('ms-pagination', {
 
 
 /***/ }),
-/* 176 */
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -708,7 +709,7 @@ avalon.component('ms-pagination', {
 exports.__esModule = true;
 var ms_control_1 = __webpack_require__(4);
 var utils_1 = __webpack_require__(5);
-__webpack_require__(177);
+__webpack_require__(178);
 ms_control_1["default"].extend({
     displayName: 'ms-radio-group',
     template: __webpack_require__(295),
@@ -751,7 +752,7 @@ ms_control_1["default"].extend({
 
 
 /***/ }),
-/* 177 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -793,7 +794,7 @@ avalon.component('ms-radio', {
 
 
 /***/ }),
-/* 178 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -805,7 +806,7 @@ __webpack_require__(278);
 
 
 /***/ }),
-/* 179 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -863,7 +864,7 @@ avalon.component('ms-timepicker-view', {
 
 
 /***/ }),
-/* 180 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -943,7 +944,7 @@ exports["default"] = default_1;
 
 
 /***/ }),
-/* 181 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -953,7 +954,7 @@ __webpack_require__(345);
 
 
 /***/ }),
-/* 182 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -981,14 +982,14 @@ function Observable() {
 
 
 /***/ }),
-/* 183 */,
 /* 184 */,
 /* 185 */,
 /* 186 */,
 /* 187 */,
 /* 188 */,
 /* 189 */,
-/* 190 */
+/* 190 */,
+/* 191 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -999,16 +1000,16 @@ __webpack_require__(324);
 
 
 /***/ }),
-/* 191 */
+/* 192 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var navConfig = __webpack_require__(41);
-__webpack_require__(193);
-var stores_1 = __webpack_require__(182);
+var navConfig = __webpack_require__(42);
+__webpack_require__(194);
+var stores_1 = __webpack_require__(183);
 exports.name = 'doc-sidebar';
 avalon.component(exports.name, {
     template: __webpack_require__(309),
@@ -1034,7 +1035,7 @@ avalon.component(exports.name, {
 
 
 /***/ }),
-/* 192 */
+/* 193 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1042,8 +1043,8 @@ avalon.component(exports.name, {
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 __webpack_require__(283);
-var stores_1 = __webpack_require__(182);
-var navConfig = __webpack_require__(41);
+var stores_1 = __webpack_require__(183);
+var navConfig = __webpack_require__(42);
 function getPage(component) {
     var html = "<xmp is=\"" + component + "\" :widget=\"{id:'" + component.replace(/\-/g, '_') + "'}\"></xmp>";
     return html;
@@ -1095,7 +1096,7 @@ applyRouteConfig(routeConfig, {
 
 
 /***/ }),
-/* 193 */
+/* 194 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -1103,24 +1104,24 @@ applyRouteConfig(routeConfig, {
 exports.__esModule = true;
 __webpack_require__(326);
 __webpack_require__(337);
-__webpack_require__(175);
+__webpack_require__(176);
 __webpack_require__(316);
 __webpack_require__(319);
 var create_form_1 = __webpack_require__(318);
 exports.createForm = create_form_1.createForm;
 __webpack_require__(322);
 __webpack_require__(338);
-__webpack_require__(178);
+__webpack_require__(179);
 __webpack_require__(347);
 __webpack_require__(313);
 __webpack_require__(340);
 __webpack_require__(343);
-__webpack_require__(172);
 __webpack_require__(173);
+__webpack_require__(174);
 __webpack_require__(332);
-__webpack_require__(176);
-__webpack_require__(181);
-var ms_loading_1 = __webpack_require__(174);
+__webpack_require__(177);
+__webpack_require__(182);
+var ms_loading_1 = __webpack_require__(175);
 exports.Loading = ms_loading_1.Loading;
 var ms_notification_1 = __webpack_require__(330);
 exports.notification = ms_notification_1["default"];
@@ -1129,7 +1130,7 @@ exports.message = ms_message_1["default"];
 
 
 /***/ }),
-/* 194 */
+/* 195 */
 /***/ (function(module, exports) {
 
 /*
@@ -3059,7 +3060,7 @@ exports.message = ms_message_1["default"];
 })(jQuery);
 
 /***/ }),
-/* 195 */
+/* 196 */
 /***/ (function(module, exports) {
 
 /*
@@ -3692,20 +3693,20 @@ exports.message = ms_message_1["default"];
 })(jQuery);
 
 /***/ }),
-/* 196 */
+/* 197 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {__webpack_require__(187);
-__webpack_require__(188);
+/* WEBPACK VAR INJECTION */(function(global) {__webpack_require__(188);
 __webpack_require__(189);
+__webpack_require__(190);
 
-__webpack_require__(185);
 __webpack_require__(186);
+__webpack_require__(187);
 
-var jQuery = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var jQuery = __webpack_require__(8);
 window.$ = window.jQuery = jQuery;
-__webpack_require__(183);
-var bootbox = __webpack_require__(40);
+__webpack_require__(184);
+var bootbox = __webpack_require__(41);
 bootbox.setLocale('zh_CN');
 
 // 提前禁止avalon对Object.create的实现
@@ -3728,10 +3729,10 @@ if (avalon.msie < 8) {
         obj[property] = meta.value;
     }
 }
-__webpack_require__(184);
-__webpack_require__(192);
-__webpack_require__(190);
+__webpack_require__(185);
+__webpack_require__(193);
 __webpack_require__(191);
+__webpack_require__(192);
 
 avalon.define({
     $id: 'root',
@@ -3748,7 +3749,6 @@ avalon.scan(document.body);
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(17)))
 
 /***/ }),
-/* 197 */,
 /* 198 */,
 /* 199 */,
 /* 200 */,
@@ -4125,7 +4125,7 @@ avalon.component('ms-calendar-year-view', {
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var moment = __webpack_require__(0);
-__webpack_require__(178);
+__webpack_require__(179);
 __webpack_require__(311);
 avalon.component('ms-calendar', {
     template: __webpack_require__(286),
@@ -4444,9 +4444,9 @@ exports["default"] = default_1;
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(25);
+__webpack_require__(26);
 __webpack_require__(310);
-__webpack_require__(179);
+__webpack_require__(180);
 var ms_datepicker_panel_1 = __webpack_require__(314);
 var utils_1 = __webpack_require__(5);
 /**
@@ -4556,9 +4556,9 @@ __webpack_require__(317);
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var bootbox = __webpack_require__(40);
-var ane_util_1 = __webpack_require__(13);
-var $ = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var bootbox = __webpack_require__(41);
+var ane_util_1 = __webpack_require__(14);
+var $ = __webpack_require__(8);
 avalon.component('ms-dialog', {
     template: '<div style="display: none"><slot name="header" /><slot name="body"/></div>',
     defaults: {
@@ -4673,7 +4673,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 };
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var Schema = __webpack_require__(197);
+var Schema = __webpack_require__(198);
 function createForm(options) {
     return new Form(options);
 }
@@ -4863,7 +4863,7 @@ __webpack_require__(320);
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-var ane_util_1 = __webpack_require__(13);
+var ane_util_1 = __webpack_require__(14);
 /**
  * 表单项组件
  * @prop label 表单项标签
@@ -5270,7 +5270,7 @@ exports["default"] = ms_message_1["default"];
 "use strict";
 
 exports.__esModule = true;
-var noty = __webpack_require__(170);
+var noty = __webpack_require__(171);
 var defaultOptions = {
     duration: 1500
 };
@@ -5341,7 +5341,7 @@ exports["default"] = ms_notification_1["default"];
 "use strict";
 
 exports.__esModule = true;
-var noty = __webpack_require__(170);
+var noty = __webpack_require__(171);
 var defaultOptions = {
     timeout: 3000
 };
@@ -5401,8 +5401,8 @@ function template(title, message, icon) {
 "use strict";
 
 exports.__esModule = true;
+__webpack_require__(178);
 __webpack_require__(177);
-__webpack_require__(176);
 __webpack_require__(277);
 
 
@@ -5497,9 +5497,9 @@ exports["default"] = default_1;
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(25);
+__webpack_require__(26);
 var ms_select_panel_1 = __webpack_require__(334);
-var ane_util_1 = __webpack_require__(13);
+var ane_util_1 = __webpack_require__(14);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-select',
@@ -5667,11 +5667,11 @@ avalon.component('ms-table-header', {
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-__webpack_require__(39);
+__webpack_require__(40);
 __webpack_require__(336);
+__webpack_require__(176);
+var ane_util_1 = __webpack_require__(14);
 __webpack_require__(175);
-var ane_util_1 = __webpack_require__(13);
-__webpack_require__(174);
 var defaultPagination = function () {
     return {
         current: 1, pageSize: 10, total: NaN, onChange: avalon.noop
@@ -5949,8 +5949,8 @@ exports["default"] = default_1;
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(25);
-__webpack_require__(179);
+__webpack_require__(26);
+__webpack_require__(180);
 var ms_timepicker_panel_1 = __webpack_require__(341);
 var utils_1 = __webpack_require__(5);
 /**
@@ -6038,7 +6038,7 @@ ms_control_1["default"].extend({
 
 exports.__esModule = true;
 __webpack_require__(344);
-__webpack_require__(180);
+__webpack_require__(181);
 __webpack_require__(280);
 
 
@@ -6051,10 +6051,10 @@ __webpack_require__(280);
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
 var ms_control_1 = __webpack_require__(4);
-__webpack_require__(25);
-__webpack_require__(181);
-var ms_tree_select_panel_1 = __webpack_require__(180);
-var ane_util_1 = __webpack_require__(13);
+__webpack_require__(26);
+__webpack_require__(182);
+var ms_tree_select_panel_1 = __webpack_require__(181);
+var ane_util_1 = __webpack_require__(14);
 var utils_1 = __webpack_require__(5);
 ms_control_1["default"].extend({
     displayName: 'ms-tree-select',
@@ -6185,11 +6185,11 @@ function getTreeNodesByKeys(root, keys, results) {
 
 exports.__esModule = true;
 var avalon = __webpack_require__(1);
-__webpack_require__(172);
+__webpack_require__(173);
 __webpack_require__(282);
-var $ = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"jquery\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-__webpack_require__(194);
+var $ = __webpack_require__(8);
 __webpack_require__(195);
+__webpack_require__(196);
 avalon.component('ms-tree', {
     template: __webpack_require__(305),
     defaults: {
@@ -6594,5 +6594,5 @@ function updateFileObj(fileList, uid, callback) {
 /* (ignored) */
 
 /***/ })
-],[196]);
+],[197]);
 });
