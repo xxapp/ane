@@ -77,12 +77,20 @@ avalon.component('ms-tree', {
                     });
                 }
             });
+            
+            this.$watch('expandedKeys', v => {
+                treeObj.expandAll(false);
+                treeObj.getNodesByFilter(n => v.contains(n.key)).forEach(n => {
+                    treeObj.expandNode(n, true);
+                });
+            });
 
             this.$watch('tree', v => {
                 treeObj = initTree(event.target, v.toJSON());
             });
 
             this.$fire('checkedKeys', this.checkedKeys);
+            this.$fire('expandedKeys', this.expandedKeys);
         }
     }
 });
