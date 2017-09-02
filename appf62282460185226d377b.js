@@ -6262,10 +6262,17 @@ avalon.component('ms-tree', {
                     });
                 }
             });
+            this.$watch('expandedKeys', function (v) {
+                treeObj.expandAll(false);
+                treeObj.getNodesByFilter(function (n) { return v.contains(n.key); }).forEach(function (n) {
+                    treeObj.expandNode(n, true);
+                });
+            });
             this.$watch('tree', function (v) {
                 treeObj = initTree(event.target, v.toJSON());
             });
             this.$fire('checkedKeys', this.checkedKeys);
+            this.$fire('expandedKeys', this.expandedKeys);
         }
     }
 });
