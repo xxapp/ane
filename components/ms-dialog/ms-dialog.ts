@@ -4,9 +4,10 @@ import { parseSlotToVModel } from '../../ane-util';
 import * as $ from 'jquery';
 
 avalon.component('ms-dialog', {
-    template: '<div style="display: none"><slot name="header" /><slot name="body"/></div>',
+    template: '<div style="display: none"><slot name="header" /><slot name="body"/><slot name="footer"/></div>',
     defaults: {
         body: 'blank',
+        footer: '',
         $dialog: null,
         show: false,
         size: '',
@@ -24,7 +25,7 @@ avalon.component('ms-dialog', {
                         message: vm.body,
                         title: '{{title}}',
                         size: vm.size,
-                        buttons: {
+                        buttons: this.footer.length ? null : {
                             save: {
                                 label: vm.okText || '保存',
                                 className: 'btn-primary',
@@ -53,7 +54,10 @@ avalon.component('ms-dialog', {
                     .on('shown.bs.modal', () => {
                         
                     });
-                    vm.$dialog.find('.modal-content').attr(':controller', this.$innerVm);
+                    const $content = vm.$dialog.find('.modal-content').attr(':controller', this.$innerVm);
+                    if (this.footer.length) {
+                        $content.append($(this.footer));
+                    }
                     avalon.scan(vm.$dialog.get(0));
                 } else {
                     if (vm.$dialog) {

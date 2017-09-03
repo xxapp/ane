@@ -115,6 +115,49 @@ avalon.define({
 });
 ```
 
+### 完全自定义 footer
+
+``` html
+<div :controller="doc-dialog-custom-footer">
+    <ms-dialog :widget="{$innerVm: 'doc-dialog-custom-footer_form', show: @show}">
+        <div slot="body" ms-skip>
+            <xmp is="ms-form">
+                <ms-form-item :widget="{label: '标题'}">
+                    <ms-input :widget="{col: 'title'}"></ms-input>
+                </ms-form-item>
+            </xmp>
+        </div>
+        <div slot="footer" class="modal-footer" ms-skip>
+            <a class="btn btn-primary" :click="@handleOk">保存</a>
+            <a class="btn btn-default" :click="@handleCancel">不保存</a>
+            <a class="btn btn-default" :click="@handleCancel">取消</a>
+        </div>
+    </ms-dialog>
+    <button type="button" class="btn btn-primary" :click="@show = true">弹出对话框</button>
+</div>
+```
+
+``` js
+import * as avalon from 'avalon2';
+import 'ane';
+
+const vm3 = avalon.define({
+    $id: 'doc-dialog-custom-footer',
+    show: false
+});
+
+avalon.define({
+    $id: 'doc-dialog-custom-footer_form',
+    title: '弹出框',
+    handleCancel(e) {
+        vm3.show = false;
+    },
+    handleOk() {
+        vm3.show = false;
+    }
+});
+```
+
 ### 组件参数
 
 | 参数 | 说明 | 类型 | 默认值 |
