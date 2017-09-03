@@ -4560,9 +4560,10 @@ var bootbox = __webpack_require__(41);
 var ane_util_1 = __webpack_require__(14);
 var $ = __webpack_require__(8);
 avalon.component('ms-dialog', {
-    template: '<div style="display: none"><slot name="header" /><slot name="body"/></div>',
+    template: '<div style="display: none"><slot name="header" /><slot name="body"/><slot name="footer"/></div>',
     defaults: {
         body: 'blank',
+        footer: '',
         $dialog: null,
         show: false,
         size: '',
@@ -4581,7 +4582,7 @@ avalon.component('ms-dialog', {
                         message: vm.body,
                         title: '{{title}}',
                         size: vm.size,
-                        buttons: {
+                        buttons: _this.footer.length ? null : {
                             save: {
                                 label: vm.okText || '保存',
                                 className: 'btn-primary',
@@ -4610,7 +4611,10 @@ avalon.component('ms-dialog', {
                     })
                         .on('shown.bs.modal', function () {
                     });
-                    vm.$dialog.find('.modal-content').attr(':controller', _this.$innerVm);
+                    var $content = vm.$dialog.find('.modal-content').attr(':controller', _this.$innerVm);
+                    if (_this.footer.length) {
+                        $content.append($(_this.footer));
+                    }
                     avalon.scan(vm.$dialog.get(0));
                 }
                 else {
