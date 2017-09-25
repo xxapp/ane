@@ -119,7 +119,7 @@ avalon.define({
 
 ``` html
 <div :controller="doc-dialog-custom-footer">
-    <ms-dialog :widget="{$innerVm: 'doc-dialog-custom-footer_form', show: @show}">
+    <ms-dialog :widget="{$innerVm: 'doc-dialog-custom-footer_form', show: @show, onCancel: @handleCancel}">
         <div slot="body" ms-skip>
             <xmp is="ms-form">
                 <ms-form-item :widget="{label: '标题'}">
@@ -143,13 +143,18 @@ import 'ane';
 
 const vm3 = avalon.define({
     $id: 'doc-dialog-custom-footer',
-    show: false
+    show: false,
+    handleCancel(e) {
+        vm3.show = false;
+    }
 });
 
 avalon.define({
     $id: 'doc-dialog-custom-footer_form',
     title: '弹出框',
     handleCancel(e) {
+        // 上面的 handelCancel 是控制 dialog 右上角关闭的
+        // 这里只控制自定义 footer 的取消按钮
         vm3.show = false;
     },
     handleOk() {
@@ -163,6 +168,7 @@ avalon.define({
 | 参数 | 说明 | 类型 | 默认值 |
 |-----|-----|-----|-----|
 | show | 控制对话框是否显示 | boolean | false |
+| className | 自定义 dialog 的 className | string | '' |
 | size | 对话框尺寸 | 'large' \| 'small' | '' |
 | okText | 自定义确认按钮文字 | string | '保存' |
 | cancelText | 自定义取消按钮文字 | string | '取消' |
