@@ -4566,6 +4566,7 @@ avalon.component('ms-dialog', {
         footer: '',
         $dialog: null,
         show: false,
+        className: '',
         size: '',
         uploading: false,
         $innerVm: '',
@@ -4581,6 +4582,7 @@ avalon.component('ms-dialog', {
                     vm.$dialog = bootbox.dialog({
                         message: vm.body,
                         title: '{{title}}',
+                        className: vm.className,
                         size: vm.size,
                         buttons: _this.footer.length ? null : {
                             save: {
